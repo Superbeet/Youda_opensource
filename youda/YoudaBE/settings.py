@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps',
+    'django.contrib.comments',
+    'django.contrib.sites',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,7 +107,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
 LANGUAGE_CODE = 'en-us'
 
 #TIME_ZONE = 'Asia/Shanghai'
@@ -116,15 +117,17 @@ USE_L10N = True
 
 USE_TZ = False
 
-
+SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
 TEMPLATE_DIRS = (
     #os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
     'html',
 )
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
