@@ -1,0 +1,15 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+</head>
+<body>
+<table>
+{%for question in questions%}
+<tr>
+    <td><a href="/userdetail?userid={{question.question_id}}"> {{question.question_content}}</a></td>
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

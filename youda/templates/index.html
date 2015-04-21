@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>友答网</title>
+<link href="/static/css/index.css" rel="stylesheet" />
+<link href="/static/css/reset.css" rel="stylesheet" />
+
+<!-- amazeui import -->
+<link rel="stylesheet" href="/static/css/amazeui.min.css" />
+<link rel="stylesheet" href="/static/css/amaze.min.css" />
+<link rel="canonical" href="http://www.uanswer.me" />
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/handlebars.min.js" />
+</script><script src="/static/js/amazeui.min.js"></script>
+<!-- amazeui ending -->
+
+
+</head>
+
+<body>
+
+<!-- header  -->
+<div id="header_bg" data-am-sticky>
+	<div id="header">
+		<div id="main_nav_bg" class="fl">
+		<div id="logo" class="fl"></div>
+		<div id="navContainer" class="fl">
+		<ul class="am-nav am-nav-pills">
+		<li> <a href="/home"  id="home_nav">
+			<img src="/static/image/index/home_nav.png" />
+			</a>  
+		</li>
+		<li> <a href="/topic"  id="topic_nav">
+			<img src="/static/image/index/topic_nav.png" />
+			</a>  
+		</li>
+		<li> <a href="/schooler"  id="schooler_nav">
+			<img src="/static/image/index/schooler_nav.png" alt="校友" title="校友" />
+			</a>  
+		</li>	
+		<li> <a href="/message"  id="message_nav">
+			<img src="/static/image/index/message_nav.png" />
+			</a>  
+		</li>
+			
+		</ul>
+
+		</div>
+
+		<div id="newPoper" class="fr">
+
+			<a href="#">
+			<div id="newPoperText">
+				新提问
+</div>
+			</a>
+
+
+		</div>
+
+
+
+		<div id="search" class="fr am-input-group">
+	
+		<input type="text" class="am-form-field">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-search"></span>
+        </button>
+      </span>
+		</div>
+
+
+
+
+
+
+
+		</div>
+	<div id="user_info" class="fl">
+		<div id="user_info_img" class="fr">
+			<img src="/static/image/avatar-min-img.jpg" width="50" height="50" class="roundImg" />
+		</div>
+	<div id="user_info_content" class="fr">
+		<span>
+		徐子豪<br/>
+		南京邮电大学▽
+
+		</span>
+	</div>
+	</div>
+	</div>
+</div>	
+
+<div id="container">
+	<div id="content">
+ {% block content %}{% endblock %}
+</div>
+</div>
+<!-- footer  -->
+<!-- <div id="footer">
+</div> -->
+</body>
+</html>

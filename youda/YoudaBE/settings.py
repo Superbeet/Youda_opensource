@@ -59,23 +59,23 @@ WSGI_APPLICATION = 'YoudaBE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 #我的数据库配置
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'dev_youda',
+         'USER': 'root',
+         'PASSWORD': 'niit',
+         'HOST': '127.0.0.1',
+         'PORT': '3306',
+     }
+ }
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dev_youda',
-#         'USER': 'root',
-#         'PASSWORD': 'niit',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 #阿里云数据库地址
 # DATABASES = {
@@ -105,7 +105,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
 LANGUAGE_CODE = 'en-us'
 
 #TIME_ZONE = 'Asia/Shanghai'
@@ -120,11 +119,13 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
-    #os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
-    'html',
+   BASE_DIR+'/templates/',
 )
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+          os.path.join(BASE_DIR, 'static').replace('\\','/'),
+    )
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
