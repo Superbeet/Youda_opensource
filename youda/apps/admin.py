@@ -1,7 +1,7 @@
 from django.contrib import admin
 import models
 
-class YoudaAdmin(admin.ModelAdmin):
+class QuestionAdmin(admin.ModelAdmin):
     list_display = (
                         'question_id',
                         'user',
@@ -30,7 +30,7 @@ class YoudaAdmin(admin.ModelAdmin):
     signature.short_description = 'New Signature'
     
 # Register your models here.
-admin.site.register(models.Questions, YoudaAdmin)
+admin.site.register(models.Questions, QuestionAdmin)
 admin.site.register(models.Answers)
 admin.site.register(models.AnswersComments)
 admin.site.register(models.Articles)

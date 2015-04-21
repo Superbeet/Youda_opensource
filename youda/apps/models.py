@@ -25,9 +25,9 @@ class Questions(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now_add = True)
     
-    class Meta:
-        managed = False
-        db_table = 'questions'
+#     class Meta:
+#         managed = False
+#         db_table = 'questions'
         
     def __unicode__(self):
         return "[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
@@ -46,9 +46,9 @@ class Answers(models.Model):
     has_attach = models.IntegerField(blank=True, null=True)
     comment_num = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'answers'
+#     class Meta:
+#         managed = False
+#         db_table = 'answers'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.answer_id, self.question,self.user,self.answer_content) 
@@ -68,9 +68,9 @@ class AnswersComments(models.Model):
     comment_num = models.IntegerField(blank=True, null=True)
     parent_id = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'answers_comments'
+#     class Meta:
+#         managed = False
+#         db_table = 'answers_comments'
         
     def __unicode__(self):
         return  u'%s %s %s %s' % (self.comment_id, self.answer,self.user,self.content) 
@@ -90,9 +90,9 @@ class Articles(models.Model):
     comment_num = models.IntegerField(blank=True, null=True)
     attention_num = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'articles'
+#     class Meta:
+#         managed = False
+#         db_table = 'articles'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.article_id, self.user_id,self.article_title,self.topic_id) 
@@ -108,9 +108,9 @@ class Associations(models.Model):
     entrance_time = models.DateTimeField(blank=True, null=True)
     leave_time = models.DateTimeField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'associations'
+#     class Meta:
+#         managed = False
+#         db_table = 'associations'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.ass_id, self.user,self.ass_name,self.position)
@@ -126,9 +126,9 @@ class InvitationUsers(models.Model):
     receive_user = models.ForeignKey('Users',related_name='all_receive_users')
     receive_user_name = models.CharField(max_length=10, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'invitation_users'
+#     class Meta:
+#         managed = False
+#         db_table = 'invitation_users'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.invitation_id, self.question,self.send_user,self.send_user_name)
@@ -145,9 +145,9 @@ class Jobs(models.Model):
     leave_time = models.DateTimeField(blank=True, null=True)
     experience = models.TextField(blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'jobs'
+#     class Meta:
+#         managed = False
+#         db_table = 'jobs'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.job_id, self.user,self.position,self.city)
@@ -164,9 +164,9 @@ class Logs(models.Model):
     from_field = models.IntegerField(db_column='from', blank=True, null=True)  # Field renamed because it was a Python reserved word.
     url = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'logs'
+#     class Meta:
+#         managed = False
+#         db_table = 'logs'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.log_id, self.user,self.ip,self.operate_time)
@@ -179,9 +179,9 @@ class Messages(models.Model):
     user = models.ForeignKey('Users')
     content = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'messages'
+#     class Meta:
+#         managed = False
+#         db_table = 'messages'
         
     def __unicode__(self):
         return u'%s %s %s' % (self.message_id, self.user,self.content)
@@ -197,9 +197,9 @@ class PrivateLetters(models.Model):
     receive_user_name = models.CharField(max_length=10, blank=True)
     content = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'private_letters'
+#     class Meta:
+#         managed = False
+#         db_table = 'private_letters'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.letter_id, self.send_user,self.send_user_name,self.receive_user)
@@ -215,9 +215,9 @@ class Schools(models.Model):
     entrance_time = models.DateTimeField(blank=True, null=True)
     education = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'schools'
+#     class Meta:
+#         managed = False
+#         db_table = 'schools'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.school_id, self.user,self.school_name,self.academy)
@@ -230,9 +230,9 @@ class Topics(models.Model):
     topic_name = models.CharField(max_length=50, blank=True)
     parent_id = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'topics'
+#     class Meta:
+#         managed = False
+#         db_table = 'topics'
         
     def __unicode__(self):
         return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",parentid_id:"+str(self.parent_id)+"]"
@@ -265,8 +265,8 @@ class Users(models.Model):
     password = models.CharField(max_length=20)
     gender = models.IntegerField(blank=True, null=True)
     power = models.IntegerField(blank=True, null=True)
-    email = models.CharField(max_length=20, blank=True)
-    verify_email = models.IntegerField(blank=True, null=True)
+    email = models.CharField(max_length=30, blank=True)
+    verify_email = models.CharField(max_length=30, blank=True)
     first_login = models.IntegerField(blank=True, null=True)
     cur_state = models.IntegerField(blank=True, null=True)
     head = models.CharField(max_length=100, blank=True)
@@ -288,9 +288,9 @@ class Users(models.Model):
     signature = models.CharField(max_length=128, default ='This guy is too lazy to leave anything.')
     photo = models.ImageField(upload_to = "upload_imgs/", default='')
     
-    class Meta:
-        managed = False
-        db_table = 'users'
+#     class Meta:
+#         managed = False
+#         db_table = 'users'
 
     def __unicode__(self):
         return self.user.username
@@ -319,9 +319,9 @@ class UsersAffiliate(models.Model):
     community_flag = models.IntegerField(blank=True, null=True)
     community_setting = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'users_affiliate'
+#     class Meta:
+#         managed = False
+#         db_table = 'users_affiliate'
         
     def __unicode__(self):
         return u'%s %s %s %s'% (self.user, self.email_state,self.qq,self.qq_state) 
