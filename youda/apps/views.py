@@ -16,17 +16,12 @@ def index(request):
     """
     return HttpResponse("Hello world!")
 
-def question_pub(request):
-    """ page to publish a question
-    """
-    pass
 
 def topic(request):
     """ Topic page
     """
     pass
 
-# --------------- Rest API ----------------
 def user_detail(request):
     """ API to fetch user's detail information
     """
@@ -37,6 +32,12 @@ def question_detail(request):
     """
     pass
 
+def question_pub(request):
+    """ page to publish a question
+    """
+    pass
+
+# --------------- Rest API ----------------
 def comment_sub(request):
     """ API to submit a comment
     """

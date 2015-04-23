@@ -33,7 +33,7 @@ class Questions(models.Model):
         class Meta:
             managed = False
             db_table = 'questions'
-        
+
     def __unicode__(self):
         return "[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
     
@@ -264,8 +264,10 @@ class YoudaUser(models.Model):
     password = models.CharField(max_length=20)
     gender = models.IntegerField(blank=True, null=True)
     power = models.IntegerField(blank=True, null=True)
+    
     email = models.CharField(max_length=20, blank=True)
     verify_email = models.CharField(max_length=100, blank=True, null=True)
+
     first_login = models.IntegerField(blank=True, null=True)
     cur_state = models.IntegerField(blank=True, null=True)
     head = models.CharField(max_length=100, blank=True)
