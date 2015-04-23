@@ -21,7 +21,9 @@ class YoudaAdmin(admin.ModelAdmin):
                     )
     
     list_filter = ('created_at',)
-    search_fields = ('title','author__user__username') #Foreign key
+    search_fields = ('user__user__username',
+                     'question_content',
+                    'question_detail',) #Foreign key
     
     # Inner function to show signature of a certain user
     def signature(self,obj):
@@ -32,19 +34,21 @@ class YoudaAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(models.Questions, YoudaAdmin)
 admin.site.register(models.Answers)
-admin.site.register(models.AnswersComments)
-admin.site.register(models.Articles)
-admin.site.register(models.Associations)
-admin.site.register(models.InvitationUsers)
-admin.site.register(models.Jobs)
-admin.site.register(models.Logs)
-admin.site.register(models.Messages)
-admin.site.register(models.PrivateLetters)
-# admin.site.register(models.Questions)
-admin.site.register(models.Schools)
+admin.site.register(models.YoudaUser)
 admin.site.register(models.Topics)
-admin.site.register(models.Users)
-admin.site.register(models.UsersAffiliate)
+
+# admin.site.register(models.AnswersComments)
+# admin.site.register(models.Articles)
+# admin.site.register(models.Associations)
+# admin.site.register(models.InvitationUsers)
+# admin.site.register(models.Jobs)
+# admin.site.register(models.Logs)
+# admin.site.register(models.Messages)
+# admin.site.register(models.PrivateLetters)
+# # admin.site.register(models.Questions)
+# admin.site.register(models.Schools)
+# admin.site.register(models.Topics)
+# admin.site.register(models.UsersAffiliate)
 
 
 

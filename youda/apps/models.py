@@ -4,12 +4,16 @@ from __future__ import unicode_literals
 from django.db import models
 from apps.CommonDao import CommonDao
 from datetime import datetime
+from django.contrib.auth.models import User
+
+# Use default DB table names or not
+defaultDatabaseTables = True
 
 class Questions(models.Model):
     question_id = models.IntegerField(primary_key=True)
     #related_name用于反向获取数据，如果查询一个用户user提了多少问题，那么user.questions_set.all()
     #可以获取，加了relate_name='all_questions'就可以这样user.all_questions.all()
-    user = models.ForeignKey('Users',related_name='all_questions')
+    user = models.ForeignKey('YoudaUser',related_name='all_questions')
     topic = models.ForeignKey('Topics', blank=True, null=True)
     question_content = models.CharField(max_length=255, blank=True)
     question_detail = models.TextField(blank=True)
@@ -25,9 +29,10 @@ class Questions(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now_add = True)
     
-    class Meta:
-        managed = False
-        db_table = 'questions'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'questions'
         
     def __unicode__(self):
         return "[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
@@ -38,7 +43,7 @@ class Questions(models.Model):
 class Answers(models.Model):
     answer_id = models.IntegerField(primary_key=True)
     question = models.ForeignKey('Questions')
-    user = models.ForeignKey('Users')
+    user = models.ForeignKey('YoudaUser')
     answer_content = models.TextField(blank=True)
     publish_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
     support_num = models.IntegerField(blank=True, null=True)
@@ -46,9 +51,10 @@ class Answers(models.Model):
     has_attach = models.IntegerField(blank=True, null=True)
     comment_num = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'answers'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'answers'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.answer_id, self.question,self.user,self.answer_content) 
@@ -62,15 +68,16 @@ class Answers(models.Model):
 class AnswersComments(models.Model):
     comment_id = models.IntegerField(primary_key=True)
     answer = models.ForeignKey(Answers)
-    user = models.ForeignKey('Users')
+    user = models.ForeignKey('YoudaUser')
     content = models.TextField(blank=True)
     time = models.DateTimeField(blank=True, null=True,default=datetime.now)
     comment_num = models.IntegerField(blank=True, null=True)
     parent_id = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'answers_comments'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'answers_comments'
         
     def __unicode__(self):
         return  u'%s %s %s %s' % (self.comment_id, self.answer,self.user,self.content) 
@@ -90,9 +97,10 @@ class Articles(models.Model):
     comment_num = models.IntegerField(blank=True, null=True)
     attention_num = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'articles'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'articles'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.article_id, self.user_id,self.article_title,self.topic_id) 
@@ -108,9 +116,10 @@ class Associations(models.Model):
     entrance_time = models.DateTimeField(blank=True, null=True)
     leave_time = models.DateTimeField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'associations'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'associations'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.ass_id, self.user,self.ass_name,self.position)
@@ -121,14 +130,15 @@ class Associations(models.Model):
 class InvitationUsers(models.Model):
     invitation_id = models.IntegerField(primary_key=True)
     question = models.ForeignKey('Questions',)#
-    send_user = models.ForeignKey('Users',related_name='all_send_users', blank=True, null=True)
+    send_user = models.ForeignKey('YoudaUser',related_name='all_send_users', blank=True, null=True)
     send_user_name = models.CharField(max_length=10, blank=True)
-    receive_user = models.ForeignKey('Users',related_name='all_receive_users')
+    receive_user = models.ForeignKey('YoudaUser',related_name='all_receive_users')
     receive_user_name = models.CharField(max_length=10, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'invitation_users'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'invitation_users'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.invitation_id, self.question,self.send_user,self.send_user_name)
@@ -145,9 +155,10 @@ class Jobs(models.Model):
     leave_time = models.DateTimeField(blank=True, null=True)
     experience = models.TextField(blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'jobs'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'jobs'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.job_id, self.user,self.position,self.city)
@@ -157,16 +168,17 @@ class Jobs(models.Model):
 
 class Logs(models.Model):
     log_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('Users', blank=True, null=True)
+    user = models.ForeignKey('YoudaUser', blank=True, null=True)
     ip = models.CharField(max_length=20, blank=True)
     operate_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
     operate_command = models.CharField(max_length=20, blank=True)
     from_field = models.IntegerField(db_column='from', blank=True, null=True)  # Field renamed because it was a Python reserved word.
     url = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'logs'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'logs'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.log_id, self.user,self.ip,self.operate_time)
@@ -176,12 +188,13 @@ class Logs(models.Model):
 
 class Messages(models.Model):
     message_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('Users')
+    user = models.ForeignKey('YoudaUser')
     content = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'messages'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'messages'
         
     def __unicode__(self):
         return u'%s %s %s' % (self.message_id, self.user,self.content)
@@ -191,15 +204,16 @@ class Messages(models.Model):
 
 class PrivateLetters(models.Model):
     letter_id = models.IntegerField(primary_key=True)
-    send_user = models.ForeignKey('Users',related_name='all_sendletter_users')#related_name='aa'
+    send_user = models.ForeignKey('YoudaUser',related_name='all_sendletter_users')#related_name='aa'
     send_user_name = models.CharField(max_length=10, blank=True)
-    receive_user = models.ForeignKey('Users',related_name='all_receiverletter_users')
+    receive_user = models.ForeignKey('YoudaUser',related_name='all_receiverletter_users')
     receive_user_name = models.CharField(max_length=10, blank=True)
     content = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'private_letters'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'private_letters'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.letter_id, self.send_user,self.send_user_name,self.receive_user)
@@ -215,9 +229,10 @@ class Schools(models.Model):
     entrance_time = models.DateTimeField(blank=True, null=True)
     education = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'schools'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'schools'
         
     def __unicode__(self):
         return u'%s %s %s %s' % (self.school_id, self.user,self.school_name,self.academy)
@@ -230,9 +245,10 @@ class Topics(models.Model):
     topic_name = models.CharField(max_length=50, blank=True)
     parent_id = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'topics'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'topics'
         
     def __unicode__(self):
         return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",parentid_id:"+str(self.parent_id)+"]"
@@ -240,40 +256,23 @@ class Topics(models.Model):
     objects = models.Manager()
     common_objects = CommonDao();
 
-# class BBS_user(models.Model):
-#     user = models.OneToOneField(User)
-#     signature = models.CharField(max_length=128, default ='This guy is too lazy to leave anything.')
-#     photo = models.ImageField(upload_to = "upload_imgs/", default='')
-#     
-#     def __unicode__(self):
-#         return self.user.username
-
-from django.contrib.auth.models import User
-
-# class YoudaUser(models.Model):
-#     user = models.OneToOneField(User)
-#     signature = models.CharField(max_length=128, default ='This guy is too lazy to leave anything.')
-#     photo = models.ImageField(upload_to = "upload_imgs/", default='')
-#     
-#     def __unicode__(self):
-#         return self.user.username
+class YoudaUser(models.Model):
+    # This is the only required field
+    user = models.ForeignKey(User, unique=True)
     
-class Users(models.Model):
-    user = models.OneToOneField(User)
-#     user_id = models.IntegerField(primary_key=True)
-#     user_name = models.CharField(max_length=10, blank=True)
+    # The rest is completely up to you...
     password = models.CharField(max_length=20)
     gender = models.IntegerField(blank=True, null=True)
     power = models.IntegerField(blank=True, null=True)
     email = models.CharField(max_length=20, blank=True)
-    verify_email = models.IntegerField(blank=True, null=True)
+    verify_email = models.CharField(max_length=100, blank=True, null=True)
     first_login = models.IntegerField(blank=True, null=True)
     cur_state = models.IntegerField(blank=True, null=True)
     head = models.CharField(max_length=100, blank=True)
-    rem_name = models.IntegerField(blank=True, null=True)
+    rem_name = models.CharField(max_length=100, blank=True, null=True)
     auto_login = models.IntegerField(blank=True, null=True)
     introduction = models.CharField(max_length=255, blank=True)
-    message = models.IntegerField(blank=True, null=True)
+    message = models.CharField(max_length=100, blank=True, null=True)
     fans_num = models.IntegerField(blank=True, null=True)
     visit_num = models.IntegerField(blank=True, null=True)
     agree_num = models.IntegerField(blank=True, null=True)
@@ -282,27 +281,25 @@ class Users(models.Model):
     affiliate_flag = models.IntegerField(blank=True, null=True)
     school_name = models.CharField(max_length=100, blank=True)
     academy = models.CharField(max_length=100, blank=True)
-    education = models.IntegerField(blank=True, null=True)
+    education = models.CharField(max_length=100, blank=True, null=True)
     entrance_time = models.DateTimeField(blank=True, null=True)
 
     signature = models.CharField(max_length=128, default ='This guy is too lazy to leave anything.')
     photo = models.ImageField(upload_to = "upload_imgs/", default='')
-    
-    class Meta:
-        managed = False
-        db_table = 'users'
+     
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'YoudaUser'
 
     def __unicode__(self):
         return self.user.username
-     
-#     def __unicode__(self):
-#         return u'%s %s %s %s'% (self.user_id, self.user_name,self.password,self.introduction) 
-#       return "[user_id:"+str(self.user_id)+",user_name:"+self.user_name+"]"
+
     objects = models.Manager()
     common_objects = CommonDao();
    
 class UsersAffiliate(models.Model):
-    user = models.ForeignKey('Users', primary_key=True)
+    user = models.ForeignKey('YoudaUser', primary_key=True)
     email_state = models.IntegerField(blank=True, null=True)
     qq = models.CharField(max_length=15, blank=True)
     qq_state = models.IntegerField(blank=True, null=True)
@@ -319,9 +316,10 @@ class UsersAffiliate(models.Model):
     community_flag = models.IntegerField(blank=True, null=True)
     community_setting = models.CharField(max_length=255, blank=True)
 
-    class Meta:
-        managed = False
-        db_table = 'users_affiliate'
+    if not defaultDatabaseTables:
+        class Meta:
+            managed = False
+            db_table = 'users_affiliate'
         
     def __unicode__(self):
         return u'%s %s %s %s'% (self.user, self.email_state,self.qq,self.qq_state) 
