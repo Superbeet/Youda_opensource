@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     url(r'^focus/$',homeAction.showMyFocus),#获得我的关注下面所有内容，返回值为list中放map，key见函数
     #url(r'^message',views.message),
     url(r'^topic',topicAction.showtopic),
+    url(r'^jsontest/$',homeAction.jsontest),
+    url(r'^test/$',homeAction.test),
     #url(r'^schooler',views.schooler),
     
 )

@@ -10,6 +10,7 @@ from django.template.loader import get_template
 from django.template.context import Context
 
 from service.FocusService import FocusService
+import json
 # Create your views here.
 questionService = QuestionService();
 focusService = FocusService();
@@ -27,4 +28,9 @@ def showMyFocus(request):
    # print request.session['name'];
     print rows[0]['question_id'];
     return render_to_response('home.html',{'rows':rows});
-    
+def jsontest(request):
+    return render_to_response('json.html')
+def test(request):
+    rows =  focusService.getMyFocus(1,page=1);
+    DATA = json.dumps(rows)
+    return HttpResponse(DATA,content_type="application/json");  
