@@ -32,7 +32,7 @@ def jsontest(request):
     return render_to_response('json.html')
 def test(request):
     rows =  focusService.getMyFocus(1,page=1);
-    print rows;
-    #DATA = json.dumps(rows);
+    #rows=[1,2];
+    DATA = json.dumps(rows,cls=CJsonEncoder);
     #print DATA;
-    return HttpResponse(rows,content_type="application/json");  
+    return HttpResponse(DATA,content_type="application/json");  
