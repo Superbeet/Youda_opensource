@@ -3,10 +3,12 @@
 from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
-from apps.models import Users, Questions, Topics
+from apps.models import Users, Questions, Topics, UsersFocus, Category
 from datetime import datetime
 from django.utils import timezone
 from django.db import transaction
+
+#commonDao测试
 
 # Create your tests here.
 #===============================================================================
@@ -27,7 +29,7 @@ def addObjects():
     question = Questions(user=user2,question_content='how to learn python',question_detail='which books should i to read?',
                          topic=topic1,active_time=datetime.now(),browse_num=100,answer_num=20,want_answer_num=20,attention_num=20,invation_num=5,has_attach=1);#IntegrityError
     #commonDao.toadd(Questions, question);
-    commonDao.toadd(Users,user1)
+    commonDao.toadd(Users,user1);
     #commonDao.toadd(Topics, topic);
 def getObject():
     user = commonDao.toget(Users,user_id=19);
@@ -37,7 +39,7 @@ def getObject():
     #print user.questions_set.all();
     print user.all_questions.all()#一对多，反向获取数据，查看一个用户提了多少问题,all_questions为自定义的名称
 def listObjects():
-    list = commonDao.tolist(Users);
+    list = commonDao.tolist(Category);
     print list;
 def delObjects():
     users = commonDao.tolist(Users);
@@ -50,15 +52,18 @@ def updateObjects():
 def queryPagesObjects():
     users = commonDao.toquerypage(Users);
     print users;
+    
+
 #自定义的sql语句execute后，一般会返回影响的记录集数目
 def executeSql():
     #commonDao.cursor.execute("SELECT * FROM users where user_id=%s and user_name = %s",[2,'tomcat']);#整数也要用%s 不然报错
     sql = "SELECT * FROM users where user_id=%s";
-    commonDao.cursor.execute(sql,19);#建议用这种方式
+    commonDao.cursor.execute(sql,1);#建议用这种方式
     #row = commonDao.cursor.fetchone();
-    row = commonDao.cursor.fetchall();
+    #row = commonDao.cursor.fetchall();
+    row = commonDao.dictfetchall(commonDao.cursor)
     if(len(row)>0):
-        print row[0];
+        print row[0]['user_name'];
     #transaction.commit_unless_managed()#django 1.5和之前会要这个
 def executesql_delte():
     sql = 'delete from users where user_id=%s';

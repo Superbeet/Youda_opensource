@@ -61,3 +61,10 @@ class CommonDao(models.Manager):
         map_obj['PAGE_COUNT'] = page_count;
         map_obj['LIST'] = list_obj;
         return map_obj;
+    #针对自定义sql语句，返回map了类型的数据
+    def dictfetchall(self,cursor):
+        desc = cursor.description
+        return [
+                dict(zip([col[0] for col in desc], row))
+                for row in cursor.fetchall()
+                ]

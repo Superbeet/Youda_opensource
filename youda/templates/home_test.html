@@ -10,6 +10,14 @@
     <td><a href="/userdetail?userid={{question.question_id}}"> {{question.question_content}}</a></td>
 </tr>
 {%endfor%}
+
+{%for row in rows%}
+<tr>
+    {%for r in row%}
+     <td>{{r}}</td>
+    {%endfor%}
+</tr>
+{%endfor%}
 </table>
 </body>
 </html>

@@ -4,7 +4,6 @@
 
 <!-- container  -->
 
-
 		<div id="banner">
 			<div data-am-widget="slider" class="am-slider am-slider-default fl" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}' id="banner_image">
 				<ul class="am-slides">
@@ -21,9 +20,6 @@
 				</ul>
 				
 			</div>
-
-
-
 
 
 
@@ -414,7 +410,14 @@
 </div>
 
 
-
+{%for row in rows%}
+<tr>
+<td>{{row.questioner_id}}</td>
+<!--    {%for r in row%}
+     <td>{{r}}</td>
+    {%endfor%}
+</tr>-->
+{%endfor%}
 
 		<div id="focus_people" class="fr">
 		<div id="focus_people_tab"></div>
@@ -426,6 +429,7 @@
 		</div>
 		</div>
 <!-- 撑人数用的 -->
+
 
 <!-- 撑人数用的 -->
 	</div>	

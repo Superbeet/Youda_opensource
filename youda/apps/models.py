@@ -80,7 +80,20 @@ class Associations(models.Model):
         return u'%s %s %s %s' % (self.ass_id, self.user,self.ass_name,self.position)
     objects = models.Manager()
     common_objects = CommonDao();
+    
+class Category(models.Model):
+    category_id = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=128, blank=True)
+    parent_id = models.IntegerField(blank=True, null=True)
 
+    class Meta:
+        managed = False
+        db_table = 'category'
+    def __unicode__(self):
+        return u'%s %s %s' % (self.category_id, self.title,self.parent_id)
+    objects = models.Manager()
+    common_objects = CommonDao();
+        
 class InvitationUsers(models.Model):
     invitation_id = models.IntegerField(primary_key=True)
     question = models.ForeignKey('Questions',)#
@@ -184,6 +197,20 @@ class Questions(models.Model):
         return "[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
     objects = models.Manager()
     common_objects = CommonDao();
+    
+class QuestionsFocus(models.Model):
+    focus_id = models.IntegerField(primary_key=True)
+    question_id = models.IntegerField(blank=True, null=True)
+    user_id = models.IntegerField(blank=True, null=True)
+    focus_time = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'questions_focus'
+    def __unicode__(self):
+        return "[focus_id:"+str(self.focus_id)+",question_id:"+str(self.question_id)+"user_id"+str(self.user_id)+"]"
+    objects = models.Manager()
+    common_objects = CommonDao();
 
 class Schools(models.Model):
     school_id = models.IntegerField(primary_key=True)
@@ -204,16 +231,34 @@ class Schools(models.Model):
 class Topics(models.Model):
     topic_id = models.IntegerField(primary_key=True)
     topic_name = models.CharField(max_length=50, blank=True)
-    parent_id = models.IntegerField(blank=True, null=True)
-
+    category_id = models.IntegerField(blank=True, null=True)
+    add_time = models.DateTimeField(blank=True, null=True)
+    discuss_num = models.IntegerField(blank=True, null=True)
+    topic_pic = models.CharField(max_length=255, blank=True)
+    focus_num = models.IntegerField(blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'topics'
+
     def __unicode__(self):
-        return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",parentid_id:"+str(self.parent_id)+"]"
+        return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",category_id:"+str(self.category_id)+"]"
     objects = models.Manager()
     common_objects = CommonDao();
+    
+class TopicFocus(models.Model):
+    focus_id = models.IntegerField(primary_key=True)
+    topic_id = models.IntegerField(blank=True, null=True)
+    user_id = models.IntegerField(blank=True, null=True)
+    focus_time = models.IntegerField(blank=True, null=True)
 
+    class Meta:
+        managed = False
+        db_table = 'topic_focus'
+    def __unicode__(self):
+        return "[focus_id:"+str(self.topic_id)+",topic_id:"+str(self.topic_id)+",user_id:"+str(self.user_id)+"]"
+    objects = models.Manager()
+    common_objects = CommonDao();  
+      
 class Users(models.Model):
     user_id = models.IntegerField(primary_key=True)
     user_name = models.CharField(max_length=10, blank=True)
@@ -247,7 +292,22 @@ class Users(models.Model):
 #       return "[user_id:"+str(self.user_id)+",user_name:"+self.user_name+"]"
     objects = models.Manager()
     common_objects = CommonDao();
-   
+    
+class UsersFocus(models.Model):
+    focus_id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField(blank=True, null=True)
+    follow_uid = models.IntegerField(blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'users_focus'  
+    def __unicode__(self):
+        return u'%s %s %s'% (self.focus_id, self.user_id,self.follow_uid) 
+#       return "[user_id:"+str(self.user_id)+",user_name:"+self.user_name+"]"
+    objects = models.Manager()
+    common_objects = CommonDao();
+    
 class UsersAffiliate(models.Model):
     user = models.ForeignKey(Users, primary_key=True)
     email_state = models.IntegerField(blank=True, null=True)

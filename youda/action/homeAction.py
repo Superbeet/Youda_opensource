@@ -10,15 +10,22 @@ from service.QuestionService import QuestionService
 from django.template.loader import get_template
 from django.template.context import Context
 from YoudaBE import settings
+from service.FocusService import FocusService
 # Create your views here.
 questionService = QuestionService();
+focusService = FocusService();
 
 def showAllQuestions(request):
     questions = questionService.getAllQuestions();
-#     t =  get_template("index.html")
-#     html = t.render(Context({
-#         "template_dir":settings.TEMPLATE_DIRS[0],
-#         "title":"Home",
-#         "static_dir":settings.STATIC_URL}))
-#     return HttpResponse(html)
     return render_to_response('home.html',{'questions':questions['LIST']})
+
+#getMyFocus(user_id,page),user_id为当前用户id，page为请求第几页的数据
+def showMyFocus(request):
+    #page = request.GET['page'];
+    #user_id = request.GET['user_id'];
+    rows =  focusService.getMyFocus(1,page=1);
+   # request.session['name']='tomcat';
+   # print request.session['name'];
+    print rows[0]['question_id'];
+    return render_to_response('home.html',{'rows':rows});
+    
