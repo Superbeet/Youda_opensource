@@ -12,27 +12,44 @@
 width:$contentWidth;
 margin-top:50px;
 }
+#hot_answer_container{
+width:$nav_with;
+margin-top:50px;
+}
 #focus_answer{
 width:$nav_with;
 }
 #focus_answer_tabs{
 width:$nav_with;
 height: 45px;
-background-image: url(../image/index/my_interest_tab.png);
 background-repeat: no-repeat;
 }
 $tab_img_width:0px;
 #my_interest_tab{
-width:$tab_img_width;
+width:200px;
+height: 45px;
+background-image: url(../image/index/my_interest_tab.png);
+background-repeat: no-repeat;
+}
+#my_interest_tab:hover{
+background-image: url(../image/index/my_interest_tab_active.png);
+background-repeat: no-repeat;
+}
+.tab_image{
+width:200px;
 height: 45px;
 }
 #hot_answer_tab{
-width:$nav_with - $tab_img_width;
-height: 45px;
 background-image: url(../image/index/hot_answer_tab.png);
 background-repeat: no-repeat;
 }
-
+#hot_answer_tab:hover{
+background-image: url(../image/index/hot_answer_tab_active.png);
+background-repeat: no-repeat;
+}
+.tab_padding{
+	margin-left: -50px;
+}
 
 $focus_people_width : 200px;
 #focus_people{
@@ -66,6 +83,9 @@ $interest_topic_body_padding : 20px;
 	width : $nav_with - $interest_topic_body_padding - 60px;
 	
 }
+
+#focus_answer_container{
+}
 #interest_topic_body_header{
 	width : $nav_with - 90px;
 }
@@ -88,16 +108,27 @@ padding-top: 10px;
 margin-top: 25px;
 height: 25px;
 }
-
-.mark_topic_icon{
-	padding-top: 18px;
+.mark_icon_container{
+margin-top:18px;
 }
+.mark_icon{
+	height:30px;
+	width:200px;
+	background-repeat:no-repeat;
+	background-image:url('../image/index/mark_icon.png');
+}
+.mark_icon:hover{
+	background-image:url('../image/index/mark_icon_active.png');
+}
+
+
 
 #to_left_topic{
 	width:30px;
 }
 .people_and_answer{
 width:200px;
+height:110px;
 color:$base_havier_color;
 margin-top:22px;
 margin-bottom: 22px;
@@ -110,6 +141,8 @@ border-bottom: 0.25px solid $dark_color;
 
 .people_and_answer_userinfo{
 	padding-top:15px;
+	height:50px;
+	line-height:50px;
 }
 .people_and_answer_content{
 padding-left: 15px;
@@ -188,224 +221,12 @@ $font_ya_hei:"Microsoft Yahei";
 }
 
 
-//answer_people_topic
-
-#all_answer_people_topic{
-width:$nav_with;
-margin-top: 36px;
-}
-.view_count{
-font-family: $font_ya_hei;
-font-size: 10pt;
-color: $dark_color;
-}
-
-
-
-.comment_count{
-@extend .view_count;
-}
-
-
-.people_answer{
-	width:$nav_with;
-	height: 200px;
-}
-
-
-.people_answer_content{
-	width: $nav_with - 60px;
-}
-.people_answer_header{
-	margin-left: 20px;
-	padding-bottom: 10px;
-}
-.people_answer_header_people_name{
-width: $nav_with - 60px - 20px;
-}
-.people_answer_header_answer_name{
-width: $nav_with - 60px - 20px;
-padding-top: 10px;
-padding-right: 10px;
-}
-.people_answer_header_answer_name img{
-	vertical-align: middle;
-}
-
-
-.people_answer_left_bar{
-	width: 60px;
-}
-
-
-.people_answer_detail{
-height: 105px;
-margin-top: 10px;
-padding-bottom: 10px;
-margin-left: 20px;
-}
-
-
-.people_answer_detail_left_bar{
-width: 60px;
-height: 95px;
-
-}
-
-.people_answer_detail_text{
-	width: $nav_with - 60px - 60px - 60px;
-	padding-left: 10px;
-}
-.people_answer_detail_text_context{
-	width: $nav_with - 60px - 60px - 60px;
-	padding-top: 20px;
-	font-family: $font_ya_hei;
-	color: $dark_color;
-	font-size: 11pt;
-	padding-left: 10px;
-
-
-}
-.people_answer_detail_text_time{
-	width: $nav_with - 60px - 60px - 60px;
-	text-align: right;
-	font-family: $font_ya_hei;
-	color: $dark_color;
-	font-size: 11pt;
-	margin-top: -8px;
-}
-.people_answer_detail_text_time img{
-	vertical-align: middle;
-}
-
-.people_answer_detail_agree_div{
-	width: 60px;
-	height: 65px;
-
-}
-.people_answer_detail_agree_icon{
-	margin-top: -30px;
-	padding-top: 35px;
-	padding-left: 8px;
-	color: #FBCF3B;
-	font-weight: bold;
-	background-color: #FFFAEE;
-	border: 0.25px solid #FBCF3B;
-
-}
-.people_answer_detail_agree_icon img{
-	vertical-align: middle;
-}
-.people_answer_detail_agree_count{
-	padding-left: 4px;
-	padding-top: 3px;
-}
-.people_answer_detail_pic_div{
-	width: 60px;
-	height: 60px;
-}
 
 
 
 
-//people_new_ask
 
 
-.people_new_ask{
-@extend .people_answer;
-height:90px;
-}
-
-.people_ask_left_bar{
-	width: 60px;
-}
-
-
-
-.people_ask_content{
-	@extend .people_answer_content;
-	padding-bottom:10px;
-	width: $nav_with - 60px - 16px;
-	margin-left: 16px;
-}
-
-.people_ask_header{
-	@extend .people_answer_header;
-	margin-left: 0px;
-}
-.people_ask_header_people_name{
-	@extend .people_answer_header_people_name;
-}
-.people_ask_header_answer_name{
-	@extend .people_answer_header_answer_name;
-}
-
-.people_ask_detail_text_time{
-	@extend .people_answer_detail_text_time;
-	text-align: left;
-
-}
-
-
-//topic_answer
-
-
-.topic_answer{
-@extend .people_answer;
-}
-
-.topic_answer_left_bar{
-	width: 60px;
-}
-
-
-
-.topic_answer_content{
-	@extend .people_answer_content;
-	width: $nav_with - 60px - 16px;
-	margin-left: 16px;
-}
-
-.topic_answer_header{
-	@extend .people_answer_header;
-	margin-left: 0px;
-}
-.topic_answer_header_people_name{
-	@extend .people_answer_header_people_name;
-}
-
-.topic_answer_detail{
-	@extend .people_answer_detail;
-	height:115px;
-	margin-left: 0px;
-}
-.topic_answer_detail_left_bar{
-	@extend .people_answer_detail_left_bar;
-
-}
-.topic_answer_detail_pic_div{
-	@extend .people_answer_detail_pic_div;
-}
-.topic_answer_detail_agree_div{
-	@extend .people_answer_detail_agree_div;
-}
-.topic_answer_detail_agree_icon{
-	@extend .people_answer_detail_agree_icon;
-}
-.topic_answer_detail_text{
-	@extend .people_answer_detail_text;
-
-}
-.topic_answer_detail_text_context{
-	@extend .people_answer_detail_text_context;
-}
-
-
-.topic_answer_detail_text_time{
-	@extend .people_answer_detail_text_time;
-	text-align: left;
-	padding-left: 10px;
-}
 //footer
 #footer{
 height: 180px;
@@ -415,76 +236,3 @@ background-color:#FAF;
 
 
 //common class
-.roundImg{
-	border : 3px solid #FFFFFF;
-	border-radius: 27px;
-	moz-border-radius:27px;
-}
-
-.fl{
-float:left;
-}
-.fr{
-	float:right;
-}
-.rec{
-width:250px;
-height: 95px;
-background-color: $base_color;
-}
-.baseMagTop{
-margin-top:7.5px;
-}
-.common_nav{
-width:70px;
-height: 90px;
-}
-.common_font{
-	color:$base_color;
-	font-size:11pt;
-}
-.havier_font{
-	color:$base_havier_color;
-		font-size:11pt;
-}
-.dark_font{
-	color:$dark_color;
-		font-size:11pt;
-}
-.active{
-}
-.common_rec_img{
-	padding-top: 10px;
-	padding-left: 10px;
-}
-.common_icon{
-	width:60px;
-	height: 60px;
-	border-radius: 27px;
-	moz-border-radius:27px;
-
-}
-
-.font_all_black{
-
-	color:black;
-}
-.font_small{
-	font-size : 10pt;
-}
-
-.border_bottom{
-	border-bottom: 0.25px  solid $base_color;
-}
-.border_bottom_dark{
-	border-bottom: 0.25px  solid $dark_color;
-}
-
-
-.font_ya_hei{
-	font-family: $font_ya_hei;
-}
-
-.vertical-align{
-	vertical-align: middle;
-}

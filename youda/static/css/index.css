@@ -1,7 +1,70 @@
+.roundImg {
+  border: 3px solid #FFFFFF;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.rec {
+  width: 250px;
+  height: 95px;
+  background-color: #17a9b8; }
+
+.baseMagTop {
+  margin-top: 7.5px; }
+
+.common_nav {
+  width: 70px;
+  height: 90px; }
+
+.common_font {
+  color: #17a9b8;
+  font-size: 11pt; }
+
+.havier_font {
+  color: #328cbe;
+  font-size: 11pt; }
+
+.dark_font {
+  color: #666666;
+  font-size: 11pt; }
+
+.common_rec_img {
+  padding-top: 10px;
+  padding-left: 10px; }
+
+.common_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.font_all_black {
+  color: black; }
+
+.font_small {
+  font-size: 10pt; }
+
+.border_bottom {
+  border-bottom: 0.25px solid #17a9b8; }
+
+.border_bottom_dark {
+  border-bottom: 0.25px solid #666666; }
+
+.font_ya_hei {
+  font-family: "Microsoft Yahei"; }
+
+.vertical-align {
+  vertical-align: middle; }
+
 #header_bg {
   height: 90px;
   width: 100%;
-  background-color: #17A9B8; }
+  background-color: #17a9b8; }
 
 #header {
   width: 1140px;
@@ -43,7 +106,7 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border: 0;
-  border-left: 0.75px solid #17A9B8; }
+  border-left: 0.75px solid #17a9b8; }
 
 #search .am-btn {
   border: 0; }
@@ -51,21 +114,53 @@
 #navContainer ul li a {
   padding: 0 0; }
 
-.nav_active, #navContainer ul li a:hover {
+.home_nav_active {
   background-color: transparent;
-  background-image: url(../image/index/active_bkg.png); }
-
-.home_nav_active, #home_nav:hover {
   background-image: url(../image/index/home_nav_active.png); }
 
-.topic_nav_active, #topic_nav:hover {
+.topic_nav_active {
+  background-color: transparent;
   background-image: url(../image/index/topic_nav_active.png); }
 
-.schooller_nav_active, #schooller_nav:hover {
+.schooler_nav_active {
+  background-color: transparent;
   background-image: url(../image/index/schooler_nav_active.png); }
 
-.message_nav_active, #message_nav:hover {
-  background-image: url(../image/index/message_nav_avtive.png); }
+.message_nav_active {
+  background-color: transparent;
+  background-image: url(../image/index/message_nav_active.png); }
+
+.home_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/home_nav.png); }
+
+.topic_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/topic_nav.png); }
+
+.schooler_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/schooler_nav.png); }
+
+.message_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/message_nav.png); }
+
+.nav_width {
+  width: 70px;
+  height: 90px; }
+
+#home_nav:hover {
+  background-image: url(../image/index/home_nav_hover.png); }
+
+#topic_nav:hover {
+  background-image: url(../image/index/topic_nav_hover.png); }
+
+#schooler_nav:hover {
+  background-image: url(../image/index/schooler_nav_hover.png); }
+
+#message_nav:hover {
+  background-image: url(../image/index/message_nav_hover.png); }
 
 #newPoper {
   width: 120px;
@@ -76,7 +171,7 @@
 
 #newPoperText {
   font-size: 12pt;
-  color: #17A9B8;
+  color: #17a9b8;
   padding-left: 64px;
   margin-top: 43px;
   height: 30px; }
@@ -118,24 +213,42 @@
   width: 1140px;
   margin-top: 50px; }
 
+#hot_answer_container {
+  width: 880px;
+  margin-top: 50px; }
+
 #focus_answer {
   width: 880px; }
 
 #focus_answer_tabs {
   width: 880px;
   height: 45px;
-  background-image: url(../image/index/my_interest_tab.png);
   background-repeat: no-repeat; }
 
 #my_interest_tab {
-  width: 0px;
+  width: 200px;
+  height: 45px;
+  background-image: url(../image/index/my_interest_tab.png);
+  background-repeat: no-repeat; }
+
+#my_interest_tab:hover {
+  background-image: url(../image/index/my_interest_tab_active.png);
+  background-repeat: no-repeat; }
+
+.tab_image {
+  width: 200px;
   height: 45px; }
 
 #hot_answer_tab {
-  width: 880px;
-  height: 45px;
   background-image: url(../image/index/hot_answer_tab.png);
   background-repeat: no-repeat; }
+
+#hot_answer_tab:hover {
+  background-image: url(../image/index/hot_answer_tab_active.png);
+  background-repeat: no-repeat; }
+
+.tab_padding {
+  margin-left: -50px; }
 
 #focus_people {
   width: 200px;
@@ -183,15 +296,25 @@
   margin-top: 25px;
   height: 25px; }
 
-.mark_topic_icon {
-  padding-top: 18px; }
+.mark_icon_container {
+  margin-top: 18px; }
+
+.mark_icon {
+  height: 30px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-image: url("../image/index/mark_icon.png"); }
+
+.mark_icon:hover {
+  background-image: url("../image/index/mark_icon_active.png"); }
 
 #to_left_topic {
   width: 30px; }
 
 .people_and_answer {
   width: 200px;
-  color: #328CBE;
+  height: 110px;
+  color: #328cbe;
   margin-top: 22px;
   margin-bottom: 22px;
   border-bottom: 0.25px solid #666666; }
@@ -200,7 +323,9 @@
   line-height: 17px; }
 
 .people_and_answer_userinfo {
-  padding-top: 15px; }
+  padding-top: 15px;
+  height: 50px;
+  line-height: 50px; }
 
 .people_and_answer_content {
   padding-left: 15px;
@@ -227,7 +352,7 @@
   height: 90px; }
 
 .interest_people_name {
-  background-color: #17A9B8;
+  background-color: #17a9b8;
   color: white;
   text-align: center;
   font-size: 11pt;
@@ -249,198 +374,7 @@
   font-size: 11pt;
   ont-family: "Microsoft Yahei"; }
 
-#all_answer_people_topic {
-  width: 880px;
-  margin-top: 36px; }
-
-.view_count, .comment_count {
-  font-family: "Microsoft Yahei";
-  font-size: 10pt;
-  color: #666666; }
-
-.people_answer, .people_new_ask, .topic_answer {
-  width: 880px;
-  height: 200px; }
-
-.people_answer_content, .people_ask_content, .topic_answer_content {
-  width: 820px; }
-
-.people_answer_header, .people_ask_header, .topic_answer_header {
-  margin-left: 20px;
-  padding-bottom: 10px; }
-
-.people_answer_header_people_name, .people_ask_header_people_name, .topic_answer_header_people_name {
-  width: 800px; }
-
-.people_answer_header_answer_name, .people_ask_header_answer_name {
-  width: 800px;
-  padding-top: 10px;
-  padding-right: 10px; }
-
-.people_answer_header_answer_name img, .people_ask_header_answer_name img {
-  vertical-align: middle; }
-
-.people_answer_left_bar {
-  width: 60px; }
-
-.people_answer_detail, .topic_answer_detail {
-  height: 105px;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 20px; }
-
-.people_answer_detail_left_bar, .topic_answer_detail_left_bar {
-  width: 60px;
-  height: 95px; }
-
-.people_answer_detail_text, .topic_answer_detail_text {
-  width: 700px;
-  padding-left: 10px; }
-
-.people_answer_detail_text_context, .topic_answer_detail_text_context {
-  width: 700px;
-  padding-top: 20px;
-  font-family: "Microsoft Yahei";
-  color: #666666;
-  font-size: 11pt;
-  padding-left: 10px; }
-
-.people_answer_detail_text_time, .people_ask_detail_text_time, .topic_answer_detail_text_time {
-  width: 700px;
-  text-align: right;
-  font-family: "Microsoft Yahei";
-  color: #666666;
-  font-size: 11pt;
-  margin-top: -8px; }
-
-.people_answer_detail_text_time img, .people_ask_detail_text_time img, .topic_answer_detail_text_time img {
-  vertical-align: middle; }
-
-.people_answer_detail_agree_div, .topic_answer_detail_agree_div {
-  width: 60px;
-  height: 65px; }
-
-.people_answer_detail_agree_icon, .topic_answer_detail_agree_icon {
-  margin-top: -30px;
-  padding-top: 35px;
-  padding-left: 8px;
-  color: #FBCF3B;
-  font-weight: bold;
-  background-color: #FFFAEE;
-  border: 0.25px solid #FBCF3B; }
-
-.people_answer_detail_agree_icon img, .topic_answer_detail_agree_icon img {
-  vertical-align: middle; }
-
-.people_answer_detail_agree_count {
-  padding-left: 4px;
-  padding-top: 3px; }
-
-.people_answer_detail_pic_div, .topic_answer_detail_pic_div {
-  width: 60px;
-  height: 60px; }
-
-.people_new_ask {
-  height: 90px; }
-
-.people_ask_left_bar {
-  width: 60px; }
-
-.people_ask_content {
-  padding-bottom: 10px;
-  width: 804px;
-  margin-left: 16px; }
-
-.people_ask_header {
-  margin-left: 0px; }
-
-.people_ask_detail_text_time {
-  text-align: left; }
-
-.topic_answer_left_bar {
-  width: 60px; }
-
-.topic_answer_content {
-  width: 804px;
-  margin-left: 16px; }
-
-.topic_answer_header {
-  margin-left: 0px; }
-
-.topic_answer_detail {
-  height: 115px;
-  margin-left: 0px; }
-
-.topic_answer_detail_text_time {
-  text-align: left;
-  padding-left: 10px; }
-
 #footer {
   height: 180px;
   width: 100%;
   background-color: #FAF; }
-
-.roundImg {
-  border: 3px solid #FFFFFF;
-  border-radius: 27px;
-  moz-border-radius: 27px; }
-
-.fl {
-  float: left; }
-
-.fr {
-  float: right; }
-
-.rec {
-  width: 250px;
-  height: 95px;
-  background-color: #17A9B8; }
-
-.baseMagTop {
-  margin-top: 7.5px; }
-
-.common_nav {
-  width: 70px;
-  height: 90px; }
-
-.common_font {
-  color: #17A9B8;
-  font-size: 11pt; }
-
-.havier_font {
-  color: #328CBE;
-  font-size: 11pt; }
-
-.dark_font {
-  color: #666666;
-  font-size: 11pt; }
-
-.common_rec_img {
-  padding-top: 10px;
-  padding-left: 10px; }
-
-.common_icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 27px;
-  moz-border-radius: 27px; }
-
-.font_all_black {
-  color: black; }
-
-.font_small {
-  font-size: 10pt; }
-
-.border_bottom {
-  border-bottom: 0.25px solid #17A9B8; }
-
-.border_bottom_dark {
-  border-bottom: 0.25px solid #666666; }
-
-.font_ya_hei {
-  font-family: "Microsoft Yahei"; }
-
-.vertical-align {
-  vertical-align: middle; }
-
-/*# sourceMappingURL=index.css.map */

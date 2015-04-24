@@ -5,6 +5,7 @@
 <title>友答网</title>
 <link href="/static/css/index.css" rel="stylesheet" />
 <link href="/static/css/reset.css" rel="stylesheet" />
+<link href="/static/css/wigets.css" rel="stylesheet" />
 
 <!-- amazeui import -->
 <link rel="stylesheet" href="/static/css/amazeui.min.css" />
@@ -27,20 +28,16 @@
 		<div id="logo" class="fl"></div>
 		<div id="navContainer" class="fl">
 		<ul class="am-nav am-nav-pills">
-		<li> <a href="/home"  id="home_nav">
-			<img src="/static/image/index/home_nav.png" />
+		<li> <a href="/home"  id="home_nav" class="nav_width home_nav_normal">
 			</a>  
 		</li>
-		<li> <a href="/topic"  id="topic_nav">
-			<img src="/static/image/index/topic_nav.png" />
+		<li> <a href="/topic"  id="topic_nav" class="nav_width topic_nav_normal">
 			</a>  
 		</li>
-		<li> <a href="/schooler"  id="schooler_nav">
-			<img src="/static/image/index/schooler_nav.png" alt="校友" title="校友" />
+		<li> <a href="/schooler"  id="schooler_nav" class="nav_width schooler_nav_normal">
 			</a>  
 		</li>	
-		<li> <a href="/message"  id="message_nav">
-			<img src="/static/image/index/message_nav.png" />
+		<li> <a href="/message"  id="message_nav" class="nav_width message_nav_normal">
 			</a>  
 		</li>
 			
@@ -63,7 +60,7 @@
 
 		<div id="search" class="fr am-input-group">
 	
-		<input type="text" class="am-form-field">
+		<input type="text" class="am-form-field" placeholder="搜索问题，话题或校友">
       <span class="am-input-group-btn">
         <button class="am-btn am-btn-link" type="button">
         	<span class="am-icon-search"></span>

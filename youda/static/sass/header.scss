@@ -60,24 +60,57 @@ height: 90px;
 	padding : 0 0 ;
 }
 
-.nav_active,#navContainer ul li a:hover{
-	background-color:transparent;
-	background-image: url(../image/index/active_bkg.png);
-}
 
-
-
-.home_nav_active,#home_nav:hover{
+.home_nav_active{
+background-color:transparent;
 background-image: url(../image/index/home_nav_active.png);
 }
-.topic_nav_active,#topic_nav:hover{
+.topic_nav_active{
+background-color:transparent;
 background-image: url(../image/index/topic_nav_active.png);
 }
-.schooller_nav_active,#schooller_nav:hover{
+
+.schooler_nav_active{
+background-color:transparent;
 background-image: url(../image/index/schooler_nav_active.png);
 }
-.message_nav_active,#message_nav:hover{
-background-image: url(../image/index/message_nav_avtive.png);
+
+.message_nav_active{
+background-color:transparent;
+background-image: url(../image/index/message_nav_active.png);
+}
+.home_nav_normal{
+background-color:transparent;
+background-image: url(../image/index/home_nav.png);
+}
+.topic_nav_normal{
+	background-color:transparent;
+background-image: url(../image/index/topic_nav.png);
+}
+.schooler_nav_normal{
+	background-color:transparent;
+background-image: url(../image/index/schooler_nav.png);
+}
+.message_nav_normal{
+	background-color:transparent;
+background-image: url(../image/index/message_nav.png);
+}
+.nav_width{
+	width:70px;
+	height:90px;
+}
+
+#home_nav:hover{
+background-image: url(../image/index/home_nav_hover.png);
+}
+#topic_nav:hover{
+background-image: url(../image/index/topic_nav_hover.png);
+}
+#schooler_nav:hover{
+background-image: url(../image/index/schooler_nav_hover.png);
+}
+#message_nav:hover{
+background-image: url(../image/index/message_nav_hover.png);
 }
 
 
