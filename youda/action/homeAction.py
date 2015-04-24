@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from apps.CommonDao import CommonDao
@@ -9,7 +8,7 @@ from django.core.context_processors import request
 from service.QuestionService import QuestionService
 from django.template.loader import get_template
 from django.template.context import Context
-from YoudaBE import settings
+
 from service.FocusService import FocusService
 # Create your views here.
 questionService = QuestionService();
