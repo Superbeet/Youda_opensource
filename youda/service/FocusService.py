@@ -25,14 +25,14 @@ class FocusService:
         list_data = [];
         for d in list_obj:
             if d[7]==1:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'questioner_head':d[8]};
+                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':str(d[6]),'type':d[7],'questioner_head':d[8]};
             elif d[7]==2:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answer_content':d[10],'support':d[11],'questioner_head':d[12],'answerer_head':d[13]};
+                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':str(d[6]),'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answer_content':d[10],'support':d[11],'questioner_head':d[12],'answerer_head':d[13]};
             elif d[7]==3:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'questioner_academy':d[8],'questioner_entime':d[9],'questioner_eduction':d[10],'topid_id':d[11],'topic_name':d[12],'questioner_head':d[13]};
+                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':str(d[6]),'type':d[7],'questioner_academy':d[8],'questioner_entime':d[9],'questioner_eduction':d[10],'topid_id':d[11],'topic_name':d[12],'questioner_head':d[13]};
             elif d[7]==4:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'questioner_academy':d[10],'questioner_entime':d[11],'questionner_education':d[12],'topic_id':d[13],'topic_name':d[14],'answer_content':d[15],'support_num':d[16],'answerer_academy':d[17],'answerer_entime':d[18],'answerer_education':d[19],'questioner_head':d[20],'answerer_head':d[21]};
+                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':str(d[6]),'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'questioner_academy':d[10],'questioner_entime':str(d[11]),'questionner_education':d[12],'topic_id':d[13],'topic_name':d[14],'answer_content':d[15],'support_num':d[16],'answerer_academy':d[17],'answerer_entime':str(d[18]),'answerer_education':d[19],'questioner_head':d[20],'answerer_head':d[21]};
             elif d[7]==5:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answerer_academy':d[10],'answerer_entime':d[11],'answerer_education':d[12],'answer_content':d[13],'questioner_head':d[14],'answerer_head':d[15]};
+                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':str(d[6]),'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answerer_academy':d[10],'answerer_entime':str(d[11]),'answerer_education':d[12],'answer_content':d[13],'questioner_head':d[14],'answerer_head':d[15]};
             list_data.append(map_data);
         return list_data;

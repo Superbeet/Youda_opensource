@@ -24,15 +24,8 @@ def showMyFocus(request):
     #page = request.GET['page'];
     #user_id = request.GET['user_id'];
     rows =  focusService.getMyFocus(1,page=1);
-   # request.session['name']='tomcat';
-   # print request.session['name'];
-    print rows[0]['question_id'];
-    return render_to_response('home.html',{'rows':rows});
-def jsontest(request):
-    return render_to_response('json.html')
-def test(request):
-    rows =  focusService.getMyFocus(1,page=1);
-    #rows=[1,2];
-    DATA = json.dumps(rows,cls=CJsonEncoder);
-    #print DATA;
-    return HttpResponse(DATA,content_type="application/json");  
+    DATA = json.dumps(rows);
+    return HttpResponse(DATA,content_type="application/json");#已json格式返回数据
+    # request.session['name']='tomcat';
+    # print request.session['name'];
+    # return render_to_response('home.html',{'rows':rows});
