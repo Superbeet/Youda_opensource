@@ -3,7 +3,7 @@
 from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
-from apps.models import Users, Questions, Topics
+from apps.models import Users, Questions, Topics, TopicFocus
 from datetime import datetime
 from django.utils import timezone
 from django.db import transaction
@@ -34,7 +34,13 @@ def myfocus1():
     list = fs.getMyFocus(1);
     for d in list:
         print type(str(d['publish_time']));
+def testaddfocusyopic():
+    #fs = FocusService();
+    #print fs.addFocusTopic(1,100);
+    o = commonDao.tolist(TopicFocus,user_id=1,topic_id=100);
+    print o
 if __name__=='__main__':
-    myfocus1();
+    testaddfocusyopic();
 
+    
     

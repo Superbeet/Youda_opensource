@@ -4,6 +4,7 @@ from service.FocusService import FocusService
 import json
 from django.http.response import HttpResponse
 from service.QuestionService import QuestionService
+from django.shortcuts import render_to_response
 # Create your views here.
 questionService = QuestionService();
 focusService = FocusService();
@@ -20,6 +21,6 @@ def showMyFocus(request):
     # request.session['name']='tomcat';
     # print request.session['name'];
     # return render_to_response('home.html',{'rows':rows});
-from django.shortcuts import render_to_response
+
 
 

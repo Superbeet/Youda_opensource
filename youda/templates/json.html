@@ -1,10 +1,13 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script>
-$.get("/test",
+$.get("/test2",
    function(data){
-     alert("ok");
-     alert(data);
-    //alert(data.list_date); // John
+     alert('json '+data);
    },"json");
+   
+$.get("/test2",
+   function(data){
+     alert('common '+data);
+   });
 </script>
