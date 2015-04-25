@@ -12,7 +12,7 @@
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17a9b8; }
+  background-color: #17A9B8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -22,11 +22,11 @@
   height: 90px; }
 
 .common_font {
-  color: #17a9b8;
+  color: #17A9B8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328cbe;
+  color: #328CBE;
   font-size: 11pt; }
 
 .dark_font {
@@ -50,7 +50,7 @@
   font-size: 10pt; }
 
 .border_bottom {
-  border-bottom: 0.25px solid #17a9b8; }
+  border-bottom: 0.25px solid #17A9B8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -60,3 +60,5 @@
 
 .vertical-align {
   vertical-align: middle; }
+
+/*# sourceMappingURL=common.css.map */

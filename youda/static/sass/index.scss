@@ -25,13 +25,13 @@ height: 45px;
 background-repeat: no-repeat;
 }
 $tab_img_width:0px;
-#my_interest_tab{
+.my_interest_tab{
 width:200px;
 height: 45px;
 background-image: url(../image/index/my_interest_tab.png);
 background-repeat: no-repeat;
 }
-#my_interest_tab:hover{
+.my_interest_tab_active,#my_interest_tab:hover{
 background-image: url(../image/index/my_interest_tab_active.png);
 background-repeat: no-repeat;
 }
@@ -39,16 +39,16 @@ background-repeat: no-repeat;
 width:200px;
 height: 45px;
 }
-#hot_answer_tab{
+.hot_answer_tab{
 background-image: url(../image/index/hot_answer_tab.png);
 background-repeat: no-repeat;
 }
-#hot_answer_tab:hover{
+.hot_answer_tab_active,#hot_answer_tab:hover{
 background-image: url(../image/index/hot_answer_tab_active.png);
 background-repeat: no-repeat;
 }
 .tab_padding{
-	margin-left: -50px;
+	margin-left: -58px;
 }
 
 $focus_people_width : 200px;
