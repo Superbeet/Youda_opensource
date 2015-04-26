@@ -6,6 +6,7 @@ from django.http.response import HttpResponse
 from service.QuestionService import QuestionService
 from django.shortcuts import render_to_response
 from util.CJsonEncoder import CJsonEncoder
+from django.core.context_processors import request
 # Create your views here.
 questionService = None;
 focusService = None;
@@ -31,5 +32,11 @@ def showHotQuestions(request):
     DATA = json.dumps(rows,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
 
-
-
+#他在求助
+def showHelpfulQuestions(request):
+    #user_id = request.GET['user_id'];
+    questionService = QuestionService();
+    rows = questionService.getHelpfulQuestions(1)#传入user_id
+    DATA = json.dumps(rows,cls=CJsonEncoder);
+    return HttpResponse(DATA,content_type="application/json");#json格式返回数据
+    

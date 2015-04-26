@@ -6,9 +6,10 @@ from django.db import transaction
 class FocusService:
     PAGE = 1; #第几页
     PAGESIZE = 10; #页面大小
-    commonDao = CommonDao();
+    commonDao = None;
     def getMyFocus(self,user_id,page=PAGE,pagesize=PAGESIZE):
         #1我关注的人有了新的提问，2我关注的人有了新的回复，3我关注的话题有了新的问题，4我关注的话题有了新的回复,5我关注的问题有了新的回复
+        commonDao = CommonDao();
         sql = "SELECT * from ( \
         SELECT u.user_id AS questioner_id,u.user_name AS questioner_name,q.question_id,q.question_content,q.browse_num,q.answer_num,q.publish_time,1 AS type,u.head AS questioner_head,'' AS f1,'' AS f2,'' AS f3,'' AS f4,'' AS f5,'' AS f6,'' AS f7,'' AS f8,'' AS f9,'' AS f10,'' AS f11 ,'' AS f12,'' AS f13 from users u ,users_focus uf,questions q WHERE uf.user_id=%s AND uf.follow_uid=u.user_id AND u.user_id=q.user_id \
          UNION \
@@ -21,9 +22,9 @@ class FocusService:
         UNION \
         SELECT q_u.user_id AS questioner_id,q_u.user_name AS questiner_name,q.question_id,q.question_content,q.browse_num,q.answer_num,q.publish_time,5 AS type,a_u.user_id AS answerer_id,a_u.user_name AS answerer_name,a_u.academy AS annswerer_academy,a_u.entrance_time AS answer_entime,a_u.education AS answerer_educatin,a.answer_content ,q_u.head AS questioner_head,a_u.head AS answerer_head,'','','','','','' from questions_focus qf,questions q ,answers a,users q_u,users a_u WHERE qf.user_id=%s AND qf.question_id=q.question_id AND a.question_id=q.question_id AND q.user_id=q_u.user_id AND a.user_id=a_u.user_id \
         ) AS un ORDER BY un.publish_time DESC LIMIT %s,%s";
-        self.commonDao.cursor.execute(sql,[user_id,user_id,user_id,user_id,user_id,(page-1)*pagesize,pagesize]);
-        #list_obj = self.commonDao.dictfetchall(self.commonDao.cursor)
-        list_obj = self.commonDao.cursor.fetchall();
+        commonDao.cursor.execute(sql,[user_id,user_id,user_id,user_id,user_id,(page-1)*pagesize,pagesize]);
+        #list_obj = commonDao.dictfetchall(commonDao.cursor)
+        list_obj = commonDao.cursor.fetchall();
         list_data = [];
         for d in list_obj:
             if d[7]==1:
@@ -41,11 +42,12 @@ class FocusService:
     #添加关注话题
     @transaction.commit_on_success
     def addFocusTopic(self,user_id,topic_id):
+        commonDao = CommonDao();
         topic_foucs = TopicFocus(topic_id=topic_id,user_id=user_id);
-#         focus = self.commonDao.tolist(TopicFocus,topic_id=topic_id,user_id=user_id)
+#         focus = commonDao.tolist(TopicFocus,topic_id=topic_id,user_id=user_id)
 #         if len(focus)>0:
 #             return -1;
-        self.commonDao.toadd(TopicFocus,topic_foucs);
+        commonDao.toadd(TopicFocus,topic_foucs);
         return 1;
             
         
