@@ -39,7 +39,7 @@ def getObject():
     #print user.questions_set.all();
     print user.all_questions.all()#一对多，反向获取数据，查看一个用户提了多少问题,all_questions为自定义的名称
 def listObjects():
-    list = commonDao.tolist(Category);
+    list = commonDao.tolist(Questions).order_by('browse_num');
     print list;
 def delObjects():
     users = commonDao.tolist(Users);

@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^focustopic/$',topicAction.focusTopic),#关注话题
     url(r'^schooler/$',schoolmateAction.index),#显示校友页
     url(r'focusschoolmate',schoolmateAction.focusSchoolmate),#关注校友
+    url(r'hotquestions',homeAction.showHotQuestions),
     #url(r'^message',messageAction.index),
 )
 #用于测试

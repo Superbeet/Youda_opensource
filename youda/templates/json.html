@@ -1,13 +1,13 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script>
-$.get("/test2",
+$.get("/hotquestions",
    function(data){
-     alert('json '+data);
+     alert(data[0].answer_time);
    },"json");
    
-$.get("/test2",
-   function(data){
-     alert('common '+data);
-   });
+//$.get("/test2",
+//   function(data){
+//     alert('common '+data);
+//   });
 </script>

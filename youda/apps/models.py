@@ -188,6 +188,7 @@ class Questions(models.Model):
     want_answer_num = models.IntegerField(blank=True, null=True)
     attention_num = models.IntegerField(blank=True, null=True)
     invation_num = models.IntegerField(blank=True, null=True)
+    anonymous = models.IntegerField(blank=True, null=True)
     has_attach = models.IntegerField(blank=True, null=True)
 
     class Meta:
