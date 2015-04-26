@@ -68,3 +68,4 @@ class CommonDao(models.Manager):
                 dict(zip([col[0] for col in desc], row))
                 for row in cursor.fetchall()
                 ]
+   
