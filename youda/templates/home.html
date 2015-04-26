@@ -4,56 +4,6 @@
 
 
 <!-- container  -->
-<script type="text/html" id="recommend_interest_topic">
-
-<% for(i = 0 ; i < recommendList.length ; i++) { %>
-		<div class="to_interest_topic fl">
-			<div class="interest_topic_pic over_img_container">
-				<a class="over_img" href="#">
-				<img src="<%=recommendList[i].imageUrl %>" />
-				</a>
-				<div class="over_img_description modal base_bg_color_85">
-				<%=recommendList[i].description %>
-				</div>
-			</div>
-			<div class="ask_and_interest_div">
-				<div class="interest_topic_icon fl">
-					<img src="/static/image/index/interest_icon.png" />关注
-					<%=recommendList[i].focusCount %>
-				</div>
-				<div class="ask_topic_icon fr">
-					<img src="/static/image/index/ask_icon.png" />提问
-					<%=recommendList[i].askCount %>
-				</div>
-			</div>
-			<div class="mark_icon_container">
-			<a href="#" >
-				<div class="mark_icon">
-				</div>
-			</a>
-			</div>
-		</div>
-
-<% } %>
-
-</script>
-
- 
- <script type="text/html" id="image_gallary">
-		<ul class="am-slides">
-		<% for(i = 0 ; i < imageList.length ; i++) { %>
-		<li>
-				<img src="<%=imageList[i].imageUrl %>" />
-				<div class="am-slider-desc"><%=imageList[i].description %></div>
-			</li>
-		<% }%>
-		</ul>
-			</div>
-</script>
-
-
-
-
 		<div id="banner">
 			<div data-am-widget="slider" class="am-slider am-slider-default fl" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}'  id="banner_image">
 
@@ -246,7 +196,7 @@
 	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
 </div> -->
 
-
+</div>
 
 <div id="hot_answer_container" class="fl">
 <!-- 本校热门问答开始 -->
@@ -258,277 +208,62 @@
 </div>
 </div>
 </div>
-</div>
 
 
 
 
 		<div id="focus_people" class="fr">
 		<div id="focus_people_tab"></div>
-		<div class="people_and_answer">
-			<div class="people_and_answer_title">大学里和毕业后有哪些是你万万没想到的</div>
-			<div class="people_and_answer_userinfo">
-			<div class="fl" ><img src="/static/image/avatar-min-img.jpg" width="50" height="50" class="roundImg" /></div>
-			<div class="fl people_and_answer_content"><span class="common_font">徐子豪</span><br/><span class="dark_font">通信工程</span><br/><span class="dark_font">2011级本科</span></div>
-		</div>
-		</div>
+
+
 <!-- 撑人数用的 -->
 
 
 <!-- 撑人数用的 -->
 	</div>	
-<script type="text/html" id="recommend_answer">
-<div class="answer">
-<div class="answer_left_bar fl">
-	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
-</div>
-<div class="answer_content fl">
-<div class="answer_header border_bottom_dark">
-<div class="people_answer_header_answer_name">
-<span class="common_font font_ya_hei">大学里和毕业后有哪些是你万万没想到的</span>
-<div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count">123</span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count">6</span>&nbsp;&nbsp;&nbsp;
-
-</div>
-</div>
-<div>
-
-<span class="font_ya_hei dark_font font_small">徐子豪 ● 通信工程 ● 2011级 ● 本科</span> 
-
-</div>
-
-</div>
 
 
-<div class="answer_detail border_bottom_dark">
-<div class="answer_detail_left_bar fl">
-	<div class="answer_detail_pic_div">
-<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
-</div>
-<div class="answer_detail_agree_div">
-<div class="answer_detail_agree_icon">
 
-<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count">6</span>
-</div>
-</div>
-</div>
-<div class="answer_detail_text fl">
-<div class="answer_detail_text_context">
-1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是  <span class="common_font">点击展开>>></span>
-</div>
-<br />
-<div class="answer_detail_text_time ">
-<span class="fl font_small">徐子豪 ● 通信工程 ● 2011级 ● 本科</span> 
-<div class="fr">
-<img src="/static/image/index/time_icon.png"  />2015-01-02&nbsp;&nbsp;13:38&nbsp;&nbsp;
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
+
+<!--  banner画廊开始 -->
+ <script type="text/html" id="image_gallary">
+		<ul class="am-slides">
+		<% for(i = 0 ; i < imageList.length ; i++) { %>
+		<li>
+				<img src="<%=imageList[i].imageUrl %>" />
+				<div class="am-slider-desc"><%=imageList[i].description %></div>
+			</li>
+		<% }%>
+		</ul>
 </script>
+<!-- banner画廊结束 -->
 
 
+<script type="text/javascript">
+var recommend_answer_data = {
+'recommendAnswerList' : [{
+'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+'askName' : '大学里和毕业后有哪些是你万万没想到的',
+'viewCount' : '123',
+'commentCount' : '6',
+'askUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+'answerAgreeCount' : '6' ,
+'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是  ',
+'answerUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+'answerTime' : '2015-01-02  13:38  '
 
- <script>
-
-
-
+}]
+};
 function toggleTabs(){
 $('#my_interest_tab').toggleClass('my_interest_tab_active');
 $('#hot_answer_tab').toggleClass('hot_answer_tab_active');
-
-	$('#hot_answer_container').toggle();
-	$('#focus_answer_container').toggle();
-
+$('#hot_answer_container').toggle();
+$('#focus_answer_container').toggle();
 }
 
- </script>
-<script type="text/html" id="recommend_interest_schooler">
-<% for(i = 0 ; i < recommendSchoolerList.length ; i++){ %>
-	<div class="to_interest_people fl">
-		<div class="interest_people_detail_div">
-			<div class="interest_people_pic_div fl">
 
-			<div class="interest_people_pic">
-
-				<img src="<%=recommendSchoolerList[i].iconUrl %>" />
-
-			</div>
-			<div class="interest_people_name">
-			<%= recommendSchoolerList[i].name %>
-		</div>
-	</div>
-		<div class="interest_people_detail fr">
-<span class="common_font">擅长:</span><br/>
-<% for(j = 0 ; j < recommendSchoolerList[i].goodAt.length ; j++){ %>
-<%=recommendSchoolerList[i].goodAt[j] %><br/>
-<% } %>
-		</div>
-	</div>
-			<div class="mark_icon_container">
-			<a href="#" >
-				<div class="mark_icon">
-				</div>
-			</a>
-			</div>
-		</div>
-<% } %>
-</script>
-<script type="text/html" id="recommend_people_answer">
-<% for(i = 0 ; i < recommendPeopleAnswerList.length ; i++) { %>
-
-<div class="people_answer">
-	<div class="people_answer_left_bar fl">
-		<img src="<%=recommendPeopleAnswerList[i].askerIconUrl %>" class="common_icon" />
-	</div>
-	<div class="people_answer_content fl">
-		<div class="people_answer_header border_bottom">
-			<div class="people_answer_header_people_name">
-				<span class="dark_font font_ya_hei">我关注的校友</span>&nbsp;&nbsp;
-				<span class="font_ya_hei font_all_black"><%=recommendPeopleAnswerList[i].askName %></span>&nbsp;&nbsp;
-				<span class="dark_font font_ya_hei">回答了</span><br />
-			</div>
-			<div class="people_answer_header_answer_name">
-			<span class="common_font font_ya_hei"><%=recommendPeopleAnswerList[i].answerName %></span>   
-				<div class="fr">
-					<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=recommendPeopleAnswerList[i].viewCount %></span>
-					<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=recommendPeopleAnswerList[i].commentCount %></span>&nbsp;&nbsp;&nbsp;
-
-				</div>
-			</div>
-
-		</div>
-
-
-	<div class="people_answer_detail border_bottom_dark">
-		<div class="people_answer_detail_left_bar fl">
-			<div class="people_answer_detail_pic_div">
-				<img src="<%=recommendPeopleAnswerList[i].answerUserIconUrl%>" class="common_icon" />
-			</div>
-			<div class="people_answer_detail_agree_div">
-				<div class="people_answer_detail_agree_icon">
-					<img src="/static/image/index/agree_icon.png" />
-					<span class="people_answer_detail_agree_count"><%=recommendPeopleAnswerList[i].answerAgreeCount %></span>
-			</div>
-		</div>
-	</div>
-	<div class="people_answer_detail_text fl">
-		<div class="people_answer_detail_text_context">
-			<%=recommendPeopleAnswerList[i].answerContext %>
-		</div><br />
-		<div class="people_answer_detail_text_time">
-			<img src="/static/image/index/time_icon.png" /><%=recommendPeopleAnswerList[i].answerTime %>
-		</div>
-	</div>
-</div>
-
-
-
-<% } %>
-</script>
-
-<script type="text/html" id="recommend_people_new_ask">
-<div class="people_new_ask">
-<div class="people_ask_left_bar fl">
-	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
-</div>
-<div class="people_ask_content border_bottom fl">
-<div class="people_ask_header">
-<div class="people_ask_header_people_name">
-<span class="dark_font font_ya_hei">我关注的校友</span>
-&nbsp;&nbsp;
-<span class="font_ya_hei font_all_black">徐子豪</span>
-&nbsp;&nbsp;
-
-<span class="dark_font font_ya_hei">提出了新的问题</span><br />
-</div>
-<div class="people_ask_header_answer_name">
-<span class="common_font font_ya_hei">大学里和毕业后有哪些是你万万没想到的？</span>   
-<div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count">123</span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count">6</span>&nbsp;&nbsp;&nbsp;
-</div>
-</div>
-</div>
-
-
-
-<div class="people_ask_detail_text_time">
-<img src="/static/image/index/time_icon.png" />2015-01-02&nbsp;&nbsp;13:38
-</div>
-
-
-
-</div>
-</div>
-</script>
-
-<script type="text/html" id="recommend_topic_answer">
-<div class="topic_answer">
-<div class="topic_answer_left_bar fl">
-	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
-</div>
-<div class="topic_answer_content fl">
-<div class="topic_answer_header border_bottom_dark">
-<div class="topic_answer_header_people_name">
-<span class="dark_font font_ya_hei">我关注的话题</span>
-&nbsp;&nbsp;
-
-
-<span class="font_ya_hei havier_font">原型设计</span><br />
-</div>
-<div class="people_answer_header_answer_name">
-<span class="common_font font_ya_hei">大学里和毕业后有哪些是你万万没想到的</span>
-<div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count">123</span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count">6</span>&nbsp;&nbsp;&nbsp;
-
-</div>
-</div>
-<div>
-
-<span class="font_ya_hei dark_font font_small">徐子豪 ● 通信工程 ● 2011级 ● 本科</span> 
-
-</div>
-
-</div>
-
-
-<div class="topic_answer_detail border_bottom_dark">
-<div class="topic_answer_detail_left_bar fl">
-	<div class="topic_answer_detail_pic_div">
-<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
-</div>
-<div class="topic_answer_detail_agree_div">
-<div class="topic_answer_detail_agree_icon">
-
-<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count">6</span>
-</div>
-</div>
-</div>
-<div class="topic_answer_detail_text fl">
-<div class="topic_answer_detail_text_context">
-1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是  <span class="common_font">点击展开>>></span>
-</div>
-<br />
-<div class="topic_answer_detail_text_time ">
-<span class="fl font_small">徐子豪 ● 通信工程 ● 2011级 ● 本科</span> 
-<div class="fr">
-<img src="/static/image/index/time_icon.png"  />2015-01-02&nbsp;&nbsp;13:38&nbsp;&nbsp;
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</script>
-
-<script type="text/javascript">
 $(document).ready(function(){
 $('#home_nav').removeClass('home_nav_normal');
 $('#home_nav').addClass('home_nav_active');
@@ -541,14 +276,10 @@ toggleTabs();
 
 $('#hot_answer_tab').on('click',function(){
 toggleTabs();
+var recommend_answer_html = template('recommend_answer',recommend_answer_data);
+$('#hot_answer_container').html(recommend_answer_html);
 	return false;
 });
-
-
-
-
-
-
 
 var bannerdata = {
 	imageList : [{
@@ -564,8 +295,11 @@ var bannerdata = {
 		description:'请叫我博丽灵梦3'
 	}]
 };
+
 var bannerhtml = template('image_gallary',bannerdata);
 $('#banner_image').html(bannerhtml);
+
+
 
 var recommend_interest_topic_data = {
 	recommendList : [{
@@ -612,7 +346,6 @@ var recommend_interest_schooler_data = {
 var recommend_interest_schooler_html = template('recommend_interest_schooler',recommend_interest_schooler_data);
 $('#interest_people_detail').html(recommend_interest_schooler_html);
 
-});
 
 var recommend_people_answer_data = {
 	recommendPeopleAnswerList : [{
@@ -629,9 +362,79 @@ var recommend_people_answer_data = {
 	]
 };
 
-var all_answer_people_topic_html = template('recommend_people_answer',recommend_people_answer_data);
-$('#all_answer_people_topic').append(all_answer_people_topic_html);
+var answer_people_topic_html = template('recommend_people_answer',recommend_people_answer_data);
+$('#all_answer_people_topic').append(answer_people_topic_html);
 
+var recommend_topic_answer_data = {
+	recommendTopicAnswerList : [{
+		'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+		'topicName' : '原型设计',
+		'askName' : '大学里和毕业后有哪些是你万万没想到的',
+		'viewCount' : '123',
+		'commentCount' : '6',
+		'askUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+		'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+		'answerAgreeCount' : '6',
+		'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是',
+		'answerUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+		'answerTime' : '2015-01-02  13:38  '
+	}
+	]
+};
+var recommend_topic_answer_html = template('recommend_topic_answer',recommend_topic_answer_data);
+$('#all_answer_people_topic').append(recommend_topic_answer_html);
+
+var recommend_people_new_ask_data = {
+	recommendPeopleNewAskList:[{
+		'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+		'askUserName' : '徐子豪',
+		'askName' : '大学里和毕业后有哪些是你万万没想到的？',
+		'viewCount' : '123',
+		'commentCount' : '6' ,
+		'askTime' : '2015-01-02  13:38'
+	}
+	]
+};
+
+var recommend_people_new_ask_html = template('recommend_people_new_ask',recommend_people_new_ask_data);
+$('#all_answer_people_topic').append(recommend_people_new_ask_html);
+
+
+var people_and_answer_data = {
+	'peopleAndAnswerList' : [{
+		'askName' : '大学里和毕业后有哪些是你万万没想到的',
+		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
+		'askUserName' : '徐子豪',
+		'askUserMajor' : '通信工程' ,
+		'askUserYearAndDegree' : '2011级本科'
+	},{
+		'askName' : '大学里和毕业后有哪些是你万万没想到的',
+		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
+		'askUserName' : '攀攀',
+		'askUserMajor' : '通信程' ,
+		'askUserYearAndDegree' : '2013级本科'
+	},{
+		'askName' : '大学里和毕业后有哪些是你万万没想到的',
+		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
+		'askUserName' : '钊钊',
+		'askUserMajor' : '信息管理' ,
+		'askUserYearAndDegree' : '2011级本科'
+	},{
+		'askName' : '大学里和毕业后有哪些是你万万没想到的',
+		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
+		'askUserName' : '叶聪',
+		'askUserMajor' : '不详' ,
+		'askUserYearAndDegree' : '2007级本科'
+	}
+
+	]
+};
+
+var people_and_answer_html = template('people_and_answer',people_and_answer_data);
+$('#focus_people').append(people_and_answer_html);
+
+
+});
 </script>
 
 
