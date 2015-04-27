@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2015-04-26 12:53:12
+Date: 2015-04-27 20:19:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2751,18 +2751,18 @@ CREATE TABLE `questions` (
 -- Records of questions
 -- ----------------------------
 INSERT INTO `questions` VALUES ('13', '1', '要如何才能进移动呢？', '要进移动的话，要准备什么呢？', '2', '2015-04-25 14:57:14', null, '10', '5', null, null, null, null, null);
-INSERT INTO `questions` VALUES ('41', '32', '谈谈华为法务部的工作体验', '自我介绍下，南邮本硕，14年4月毕业，目前就职华为法务部知识产权分部。\n\n我是14年4月入职华为，到目前为止差不多半年，谈下对华为的感受。\n\n1、未来五年是华为的战略机遇期，五年后就不好说了。\n\n2、部门的人际关系很简单，只要安安心心把活干好，不用在人际沟通上花太多的心思。\n\n3、工作强度确实大，加班是家常便饭，时间管理很重要。\n\n世上唯庸人无咎无誉，对于公司也是如此，华为能在一片争议和赞美声中稳步成长，本身就是一件很了不起的事。\n如果有问题，可以通过邮箱联系我：sxxujianbo@126.com', '4', '2015-04-21 12:16:42', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('43', '3', '南邮人在华为工作是怎样的一种体验？', '待遇，发展空间，工作压力，华为的情况。', '12', '2015-04-21 12:16:43', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('49', '8', '找产品经理的实习，有哪些基本要求？', '有哪些软件或者书可以推荐，产品经理具体从事哪些工作？', '2', '2015-04-21 12:16:44', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('50', '3', '南京联想是怎么样的一个公司？', '可否详细介绍下刚成立的南京联想的情况？', '4', '2015-04-21 12:16:45', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('52', '3', '如何申请香港的博士？', '比如：香港大学，城市大学，中文大学，对于我们这些邮电高校学生，有值得分享的故事和感受吗？', '12', '2015-04-21 12:16:46', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('58', '52', '在运营商的工作体验', '最好再介绍一下里面的福利待遇大概是怎么样的', '2', '2015-04-21 12:16:47', null, null, null, null, null, null, null, null);
+INSERT INTO `questions` VALUES ('41', '32', '谈谈华为法务部的工作体验', '自我介绍下，南邮本硕，14年4月毕业，目前就职华为法务部知识产权分部。\n\n我是14年4月入职华为，到目前为止差不多半年，谈下对华为的感受。\n\n1、未来五年是华为的战略机遇期，五年后就不好说了。\n\n2、部门的人际关系很简单，只要安安心心把活干好，不用在人际沟通上花太多的心思。\n\n3、工作强度确实大，加班是家常便饭，时间管理很重要。\n\n世上唯庸人无咎无誉，对于公司也是如此，华为能在一片争议和赞美声中稳步成长，本身就是一件很了不起的事。\n如果有问题，可以通过邮箱联系我：sxxujianbo@126.com', '4', '2015-04-26 14:43:14', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('43', '3', '南邮人在华为工作是怎样的一种体验？', '待遇，发展空间，工作压力，华为的情况。', '12', '2015-04-26 14:43:15', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('49', '8', '找产品经理的实习，有哪些基本要求？', '有哪些软件或者书可以推荐，产品经理具体从事哪些工作？', '2', '2015-04-26 14:43:16', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('50', '3', '南京联想是怎么样的一个公司？', '可否详细介绍下刚成立的南京联想的情况？', '4', '2015-04-26 14:43:16', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('52', '3', '如何申请香港的博士？', '比如：香港大学，城市大学，中文大学，对于我们这些邮电高校学生，有值得分享的故事和感受吗？', '12', '2015-04-26 14:43:16', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('58', '52', '在运营商的工作体验', '最好再介绍一下里面的福利待遇大概是怎么样的', '2', '2015-04-26 14:43:16', null, null, '0', null, null, null, null, null);
 INSERT INTO `questions` VALUES ('65', '60', '对于微营销，包括通过微信朋友圈，QQ空间，微博等媒介，有哪些可以借鉴的经验？', '经常的看到对于微营销，很多人会采取直接屏蔽的态度，如何不让你的受众群体反感，并愿意帮你转发分享呢？', '4', '2015-04-21 12:16:49', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('68', '3', '作为用户，友答网需要改进的地方有哪些？', '', '12', '2015-04-21 12:16:50', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('69', '73', '大一时期如何选择各种竞赛活动？', '刚上大一，没学多少东西呢。最近出现了各种竞赛，物联网创新大赛，网页制作大赛。现在的我是纯小白啊，但是有学长推荐我们去参加，可是什么都不会去参加有什么意义？或者我应该怎么去为这两个比赛准备一下？\n\n谢谢学长学姐！', '4', '2015-04-21 12:16:51', null, null, null, null, null, null, null, null);
+INSERT INTO `questions` VALUES ('68', '3', '作为用户，友答网需要改进的地方有哪些？', '', '12', '2015-04-26 14:43:17', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('69', '73', '大一时期如何选择各种竞赛活动？', '刚上大一，没学多少东西呢。最近出现了各种竞赛，物联网创新大赛，网页制作大赛。现在的我是纯小白啊，但是有学长推荐我们去参加，可是什么都不会去参加有什么意义？或者我应该怎么去为这两个比赛准备一下？\n\n谢谢学长学姐！', '4', '2015-04-26 14:43:17', null, null, '0', null, null, null, null, null);
 INSERT INTO `questions` VALUES ('70', '72', '南邮大二的STITP实践项目含金量如何？', '希望过来人给点建议。我们数据结构老师让自己找题目，感觉有点不知道方向', '2', '2015-04-21 12:17:02', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('71', '29', '分享那些帮你度过危机并对你有很大鼓舞和启发的书籍', '请注明遇到了什么困难，偶然或者接受建议读了怎样的书籍，然后获得了怎么样的启发和改善。', '4', '2015-04-21 12:17:03', null, null, null, null, null, null, null, null);
-INSERT INTO `questions` VALUES ('72', '80', '如果毕业想进自己家所在地级市的运营商，作为研一学生，需要准备点什么？', '', '12', '2015-04-21 12:17:05', null, null, null, null, null, null, null, null);
+INSERT INTO `questions` VALUES ('71', '29', '分享那些帮你度过危机并对你有很大鼓舞和启发的书籍', '请注明遇到了什么困难，偶然或者接受建议读了怎样的书籍，然后获得了怎么样的启发和改善。', '4', '2015-04-26 14:43:17', null, null, '0', null, null, null, null, null);
+INSERT INTO `questions` VALUES ('72', '80', '如果毕业想进自己家所在地级市的运营商，作为研一学生，需要准备点什么？', '', '12', '2015-04-26 14:43:19', null, null, '0', null, null, null, null, null);
 INSERT INTO `questions` VALUES ('73', '84', '关于考研问题：南邮而言，如果要保外校的研究生需要什么条件呢？', '', null, '2015-04-12 21:58:52', null, null, null, null, null, null, null, null);
 INSERT INTO `questions` VALUES ('74', '84', '请问专硕和学硕有什么区别呢？', '请问专业硕士和学士硕士有什么区别呢？', null, '2015-04-12 21:58:52', null, null, null, null, null, null, null, null);
 INSERT INTO `questions` VALUES ('76', '73', '网页制作大赛的问题。', '这届网页制作大赛什么时候开始，具体流程，开始了后和小伙伴做网页提交，还是线下先做好，到时候直接提交？\n', null, '2015-04-12 21:58:52', null, null, null, null, null, null, null, null);
@@ -6227,12 +6227,12 @@ CREATE TABLE `topic_focus` (
   KEY `uid` (`user_id`),
   KEY `topic_id` (`topic_id`),
   KEY `topic_uid` (`topic_id`,`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1697 DEFAULT CHARSET=utf8 COMMENT='话题关注表';
+) ENGINE=MyISAM AUTO_INCREMENT=1996 DEFAULT CHARSET=utf8 COMMENT='话题关注表';
 
 -- ----------------------------
 -- Records of topic_focus
 -- ----------------------------
-INSERT INTO `topic_focus` VALUES ('190', '17', '82', null);
+INSERT INTO `topic_focus` VALUES ('1990', '17', '82', null);
 INSERT INTO `topic_focus` VALUES ('2', '2', '1', null);
 INSERT INTO `topic_focus` VALUES ('13', '4', '3', null);
 INSERT INTO `topic_focus` VALUES ('4', '4', '1', null);
@@ -7721,6 +7721,12 @@ INSERT INTO `topic_focus` VALUES ('1693', '29', '438', null);
 INSERT INTO `topic_focus` VALUES ('1694', '84', '438', null);
 INSERT INTO `topic_focus` VALUES ('1695', '1', '1', '2015-04-24 20:26:02');
 INSERT INTO `topic_focus` VALUES ('1696', '100', '1', '2015-04-24 20:36:07');
+INSERT INTO `topic_focus` VALUES ('1697', '99', '1', '2015-04-27 13:27:28');
+INSERT INTO `topic_focus` VALUES ('1991', '98', '1', '2015-04-27 13:47:58');
+INSERT INTO `topic_focus` VALUES ('1992', '97', '1', '2015-04-27 13:57:58');
+INSERT INTO `topic_focus` VALUES ('1993', '96', '1', '2015-04-27 14:32:02');
+INSERT INTO `topic_focus` VALUES ('1994', '94', '1', '2015-04-27 14:49:54');
+INSERT INTO `topic_focus` VALUES ('1995', '101', '1', '2015-04-27 19:50:11');
 
 -- ----------------------------
 -- Table structure for `users`
@@ -8516,13 +8522,13 @@ DROP TABLE IF EXISTS `users_focus`;
 CREATE TABLE `users_focus` (
   `focus_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
   `user_id` int(11) DEFAULT NULL COMMENT '用户id',
-  `follow_uid` int(11) DEFAULT NULL COMMENT '被关注用户的id',
+  `schoolmate_id` int(11) DEFAULT NULL COMMENT '被关注用户的id',
   `focus_time` timestamp NULL DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`focus_id`),
   KEY `fans_uid` (`user_id`),
-  KEY `friend_uid` (`follow_uid`),
-  KEY `user_follow` (`user_id`,`follow_uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=4848 DEFAULT CHARSET=utf8 COMMENT='用户关注表';
+  KEY `friend_uid` (`schoolmate_id`),
+  KEY `user_follow` (`user_id`,`schoolmate_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4850 DEFAULT CHARSET=utf8 COMMENT='用户关注表';
 
 -- ----------------------------
 -- Records of users_focus
@@ -13174,3 +13180,5 @@ INSERT INTO `users_focus` VALUES ('4844', '218', '753', null);
 INSERT INTO `users_focus` VALUES ('4845', '218', '721', null);
 INSERT INTO `users_focus` VALUES ('4846', '561', '343', null);
 INSERT INTO `users_focus` VALUES ('4847', '184', '117', null);
+INSERT INTO `users_focus` VALUES ('4848', '1', '880', '2015-04-27 19:32:38');
+INSERT INTO `users_focus` VALUES ('4849', '1', '888', '2015-04-27 19:32:47');
