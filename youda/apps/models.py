@@ -297,7 +297,7 @@ class Users(models.Model):
 class UsersFocus(models.Model):
     focus_id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField(blank=True, null=True)
-    follow_uid = models.IntegerField(blank=True, null=True)
+    schoolmate_id = models.IntegerField(blank=True, null=True)
     focus_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
 
     class Meta:

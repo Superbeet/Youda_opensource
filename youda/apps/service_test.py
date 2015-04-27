@@ -31,16 +31,16 @@ def myfocus_test():
     print list_data;
 def myfocus1():
     fs = FocusService();
-    list = fs.getMyFocus(1);
+    list = fs.getMyFocus(-1);
     for d in list:
-        print type(str(d['publish_time']));
+        print d;
 def testaddfocusyopic():
-    #fs = FocusService();
-    #print fs.addFocusTopic(1,100);
-    o = commonDao.tolist(TopicFocus,user_id=1,topic_id=100);
-    print o
+    fs = FocusService();
+    print fs.addFocusTopic(1,96);
+    #o = commonDao.tolist(TopicFocus,user_id=1,topic_id=99);
+    #print o
 if __name__=='__main__':
-    testaddfocusyopic();
+    myfocus1();
 
     
     

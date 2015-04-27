@@ -22,32 +22,33 @@ class FocusService:
         UNION \
         SELECT q_u.user_id AS questioner_id,q_u.user_name AS questiner_name,q.question_id,q.question_content,q.browse_num,q.answer_num,q.publish_time,5 AS type,a_u.user_id AS answerer_id,a_u.user_name AS answerer_name,a_u.academy AS annswerer_academy,a_u.entrance_time AS answer_entime,a_u.education AS answerer_educatin,a.answer_content ,q_u.head AS questioner_head,a_u.head AS answerer_head,'','','','','','' from questions_focus qf,questions q ,answers a,users q_u,users a_u WHERE qf.user_id=%s AND qf.question_id=q.question_id AND a.question_id=q.question_id AND q.user_id=q_u.user_id AND a.user_id=a_u.user_id \
         ) AS un ORDER BY un.publish_time DESC LIMIT %s,%s";
-        commonDao.cursor.execute(sql,[user_id,user_id,user_id,user_id,user_id,(page-1)*pagesize,pagesize]);
+        data_length = commonDao.cursor.execute(sql,[user_id,user_id,user_id,user_id,user_id,(page-1)*pagesize,pagesize]);
         #list_obj = commonDao.dictfetchall(commonDao.cursor)
         list_obj = commonDao.cursor.fetchall();
         list_data = [];
         for d in list_obj:
             if d[7]==1:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'questioner_head':d[8]};
+                map_data = {'type':d[7],'data':{'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'questioner_head':d[8]}};
             elif d[7]==2:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answer_content':d[10],'support':d[11],'questioner_head':d[12],'answerer_head':d[13]};
+                map_data = {'type':d[7],'data':{'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'answerer_id':d[8],'answerer_name':d[9],'answer_content':d[10],'support_num':d[11],'questioner_head':d[12],'answerer_head':d[13]}};
             elif d[7]==3:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'questioner_academy':d[8],'questioner_entime':d[9],'questioner_eduction':d[10],'topid_id':d[11],'topic_name':d[12],'questioner_head':d[13]};
+                map_data = {'type':d[7],'data':{'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'questioner_academy':d[8],'questioner_entime':d[9],'questioner_eduction':d[10],'topid_id':d[11],'topic_name':d[12],'questioner_head':d[13]}};
             elif d[7]==4:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'questioner_academy':d[10],'questioner_entime':d[11],'questionner_education':d[12],'topic_id':d[13],'topic_name':d[14],'answer_content':d[15],'support_num':d[16],'answerer_academy':d[17],'answerer_entime':d[18],'answerer_education':d[19],'questioner_head':d[20],'answerer_head':d[21]};
+                map_data = {'type':d[7],'data':{'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'answerer_id':d[8],'answerer_name':d[9],'questioner_academy':d[10],'questioner_entime':d[11],'questioner_education':d[12],'topic_id':d[13],'topic_name':d[14],'answer_content':d[15],'support_num':d[16],'answerer_academy':d[17],'answerer_entime':d[18],'answerer_education':d[19],'questioner_head':d[20],'answerer_head':d[21]}};
             elif d[7]==5:
-                map_data = {'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'type':d[7],'answerer_id':d[8],'answerer_name':d[9],'answerer_academy':d[10],'answerer_entime':d[11],'answerer_education':d[12],'answer_content':d[13],'questioner_head':d[14],'answerer_head':d[15]};
+                map_data = {'type':d[7],'data':{'questioner_id':d[0],'questioner_name':d[1],'question_id':d[2],'question_content':d[3],'browse_num':d[4],'answer_num':d[5],'publish_time':d[6],'answerer_id':d[8],'answerer_name':d[9],'answerer_academy':d[10],'answerer_entime':d[11],'answerer_education':d[12],'answer_content':d[13],'questioner_head':d[14],'answerer_head':d[15]}};
             list_data.append(map_data);
-        return list_data;
+        map_obj={'length':data_length,'data':list_data};
+        return map_obj;
     #添加关注话题
     @transaction.commit_on_success
     def addFocusTopic(self,user_id,topic_id):
         commonDao = CommonDao();
         topic_foucs = TopicFocus(topic_id=topic_id,user_id=user_id);
-#         focus = commonDao.tolist(TopicFocus,topic_id=topic_id,user_id=user_id)
-#         if len(focus)>0:
-#             return -1;
+        focus = commonDao.tolist(TopicFocus,topic_id=topic_id,user_id=user_id)
+        if len(focus)>0:
+            return -1;
         commonDao.toadd(TopicFocus,topic_foucs);
-        return 1;
-            
+        #raise ValueError;
+        return 1;         
         

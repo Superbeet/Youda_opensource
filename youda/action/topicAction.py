@@ -3,6 +3,8 @@
 from django.shortcuts import render_to_response
 from service.FocusService import FocusService
 from django.http.response import HttpResponse
+from django.db import transaction
+import json
 
 focusService = None;
 def index(request):
@@ -10,8 +12,9 @@ def index(request):
 #添加关注话题，返回1关注成功
 def focusTopic(request):
     focusService = FocusService();
-    topic_id = request.POST['topic_id'];
-    user_id = request.session['user_id'];
-    r = focusService.addFocusTopic(user_id, topic_id);
-    return HttpResponse(r); 
-    
+    topic_id = request.GET['topic_id'];
+    #user_id = request.session['user_id'];
+    r = focusService.addFocusTopic(1, topic_id);
+    data = {'status':r}
+    DATA = json.dumps(data);
+    return HttpResponse(DATA,content_type="application/json"); #json格式返回数据

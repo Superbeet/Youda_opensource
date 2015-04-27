@@ -2,8 +2,7 @@
 __pycache__/
 *.py[cod]
 youda/.settings/
-youda/.project
-youda/.pydevproject
+youda/.*
 # C extensions
 *.so
 
