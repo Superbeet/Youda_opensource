@@ -1,0 +1,33 @@
+@import "common.scss";
+
+.my_interest_topic_tab{
+background-image: url('/static/image/index/my_interest_topic_tab.png');
+background-repeat: no-repeat;;
+}
+
+.hot_topic_tab{
+background-image: url('/static/image/index/hot_topic_tab.png');
+background-repeat: no-repeat;
+}
+#my_interest_topic_tab:hover,.my_interest_topic_tab_active{
+background-image: url('/static/image/index/my_interest_topic_tab_active.png');
+background-repeat: no-repeat;;
+}
+
+#hot_topic_tab:hover,.hot_topic_tab_active{
+background-image: url('/static/image/index/hot_topic_tab_active.png');
+background-repeat: no-repeat;
+}
+.topic_recommend_tab{
+background-image: url('/static/image/index/topic_recommend_tab.png');
+background-repeat: no-repeat;
+height: 44px;
+width: 200px;
+}
+.to_interest_topic{
+margin-left:0px;
+margin-top:20px;
+border-bottom : 0.25px solid $dark_color;
+}
+#topic_recommend{
+}

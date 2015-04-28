@@ -1,55 +1,50 @@
 {% extends "base.html" %}
+
+{% block css %}
+<link href="/static/css/topic.css" rel="stylesheet" />
+
+{% endblock %}
+
+
+
+
 {% block focus_area  %}
-<style type="text/css">
-.my_interest_topic_tab{
-background-image: url('/static/image/index/my_interest_topic_tab.png');
-background-repeat: no-repeat;;
-}
 
-.hot_topic_tab{
-background-image: url('/static/image/index/hot_topic_tab.png');
-background-repeat: no-repeat;
-}
-.my_interest_topic_tab_active{
-background-image: url('/static/image/index/my_interest_topic_tab_active.png');
-background-repeat: no-repeat;;
-}
-
-.hot_topic_tab_active{
-background-image: url('/static/image/index/hot_topic_tab_active.png');
-background-repeat: no-repeat;
-}
-.topic_recommend_tab{
-background-image: url('/static/image/index/topic_recommend_tab.png');
-background-repeat: no-repeat;
-height: 44px;
-width: 200px;
-}
-</style>
 
 
 
 		<div id="focus_answer" class="fl">
 		<div id="focus_answer_tabs">
 
-		<div id="my_interest_tab" class="fl common_tab my_interest_topic_tab">
+		<div id="my_interest_topic_tab" class="fl common_tab my_interest_topic_tab">
 		<a href="/static/tab.html">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
-		<div id="hot_answer_tab" class="hot_topic_tab fl common_tab tab_padding">
+		<div id="hot_topic_tab" class="hot_topic_tab fl common_tab tab_padding">
 		<a href="/static/tab.html">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
 		</div>
-		<div id="focus_answer_container">
-我关注的话题
+		<div id="focus_topic_container">
+
+		<!-- 我关注的话题开始 -->
+		<div class="">
+
+
 
 		</div>
-		<div id="hot_answer_container" class="fl">
+
+
+
+
+
+		<!-- 我关注的话题结束 -->
+		</div>
+		<div id="hot_topic_container" class="fl">
 <!-- 本校热门话题开始 -->
 
 
@@ -61,37 +56,62 @@ width: 200px;
 {% endblock %}
 {% block focus_people  %}
 
-<div id="topic_recommend_tab" class="topic_recommend_tab"></div>
-
+<div id="topic_recommend_tab" class="topic_recommend_tab">
+</div>
+<div id="topic_recommend"></div>
 
 <script>
 
 
 
 function toggleTabs(){
-$('#my_interest_tab').toggleClass('my_interest_topic_tab_active');
-$('#hot_answer_tab').toggleClass('hot_topic_tab_active');
-$('#hot_answer_container').toggle();
-$('#focus_answer_container').toggle();
+$('#my_interest_topic_tab').toggleClass('my_interest_topic_tab_active');
+$('#hot_topic_tab').toggleClass('hot_topic_tab_active');
+$('#hot_topic_container').toggle();
+$('#focus_topic_container').toggle();
 }
 
 
 $(document).ready(function(){
 	$('#topic_nav').removeClass('topic_nav_normal');
 $('#topic_nav').addClass('topic_nav_active');
-$('#my_interest_tab').addClass('my_interest_topic_tab_active');
-$('#hot_answer_container').hide();
-$('#my_interest_tab').on('click',function(){
+$('#my_interest_topic_tab').addClass('my_interest_topic_tab_active');
+$('#hot_topic_container').hide();
+$('#my_interest_topic_tab').on('click',function(){
 toggleTabs();
 	return false;
 });
 
-$('#hot_answer_tab').on('click',function(){
+$('#hot_topic_tab').on('click',function(){
 toggleTabs();
-var recommend_answer_html = template('recommend_answer',recommend_answer_data);
-$('#hot_answer_container').html(recommend_answer_html);
-	return false;
+return false;
+
 });
+
+var recommend_interest_topic_data = {
+	recommendList : [{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦1',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦2',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦3',
+		focusCount : '112',
+		askCount : '131'
+	}]
+};
+
+var recommend_interest_topic_html = template('recommend_interest_topic',recommend_interest_topic_data);
+$('#topic_recommend').append(recommend_interest_topic_html);
+
 
 });
  </script>
