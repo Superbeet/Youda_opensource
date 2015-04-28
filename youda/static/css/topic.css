@@ -12,7 +12,7 @@
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17a9b8; }
+  background-color: #17A9B8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -22,11 +22,11 @@
   height: 90px; }
 
 .common_font {
-  color: #17a9b8;
+  color: #17A9B8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328cbe;
+  color: #328CBE;
   font-size: 11pt; }
 
 .dark_font {
@@ -50,7 +50,7 @@
   font-size: 10pt; }
 
 .border_bottom {
-  border-bottom: 0.25px solid #17a9b8; }
+  border-bottom: 0.25px solid #17A9B8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -87,3 +87,77 @@
   margin-left: 0px;
   margin-top: 20px;
   border-bottom: 0.25px solid #666666; }
+
+.topic_and_answer_recommend_container {
+  width: 880px;
+  margin-top: 30px; }
+
+.topic_detail_area {
+  width: 880px;
+  height: 130px; }
+
+.topic_answer_list_area {
+  width: 880px;
+  height: 225px; }
+
+.topic_img {
+  height: 130px;
+  width: 200px; }
+
+.topic_detail_content {
+  width: 680px;
+  height: 130px;
+  padding-left: 20px; }
+
+.topic_detail_content h1 {
+  font-size: 13pt; }
+
+.topic_detail_content p {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.topic_icons .ask_and_interest_div {
+  margin-top: 0px; }
+
+.topic_icons .mark_icon_container {
+  margin-top: 0px; }
+
+.topic_answer_list_header {
+  width: 880px;
+  height: 30px; }
+
+.topic_answer_list_content {
+  width: 880px;
+  height: 180px;
+  background-color: #F9FFFF; }
+
+.topic_answer_list_content ul {
+  list-style: none;
+  padding-left: 0px; }
+
+.topic_answer_list_content ul li {
+  height: 35px;
+  line-height: 35px; }
+
+.recommend_hot_topic_icons {
+  width: 880px;
+  height: 130px; }
+
+.topic_rec_normal {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-image: url("/static/image/index/topic_rec.png");
+  background-repeat: no-repeat;
+  font-size: 10pt;
+  margin-top: 20px; }
+
+.topic_rec_normal:hover {
+  background-image: url("/static/image/index/topic_rec_active.png");
+  background-repeat: no-repeat; }
+
+.topic_rec_margin {
+  margin-left: 93.33333px; }
+
+/*# sourceMappingURL=topic.css.map */

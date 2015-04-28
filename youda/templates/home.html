@@ -247,15 +247,27 @@ $('#home_nav').removeClass('home_nav_normal');
 $('#home_nav').addClass('home_nav_active');
 $('#my_interest_tab').addClass('my_interest_tab_active');
 $('#hot_answer_container').hide();
+$('#my_interest_tab').attr('active','true');
+$('#hot_answer_tab').attr('active','false');
+
 $('#my_interest_tab').on('click',function(){
+if($('#my_interest_tab').attr('active') == 'false'){
+	$('#my_interest_tab').attr('active','true');
+	$('#hot_answer_tab').attr('active','false');
 toggleTabs();
+}
 	return false;
 });
 
 $('#hot_answer_tab').on('click',function(){
+	if($('#hot_answer_tab').attr('active') == 'false'){
+
+		$('#my_interest_tab').attr('active','false');
+		$('#hot_answer_tab').attr('active','true');
 toggleTabs();
 var recommend_answer_html = template('recommend_answer',recommend_answer_data);
 $('#hot_answer_container').html(recommend_answer_html);
+}
 	return false;
 });
 
