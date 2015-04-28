@@ -33,6 +33,18 @@
 </script>
 <!-- 推荐感兴趣校友结束 -->
 
+<!--  banner画廊开始 -->
+ <script type="text/html" id="image_gallary">
+		<ul class="am-slides">
+		<% for(i = 0 ; i < imageList.length ; i++) { %>
+		<li>
+				<img src="<%=imageList[i].imageUrl %>" />
+				<div class="am-slider-desc"><%=imageList[i].description %></div>
+			</li>
+		<% }%>
+		</ul>
+</script>
+<!-- banner画廊结束 -->
 
 <!-- 推荐感兴趣话题开始 -->
 <script type="text/html" id="recommend_interest_topic">

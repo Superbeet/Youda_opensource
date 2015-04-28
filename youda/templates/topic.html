@@ -1,14 +1,98 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
+{% block focus_area  %}
+<style type="text/css">
+.my_interest_topic_tab{
+background-image: url('/static/image/index/my_interest_topic_tab.png');
+background-repeat: no-repeat;;
+}
 
- {% block content %}
+.hot_topic_tab{
+background-image: url('/static/image/index/hot_topic_tab.png');
+background-repeat: no-repeat;
+}
+.my_interest_topic_tab_active{
+background-image: url('/static/image/index/my_interest_topic_tab_active.png');
+background-repeat: no-repeat;;
+}
 
-话题页面正在进行中。。
+.hot_topic_tab_active{
+background-image: url('/static/image/index/hot_topic_tab_active.png');
+background-repeat: no-repeat;
+}
+.topic_recommend_tab{
+background-image: url('/static/image/index/topic_recommend_tab.png');
+background-repeat: no-repeat;
+height: 44px;
+width: 200px;
+}
+</style>
+
+
+
+		<div id="focus_answer" class="fl">
+		<div id="focus_answer_tabs">
+
+		<div id="my_interest_tab" class="fl common_tab my_interest_topic_tab">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		<div id="hot_answer_tab" class="hot_topic_tab fl common_tab tab_padding">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		</div>
+		<div id="focus_answer_container">
+我关注的话题
+
+		</div>
+		<div id="hot_answer_container" class="fl">
+<!-- 本校热门话题开始 -->
+
+
+本校热门话题
+<!-- 本校热门话题结束 -->
+
+</div>
+</div>
+{% endblock %}
+{% block focus_people  %}
+
+<div id="topic_recommend_tab" class="topic_recommend_tab"></div>
 
 
 <script>
+
+
+
+function toggleTabs(){
+$('#my_interest_tab').toggleClass('my_interest_topic_tab_active');
+$('#hot_answer_tab').toggleClass('hot_topic_tab_active');
+$('#hot_answer_container').toggle();
+$('#focus_answer_container').toggle();
+}
+
+
 $(document).ready(function(){
-$('#topic_nav').removeClass('topic_nav_normal');
+	$('#topic_nav').removeClass('topic_nav_normal');
 $('#topic_nav').addClass('topic_nav_active');
+$('#my_interest_tab').addClass('my_interest_topic_tab_active');
+$('#hot_answer_container').hide();
+$('#my_interest_tab').on('click',function(){
+toggleTabs();
+	return false;
+});
+
+$('#hot_answer_tab').on('click',function(){
+toggleTabs();
+var recommend_answer_html = template('recommend_answer',recommend_answer_data);
+$('#hot_answer_container').html(recommend_answer_html);
+	return false;
+});
+
 });
  </script>
  {% endblock %}

@@ -1,21 +1,11 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
- {% block content %}
+
+
 
 
 <!-- container  -->
-		<div id="banner">
-			<div data-am-widget="slider" class="am-slider am-slider-default fl" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}'  id="banner_image">
-
-			
-			</div>
-			<div id="banner_content" class="fl">
-			<div class="rec" ></div>
-			<div class="rec baseMagTop"></div>
-			<div class="rec baseMagTop"></div>
-			</div>
-		</div>
-		<div id="focus_area">
+ {% block focus_area %}
 		<div id="focus_answer" class="fl">
 		<div id="focus_answer_tabs">
 
@@ -207,12 +197,12 @@
 
 </div>
 </div>
-</div>
+{% endblock  %}
 
 
 
 
-		<div id="focus_people" class="fr">
+	{% block focus_people  %}
 		<div id="focus_people_tab"></div>
 
 
@@ -220,24 +210,12 @@
 
 
 <!-- 撑人数用的 -->
-	</div>	
 
 
 
 
 
-<!--  banner画廊开始 -->
- <script type="text/html" id="image_gallary">
-		<ul class="am-slides">
-		<% for(i = 0 ; i < imageList.length ; i++) { %>
-		<li>
-				<img src="<%=imageList[i].imageUrl %>" />
-				<div class="am-slider-desc"><%=imageList[i].description %></div>
-			</li>
-		<% }%>
-		</ul>
-</script>
-<!-- banner画廊结束 -->
+
 
 
 <script type="text/javascript">
@@ -280,24 +258,6 @@ var recommend_answer_html = template('recommend_answer',recommend_answer_data);
 $('#hot_answer_container').html(recommend_answer_html);
 	return false;
 });
-
-var bannerdata = {
-	imageList : [{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦1'
-	},
-	{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦2'
-	},
-	{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦3'
-	}]
-};
-
-var bannerhtml = template('image_gallary',bannerdata);
-$('#banner_image').html(bannerhtml);
 
 
 
@@ -349,21 +309,21 @@ $('#interest_people_detail').html(recommend_interest_schooler_html);
 
 var recommend_people_answer_data = {
 	recommendPeopleAnswerList : [{
-		askerIconUrl : '/static/image/people_detail_pic_60_60.jpg',
-		askName:'徐子豪',
-		answerName : '大学里和毕业后有哪些是你万万没想到的',
-		viewCount : '123',
-		commentCount : '666',
-		answerUserIconUrl : '/static/image/people_detail_pic_60_60.jpg',
-		answerAgreeCount : '5',
-		answerContext : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样',
-		answerTime : '2015-01-02  13:38'
+		'askerIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+		'askName':'徐子豪',
+		'answerName' : '大学里和毕业后有哪些是你万万没想到的',
+		'viewCount' : '123',
+		'commentCount' : '666',
+		'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+		'answerAgreeCount' : '5',
+		'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样',
+		'answerTime' : '2015-01-02  13:38'
 	}
 	]
 };
 
-var answer_people_topic_html = template('recommend_people_answer',recommend_people_answer_data);
-$('#all_answer_people_topic').append(answer_people_topic_html);
+var recommend_people_answer_html = template('recommend_people_answer',recommend_people_answer_data);
+$('#all_answer_people_topic').append(recommend_people_answer_html);
 
 var recommend_topic_answer_data = {
 	recommendTopicAnswerList : [{
