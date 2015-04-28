@@ -24,7 +24,7 @@ def showMyFocus(request):
     # request.session['name']='tomcat';
     # print request.session['name'];
     # return render_to_response('home.html',{'rows':rows});
-#显示热门问答
+#显示本校热门问答
 def showHotQuestions(request):
     questionService = QuestionService();
     #school_name = request.session['school_name'];
