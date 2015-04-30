@@ -5,7 +5,12 @@ $base_havier_color:#328CBE;
 $dark_color:#666666;
 $active_color:#008899;
 $font_ya_hei:"Microsoft Yahei";
-
+a{
+	outline : none;
+}
+a:focus{
+	outline : none;
+}
 
 .roundImg{
 	border : 3px solid #FFFFFF;
