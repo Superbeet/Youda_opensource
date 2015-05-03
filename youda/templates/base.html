@@ -4,9 +4,6 @@
 <head>
 <meta charset="utf-8">
 <title>友答网</title>
-<link href="/static/css/index.css" rel="stylesheet" />
-<link href="/static/css/reset.css" rel="stylesheet" />
-<link href="/static/css/wigets.css" rel="stylesheet" />
 
 <!-- amazeui import -->
 <link rel="stylesheet" href="/static/css/amazeui.min.css" />
@@ -18,6 +15,12 @@
 </script>
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/template-native.js"></script>
+
+<link href="/static/css/index.css" rel="stylesheet" />
+<link href="/static/css/reset.css" rel="stylesheet" />
+<link href="/static/css/wigets.css" rel="stylesheet" />
+
+
 
 {% include 'common_template.html' %}
 
@@ -145,7 +148,7 @@ $('#banner_image').html(bannerhtml);
 
 </script>
  {% endblock %}
-<div id="focus_area">
+<div id="focus_area" class="fl">
  {% block focus_area %}
 
  {% endblock %}

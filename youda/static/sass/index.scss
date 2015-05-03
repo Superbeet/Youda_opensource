@@ -9,7 +9,7 @@
 //focus_area
 
 #focus_area{
-width:$contentWidth;
+width:$nav_with;
 margin-top:50px;
 }
 #hot_answer_container{
@@ -56,6 +56,7 @@ $focus_people_width : 200px;
 #focus_people{
 width:$focus_people_width;
 margin-left:60px;
+margin-top: 50px;
 }
 #focus_people_tab{
 width:$focus_people_width;

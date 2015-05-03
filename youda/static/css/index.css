@@ -18,7 +18,7 @@ a:focus {
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17a9b8; }
+  background-color: #17A9B8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -28,11 +28,11 @@ a:focus {
   height: 90px; }
 
 .common_font {
-  color: #17a9b8;
+  color: #17A9B8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328cbe;
+  color: #328CBE;
   font-size: 11pt; }
 
 .dark_font {
@@ -56,7 +56,7 @@ a:focus {
   font-size: 10pt; }
 
 .border_bottom {
-  border-bottom: 0.25px solid #17a9b8; }
+  border-bottom: 0.25px solid #17A9B8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -67,10 +67,13 @@ a:focus {
 .vertical-align {
   vertical-align: middle; }
 
+.align_center {
+  text-align: center; }
+
 #header_bg {
   height: 90px;
   width: 100%;
-  background-color: #17a9b8; }
+  background-color: #17A9B8; }
 
 #header {
   width: 1140px;
@@ -112,7 +115,7 @@ a:focus {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border: 0;
-  border-left: 0.75px solid #17a9b8; }
+  border-left: 0.75px solid #17A9B8; }
 
 #search .am-btn {
   border: 0; }
@@ -177,7 +180,7 @@ a:focus {
 
 #newPoperText {
   font-size: 12pt;
-  color: #17a9b8;
+  color: #17A9B8;
   padding-left: 64px;
   margin-top: 43px;
   height: 30px; }
@@ -216,7 +219,7 @@ a:focus {
   margin: 0 auto; }
 
 #focus_area {
-  width: 1140px;
+  width: 880px;
   margin-top: 50px; }
 
 #hot_answer_container {
@@ -259,7 +262,8 @@ a:focus {
 
 #focus_people {
   width: 200px;
-  margin-left: 60px; }
+  margin-left: 60px;
+  margin-top: 50px; }
 
 #focus_people_tab {
   width: 200px;
@@ -321,7 +325,7 @@ a:focus {
 .people_and_answer {
   width: 200px;
   height: 110px;
-  color: #328cbe;
+  color: #328CBE;
   margin-top: 22px;
   margin-bottom: 22px;
   border-bottom: 0.25px solid #666666; }
@@ -359,7 +363,7 @@ a:focus {
   height: 90px; }
 
 .interest_people_name {
-  background-color: #17a9b8;
+  background-color: #17A9B8;
   color: white;
   text-align: center;
   font-size: 11pt;
@@ -385,3 +389,5 @@ a:focus {
   height: 180px;
   width: 100%;
   background-color: #FAF; }
+
+/*# sourceMappingURL=index.css.map */
