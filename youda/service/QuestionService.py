@@ -32,5 +32,11 @@ class QuestionService:
         data = commonDao.dictfetchall(commonDao.cursor);
         map_obj = {'length':data_length,'data':data}
         return map_obj;
+    def getQuestionDetail(self,question_id):
+        commonDao = CommonDao();
+        v = commonDao.toget(Questions,question_id=13);
+        if v==-1 or v==0:#返回多条或0条记录
+            return -1;
+        return v;
             
     

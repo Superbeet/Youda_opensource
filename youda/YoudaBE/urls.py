@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from action import homeAction, topicAction,schoolmateAction, testAction
+from action import homeAction, topicAction,schoolmateAction, testAction,\
+    questionAction
 
 urlpatterns = patterns('',
     # Examples:
@@ -23,5 +24,6 @@ urlpatterns = patterns('',
 urlpatterns +=patterns('',
     url(r'testjson',testAction.test1),
     url(r'test2',testAction.test2),
+    url(r'showQuestionDetail',questionAction.showQuestionDetail),
                        
 )

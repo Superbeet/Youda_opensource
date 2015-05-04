@@ -5,6 +5,7 @@ from service.FocusService import FocusService
 from django.http.response import HttpResponse
 from django.db import transaction
 import json
+from django.core.context_processors import request
 
 focusService = None;
 def index(request):
@@ -18,3 +19,6 @@ def focusTopic(request):
     data = {'status':r}
     DATA = json.dumps(data);
     return HttpResponse(DATA,content_type="application/json"); #json格式返回数据
+#话题推荐.有点问题？？？？
+def recommendTopic(request):
+    pass;

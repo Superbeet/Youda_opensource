@@ -232,7 +232,7 @@ class Schools(models.Model):
 class Topics(models.Model):
     topic_id = models.IntegerField(primary_key=True)
     topic_name = models.CharField(max_length=50, blank=True)
-    category_id = models.IntegerField(blank=True, null=True)
+    parent_id = models.IntegerField(blank=True, null=True)
     add_time = models.DateTimeField(blank=True, null=True)
     discuss_num = models.IntegerField(blank=True, null=True)
     topic_pic = models.CharField(max_length=255, blank=True)
@@ -242,7 +242,7 @@ class Topics(models.Model):
         db_table = 'topics'
 
     def __unicode__(self):
-        return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",category_id:"+str(self.category_id)+"]"
+        return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",category_id:"+str(self.parent_id)+"]"
     objects = models.Manager()
     common_objects = CommonDao();
     
