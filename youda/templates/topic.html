@@ -1,14 +1,329 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
- {% block content %}
+{% block css %}
+<link href="/static/css/topic.css" rel="stylesheet" />
 
-话题页面正在进行中。。
+{% endblock %}
 
+
+
+
+{% block focus_area  %}
+
+
+
+
+		<div id="focus_answer" class="fl">
+		<div id="focus_answer_tabs">
+
+		<div id="my_interest_topic_tab" class="fl common_tab my_interest_topic_tab">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		<div id="hot_topic_tab" class="hot_topic_tab fl common_tab tab_padding">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		</div>
+		<div id="focus_topic_container">
+
+		<!-- 我关注的话题开始 -->
+		<div class="topic_and_answer_recommend_container border_bottom">
+		<div class="topic_detail_area border_bottom_dark">
+		<div class="topic_img fl" >
+		<img src="/static/image/index/topic_pic.png" />
+		</div>
+		<div class="topic_detail_content fl" >
+		<h1 class="common_font">工作介绍</h1>
+		<p class="dark_font">社招，校招，实习，兼职等经验交流</p>
+		<div class="topic_icons">
+			<div class="ask_and_interest_div fl">
+				<div class="interest_topic_icon fl">
+					<img src="/static/image/index/interest_icon.png" />关注123
+				</div>
+				<div class="ask_topic_icon fr">
+					<img src="/static/image/index/ask_icon.png" />提问 123
+				</div>
+			</div>
+			<div class="mark_icon_container fr">
+			<a href="#" >
+				<div class="mark_icon">
+				</div>
+			</a>
+			</div>
+		</div>
+
+		</div>
+
+		</div>
+
+		<!-- 话题下的问答列表开始  -->
+		<div class="topic_answer_list_area">
+		<div class="topic_answer_list_header">
+		<div class="fl dark_font">最新问题</div>
+		<div class="fr dark_font">点击收起</div>
+		</div>
+		<div class="topic_answer_list_content">
+		<ul>
+			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+			<!-- 以下为话题充字数用 -->
+			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+
+			<!-- 以为话题充字数用 -->
+		</ul>
+
+		</div>
+
+
+
+
+
+		</div>
+<!-- 话题下的问答列表结束  -->
+		</div>
+
+
+
+
+
+		<!-- 我关注的话题结束 -->
+		</div>
+		<div id="hot_topic_container" class="fl">
+<!-- 本校热门话题开始 -->
+	<div class="recommend_hot_topic_icons">
+	<a href="#" class="fl"><div class="topic_rec_normal">全部话题</div></a>
+	<!-- 推荐话题充字数开始 -->
+	<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>
+	<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>	<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>
+		<a href="#" class="fl"><div class="topic_rec_normal">应聘深造</div></a>
+			<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>
+	<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>	<a href="#" class="topic_rec_margin fl"><div class="topic_rec_normal">应聘深造</div></a>	
+
+
+
+	<!-- 推荐话题充字数结束 -->
+	</div>
+
+		<div class="topic_and_answer_recommend_container border_bottom">
+		<div class="topic_detail_area border_bottom_dark">
+		<div class="topic_img fl" >
+		<img src="/static/image/index/topic_pic.png" />
+		</div>
+		<div class="topic_detail_content fl" >
+		<h1 class="common_font">工作介绍</h1>
+		<p class="dark_font">社招，校招，实习，兼职等经验交流</p>
+		<div class="topic_icons">
+			<div class="ask_and_interest_div fl">
+				<div class="interest_topic_icon fl">
+					<img src="/static/image/index/interest_icon.png" />关注123
+				</div>
+				<div class="ask_topic_icon fr">
+					<img src="/static/image/index/ask_icon.png" />提问 123
+				</div>
+			</div>
+			<div class="mark_icon_container fr">
+			<a href="#" >
+				<div class="mark_icon">
+				</div>
+			</a>
+			</div>
+		</div>
+
+		</div>
+
+		</div>
+
+		<!-- 话题下的问答列表开始  -->
+		<div class="topic_answer_list_area">
+		<div class="topic_answer_list_header">
+		<div class="fl dark_font">最新问题</div>
+		<div class="fr dark_font">点击收起</div>
+		</div>
+		<div class="topic_answer_list_content">
+		<ul>
+			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+			<!-- 以下为话题充字数用 -->
+			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl common_font">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+
+			<!-- 以为话题充字数用 -->
+		</ul>
+
+		</div>
+
+
+
+
+
+		</div>
+<!-- 话题下的问答列表结束  -->
+		</div>
+<!-- 本校热门话题结束 -->
+
+</div>
+</div>
+{% endblock %}
+{% block focus_people  %}
+
+<div id="topic_recommend_tab" class="topic_recommend_tab">
+</div>
+<div id="topic_recommend"></div>
 
 <script>
+
+
+
+function toggleTabs(){
+$('#my_interest_topic_tab').toggleClass('my_interest_topic_tab_active');
+$('#hot_topic_tab').toggleClass('hot_topic_tab_active');
+$('#hot_topic_container').toggle();
+$('#focus_topic_container').toggle();
+}
+
+
 $(document).ready(function(){
-$('#topic_nav').removeClass('topic_nav_normal');
+	$('#topic_nav').removeClass('topic_nav_normal');
 $('#topic_nav').addClass('topic_nav_active');
+$('#my_interest_topic_tab').addClass('my_interest_topic_tab_active');
+$('#hot_topic_container').hide();
+
+$('#my_interest_topic_tab').attr('active','true');
+$('#hot_topic_tab').attr('active','false');
+
+$('#my_interest_topic_tab').on('click',function(){
+
+if($('#my_interest_topic_tab').attr('active') == 'false'){
+
+$('#my_interest_topic_tab').attr('active','true');
+	$('#hot_topic_tab').attr('active','false');
+	toggleTabs();
+}
+	return false;
+});
+
+$('#hot_topic_tab').on('click',function(){
+	if($('#hot_topic_tab').attr('active') == 'false'){
+
+	$('#my_interest_topic_tab').attr('active','false');
+	$('#hot_topic_tab').attr('active','true');
+	toggleTabs();
+}
+return false;
+
+});
+
+var recommend_interest_topic_data = {
+	recommendList : [{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦1',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦2',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦3',
+		focusCount : '112',
+		askCount : '131'
+	}]
+};
+
+var recommend_interest_topic_html = template('recommend_interest_topic',recommend_interest_topic_data);
+$('#topic_recommend').append(recommend_interest_topic_html);
+
+
 });
  </script>
  {% endblock %}

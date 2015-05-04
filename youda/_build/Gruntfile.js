@@ -21,7 +21,11 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= meta.deployPath %>index.css': '<%= meta.srcPath %>index.scss','<%= meta.deployPath %>wigets.css': '<%= meta.srcPath %>wigets.scss','<%= meta.deployPath %>common.css': '<%= meta.srcPath %>common.scss'
+                    '<%= meta.deployPath %>index.css': '<%= meta.srcPath %>index.scss',
+                    '<%= meta.deployPath %>wigets.css': '<%= meta.srcPath %>wigets.scss',
+                    '<%= meta.deployPath %>common.css': '<%= meta.srcPath %>common.scss',
+                    '<%= meta.deployPath %>topic.css': '<%= meta.srcPath %>topic.scss',
+                    '<%= meta.deployPath %>answer_detail.css': '<%= meta.srcPath %>answer_detail.scss'
                 },
                 options: {
                 }

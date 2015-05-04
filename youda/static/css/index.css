@@ -1,3 +1,9 @@
+a {
+  outline: none; }
+
+a:focus {
+  outline: none; }
+
 .roundImg {
   border: 3px solid #FFFFFF;
   border-radius: 27px;
@@ -60,6 +66,9 @@
 
 .vertical-align {
   vertical-align: middle; }
+
+.align_center {
+  text-align: center; }
 
 #header_bg {
   height: 90px;
@@ -210,7 +219,7 @@
   margin: 0 auto; }
 
 #focus_area {
-  width: 1140px;
+  width: 880px;
   margin-top: 50px; }
 
 #hot_answer_container {
@@ -223,15 +232,16 @@
 #focus_answer_tabs {
   width: 880px;
   height: 45px;
+  background-image: url(../image/index/tab_bkg.png);
   background-repeat: no-repeat; }
 
-#my_interest_tab {
+.my_interest_tab {
   width: 200px;
   height: 45px;
   background-image: url(../image/index/my_interest_tab.png);
   background-repeat: no-repeat; }
 
-#my_interest_tab:hover {
+.my_interest_tab_active, #my_interest_tab:hover {
   background-image: url(../image/index/my_interest_tab_active.png);
   background-repeat: no-repeat; }
 
@@ -239,20 +249,21 @@
   width: 200px;
   height: 45px; }
 
-#hot_answer_tab {
+.hot_answer_tab {
   background-image: url(../image/index/hot_answer_tab.png);
   background-repeat: no-repeat; }
 
-#hot_answer_tab:hover {
+.hot_answer_tab_active, #hot_answer_tab:hover {
   background-image: url(../image/index/hot_answer_tab_active.png);
   background-repeat: no-repeat; }
 
 .tab_padding {
-  margin-left: -50px; }
+  margin-left: -58px; }
 
 #focus_people {
   width: 200px;
-  margin-left: 60px; }
+  margin-left: 60px;
+  margin-top: 50px; }
 
 #focus_people_tab {
   width: 200px;
