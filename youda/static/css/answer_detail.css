@@ -18,7 +18,7 @@ a:focus {
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17A9B8; }
+  background-color: #17a9b8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -28,11 +28,11 @@ a:focus {
   height: 90px; }
 
 .common_font {
-  color: #17A9B8;
+  color: #17a9b8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328CBE;
+  color: #328cbe;
   font-size: 11pt; }
 
 .dark_font {
@@ -56,7 +56,7 @@ a:focus {
   font-size: 10pt; }
 
 .border_bottom {
-  border-bottom: 0.25px solid #17A9B8; }
+  border-bottom: 0.25px solid #17a9b8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -115,14 +115,34 @@ a:focus {
 
 .left_bar {
   width: 60px;
-  float: left;
-  height: 210px; }
+  float: left; }
 
 .top_level_container {
   width: 820px;
-  float: left;
-  height: 210px;
+  float: right;
   padding-left: 15px; }
+
+.second_level_container {
+  width: 730px;
+  float: right;
+  padding-left: 15px; }
+
+.answer_user_detail {
+  width: 820px;
+  height: 20px;
+  line-height: 20px; }
+
+.response_text_container {
+  width: 820px;
+  padding-right: 30px;
+  margin-top: 20px;
+  line-height: 20px; }
+
+.response_image_container {
+  width: 820px; }
+
+.response_image_container img {
+  width: 790px; }
 
 .common_icon img {
   width: 60px;
@@ -158,12 +178,23 @@ a:focus {
   color: #666666;
   margin-top: 20px; }
 
+.time_and_comment_container {
+  width: 820px;
+  height: 25px;
+  line-height: 25px; }
+
 .time_icon_container {
-  width: 150px; }
+  width: 150px;
+  font-size: 10pt; }
 
 .comment_icon_container {
   width: 130px;
   padding-left: 30px; }
+
+.answer_comment_area {
+  width: 820px;
+  height: 200px;
+  background-color: #F0FCFC; }
 
 .mark_container {
   width: 120px;
@@ -235,7 +266,7 @@ a:focus {
   margin-right: 10px; }
 
 .spiltter {
-  color: #17A9B8;
+  color: #17a9b8;
   font-size: 9pt; }
 
 .comparator_container {
@@ -246,8 +277,4 @@ a:focus {
 
 .response_container {
   width: 880px;
-  height: 300px;
-  margin-top: 30px;
-  background-color: #ADDFAD; }
-
-/*# sourceMappingURL=answer_detail.css.map */
+  margin-top: 30px; }

@@ -53,13 +53,38 @@ width: $nav_with;
 .left_bar{
 	width: $left_bar_width;
 	float: left;
-	height: 210px;
 }
 .top_level_container{
 	width:  $nav_with - $left_bar_width;
-	float: left;
-	height: 210px;
+	float: right;
 	padding-left: 15px;
+}
+
+.second_level_container{
+	width:  $nav_with - $left_bar_width * 2 - 15px * 2;
+	float: right;
+	padding-left: 15px;
+}
+
+.answer_user_detail{
+	width:  $nav_with - $left_bar_width;
+	height:20px;
+	line-height:20px;
+}
+
+.response_text_container{
+	width:  $nav_with - $left_bar_width;
+	padding-right : 30px;
+	margin-top:20px;
+	line-height:20px;
+}
+
+.response_image_container{
+	width:  $nav_with - $left_bar_width;
+}
+
+.response_image_container img{
+	width:  $nav_with - $left_bar_width - 30px;
 }
 
 .common_icon img{
@@ -97,14 +122,27 @@ font-family: $font_ya_hei;
 color : $dark_color;
 margin-top: 20px;
 }
+.time_and_comment_container{
+	width: $nav_with - $left_bar_width;
+	height:25px;
+	line-height:25px;
+}
 
 .time_icon_container{
 	width: 150px;
+	font-size:10pt;
 }
 
 .comment_icon_container{
 	width: 130px;
 	padding-left: 30px;
+}
+
+.answer_comment_area{
+	width: $nav_with - $left_bar_width;
+	height:200px;
+	background-color:#F0FCFC;
+
 }
 .mark_container{
 	width: 120px;
@@ -175,6 +213,7 @@ margin-left: -5px;
 	line-height: 44px;
 	font-size: 10pt;
 }
+
 .only_common_schooler_replay_selecter{
 	width: 162px;
 	margin-left: 120px;
@@ -193,7 +232,5 @@ margin-left: -5px;
 
 .response_container{
 width: $nav_with;
-height: 300px;
 margin-top: 30px;
-background-color: #ADDFAD;
 }
