@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from apps.CommonDao import CommonDao
-from apps.models import Questions
+from apps.models import Questions, Answers, AnswersComments
 from django.db import transaction
 from time import sleep
 class QuestionService:
@@ -38,5 +38,46 @@ class QuestionService:
         if v==-1 or v==0:#返回多条或0条记录
             return -1;
         return v;
+    def getAnswersAndComments(self,question_id):
+        commonDao =  CommonDao();
+        answers_num = commonDao.tolist(Answers,question_id=question_id).count();
+        map_answer = {};#存放问题的数量和问题的详细信息
+        map_answer['answers_num'] = answers_num;
+        if answers_num>0:
+            answers = commonDao.tolist(Answers,question_id=question_id).order_by('-support_num');#得到改问题的回复，按点赞数量排序
+            list_obj = [];#存放所有的问题及问题的评论 
+            for answer in answers:
+                map_obj={};#存放该问题及该问题的评论
+                map_obj["user"]={'user_id':answer.user.user_id,'user_name':answer.user.user_name,'academy':answer.user.academy,
+                                 'head':answer.user.head,'entime':answer.user.entrance_time,'education':answer.user.education};
+                map_obj["answer"]={'answer_id':answer.answer_id,'answer_content':answer.answer_content,'publish_time':answer.publish_time,'support_num':answer.support_num,'anonymous':answer.anonymous,'comment_num':answer.comment_num};
+                
+                map_obj["comment_num"]=answer.comment_num;#记录该问题评论的数量
+                if answer.comment_num>0:#如果评论数量不等于0，则将评论存入map
+                    comments = commonDao.tolist(AnswersComments,answer=answer,parent_id=0).order_by('time');#得到该问题的第一条评论，并按时间排序
+                    list_comment=[];
+                    
+                    for comment in comments:
+                        map_comment={};
+                        #得到问题的第一条评论，评论分为第一条评论和对第一条评论的评论，这两种评论要分开处理
+                        map_comment["first_comment"]={'user_id':comment.user.user_id,'user_name':comment.user.user_name,'head':comment.user.head,'comment_time':comment.time,'content':comment.content};
+                        #得到第一条评论的评论，前端此处可以判断评论的数量，如果数量大于等于2，则说明存在对第一条评论的评论，否则不存在
+                        remain_comments = commonDao.tolist(AnswersComments,parent_id=comment.comment_id);
+                        list_remain_comments = [];#存放除了第一条评论的评论
+                        for remain_comment in remain_comments:
+                            map_remain_comment = {'user_id':remain_comment.user.user_id,'user_name':remain_comment.user.user_name,'head':remain_comment.user.head,'comment_time':remain_comment.time,'content':remain_comment.content};
+                            list_remain_comments.append(map_remain_comment);
+                        map_comment["remain_comments"]=list_remain_comments;
+                        
+                        list_comment.append(map_comment);
+                        
+                    map_obj["comments"]=list_comment;#得到所有的评论，包括第一条评论和第一条评论的评论
+                
+                list_obj.append(map_obj);#得到问题及该问题的评论
+        map_answer['answers'] = list_obj;
+                            
+        return map_answer;
+       
+        
             
     

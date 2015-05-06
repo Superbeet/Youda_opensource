@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from action import homeAction, topicAction,schoolmateAction, testAction,messageAction
+from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
+    questionAction
 
 
 urlpatterns = patterns('',
@@ -17,9 +18,12 @@ urlpatterns = patterns('',
     url(r'^topic/$',topicAction.index),#显示话题页
     url(r'^focustopic/$',topicAction.focusTopic),#关注话题
     url(r'^schooler/$',schoolmateAction.index),#显示校友页
-    url(r'focusschoolmate',schoolmateAction.focusSchoolmate),#关注校友
-    url(r'hotquestions',homeAction.showHotQuestions),#本校热门问答
-    url(r'helpquestions',homeAction.showHelpfulQuestions),#TA在求助
+    url(r'focusschoolmate/$',schoolmateAction.focusSchoolmate),#关注校友
+    url(r'hotquestions/$',homeAction.showHotQuestions),#本校热门问答
+    url(r'helpquestions/$',homeAction.showHelpfulQuestions),#TA在求助
+    url(r'questiondetail/question/(\d+)/$',questionAction.showQuestionDetail),#问题详情的问题
+    url(r'questiondetail/answer/(\d+)/$',questionAction.showAnswersAndComments),#问题详情的问题回复
+    
     #url(r'^message',messageAction.index),
 )
 #用于测试

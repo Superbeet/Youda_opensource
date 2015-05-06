@@ -44,8 +44,11 @@ def testGetQuestionDetail():
     questionService = QuestionService();
     o = questionService.getQuestionDetail(1);
     print o;
+def testGetAnswersAndComments():
+    questionService = QuestionService();
+    questionService.getAnswersAndComments(13);
 if __name__=='__main__':
-    testGetQuestionDetail();
+    testGetAnswersAndComments();
 
     
     
