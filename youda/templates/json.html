@@ -1,0 +1,13 @@
+
+<script src="/static/js/jquery.min.js"></script>
+<script>
+$.get("/hotquestions",
+   function(data){
+     alert(data.length);
+   },"json");
+   
+//$.get("/test2",
+//   function(data){
+//     alert('common '+data);
+//   });
+</script>

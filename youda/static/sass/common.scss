@@ -1,0 +1,81 @@
+$contentWidth : 1140px;
+$nav_with:880px;
+$base_color:#17A9B8;
+$base_havier_color:#328CBE;
+$dark_color:#666666;
+$active_color:#008899;
+$font_ya_hei:"Microsoft Yahei";
+
+
+.roundImg{
+	border : 3px solid #FFFFFF;
+	border-radius: 27px;
+	moz-border-radius:27px;
+}
+
+.fl{
+float:left;
+}
+.fr{
+	float:right;
+}
+.rec{
+width:250px;
+height: 95px;
+background-color: $base_color;
+}
+.baseMagTop{
+margin-top:7.5px;
+}
+.common_nav{
+width:70px;
+height: 90px;
+}
+.common_font{
+	color:$base_color;
+	font-size:11pt;
+}
+.havier_font{
+	color:$base_havier_color;
+		font-size:11pt;
+}
+.dark_font{
+	color:$dark_color;
+		font-size:11pt;
+}
+
+.common_rec_img{
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.common_icon{
+	width:60px;
+	height: 60px;
+	border-radius: 27px;
+	moz-border-radius:27px;
+
+}
+
+.font_all_black{
+
+	color:black;
+}
+.font_small{
+	font-size : 10pt;
+}
+
+.border_bottom{
+	border-bottom: 0.25px  solid $base_color;
+}
+.border_bottom_dark{
+	border-bottom: 0.25px  solid $dark_color;
+}
+
+
+.font_ya_hei{
+	font-family: $font_ya_hei;
+}
+
+.vertical-align{
+	vertical-align: middle;
+}

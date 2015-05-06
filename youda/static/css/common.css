@@ -1,0 +1,62 @@
+.roundImg {
+  border: 3px solid #FFFFFF;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.rec {
+  width: 250px;
+  height: 95px;
+  background-color: #17a9b8; }
+
+.baseMagTop {
+  margin-top: 7.5px; }
+
+.common_nav {
+  width: 70px;
+  height: 90px; }
+
+.common_font {
+  color: #17a9b8;
+  font-size: 11pt; }
+
+.havier_font {
+  color: #328cbe;
+  font-size: 11pt; }
+
+.dark_font {
+  color: #666666;
+  font-size: 11pt; }
+
+.common_rec_img {
+  padding-top: 10px;
+  padding-left: 10px; }
+
+.common_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.font_all_black {
+  color: black; }
+
+.font_small {
+  font-size: 10pt; }
+
+.border_bottom {
+  border-bottom: 0.25px solid #17a9b8; }
+
+.border_bottom_dark {
+  border-bottom: 0.25px solid #666666; }
+
+.font_ya_hei {
+  font-family: "Microsoft Yahei"; }
+
+.vertical-align {
+  vertical-align: middle; }
