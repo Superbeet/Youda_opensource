@@ -1,19 +1,36 @@
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>友答网</title>
-<link href="/static/css/index.css" rel="stylesheet" />
-<link href="/static/css/reset.css" rel="stylesheet" />
-<link href="/static/css/wigets.css" rel="stylesheet" />
 
 <!-- amazeui import -->
 <link rel="stylesheet" href="/static/css/amazeui.min.css" />
 <link rel="stylesheet" href="/static/css/amaze.min.css" />
+
 <link rel="canonical" href="http://www.uanswer.me" />
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/handlebars.min.js" />
-</script><script src="/static/js/amazeui.min.js"></script>
+</script>
+<script src="/static/js/amazeui.min.js"></script>
+<script src="/static/js/template-native.js"></script>
+
+<link href="/static/css/index.css" rel="stylesheet" />
+<link href="/static/css/reset.css" rel="stylesheet" />
+<link href="/static/css/wigets.css" rel="stylesheet" />
+
+
+
+{% include 'common_template.html' %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
 <!-- amazeui ending -->
 
 
@@ -92,7 +109,55 @@
 
 <div id="container">
 	<div id="content">
- {% block content %}{% endblock %}
+ {% block banner %} 
+		<div id="banner">
+			<div data-am-widget="slider" class="am-slider am-slider-default fl" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}'  id="banner_image">
+
+			
+			</div>
+			<div id="banner_content" class="fl">
+			<div class="rec" ></div>
+			<div class="rec baseMagTop"></div>
+			<div class="rec baseMagTop"></div>
+			</div>
+		</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var bannerdata = {
+	imageList : [{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦1'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦2'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦3'
+	}]
+};
+
+var bannerhtml = template('image_gallary',bannerdata);
+$('#banner_image').html(bannerhtml);
+
+
+	
+});
+
+</script>
+ {% endblock %}
+<div id="focus_area" class="fl">
+ {% block focus_area %}
+
+ {% endblock %}
+</div>
+<div id="focus_people" class="fr">
+ {% block focus_people %}
+
+ {% endblock %}
+</div>
 </div>
 </div>
 <!-- footer  -->

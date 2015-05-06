@@ -1,3 +1,9 @@
+a {
+  outline: none; }
+
+a:focus {
+  outline: none; }
+
 .roundImg {
   border: 3px solid #FFFFFF;
   border-radius: 27px;
@@ -50,8 +56,7 @@
   font-size: 10pt; }
 
 .border_bottom {
-  border-bottom: 0.25px solid #17a9b8; }
-
+ 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
 
@@ -60,6 +65,9 @@
 
 .vertical-align {
   vertical-align: middle; }
+
+.align_center {
+  text-align: center; }
 
 #all_answer_people_topic {
   width: 880px;

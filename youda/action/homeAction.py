@@ -13,6 +13,9 @@ focusService = None;
 
 def index(request):
     return render_to_response('home.html');
+
+def answer_detail(request):
+     return render_to_response('answer_detail.html');
 #显示我的关注下的所有内容
 def showMyFocus(request):
     focusService = FocusService();

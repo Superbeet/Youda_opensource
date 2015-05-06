@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
-from action import homeAction, topicAction,schoolmateAction, testAction
+from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
+    questionAction
 
 
 urlpatterns = patterns('',

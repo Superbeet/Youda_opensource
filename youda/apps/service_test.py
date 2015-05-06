@@ -8,6 +8,7 @@ from datetime import datetime
 from django.utils import timezone
 from django.db import transaction
 from service.FocusService import FocusService
+from service.QuestionService import QuestionService
 # 业务测试
 django.setup()
 commonDao = CommonDao();
@@ -39,8 +40,15 @@ def testaddfocusyopic():
     print fs.addFocusTopic(1,96);
     #o = commonDao.tolist(TopicFocus,user_id=1,topic_id=99);
     #print o
+def testGetQuestionDetail():
+    questionService = QuestionService();
+    o = questionService.getQuestionDetail(1);
+    print o;
+def testGetAnswersAndComments():
+    questionService = QuestionService();
+    questionService.getAnswersAndComments(13);
 if __name__=='__main__':
-    myfocus1();
+    testGetAnswersAndComments();
 
     
     
