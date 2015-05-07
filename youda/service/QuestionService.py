@@ -38,13 +38,13 @@ class QuestionService:
         if v==-1 or v==0:#返回多条或0条记录
             return -1;
         return v;
-    def getAnswersAndComments(self,question_id):
+    def getAnswersAndComments(self,question_id,page=PAGE,pagesize=PAGESIZE):
         commonDao =  CommonDao();
         answers_num = commonDao.tolist(Answers,question_id=question_id).count();
         map_answer = {};#存放问题的数量和问题的详细信息
         map_answer['answers_num'] = answers_num;
         if answers_num>0:
-            answers = commonDao.tolist(Answers,question_id=question_id).order_by('-support_num');#得到改问题的回复，按点赞数量排序
+            answers = commonDao.tolist(Answers,question_id=question_id).order_by('-support_num')[(page-1)*pagesize:pagesize];#得到改问题的回复，按点赞数量排序
             list_obj = [];#存放所有的问题及问题的评论 
             for answer in answers:
                 map_obj={};#存放该问题及该问题的评论
