@@ -318,92 +318,48 @@ var recommend_interest_schooler_data = {
 var recommend_interest_schooler_html = template('recommend_interest_schooler',recommend_interest_schooler_data);
 $('#interest_people_detail').html(recommend_interest_schooler_html);
 
+    $.ajax({
+        url : '/helpquestions',
+        type : 'get',
+        dataType : 'json',
+        success:function(result){
+            var people_and_answer_html = template('people_and_answer',result);
+            $('#focus_people').append(people_and_answer_html);
+        }
+    });
 
-var recommend_people_answer_data = {
-	recommendPeopleAnswerList : [{
-		'askerIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-		'askName':'徐子豪',
-		'answerName' : '大学里和毕业后有哪些是你万万没想到的',
-		'viewCount' : '123',
-		'commentCount' : '666',
-		'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-		'answerAgreeCount' : '5',
-		'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样',
-		'answerTime' : '2015-01-02  13:38'
-	}
-	]
-};
-
-var recommend_people_answer_html = template('recommend_people_answer',recommend_people_answer_data);
-$('#all_answer_people_topic').append(recommend_people_answer_html);
-
-var recommend_topic_answer_data = {
-	recommendTopicAnswerList : [{
-		'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-		'topicName' : '原型设计',
-		'askName' : '大学里和毕业后有哪些是你万万没想到的',
-		'viewCount' : '123',
-		'commentCount' : '6',
-		'askUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
-		'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-		'answerAgreeCount' : '6',
-		'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是',
-		'answerUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
-		'answerTime' : '2015-01-02  13:38  '
-	}
-	]
-};
-var recommend_topic_answer_html = template('recommend_topic_answer',recommend_topic_answer_data);
-$('#all_answer_people_topic').append(recommend_topic_answer_html);
-
-var recommend_people_new_ask_data = {
-	recommendPeopleNewAskList:[{
-		'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-		'askUserName' : '徐子豪',
-		'askName' : '大学里和毕业后有哪些是你万万没想到的？',
-		'viewCount' : '123',
-		'commentCount' : '6' ,
-		'askTime' : '2015-01-02  13:38'
-	}
-	]
-};
-
-var recommend_people_new_ask_html = template('recommend_people_new_ask',recommend_people_new_ask_data);
-$('#all_answer_people_topic').append(recommend_people_new_ask_html);
+$.ajax({
+    url : '/focus',
+    dataType : 'json',
+    success : function(result){
+        for(var i = 0 ; i < result.length ; i ++){
+            var data = result.data;
+            var type = data.type;
+            var html = '';
+            switch(type){
+                case 1:
+                    html = template('recommend_people_new_ask',data);
+                    break;
+                case 2:
+                    html = template('recommend_people_answer',data);
+                    break;
+                case 3 :
+                    html = template('recommend_topic_answer',data);
+                    break;
+                case 4:
+                    html = template('recommend_topic_answer_response',data);
+                    break;
+                case 5:
+                    html = template('recommend_answer_response',data);
+                    break;
+                default :
+            }
+             $('#all_answer_people_topic').append(recommend_people_new_ask_html);
+        }
+    }
+});
 
 
-var people_and_answer_data = {
-	'peopleAndAnswerList' : [{
-		'askName' : '大学里和毕业后有哪些是你万万没想到的',
-		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
-		'askUserName' : '徐子豪',
-		'askUserMajor' : '通信工程' ,
-		'askUserYearAndDegree' : '2011级本科'
-	},{
-		'askName' : '大学里和毕业后有哪些是你万万没想到的',
-		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
-		'askUserName' : '攀攀',
-		'askUserMajor' : '通信程' ,
-		'askUserYearAndDegree' : '2013级本科'
-	},{
-		'askName' : '大学里和毕业后有哪些是你万万没想到的',
-		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
-		'askUserName' : '钊钊',
-		'askUserMajor' : '信息管理' ,
-		'askUserYearAndDegree' : '2011级本科'
-	},{
-		'askName' : '大学里和毕业后有哪些是你万万没想到的',
-		'askUserIconUrl' : '/static/image/avatar-min-img.jpg',
-		'askUserName' : '叶聪',
-		'askUserMajor' : '不详' ,
-		'askUserYearAndDegree' : '2007级本科'
-	}
-
-	]
-};
-
-var people_and_answer_html = template('people_and_answer',people_and_answer_data);
-$('#focus_people').append(people_and_answer_html);
 
 
 });
