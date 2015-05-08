@@ -84,7 +84,7 @@
 
 
 <!-- 关注话题有了新的提问开始 -->
-<script type="text/html" id="recommend_topic_answer">
+<script type="text/html" id="recommend_topic_answer" charset="utf-8">
 <div class="topic_answer">
 <div class="topic_answer_left_bar fl">
 	<img src="<%=data.questioner_head %>" class="common_icon" />
@@ -108,7 +108,7 @@
 </div>
 <div>
 
-<span class="font_ya_hei dark_font font_small"><%=recommendTopicAnswerList[i].askUserShortIntroduce %></span>
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
 
 </div>
 
@@ -134,9 +134,9 @@
 </div>
 <br />
 <div class="topic_answer_detail_text_time ">
-<span class="fl font_small"><%=recommendTopicAnswerList[i].answerUserShortIntroduce %></span>
+<span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  /><%=recommendTopicAnswerList[i].answerTime %>
+<img src="/static/image/index/time_icon.png"  />回答时间
 </div>
 </div>
 </div>
@@ -148,7 +148,7 @@
 
 
 <!-- 关注话题有了新的回复开始 -->
-<script type="text/html" id="recommend_topic_answer_response">
+<script type="text/html" id="recommend_topic_answer_response" charset="utf-8">
 <div class="topic_answer">
 <div class="topic_answer_left_bar fl">
 	<img src="<%=data.questioner_head %>" class="common_icon" />
@@ -172,7 +172,7 @@
 </div>
 <div>
 
-<span class="font_ya_hei dark_font font_small"><%=recommendTopicAnswerList[i].askUserShortIntroduce %></span>
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
 
 </div>
 
@@ -198,9 +198,9 @@
 </div>
 <br />
 <div class="topic_answer_detail_text_time ">
-<span class="fl font_small"><%=recommendTopicAnswerList[i].answerUserShortIntroduce %></span>
+<span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  /><%=recommendTopicAnswerList[i].answerTime %>
+<img src="/static/image/index/time_icon.png"  />回答时间
 </div>
 </div>
 </div>
@@ -211,7 +211,7 @@
 <!-- 关注话题有了新的回复结束 -->
 
 <!-- 关注问题有了新的回复开始 -->
-<script type="text/html" id="recommend_answer_response">
+<script type="text/html" id="recommend_answer_response" charset="utf-8">
 <div class="topic_answer">
 <div class="topic_answer_left_bar fl">
 	<a href="/people/<%= data.questioner_id %>"><img src="<%=data.questioner_head %>" class="common_icon" /></a>
@@ -224,14 +224,14 @@
 <div class="people_answer_header_answer_name">
 <span class="common_font font_ya_hei"><%=data.questin_content %></span>
 <div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=recommendTopicAnswerList[i].viewCount %></span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=recommendTopicAnswerList[i].commentCount %></span>&nbsp;&nbsp;&nbsp;
+<img src="/static/image/index/view_icon.png"  /><span class="view_count">122</span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count">12</span>&nbsp;&nbsp;&nbsp;
 
 </div>
 </div>
 <div>
 
-<span class="font_ya_hei dark_font font_small"><%=recommendTopicAnswerList[i].askUserShortIntroduce %></span>
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
 
 </div>
 
@@ -246,7 +246,7 @@
 <div class="topic_answer_detail_agree_div">
 <div class="topic_answer_detail_agree_icon">
 
-<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=recommendTopicAnswerList[i].answerAgreeCount %></span>
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count">123</span>
 </div>
 </div>
 </div>
@@ -257,9 +257,9 @@
 </div>
 <br />
 <div class="topic_answer_detail_text_time ">
-<span class="fl font_small"><%=recommendTopicAnswerList[i].answerUserShortIntroduce %></span>
+<span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  /><%=recommendTopicAnswerList[i].answerTime %>
+<img src="/static/image/index/time_icon.png"  />回答时间
 </div>
 </div>
 </div>
@@ -273,7 +273,7 @@
 
 
 <!-- 关注人物新的回答开始 -->
-<script type="text/html" id="recommend_people_answer">
+<script type="text/html" id="recommend_people_answer" charset="utf-8">
 
 <div class="people_answer">
 	<div class="people_answer_left_bar fl">
@@ -301,7 +301,7 @@
 	<div class="people_answer_detail border_bottom_dark">
 		<div class="people_answer_detail_left_bar fl">
 			<div class="people_answer_detail_pic_div">
-				<a href="/people/<%= data.answerer_id %>"><img src="<%=data.answerUserIconUrl%>" class="common_icon" /></a>
+				<a href="/people/<%= data.answerer_id %>"><img src="<%=data.answer_head%>" class="common_icon" /></a>
 			</div>
 			<div class="people_answer_detail_agree_div">
 				<div class="people_answer_detail_agree_icon">
@@ -315,7 +315,7 @@
 			<%=data.answer_content %>
 		</div><br />
 		<div class="people_answer_detail_text_time">
-			<img src="/static/image/index/time_icon.png" /><%=recommendPeopleAnswerList[i].answerTime %>
+			<img src="/static/image/index/time_icon.png" />回答时间
 		</div>
 	</div>
 </div>
@@ -327,7 +327,7 @@
 
 
 <!-- 人物与话题开始 -->
-	<script type="text/html" id="people_and_answer">
+	<script type="text/html" id="people_and_answer" charset="utf-8">
 		<% for(i = 0 ; i < data.length ; i ++){ %>
 		<div class="people_and_answer">
 			<div class="people_and_answer_title"><a href="question/<%= data.question_id %>"><%= data.question_content %></a></div>
@@ -343,7 +343,7 @@
 
 
 <!--  推荐问答开始 -->
- <script type="text/html" id="recommend_answer">
+ <script type="text/html" id="recommend_answer" charset="utf-8">
 
 <% for(i = 0 ; i < recommendAnswerList.length ; i++){ %>
 <div class="answer">
@@ -402,7 +402,7 @@
 
 
 <!--  推荐人物新问答开始 -->
- <script type="text/html" id="recommend_people_new_ask">
+ <script type="text/html" id="recommend_people_new_ask" charset="utf-8">
 <div class="people_new_ask">
 <div class="people_ask_left_bar fl">
 	<a href="/people/<%=data.questioner_id %>"><img src="<%=data.questioner_head %>" class="common_icon" /></a>

@@ -317,7 +317,6 @@ var recommend_interest_schooler_data = {
 
 var recommend_interest_schooler_html = template('recommend_interest_schooler',recommend_interest_schooler_data);
 $('#interest_people_detail').html(recommend_interest_schooler_html);
-
     $.ajax({
         url : '/helpquestions',
         type : 'get',
@@ -331,30 +330,33 @@ $('#interest_people_detail').html(recommend_interest_schooler_html);
 $.ajax({
     url : '/focus',
     dataType : 'json',
+    type : 'get',
     success : function(result){
+        var data = result.data;
         for(var i = 0 ; i < result.length ; i ++){
-            var data = result.data;
-            var type = data.type;
+           var currentIndexData = data[i];
+            var type = currentIndexData.type;
+            console.log(currentIndexData.data);
             var html = '';
             switch(type){
                 case 1:
-                    html = template('recommend_people_new_ask',data);
+                    html = template('recommend_people_new_ask',currentIndexData);
                     break;
                 case 2:
-                    html = template('recommend_people_answer',data);
+                    html = template('recommend_people_answer',currentIndexData);
                     break;
                 case 3 :
-                    html = template('recommend_topic_answer',data);
+                    html = template('recommend_topic_answer',currentIndexData);
                     break;
                 case 4:
-                    html = template('recommend_topic_answer_response',data);
+                    html = template('recommend_topic_answer_response',currentIndexData);
                     break;
                 case 5:
-                    html = template('recommend_answer_response',data);
+                    html = template('recommend_answer_response',currentIndexData);
                     break;
                 default :
             }
-             $('#all_answer_people_topic').append(recommend_people_new_ask_html);
+             $('#all_answer_people_topic').append(html);
         }
     }
 });
