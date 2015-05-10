@@ -148,28 +148,141 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 <img src="/static/image/index/comment_icon.png" />123
 </div>
 
-</div> 
-<div class="answer_comment_area">
+</div>
+    <!-- 未完成的头部小圆点 -->
+     <!--
+    <div class="comment_header_point fl"></div>
+    -->
+<div class="answer_comment_area fl">
+
+    <div class="answer_comment">
 	<div class="left_bar">
 	<a href="#">
 	<div class="common_icon" >
 		<img src="/static/image/people_detail_pic_60_60.jpg" />
 	</div>
 	</a>
-		<div class="agree_count_area">
-				<img src="/static/image/index/agree_icon.png" />123
-		
-
-		</div>
-
 	</div>
 	<div class="second_level_container">
-	右边的右边</div>
+	<div class="user_name_and_time_container">
+        <div class="common_font fl comment_user_name_container">徐子豪</div>   <div class="time_icon_container fl comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-01 14:30
+</div>
+        <div class="fr common_font comment_reply_container">回复</div>
+    </div>
+        <div class="comment_context_container fl dark_font">
+            没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！
 
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+    <!-- 撑字数用的 -->
+        <div class="answer_comment">
+	<div class="left_bar">
+	<a href="#">
+	<div class="common_icon" >
+		<img src="/static/image/people_detail_pic_60_60.jpg" />
 	</div>
+	</a>
+	</div>
+	<div class="second_level_container">
+	<div class="user_name_and_time_container">
+        <div class="common_font fl comment_user_name_container">杨钊</div>   <div class="time_icon_container fl comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-01 14:30
+</div>
+        <div class="fr common_font comment_reply_container">回复</div>
+    </div>
+        <div class="comment_context_container fl dark_font">
+            回复@徐子豪 有种你下课别走
+
+
+        </div>
+
+
+    </div>
+    </div>
+    <!-- 撑字数用的 -->
+    <div class="comment_reply_input_area">
+        <div class="comment_replt_input fl">
+    <input type="text" class="am-form-field " placeholder="有话不说憋着多难受啊" />
+    </div>
+<div class="comment_reply_submit_area fl">
+        <button class="am-btn am-btn-secondary fr">提交评论</button>
+<div class="common_selecter comment_reply_sheld_name_selecter fr">
+   <a href="#"> <img src="/static/image/index/radio_unselect.png" />
+    匿名回复
+   </a>
+</div>
+
+
+</div>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+<div class="page_bar_area fl">
+<div class="page_bar_container">
+<ul class="page_bar" fl>
+<li><a href="#"><div class=""><div class="pager_content fl">上一页</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">1</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">2</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">3</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">4</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">...</div><div class="pager_point fl"></div></div></a></li>
+<li><a href="#"><div class="pager_container"><div class="pager_content fl">5</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+<li><a href="#"><div class=""><div class="pager_content fl">下一页</div><div class="pager_point fl pager_container_normal"></div></div></a></li>
+
+</ul>
+</div>
+<div class="pager_bkg_container fl">
+</div>
+</div>
+<div class="answer_area">
+<div class="answer_content_input_area">
+    <textarea></textarea>
+
+</div>
+<div class="answer_submit_area fl">
+        <button class="am-btn am-btn-secondary fr">提交回答</button>
+<div class="common_selecter comment_reply_sheld_name_selecter fr">
+   <a href="#"> <img src="/static/image/index/radio_unselect.png" />
+    匿名回复
+   </a>
+</div>
 </div>
 
 </div>
+
+
+
+<script type="text/javascript">
+$('.pager_container').on('mouseover',function(){
+$(this).addClass('pager_container_active');
+$(this).children('.pager_point').removeClass('pager_container_normal');
+});
+$('.pager_container').on('mouseout',function(){
+$(this).removeClass('pager_container_active');
+$(this).children('.pager_point').addClass('pager_container_normal');
+});
+$(document).ready(function(){
+var bar_count = $('.page_bar li').length;
+var width = bar_count * 70;
+$('.page_bar').width(width);
+});
+
+</script>
 
 
 {% endblock %}

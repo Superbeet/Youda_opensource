@@ -38,19 +38,19 @@ class QuestionService:
         if v==-1 or v==0:#返回多条或0条记录
             return -1;
         return v;
-    def getAnswersAndComments(self,question_id):
+    def getAnswersAndComments(self,question_id,page=PAGE,pagesize=PAGESIZE):
         commonDao =  CommonDao();
         answers_num = commonDao.tolist(Answers,question_id=question_id).count();
         map_answer = {};#存放问题的数量和问题的详细信息
         map_answer['answers_num'] = answers_num;
         if answers_num>0:
-            answers = commonDao.tolist(Answers,question_id=question_id).order_by('-support_num');#得到改问题的回复，按点赞数量排序
+            answers = commonDao.tolist(Answers,question_id=question_id).order_by('-support_num')[(page-1)*pagesize:pagesize];#得到改问题的回复，按点赞数量排序
             list_obj = [];#存放所有的问题及问题的评论 
             for answer in answers:
                 map_obj={};#存放该问题及该问题的评论
                 map_obj["user"]={'user_id':answer.user.user_id,'user_name':answer.user.user_name,'academy':answer.user.academy,
                                  'head':answer.user.head,'entime':answer.user.entrance_time,'education':answer.user.education};
-                map_obj["answer"]={'answer_id':answer.answer_id,'answer_content':answer.answer_content,'publish_time':answer.publish_time,'support_num':answer.support_num,'anonymous':answer.anonymous,'comment_num':answer.comment_num};
+                map_obj["answer"]={'answer_id':answer.answer_id,'answer_content':answer.answer_content,'publish_time':answer.publish_time,'support_num':answer.support_num,'anonymous':answer.anonymous};
                 
                 map_obj["comment_num"]=answer.comment_num;#记录该问题评论的数量
                 if answer.comment_num>0:#如果评论数量不等于0，则将评论存入map

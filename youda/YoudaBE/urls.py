@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     url(r'hotquestions/$',homeAction.showHotQuestions),#本校热门问答
     url(r'helpquestions/$',homeAction.showHelpfulQuestions),#TA在求助
     url(r'questiondetail/question/(\d+)/$',questionAction.showQuestionDetail),#问题详情的问题
-    url(r'questiondetail/answer/(\d+)/$',questionAction.showAnswersAndComments),#问题详情的问题回复
+    url(r'questiondetail/answer/(\d+)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
     
     #url(r'^message',messageAction.index),
 )

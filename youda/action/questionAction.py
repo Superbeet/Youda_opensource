@@ -18,11 +18,11 @@ def showQuestionDetail(request,question_id):
     if o!=-1:
         return render_to_response('home_test.html',{'QUESTION':o});
     return render_to_response('home_test.html');
-#问题的回复及评论
-def showAnswersAndComments(request,question_id):
+#问题的回复及评论,question_id 问题id，page 第几页
+def showAnswersAndComments(request,question_id,page):
     questionService = QuestionService();
     question_id = question_id;
-    data = questionService.getAnswersAndComments(13);
+    data = questionService.getAnswersAndComments(13,1);
     DATA = json.dumps(data,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json"); #json格式返回数据
     

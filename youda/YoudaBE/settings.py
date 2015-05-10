@@ -79,15 +79,15 @@ DATABASES = {
 
 #阿里云数据库地址
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dev_youda',
-#         'USER': 'sunny',
-#         'PASSWORD': 'zhangpan',
-#         'HOST': 'rds5w5r280o8rsg0dqdhr.mysql.rds.aliyuncs.com',
-#         'PORT': '3306',
-#     }
-# }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'youda2_dev',
+#          'USER': 'youdawang',
+#          'PASSWORD': 'Superbeet528979',
+#          'HOST': 'rdsa5d5jn2udjgqubak2n.mysql.rds.aliyuncs.com',
+#          'PORT': '3306',
+#      }
+#  }
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
