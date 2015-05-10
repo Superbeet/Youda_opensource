@@ -16,11 +16,11 @@ class QuestionAdmin(admin.ModelAdmin):
                         'attention_num',
                         'invation_num',
                         'has_attach',
-                        'created_at',
-                        'updated_at',
+#                         'created_at',
+#                         'updated_at',
                     )
     
-    list_filter = ('created_at',)
+#     list_filter = ('created_at',)
     search_fields = ('title','author__user__username') #Foreign key
     
     # Inner function to show signature of a certain user
