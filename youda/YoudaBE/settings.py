@@ -62,7 +62,7 @@ WSGI_APPLICATION = 'YoudaBE.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'dev_youda',
+         'NAME': 'dev_youda_2',
          'USER': 'root',
          'PASSWORD': '',
          'HOST': '127.0.0.1',
@@ -119,9 +119,11 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 TEMPLATE_DIRS = (
-   BASE_DIR+'/templates/',
-   BASE_DIR+'/static/template/',
+   BASE_DIR + '/templates/',
+   BASE_DIR + '/static/template/',
+   BASE_DIR + '/templates/test/'
 )
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
           os.path.join(BASE_DIR, 'static').replace('\\','/'),
