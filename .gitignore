@@ -58,3 +58,6 @@ docs/_build/
 target/
 *.pydevproject
 youda/db.sqlite3
+
+# DB migrations
+youda/apps/migration*/
