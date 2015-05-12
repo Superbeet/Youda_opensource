@@ -9,7 +9,7 @@ from django.core.exceptions import MultipleObjectsReturned
 class CommonDao(models.Manager):
     PAGE = 1; #第几页
     PAGESIZE = 5; #页面大小
-    cursor = connection.cursor();
+    #cursor = connection.cursor();
     #===========================================================================
     # 向数据库中插入一条记录
     # @oo为类名  @o 为要添加到数据库的任意对象

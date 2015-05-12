@@ -35,7 +35,7 @@ def showHotQuestions(request):
     DATA = json.dumps(rows,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
 
-#他在求助
+#他在求助 
 def showHelpfulQuestions(request):
     #user_id = request.GET['user_id'];
     questionService = QuestionService();
