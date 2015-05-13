@@ -33,11 +33,162 @@
 {% endblock %}
 <!-- amazeui ending -->
 
+<style>
 
+.new_answer_container{
+        background-color: #EFFCFC;
+        border:1px solid #1EA4AC;
+        -moz-border-radius: 5px;      /* Gecko browsers */
+        -webkit-border-radius: 5px;   /* Webkit browsers */
+         border-radius:5px;            /* W3C syntax */
+    }
+.am-modal-no-btn .am-modal-dialog{
+      background-color: #EFFCFC;
+     -moz-border-radius: 5px;      /* Gecko browsers */
+        -webkit-border-radius: 5px;   /* Webkit browsers */
+         border-radius:5px;
+}
+
+.dialog_close_btn{
+    background-color: #1EA4AC;
+    color: white;
+    width: 24px;
+    -moz-border-radius: 12px;      /* Gecko browsers */
+    -webkit-border-radius: 12px;   /* Webkit browsers */
+    border-radius:12px;
+}
+    .am-modal-hd .am-close{
+        right: 10px;
+        top: 15px;
+    }
+    .am-modal-bd{
+        padding-left: 60px;
+    padding-right: 60px;;
+    }
+    .new_answer_description h1{
+        color:#1EA4AC;
+        font-size: 13pt;
+        text-align: left;
+         margin-top: 15px;
+         margin-bottom: 15px;
+    }
+    .new_answer_description p{
+        color:#666666;
+        font-size: 10pt;
+        line-height: 16px;
+        text-align: left;
+        margin:0px;
+    }
+    .new_answer_description h2{
+        color:#666666;
+        font-size: 12pt;
+        text-align: left;
+           margin-top: 10px;
+         margin-bottom: 10px;
+    }
+    .new_answer_description h3{
+        color:#666666;
+        font-size: 10pt;
+        text-align: left;
+           margin-top: 10px;
+         margin-bottom: 10px;
+        font-weight:normal;
+    }
+.new_answer_form_container{
+    width: 100%;
+}
+    .new_answer_content_input{
+        width: 100%;
+        height: 30px;
+        margin-top: 15px;
+    }
+    .new_answer_desc_input{
+        width: 100%;
+        height: 45px;
+         margin-top: 15px;
+    }
+    .common_input_border{
+        border:1.5px solid #1EA4AC;
+        -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px;            /* W3C syntax */
+    }
+    .common_button_border{
+         background-color: #EFFCFC;
+        border:1.5px solid #1EA4AC;
+        -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+        width: 120px;
+    height: 30px;
+        line-height: 30px;
+        padding: 0px;
+        margin: 0px;
+    }
+       .common_button_border:hover{
+background-color: #1EA4AC;
+           color:white;
+       }
+
+
+</style>
 </head>
 
 <body>
+<!-- newAnswerPoperDiv Begin -->
+ <div class="am-modal am-modal-no-btn new_answer_container" tabindex="-1" id="newAnswer">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">
+      <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
+    </div>
+    <div class="am-modal-bd">
+    <div class="new_answer_description">
+    <h1>提问原则</h1>
+        <p>真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h2>禁止情况</h2>
+         <p>真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h3>完整的提问建议可查看<a href="#">友答的提问规范有哪些</a>以及<a href="#">如何提一个好问题</a></h3>
 
+    </div>
+
+        <div class="new_answer_form_container">
+    <input type="text" placeholder="一句话描述你的问题(必填)" class="new_answer_content_input common_input_border" />
+    <input type="text" placeholder="问题补充(选填)" class="new_answer_desc_input common_input_border" />
+            <div class="topic_selecter_container">
+            <button class="am-btn common_button_border" data-am-collapse="{target: '#collapse-nav'}">选择话题类型 <i class="am-icon-bars"></i></button>
+            或 <button class="am-btn common_button_border">创建新的话题</button>选择话题类型，系统将推荐更合适的校友回答您的问题
+            <nav>
+                <ul id="collapse-nav" class="am-nav am-collapse">
+                 <li><a href="">开始使用</a></li>
+                 <li><a href="">CSS 介绍</a></li>
+                 <li class="am-active"><a href="">JS 介绍</a></li>
+                 <li><a href="">功能定制</a></li>
+                </ul>
+            </nav>
+                </div>
+             <div class="commit_container">
+                  <button class="am-btn am-btn-primary fr">发布问题</button>
+            <button class="am-btn am-btn-default fr">我要发文章</button>
+
+
+             </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- newAnswerPoperDiv End-->
 <!-- header  -->
 <div id="header_bg" data-am-sticky>
 	<div id="header">
@@ -64,7 +215,7 @@
 
 		<div id="newPoper" class="fr">
 
-			<a href="#">
+			<a href="javascript: void(0)" data-am-modal="{target:'#newAnswer',width: 900, height: 600}">
 			<div id="newPoperText">
 				新提问
 </div>
