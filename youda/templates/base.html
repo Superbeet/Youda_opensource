@@ -64,7 +64,67 @@
     </div>
 
         <div class="new_answer_form_container">
-    <input type="text" placeholder="一句话描述你的问题(必填)" class="new_answer_content_input common_input_border" />
+            <div id="doc-dropdown-justify-js">
+  <div class="am-dropdown new_answer_input_container" id="new_answer_input_container">
+      <input type="text" placeholder="一句话描述你的问题(必填)" class="new_answer_content_input common_input_border am-dropdown-toggle" id="new_answer_content_input" />
+    <div class="am-dropdown-content new_answer_content_recomman_container">
+
+        <p class="havier_font">您想问的是不是：</p>
+        <div class="topic_answer_list_content topic_answer_list_content_new_answer">
+		<ul>
+			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+			<!-- 以下为话题充字数用 -->
+			<li>
+			<div class="topic_title fl ">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+
+			<!-- 以为话题充字数用 -->
+		</ul>
+
+		</div>
+        <p class="havier_font">都不是，我要提一个新问题>>></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  $('#new_answer_content_input').on('focus',function(){
+$('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
+  });
+
+
+</script>
+
+
+
+
+
     <input type="text" placeholder="问题补充(选填)" class="new_answer_desc_input common_input_border" />
             <div class="topic_selecter_container">
             <div class="am-dropdown" data-am-dropdown>

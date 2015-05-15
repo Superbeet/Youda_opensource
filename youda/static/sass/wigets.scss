@@ -447,3 +447,40 @@ background-color: #1EA4AC;
     .commit_container{
           margin-top: 15px;
     }
+   .new_answer_input_container{
+     width: 100%;
+   }
+   .new_answer_content_recomman_container{
+     width: 100%;
+   }
+
+ //answer list recommand
+.topic_answer_list_content{
+	width: $nav_with;
+	height: 180px;
+	background-color: #F9FFFF;
+}
+.topic_answer_list_content ul{
+	list-style: none;
+	padding-left: 0px;
+  padding-right: 0px;
+}
+.topic_answer_list_content ul li{
+	height: 35px;
+	line-height: 35px;
+}
+.topic_answer_list_content_new_answer{
+  height: auto;
+width: 745px;
+}
+
+.topic_answer_list_content_new_answer ul li{
+	height: 30px;
+	line-height: 30px;
+  color: $dark_color;
+  font-size: 10pt;
+}
+.new_answer_content_recomman_container p{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
