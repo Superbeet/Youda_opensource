@@ -3,7 +3,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
-    questionAction
+    questionAction, loginAction
 
 
 urlpatterns = patterns('',
@@ -31,5 +31,8 @@ urlpatterns +=patterns('',
     url(r'testjson',testAction.test1),
     url(r'test2',testAction.test2),
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
+    url(r'fileupload',loginAction.headUpload),
+    url(r'readheadfile',loginAction.readHeadFile),
+    url(r'contact',testAction.contact),
                        
 )
