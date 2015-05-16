@@ -135,19 +135,6 @@ a:focus {
   width: 880px;
   height: 30px; }
 
-.topic_answer_list_content {
-  width: 880px;
-  height: 180px;
-  background-color: #F9FFFF; }
-
-.topic_answer_list_content ul {
-  list-style: none;
-  padding-left: 0px; }
-
-.topic_answer_list_content ul li {
-  height: 35px;
-  line-height: 35px; }
-
 .recommend_hot_topic_icons {
   width: 880px;
   height: 130px; }

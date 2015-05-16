@@ -33,11 +33,130 @@
 {% endblock %}
 <!-- amazeui ending -->
 
+<style>
 
+</style>
 </head>
 
 <body>
+<!-- newAnswerPoperDiv Begin -->
+ <div class="am-modal am-modal-no-btn new_answer_container" tabindex="-1" id="newAnswer">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">
+      <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
+    </div>
+    <div class="am-modal-bd">
+    <div class="new_answer_description">
+    <h1>提问原则</h1>
+        <p>真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h2>禁止情况</h2>
+         <p>真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h3>完整的提问建议可查看<a href="#">友答的提问规范有哪些</a>以及<a href="#">如何提一个好问题</a></h3>
 
+    </div>
+
+        <div class="new_answer_form_container">
+            <div id="doc-dropdown-justify-js">
+  <div class="am-dropdown new_answer_input_container" id="new_answer_input_container">
+      <input type="text" placeholder="一句话描述你的问题(必填)" class="new_answer_content_input common_input_border am-dropdown-toggle" id="new_answer_content_input" />
+    <div class="am-dropdown-content new_answer_content_recomman_container">
+
+        <p class="havier_font">您想问的是不是：</p>
+        <div class="topic_answer_list_content topic_answer_list_content_new_answer">
+		<ul>
+			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+			<!-- 以下为话题充字数用 -->
+			<li>
+			<div class="topic_title fl ">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+
+			<!-- 以为话题充字数用 -->
+		</ul>
+
+		</div>
+        <p class="havier_font">都不是，我要提一个新问题>>></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  $('#new_answer_content_input').on('focus',function(){
+$('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
+  });
+
+
+</script>
+
+
+
+
+
+    <input type="text" placeholder="问题补充(选填)" class="new_answer_desc_input common_input_border" />
+            <div class="topic_selecter_container">
+            <div class="am-dropdown" data-am-dropdown>
+  <button class="am-btn common_button_border am-dropdown-toggle" data-am-dropdown-toggle>选择话题类型 <span class="am-icon-caret-down"></span></button>
+  <ul class="am-dropdown-content">
+
+    <li><a href="#">快乐的方式不只一种</a></li>
+    <li class="am-active"><a href="#">最荣幸是</a></li>
+    <li><a href="#">谁都是造物者的光荣</a></li>
+    <li class="am-disabled"><a href="#">就站在光明的角落</a></li>
+    <li class="am-divider"></li>
+    <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+  </ul>
+</div>
+            或 <button class="am-btn common_button_border">创建新的话题</button>选择话题类型，系统将推荐更合适的校友回答您的问题
+
+                </div>
+             <div class="commit_container">
+                  <button class="am-btn fr submit_question_btn">发布问题</button>
+                 <button class="am-btn  fr to_add_paper_btn">我要发文章</button>
+
+
+             </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- newAnswerPoperDiv End-->
 <!-- header  -->
 <div id="header_bg" data-am-sticky>
 	<div id="header">
@@ -64,7 +183,7 @@
 
 		<div id="newPoper" class="fr">
 
-			<a href="#">
+			<a href="javascript: void(0)" data-am-modal="{target:'#newAnswer',width: 900, height: 600}">
 			<div id="newPoperText">
 				新提问
 </div>
