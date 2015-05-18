@@ -3,10 +3,10 @@
 from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
-from apps.models import Users, Questions, Topics, UsersFocus, Category
+from apps.models import Users, Questions, Topics, UsersFocus
 from datetime import datetime
 from django.utils import timezone
-from django.db import transaction
+from django.db import transaction, connection
 
 #commonDao测试
 
@@ -58,12 +58,13 @@ def queryPagesObjects():
 def executeSql():
     #commonDao.cursor.execute("SELECT * FROM users where user_id=%s and user_name = %s",[2,'tomcat']);#整数也要用%s 不然报错
     sql = "SELECT * FROM users where user_id=%s";
-    commonDao.cursor.execute(sql,1);#建议用这种方式
+    cursor = connection.cursor();
+    cursor.execute(sql,[ "';delete from users where 'a'='a" ]);#建议用这种方式
     #row = commonDao.cursor.fetchone();
     #row = commonDao.cursor.fetchall();
-    row = commonDao.dictfetchall(commonDao.cursor)
+    row = commonDao.dictfetchall(cursor)
     if(len(row)>0):
-        print row[0]['user_name'];
+        print row;
     #transaction.commit_unless_managed()#django 1.5和之前会要这个
 def executesql_delte():
     sql = 'delete from users where user_id=%s';
@@ -75,4 +76,4 @@ def demo():
     question = commonDao.toget(Questions,question_id=13);
     commonDao.todele(Questions, question);
 if __name__=='__main__':
-    listObjects();
+    executeSql();

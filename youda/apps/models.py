@@ -283,8 +283,8 @@ class Users(models.Model):
     
 class UsersFocus(models.Model):
     focus_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey(Users, blank=True, null=True)
-    schoolmate = models.ForeignKey(Users, blank=True, null=True)
+    user = models.ForeignKey(Users, blank=True, null=True,related_name="all_users")
+    schoolmate = models.ForeignKey(Users, blank=True, null=True,related_name="all_focus_users")
     focus_time = models.DateTimeField(blank=True,default=datetime.now)
     class Meta:
         managed = False

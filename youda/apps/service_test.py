@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.db import transaction
 from service.FocusService import FocusService
 from service.QuestionService import QuestionService
+from util.default_class import default_class
 # 业务测试
 django.setup()
 commonDao = CommonDao();
@@ -53,8 +54,12 @@ def testshowHelpfulQuestions():
     questionService = QuestionService();
     map = questionService.getHelpfulQuestions(1);
     print map;
+def sqltest():
+    demo = default_class();
+    list = ['or','and',"''",'delete'];
+    print demo.Sql_Injection(list);
 if __name__=='__main__':
-    myfocus_test();
+    sqltest();
 
     
     
