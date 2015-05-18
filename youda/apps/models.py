@@ -47,15 +47,16 @@ class AnswersComments(models.Model):
 
 class Articles(models.Model):
     article_id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField()
+    user = models.ForeignKey('Users')
     article_title = models.CharField(max_length=255, blank=True)
     article_detail = models.TextField(blank=True)
-    topic_id = models.IntegerField(blank=True, null=True)
-    publish_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
+    topic = models.ForeignKey('Topics', blank=True, null=True)
+    publish_time = models.DateTimeField(blank=True, null=True)
     active_time = models.DateTimeField(blank=True, null=True)
     browse_num = models.IntegerField(blank=True, null=True)
     comment_num = models.IntegerField(blank=True, null=True)
     attention_num = models.IntegerField(blank=True, null=True)
+
 
     class Meta:
         managed = False
@@ -80,20 +81,7 @@ class Associations(models.Model):
         return u'%s %s %s %s' % (self.ass_id, self.user,self.ass_name,self.position)
     objects = models.Manager()
     common_objects = CommonDao();
-    
-class Category(models.Model):
-    category_id = models.IntegerField(primary_key=True)
-    title = models.CharField(max_length=128, blank=True)
-    parent_id = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'category'
-    def __unicode__(self):
-        return u'%s %s %s' % (self.category_id, self.title,self.parent_id)
-    objects = models.Manager()
-    common_objects = CommonDao();
-        
+         
 class InvitationUsers(models.Model):
     invitation_id = models.IntegerField(primary_key=True)
     question = models.ForeignKey('Questions',)#
@@ -201,10 +189,9 @@ class Questions(models.Model):
     
 class QuestionsFocus(models.Model):
     focus_id = models.IntegerField(primary_key=True)
-    question_id = models.IntegerField(blank=True, null=True)
-    user_id = models.IntegerField(blank=True, null=True)
-    focus_time = models.IntegerField(blank=True, null=True)
-
+    question = models.ForeignKey(Questions, blank=True, null=True)
+    user = models.ForeignKey('Users', blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True, default=datetime.now)
     class Meta:
         managed = False
         db_table = 'questions_focus'
@@ -248,9 +235,9 @@ class Topics(models.Model):
     
 class TopicFocus(models.Model):
     focus_id = models.IntegerField(primary_key=True)
-    topic_id = models.IntegerField(blank=True, null=True)
-    user_id = models.IntegerField(blank=True, null=True)
-    focus_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
+    topic = models.ForeignKey('Topics', blank=True, null=True)
+    user = models.ForeignKey('Users', blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True, default=datetime.now)
 
     class Meta:
         managed = False
@@ -296,10 +283,9 @@ class Users(models.Model):
     
 class UsersFocus(models.Model):
     focus_id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField(blank=True, null=True)
-    schoolmate_id = models.IntegerField(blank=True, null=True)
-    focus_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
-
+    user = models.ForeignKey(Users, blank=True, null=True)
+    schoolmate = models.ForeignKey(Users, blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True,default=datetime.now)
     class Meta:
         managed = False
         db_table = 'users_focus'  
