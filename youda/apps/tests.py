@@ -23,11 +23,11 @@ django.setup()
 commonDao = CommonDao();
 def addObjects():
     user1 = Users(user_name='apache', password=123, gender=1, power=1, email='1724241758@qq.com', verify_email=1, first_login=1, 
-                  cur_state=1, head='1',rem_name= 0,auto_login= 0, introduction='南京有点大学',message= 10, fans_num=10, visit_num=10, agree_num=40, thanks_num=10, integral=200, affiliate_flag=0, school_name='njupt', academy='计算机学院', entrance_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S"), education=2);
-    user2 = commonDao.toget(Users,user_id=19)
-    topic1 = commonDao.toget(Topics,topic_id=1)
-    question = Questions(user=user2,question_content='how to learn python',question_detail='which books should i to read?',
-                         topic=topic1,active_time=datetime.now(),browse_num=100,answer_num=20,want_answer_num=20,attention_num=20,invation_num=5,has_attach=1);#IntegrityError
+                  cur_state=1, head='1',rem_name= 0,auto_login= 0, introduction='南京有点大学',message_num= 10, fans_num=10, visit_num=10, agree_num=40, thanks_num=10, integral=200, affiliate_flag=0);
+    #user2 = commonDao.toget(Users,user_id=19)
+    #topic1 = commonDao.toget(Topics,topic_id=1)
+    #question = Questions(user=user2,question_content='how to learn python',question_detail='which books should i to read?',
+    #                  topic=topic1,active_time=datetime.now(),browse_num=100,answer_num=20,want_answer_num=20,attention_num=20,invation_num=5,has_attach=1);#IntegrityError
     #commonDao.toadd(Questions, question);
     commonDao.toadd(Users,user1);
     #commonDao.toadd(Topics, topic);
@@ -76,4 +76,4 @@ def demo():
     question = commonDao.toget(Questions,question_id=13);
     commonDao.todele(Questions, question);
 if __name__=='__main__':
-    executeSql();
+    addObjects();
