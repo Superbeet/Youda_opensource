@@ -23,11 +23,37 @@ $system_panel_width : $nav_with + 40px;
   background-color: rgba(255,255,255,0.85);
 
 }
+$login_area_width:400px;
+.image_area{
+   height : 404px;
+  width: $system_panel_width - $login_area_width;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.image_area .image{
+  width: 420px;
+  height: 300px;
+  background-color: #095f8a;
+}
+
+.login_area{
+  height : 404px;
+  width: $login_area_width;
+  background-color: rgba(32,178,170,0.2);
+}
+
+
 
 .top_title{
     width: $system_panel_width;
     margin-bottom: -20px;
+    position: relative;
+    z-index: 10;
 }
 .bottom_title{
     width: $system_panel_width;
 }
+
+
