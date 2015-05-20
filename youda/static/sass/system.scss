@@ -1,0 +1,33 @@
+@import "common.scss";
+
+$system_panel_width : $nav_with + 40px;
+.system_container{
+  width: $system_panel_width;
+  margin:0 auto;
+}
+
+.login_bkg{
+  background-image: url('/static/image/system_bkg.png');
+  background-size: 100%;
+}
+.system_logo{
+  width: $system_panel_width;
+  height: 126px;
+  background-image: url('/static/image/system/logo_slogan.png');
+  background-repeat: no-repeat;
+}
+
+.main_area{
+  width: $system_panel_width;
+  height: 404px;
+  background-color: rgba(255,255,255,0.85);
+
+}
+
+.top_title{
+    width: $system_panel_width;
+    margin-bottom: -20px;
+}
+.bottom_title{
+    width: $system_panel_width;
+}

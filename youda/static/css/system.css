@@ -70,4 +70,30 @@ a:focus {
 .align_center {
   text-align: center; }
 
-/*# sourceMappingURL=common.css.map */
+.system_container {
+  width: 920px;
+  margin: 0 auto; }
+
+.login_bkg {
+  background-image: url("/static/image/system_bkg.png");
+  background-size: 100%; }
+
+.system_logo {
+  width: 920px;
+  height: 126px;
+  background-image: url("/static/image/system/logo_slogan.png");
+  background-repeat: no-repeat; }
+
+.main_area {
+  width: 920px;
+  height: 404px;
+  background-color: rgba(255, 255, 255, 0.85); }
+
+.top_title {
+  width: 920px;
+  margin-bottom: -20px; }
+
+.bottom_title {
+  width: 920px; }
+
+/*# sourceMappingURL=system.css.map */

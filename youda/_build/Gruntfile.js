@@ -25,7 +25,8 @@ module.exports = function(grunt) {
                     '<%= meta.deployPath %>wigets.css': '<%= meta.srcPath %>wigets.scss',
                     '<%= meta.deployPath %>common.css': '<%= meta.srcPath %>common.scss',
                     '<%= meta.deployPath %>topic.css': '<%= meta.srcPath %>topic.scss',
-                    '<%= meta.deployPath %>answer_detail.css': '<%= meta.srcPath %>answer_detail.scss'
+                    '<%= meta.deployPath %>answer_detail.css': '<%= meta.srcPath %>answer_detail.scss',
+		    '<%= meta.deployPath %>system.css': '<%= meta.srcPath %>system.scss'
                 },
                 options: {
                 }
