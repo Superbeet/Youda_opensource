@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+  height: 100%; }
+
 a {
   outline: none; }
 
@@ -18,7 +22,7 @@ a:focus {
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17A9B8; }
+  background-color: #17a9b8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -28,11 +32,11 @@ a:focus {
   height: 90px; }
 
 .common_font {
-  color: #17A9B8;
+  color: #17a9b8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328CBE;
+  color: #328cbe;
   font-size: 11pt; }
 
 .dark_font {
@@ -55,8 +59,11 @@ a:focus {
 .font_small {
   font-size: 10pt; }
 
+.hidden {
+  display: none; }
+
 .border_bottom {
-  border-bottom: 0.25px solid #17A9B8; }
+  border-bottom: 0.25px solid #17a9b8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -78,6 +85,15 @@ a:focus {
   background-image: url("/static/image/system_bkg.png");
   background-size: 100%; }
 
+.opacity_bkg {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%; }
+
+.register_bkg {
+  background-image: url("/static/image/system_bkg.png");
+  background-size: 100%; }
+
 .system_logo {
   width: 920px;
   height: 126px;
@@ -85,8 +101,9 @@ a:focus {
   background-repeat: no-repeat; }
 
 .main_area {
-  width: 920px;
-  height: 404px;
+  width: 940px;
+  padding-right: 10px;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.85); }
 
 .image_area {
@@ -106,19 +123,27 @@ a:focus {
   width: 400px;
   background-color: rgba(32, 178, 170, 0.2); }
 
-.common_form_size, .user_form, .password_form, .remember_me_form, .three_part_login_form, .submit_form {
+.register_area {
+  height: 404px;
+  width: 400px; }
+
+.common_form_size, .user_form, .password_form, .remember_me_form, .three_part_login_form, .submit_form, .mail_form, .user_name_form, .current_stage_form, .sex_form {
   width: 400px;
   height: 40px;
   line-height: 40px;
   margin-top: 30px;
   padding-left: 30px;
-  padding-right: 30px; }
+  padding-right: 30px;
+  color: #666666; }
 
 .user_form {
   margin-top: 45px; }
 
 .common_login_field {
   width: 270px; }
+
+.mail_form {
+  margin-top: 60px; }
 
 .goto_register_container {
   margin-left: 60px; }
@@ -150,7 +175,8 @@ a:focus {
   position: relative;
   z-index: 10; }
 
+.register_title {
+  padding-right: 30px; }
+
 .bottom_title {
   width: 920px; }
-
-/*# sourceMappingURL=system.css.map */

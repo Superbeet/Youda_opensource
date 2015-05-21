@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+  height: 100%; }
+
 a {
   outline: none; }
 
@@ -18,7 +22,7 @@ a:focus {
 .rec {
   width: 250px;
   height: 95px;
-  background-color: #17A9B8; }
+  background-color: #17a9b8; }
 
 .baseMagTop {
   margin-top: 7.5px; }
@@ -28,11 +32,11 @@ a:focus {
   height: 90px; }
 
 .common_font {
-  color: #17A9B8;
+  color: #17a9b8;
   font-size: 11pt; }
 
 .havier_font {
-  color: #328CBE;
+  color: #328cbe;
   font-size: 11pt; }
 
 .dark_font {
@@ -55,8 +59,11 @@ a:focus {
 .font_small {
   font-size: 10pt; }
 
+.hidden {
+  display: none; }
+
 .border_bottom {
-  border-bottom: 0.25px solid #17A9B8; }
+  border-bottom: 0.25px solid #17a9b8; }
 
 .border_bottom_dark {
   border-bottom: 0.25px solid #666666; }
@@ -417,5 +424,3 @@ a:focus {
 .new_answer_content_recomman_container p {
   margin-top: 4px;
   margin-bottom: 4px; }
-
-/*# sourceMappingURL=wigets.css.map */

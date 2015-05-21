@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'questiondetail/question/(\d+)/$',questionAction.showQuestionDetail),#问题详情的问题
     url(r'questiondetail/answer/(\d+)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
     url(r'^login/$',systemAction.toLogin),
+    url(r'^register/$',systemAction.toRegister),
     #url(r'^message',messageAction.index),
 )
 #用于测试

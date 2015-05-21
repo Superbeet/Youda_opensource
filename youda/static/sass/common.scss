@@ -5,6 +5,8 @@ $base_havier_color:#328CBE;
 $dark_color:#666666;
 $active_color:#008899;
 $font_ya_hei:"Microsoft Yahei";
+
+html, body{ margin:0; height:100%; }
 a {
 	outline : none;
 }
@@ -69,6 +71,9 @@ height: 90px;
 	font-size : 10pt;
 }
 
+.hidden{
+  display: none;
+}
 .border_bottom{
 	border-bottom: 0.25px  solid $base_color;
 }
