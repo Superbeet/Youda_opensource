@@ -150,4 +150,18 @@ width: 270px;
     width: $system_panel_width;
 }
 
+.second_part{
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.second_part .common_register_container{
+  width: $system_panel_width - (45px * 2);
+  height: 50px;
+  line-height: 50px;
+  background-color:#095f8a;
+}
+
 

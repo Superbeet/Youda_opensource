@@ -180,3 +180,15 @@ a:focus {
 
 .bottom_title {
   width: 920px; }
+
+.second_part {
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 35px;
+  padding-bottom: 30px; }
+
+.second_part .common_register_container {
+  width: 830px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #095f8a; }
