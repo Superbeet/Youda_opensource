@@ -59,23 +59,23 @@ WSGI_APPLICATION = 'YoudaBE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 #我的数据库配置
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'dev_youda_2',
-         'USER': 'root',
-         'PASSWORD': '',
-         'HOST': '127.0.0.1',
-         'PORT': '3306',
-     }
- }
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'dev_youda_2',
+#          'USER': 'root',
+#          'PASSWORD': '',
+#          'HOST': '127.0.0.1',
+#          'PORT': '3306',
+#      }
+#  }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 #阿里云数据库地址
 # DATABASES = {

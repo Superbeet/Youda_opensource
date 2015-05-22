@@ -6,6 +6,7 @@ encoding//action/homeAction.py=utf-8
 encoding//action/loginAction.py=utf-8
 encoding//action/messageAction.py=utf-8
 encoding//action/questionAction.py=utf-8
+encoding//action/testAction.py=utf-8
 encoding//action/topicAction.py=utf-8
 encoding//apps/CommonDao.py=utf-8
 encoding//apps/models.py=utf-8

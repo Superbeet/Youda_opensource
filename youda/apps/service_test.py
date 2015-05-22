@@ -3,7 +3,7 @@
 from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
-from apps.models import Users, Questions, Topics, TopicFocus
+from apps.models_2 import Users, Questions, Topics, TopicFocus
 from datetime import datetime
 from django.utils import timezone
 from django.db import transaction

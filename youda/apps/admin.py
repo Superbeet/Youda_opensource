@@ -1,5 +1,5 @@
 from django.contrib import admin
-import models
+from apps import models
 
 class QuestionAdmin(admin.ModelAdmin):
     list_display = (
@@ -29,22 +29,22 @@ class QuestionAdmin(admin.ModelAdmin):
     
     signature.short_description = 'New Signature'
     
-# Register your models here.
-admin.site.register(models.Questions, QuestionAdmin)
-admin.site.register(models.Answers)
-admin.site.register(models.AnswersComments)
-admin.site.register(models.Articles)
-admin.site.register(models.Associations)
-admin.site.register(models.InvitationUsers)
-admin.site.register(models.Jobs)
-admin.site.register(models.Logs)
-admin.site.register(models.Messages)
-admin.site.register(models.PrivateLetters)
-# admin.site.register(models.Questions)
-admin.site.register(models.Schools)
-admin.site.register(models.Topics)
-admin.site.register(models.Users)
-admin.site.register(models.UsersAffiliate)
+# Register your models_2 here.
+# admin.site.register(models_2.Question, QuestionAdmin)
+# admin.site.register(models_2.Answer)
+# admin.site.register(models_2.AnswerComment)
+# admin.site.register(models_2.Article)
+# admin.site.register(models_2.Association)
+# admin.site.register(models_2.InvitationUser)
+# admin.site.register(models_2.UserJob)
+# admin.site.register(models_2.Log)
+# admin.site.register(models_2.Message)
+# admin.site.register(models_2.PrivateLetter)
+# # admin.site.register(models_2.Questions)
+# admin.site.register(models_2.School)
+# admin.site.register(models_2.Topic)
+# admin.site.register(models_2.User)
+# admin.site.register(models_2.UserAffiliate)
 
 
 

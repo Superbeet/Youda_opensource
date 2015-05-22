@@ -16,13 +16,15 @@ import json
 
 from util.CJsonEncoder import CJsonEncoder
 
-def topicTest(request):
-    return render_to_response('topicTest.html')
+def test_focusTopicTest(request):
+    return render_to_response('focusTopicTest.html')
     
-    
+def test_getSchoolTopic(request):
+    return render_to_response('schoolTopicTest.html')
+
 @api_view(['GET'])
 def getFocusTopic(request):
-    print "getFocusTopic <-"
+    print "--> getFocusTopic"
     
     page = request.GET['page']
     user_id = request.GET['user_id']
@@ -34,7 +36,7 @@ def getFocusTopic(request):
     print "focus_topic_block_list -> %s" %(focus_topic_block_list)
     
     topic_data_list = []
-    topic_data_fail_list = []
+#     topic_data_fail_list = []
     
     focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
     
@@ -54,32 +56,9 @@ def getFocusTopic(request):
         print 'topic_data_series -> %s' %topic_data_series
      
         topic_data_list.append(topic_data_series)
-
-#     for topic_block in focus_topic_block_list:
-#         print "-------------------------"
-#         print "topic_block", topic_block
-#         
-#         topic_data_block = models.Topics.objects.get(topic_id = topic_block.topic_id)
-#         
-#         if topic_data_block:
-#             topic_data_series = [
-#                                 topic_data_block.topic_id,
-#                                 topic_data_block.topic_name,
-#                                 topic_data_block.parent_id,
-#                                 topic_data_block.add_time,
-#                                 topic_data_block.discuss_num,
-#                                 topic_data_block.topic_pic,
-#                                 topic_data_block.focus_num ]
-#         
-#             print 'topic_data_series -> %s' %topic_data_series
-#             
-#             topic_data_list.append(topic_data_series)
-#         
-#         else:
-#             topic_data_fail_list.append(topic_block.topic_id)
         
     print 'topic_data_list -> %s' %topic_data_list
-    print 'topic_data_fail_list -> %s' %topic_data_fail_list
+#     print 'topic_data_fail_list -> %s' %topic_data_fail_list
     
     DATA = json.dumps(topic_data_list,cls=CJsonEncoder)
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
@@ -90,7 +69,48 @@ def getFocusTopic(request):
     
 @api_view(['GET'])
 def getSchoolTopic(request):
-    pass
+    print "--> getSchoolTopic"
+    
+    user_id = request.GET['user_id']
+    page = request.GET['page']
+    
+    print "page -> %s | user_id -> %s" %(page, user_id)
+    
+    user_info = models.UsersAffiliate.objects.get(user_id = user_id)
+    
+    print "user_info -> %s" %(user_info)
+    
+    
+#     focus_topic_block_list = models_2.TopicSchool.objects.filter(school_id=school_id)
+#     
+#     print "focus_topic_block_list -> %s" %(focus_topic_block_list)
+#     
+#     topic_data_list = []
+#     
+#     focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
+#     
+#     topic_data_block_list = models_2.Topics.objects.filter(topic_id__in = focus_topic_id_list)     
+#     
+#     for block in topic_data_block_list:
+#         topic_data_series = [
+#                                 block.topic_id,
+#                                 block.topic_name,
+#                                 block.parent_id,
+#                                 block.add_time,
+#                                 block.discuss_num,
+#                                 block.topic_pic,
+#                                 block.focus_num     
+#                             ]
+#  
+#         print 'topic_data_series -> %s' %topic_data_series
+#      
+#         topic_data_list.append(topic_data_series)
+#         
+#     print 'topic_data_list -> %s' %topic_data_list
+# #     print 'topic_data_fail_list -> %s' %topic_data_fail_list
+#     
+#     DATA = json.dumps(topic_data_list,cls=CJsonEncoder)
+#     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
 
 @api_view(['POST'])
 def setFocusTopic(request):
