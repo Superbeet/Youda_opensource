@@ -7,7 +7,7 @@ from datetime import datetime
 from django.db.models.fields import AutoField
 
 class Answers(models.Model):
-    answer_id = models.IntegerField(primary_key=True)
+    answer_id = models.AutoField(primary_key=True)
     question = models.ForeignKey('Questions')
     user = models.ForeignKey('Users')
     answer_content = models.TextField(blank=True)
@@ -29,8 +29,8 @@ class Answers(models.Model):
 
 
 class AnswersComments(models.Model):
-    comment_id = models.IntegerField(primary_key=True)
-    answer = models.ForeignKey(Answers)
+    comment_id = models.AutoField(primary_key=True)
+    answer = models.ForeignKey('Answers')
     user = models.ForeignKey('Users')
     content = models.TextField(blank=True)
     time = models.DateTimeField(blank=True, null=True,default=datetime.now)
@@ -45,7 +45,7 @@ class AnswersComments(models.Model):
     common_objects = CommonDao();
 
 class Articles(models.Model):
-    article_id = models.IntegerField(primary_key=True)
+    article_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('Users')
     article_title = models.CharField(max_length=255, blank=True)
     article_detail = models.TextField(blank=True)
@@ -55,8 +55,7 @@ class Articles(models.Model):
     browse_num = models.IntegerField(blank=True, null=True)
     comment_num = models.IntegerField(blank=True, null=True)
     attention_num = models.IntegerField(blank=True, null=True)
-
-
+    
     class Meta:
         db_table = 'articles'
     def __unicode__(self):
@@ -65,7 +64,7 @@ class Articles(models.Model):
     common_objects = CommonDao();
 
 class Associations(models.Model):
-    ass_id = models.IntegerField(primary_key=True)
+    ass_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('UsersAffiliate')
     ass_name = models.CharField(max_length=100)
     position = models.CharField(max_length=100, blank=True)
@@ -80,7 +79,7 @@ class Associations(models.Model):
     common_objects = CommonDao();
 
 class InvitationUsers(models.Model):
-    invitation_id = models.IntegerField(primary_key=True)
+    invitation_id = models.AutoField(primary_key=True)
     question = models.ForeignKey('Questions',)#
     send_user = models.ForeignKey('Users',related_name='all_send_users', blank=True, null=True)
     send_user_name = models.CharField(max_length=10, blank=True)
@@ -95,7 +94,7 @@ class InvitationUsers(models.Model):
     common_objects = CommonDao();
 
 class UserJobs(models.Model):
-    job_id = models.IntegerField(primary_key=True)
+    job_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('UsersAffiliate')
     position = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=100, blank=True)
@@ -111,7 +110,7 @@ class UserJobs(models.Model):
     common_objects = CommonDao();
 
 class Logs(models.Model):
-    log_id = models.IntegerField(primary_key=True)
+    log_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('Users', blank=True, null=True)
     ip = models.CharField(max_length=20, blank=True)
     operate_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
@@ -127,7 +126,7 @@ class Logs(models.Model):
     common_objects = CommonDao();
 
 class Messages(models.Model):
-    message_id = models.IntegerField(primary_key=True)
+    message_id = models.AutoField(primary_key=True)
     message_user = models.ForeignKey('Users')
     content = models.CharField(max_length=255, blank=True)
 
@@ -139,7 +138,7 @@ class Messages(models.Model):
     common_objects = CommonDao();
 
 class PrivateLetters(models.Model):
-    letter_id = models.IntegerField(primary_key=True)
+    letter_id = models.AutoField(primary_key=True)
     send_user = models.ForeignKey('Users',related_name='all_sendletter_users')#related_name='aa'
     send_user_name = models.CharField(max_length=10, blank=True)
     receive_user = models.ForeignKey('Users',related_name='all_receiverletter_users')
@@ -154,7 +153,7 @@ class PrivateLetters(models.Model):
     common_objects = CommonDao();
 
 class Questions(models.Model):
-    question_id = models.IntegerField(primary_key=True)
+    question_id = models.AutoField(primary_key=True)
     #related_name用于反向获取数据，如果查询一个用户user提了多少问题，那么user.questions_set.all()
     #可以获取，加了relate_name='all_questions'就可以这样user.all_questions.all()
     user = models.ForeignKey('Users',related_name='all_questions')
@@ -179,10 +178,10 @@ class Questions(models.Model):
     common_objects = CommonDao();
     
 class QuestionsFocus(models.Model):
-    focus_id = models.IntegerField(primary_key=True)
-    question = models.ForeignKey(Questions, blank=True, null=True)
-    user = models.ForeignKey('Users', blank=True, null=True)
-    focus_time = models.DateTimeField(blank=True, default=datetime.now,auto_now_add=True)
+    focus_id = models.AutoField(primary_key=True)
+    question = models.ForeignKey('Questions', blank=True, null=True)
+    user = models.ForeignKey('UsersAffiliate', blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True, default=datetime.now)
     class Meta:
         db_table = 'questions_focus'
     def __unicode__(self):
@@ -193,23 +192,23 @@ class QuestionsFocus(models.Model):
 # New Schools class, store all candidate school data
 # 新Schools类，存储所以候选学校信息
 class Schools(models.Model):    
-    school_id = models.IntegerField(primary_key=True)
+    school_id = models.AutoField(primary_key=True)
     school_name = models.CharField(max_length=128, blank=True, null=True)
     region = models.CharField(max_length=128, blank=True, null=True)
     school_category = models.CharField(max_length=128, blank=True, null=True)
 
     class Meta:
-        db_table = 'school'
+        db_table = 'schools'
     def __unicode__(self):
-        return "[focus_id:"+str(self.focus_id)+",question_id:"+str(self.question_id)+"user_id"+str(self.user_id)+"]"
+        return "[school_id:"+str(self.school_id)+",school_name:"+str(self.school_name)+"region"+str(self.region)+"]"
     objects = models.Manager()
     common_objects = CommonDao();
 # Former School class, store user's school relative information
 # 前Schools类，存储用户相关的学校信息
 class UserSchool(models.Model):
-    primary_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('Users', blank=True, null=True)
-    school = models.ForeignKey('Schools',blank=True, null=True)
+    primary_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('UsersAffiliate')
+    school = models.ForeignKey('Schools')
     academy = models.CharField(max_length=100, blank=True)
     entrance_time = models.DateTimeField(blank=True, null=True)
     education = models.IntegerField(blank=True, null=True)
@@ -219,33 +218,16 @@ class UserSchool(models.Model):
         return u'%s %s %s %s' % (self.school, self.user,self.academy,self.education)
     objects = models.Manager()
     common_objects = CommonDao();
-# Former School class, store user's school relative information
-# 前Schools类，存储用户相关的学校信息
-# class UserSchools(models.Model):    
-#     primary_id = models.IntegerField(primary_key=True)
-#     user = models.ForeignKey('Users', blank=True, null=True)
-#     school_id = models.IntegerField(blank=True, null=True)
-#     user_school = models.ForeignKey('Schools')
-#     academy = models.CharField(max_length=100, blank=True)
-#     entrance_time = models.DateTimeField(blank=True, null=True)
-#     education = models.IntegerField(blank=True, null=True)
-# 
-#     class Meta:
-#         db_table = 'user_school'
-#     def __unicode__(self):
-#         return u'%s %s %s %s' % (self.school_id, self.user,self.school_name,self.academy)
-#     objects = models.Manager()
-#     common_objects = CommonDao();
 
 class Topics(models.Model):
-    topic_id = models.IntegerField(primary_key=True)
+    topic_id = models.AutoField(primary_key=True)
     topic_name = models.CharField(max_length=50, blank=True)
     parent_id = models.IntegerField(blank=True, null=True)
     add_time = models.DateTimeField(blank=True, null=True)
     discuss_num = models.IntegerField(blank=True, null=True)
-    topic_pic = models.CharField(max_length=255, blank=True)
+    topic_pic = models.CharField(max_length=255, blank=True,null=True)
     focus_num = models.IntegerField(blank=True, null=True)
-    topic_school = models.ForeignKey('Schools')
+    topic_school = models.ForeignKey('Schools',db_column='school_id')
     
     class Meta:
         db_table = 'topics'
@@ -256,10 +238,10 @@ class Topics(models.Model):
     common_objects = CommonDao();
     
 class TopicFocus(models.Model):
-    focus_id = models.IntegerField(primary_key=True)
+    focus_id = models.AutoField(primary_key=True)
     topic = models.ForeignKey('Topics', blank=True, null=True)
-    user = models.ForeignKey('Users', blank=True, null=True)
-    focus_time = models.DateTimeField(blank=True, default=datetime.now,auto_now_add=True)
+    user = models.ForeignKey('UsersAffiliate', blank=True, null=True)
+    focus_time = models.DateTimeField(blank=True, default=datetime.now)
 
     class Meta:
         db_table = 'topic_focus'
@@ -269,8 +251,8 @@ class TopicFocus(models.Model):
     common_objects = CommonDao();  
 
 class Users(models.Model):
-    user_id = models.IntegerField(primary_key=True)
-    user_name = models.CharField(max_length=10, blank=True)
+    user_id = models.AutoField(primary_key=True)
+    user_name = models.CharField(max_length=10, blank=True,verbose_name='姓名')
     password = models.CharField(max_length=20)
     gender = models.IntegerField(blank=True, null=True)
     power = models.IntegerField(blank=True, null=True)
@@ -289,9 +271,7 @@ class Users(models.Model):
     thanks_num = models.IntegerField(blank=True, null=True)
     integral = models.IntegerField(blank=True, null=True)
     affiliate_flag = models.IntegerField(blank=True, null=True)
-    school = models.ManyToManyField('Schools', blank=True, null=True)
-    #question_focus = models.ManyToManyField('Questions', blank=True, null=True,through='QuestionsFocus')
-    #topic_focus = models.ManyToManyField('Topics', blank=True, null=True,through='TopicFocus')
+
     # Remove, one user can have more than one school. Move relative information to class UserSchool 
     # 删除，同一个用户会有多个学校，移入UserSchool中
     # school_name = models.CharField(max_length=100, blank=True) 
@@ -308,7 +288,7 @@ class Users(models.Model):
     common_objects = CommonDao();
     
 class UsersFocus(models.Model):
-    focus_id = models.IntegerField(primary_key=True)
+    focus_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('Users', blank=True, null=True,related_name="all_users")
     schoolmate = models.ForeignKey('Users', blank=True, null=True,related_name="all_focus_users")
     focus_time = models.DateTimeField(blank=True,default=datetime.now)
@@ -316,9 +296,8 @@ class UsersFocus(models.Model):
         db_table = 'users_focus'  
     def __unicode__(self):
         return u'%s %s %s'% (self.focus_id, self.user_id,self.follow_uid) 
-#       return "[user_id:"+str(self.user_id)+",user_name:"+self.user_name+"]"
     objects = models.Manager()
-    common_objects = CommonDao();
+    common_objects = CommonDao()
     
 class UsersAffiliate(models.Model):
     user = models.ForeignKey(Users, primary_key=True)
@@ -337,10 +316,10 @@ class UsersAffiliate(models.Model):
     attention_topic_num = models.IntegerField(blank=True, null=True)
     community_flag = models.IntegerField(blank=True, null=True)
     community_setting = models.CharField(max_length=255, blank=True)
-    #这些关系放在Users中体现，并改为多对多关系
-    #user_school = models.ForeignKey('UserSchools')
-    #focus_topic = models.ForeignKey('TopicFocus')
-    #user_job = models.ForeignKey('UserJobs')
+    
+    school = models.ManyToManyField('Schools',blank=True, null=True,through='UserSchool')
+    question_focus = models.ManyToManyField('Questions', blank=True, null=True,through='QuestionsFocus')
+    topic_focus = models.ManyToManyField('Topics', blank=True, null=True,through='TopicFocus')
 
     class Meta:
         db_table = 'users_affiliate'

@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Answers',
             fields=[
-                ('answer_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('answer_id', models.AutoField(serialize=False, primary_key=True)),
                 ('answer_content', models.TextField(blank=True)),
                 ('publish_time', models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)),
                 ('support_num', models.IntegerField(null=True, blank=True)),
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AnswersComments',
             fields=[
-                ('comment_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('comment_id', models.AutoField(serialize=False, primary_key=True)),
                 ('content', models.TextField(blank=True)),
                 ('time', models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)),
                 ('comment_num', models.IntegerField(null=True, blank=True)),
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Articles',
             fields=[
-                ('article_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('article_id', models.AutoField(serialize=False, primary_key=True)),
                 ('article_title', models.CharField(max_length=255, blank=True)),
                 ('article_detail', models.TextField(blank=True)),
                 ('publish_time', models.DateTimeField(null=True, blank=True)),
@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Associations',
             fields=[
-                ('ass_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('ass_id', models.AutoField(serialize=False, primary_key=True)),
                 ('ass_name', models.CharField(max_length=100)),
                 ('position', models.CharField(max_length=100, blank=True)),
                 ('entrance_time', models.DateTimeField(null=True, blank=True)),
@@ -76,7 +76,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='InvitationUsers',
             fields=[
-                ('invitation_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('invitation_id', models.AutoField(serialize=False, primary_key=True)),
                 ('send_user_name', models.CharField(max_length=10, blank=True)),
                 ('receive_user_name', models.CharField(max_length=10, blank=True)),
             ],
@@ -88,7 +88,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Logs',
             fields=[
-                ('log_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('log_id', models.AutoField(serialize=False, primary_key=True)),
                 ('ip', models.CharField(max_length=20, blank=True)),
                 ('operate_time', models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)),
                 ('operate_command', models.CharField(max_length=20, blank=True)),
@@ -103,7 +103,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Messages',
             fields=[
-                ('message_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('message_id', models.AutoField(serialize=False, primary_key=True)),
                 ('content', models.CharField(max_length=255, blank=True)),
             ],
             options={
@@ -114,7 +114,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PrivateLetters',
             fields=[
-                ('letter_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('letter_id', models.AutoField(serialize=False, primary_key=True)),
                 ('send_user_name', models.CharField(max_length=10, blank=True)),
                 ('receive_user_name', models.CharField(max_length=10, blank=True)),
                 ('content', models.CharField(max_length=255, blank=True)),
@@ -127,7 +127,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Questions',
             fields=[
-                ('question_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('question_id', models.AutoField(serialize=False, primary_key=True)),
                 ('question_content', models.CharField(max_length=255, blank=True)),
                 ('question_detail', models.TextField(blank=True)),
                 ('publish_time', models.DateTimeField(default=datetime.datetime.now, null=True, blank=True)),
@@ -148,7 +148,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='QuestionsFocus',
             fields=[
-                ('focus_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('focus_id', models.AutoField(serialize=False, primary_key=True)),
                 ('focus_time', models.DateTimeField(default=datetime.datetime.now, auto_now_add=True)),
                 ('question', models.ForeignKey(blank=True, to='apps.Questions', null=True)),
             ],
@@ -160,20 +160,20 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Schools',
             fields=[
-                ('school_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('school_id', models.AutoField(serialize=False, primary_key=True)),
                 ('school_name', models.CharField(max_length=128, null=True, blank=True)),
                 ('region', models.CharField(max_length=128, null=True, blank=True)),
                 ('school_category', models.CharField(max_length=128, null=True, blank=True)),
             ],
             options={
-                'db_table': 'school',
+                'db_table': 'schools',
             },
             bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='TopicFocus',
             fields=[
-                ('focus_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('focus_id', models.AutoField(serialize=False, primary_key=True)),
                 ('focus_time', models.DateTimeField(default=datetime.datetime.now, auto_now_add=True)),
             ],
             options={
@@ -184,7 +184,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Topics',
             fields=[
-                ('topic_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('topic_id', models.AutoField(serialize=False, primary_key=True)),
                 ('topic_name', models.CharField(max_length=50, blank=True)),
                 ('parent_id', models.IntegerField(null=True, blank=True)),
                 ('add_time', models.DateTimeField(null=True, blank=True)),
@@ -201,7 +201,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserJobs',
             fields=[
-                ('job_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('job_id', models.AutoField(serialize=False, primary_key=True)),
                 ('position', models.CharField(max_length=200, blank=True)),
                 ('city', models.CharField(max_length=100, blank=True)),
                 ('entrance_time', models.DateTimeField(null=True, blank=True)),
@@ -216,7 +216,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Users',
             fields=[
-                ('user_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('user_id', models.AutoField(serialize=False, primary_key=True)),
                 ('user_name', models.CharField(max_length=10, blank=True)),
                 ('password', models.CharField(max_length=20)),
                 ('gender', models.IntegerField(null=True, blank=True)),
@@ -270,12 +270,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserSchool',
             fields=[
-                ('primary_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('primary_id', models.AutoField(serialize=False, primary_key=True)),
                 ('academy', models.CharField(max_length=100, blank=True)),
                 ('entrance_time', models.DateTimeField(null=True, blank=True)),
                 ('education', models.IntegerField(null=True, blank=True)),
-                ('school', models.ForeignKey(blank=True, to='apps.Schools', null=True)),
-                ('user', models.ForeignKey(blank=True, to='apps.Users', null=True)),
+                ('school', models.ForeignKey(to='apps.Schools')),
+                ('user', models.ForeignKey(to='apps.Users')),
             ],
             options={
                 'db_table': 'user_school',
@@ -285,7 +285,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UsersFocus',
             fields=[
-                ('focus_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('focus_id', models.AutoField(serialize=False, primary_key=True)),
                 ('focus_time', models.DateTimeField(default=datetime.datetime.now, blank=True)),
                 ('schoolmate', models.ForeignKey(related_name='all_focus_users', blank=True, to='apps.Users', null=True)),
                 ('user', models.ForeignKey(related_name='all_users', blank=True, to='apps.Users', null=True)),
@@ -298,7 +298,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='users',
             name='school',
-            field=models.ManyToManyField(to='apps.Schools', null=True, blank=True),
+            field=models.ManyToManyField(to='apps.Schools', through='apps.UserSchool'),
             preserve_default=True,
         ),
         migrations.AddField(
