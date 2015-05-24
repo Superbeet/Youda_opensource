@@ -1,0 +1,442 @@
+
+<!-- 推荐感兴趣校友开始 -->
+<script type="text/html" id="recommend_interest_schooler">
+<% for(i = 0 ; i < recommendSchoolerList.length ; i++){ %>
+	<div class="to_interest_people fl">
+		<div class="interest_people_detail_div">
+			<div class="interest_people_pic_div fl">
+
+			<div class="interest_people_pic">
+
+				<img src="<%=recommendSchoolerList[i].iconUrl %>" />
+
+			</div>
+			<div class="interest_people_name">
+			<%= recommendSchoolerList[i].name %>
+		</div>
+	</div>
+		<div class="interest_people_detail fr">
+<span class="common_font">擅长:</span><br/>
+<% for(j = 0 ; j < recommendSchoolerList[i].goodAt.length ; j++){ %>
+<%=recommendSchoolerList[i].goodAt[j] %><br/>
+<% } %>
+		</div>
+	</div>
+			<div class="mark_icon_container">
+			<a href="#" >
+				<div class="mark_icon">
+				</div>
+			</a>
+			</div>
+		</div>
+<% } %>
+</script>
+<!-- 推荐感兴趣校友结束 -->
+
+<!--  banner画廊开始 -->
+ <script type="text/html" id="image_gallary">
+		<ul class="am-slides">
+		<% for(i = 0 ; i < imageList.length ; i++) { %>
+		<li>
+				<img src="<%=imageList[i].imageUrl %>" />
+				<div class="am-slider-desc"><%=imageList[i].description %></div>
+			</li>
+		<% }%>
+		</ul>
+</script>
+<!-- banner画廊结束 -->
+
+<!-- 推荐感兴趣话题开始 -->
+<script type="text/html" id="recommend_interest_topic">
+
+<% for(i = 0 ; i < recommendList.length ; i++) { %>
+		<div class="to_interest_topic fl">
+			<div class="interest_topic_pic over_img_container">
+				<a class="over_img" href="#">
+				<img src="<%=recommendList[i].imageUrl %>" />
+				</a>
+				<div class="over_img_description modal base_bg_color_85">
+				<%=recommendList[i].description %>
+				</div>
+			</div>
+			<div class="ask_and_interest_div">
+				<div class="interest_topic_icon fl">
+					<img src="/static/image/index/interest_icon.png" />关注
+					<%=recommendList[i].focusCount %>
+				</div>
+				<div class="ask_topic_icon fr">
+					<img src="/static/image/index/ask_icon.png" />提问
+					<%=recommendList[i].askCount %>
+				</div>
+			</div>
+			<div class="mark_icon_container">
+			<a href="#" >
+				<div class="mark_icon">
+				</div>
+			</a>
+			</div>
+		</div>
+
+<% } %>
+
+</script>
+<!-- 推荐感兴趣话题结束 -->
+
+
+<!-- 关注话题有了新的提问开始 -->
+<script type="text/html" id="recommend_topic_answer" charset="utf-8">
+<div class="topic_answer">
+<div class="topic_answer_left_bar fl">
+	<img src="<%=data.questioner_head %>" class="common_icon" />
+</div>
+<div class="topic_answer_content fl">
+<div class="topic_answer_header border_bottom_dark">
+<div class="topic_answer_header_people_name">
+<span class="dark_font font_ya_hei">我关注的话题</span>
+&nbsp;&nbsp;
+
+
+<span class="font_ya_hei havier_font"><a href="/topic/<%=data.topic_id"><%=data.topic_name %></a></span>&nbsp;&nbsp;<span class="dark_font">有了新的提问</span><br />
+</div>
+<div class="people_answer_header_answer_name">
+<span class="common_font font_ya_hei"><%=data.questin_content %></span>
+<div class="fr">
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data.browse_num %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data.answer_num %></span>&nbsp;&nbsp;&nbsp;
+
+</div>
+</div>
+<div>
+
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
+
+</div>
+
+</div>
+
+
+<div class="topic_answer_detail border_bottom_dark">
+<div class="topic_answer_detail_left_bar fl">
+	<div class="topic_answer_detail_pic_div">
+<img src="<%=data.answerer_head %>" class="common_icon" />
+</div>
+<div class="topic_answer_detail_agree_div">
+<div class="topic_answer_detail_agree_icon">
+
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=data.support_num %></span>
+</div>
+</div>
+</div>
+<div class="topic_answer_detail_text fl">
+<div class="topic_answer_detail_text_context">
+<%=data.answer_content %>
+<span class="common_font">点击展开>>></span>
+</div>
+<br />
+<div class="topic_answer_detail_text_time ">
+<span class="fl font_small">回答个人简介</span>
+<div class="fr">
+<img src="/static/image/index/time_icon.png"  />回答时间
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</script>
+<!-- 关注话题有了新的提问结束 -->
+
+
+<!-- 关注话题有了新的回复开始 -->
+<script type="text/html" id="recommend_topic_answer_response" charset="utf-8">
+<div class="topic_answer">
+<div class="topic_answer_left_bar fl">
+	<img src="<%=data.questioner_head %>" class="common_icon" />
+</div>
+<div class="topic_answer_content fl">
+<div class="topic_answer_header border_bottom_dark">
+<div class="topic_answer_header_people_name">
+<span class="dark_font font_ya_hei">我关注的话题</span>
+&nbsp;&nbsp;
+
+
+<span class="font_ya_hei havier_font"><a href="/topic/<%=data.topic_id"><%=data.topic_name %></a></span>&nbsp;&nbsp;<span class="dark_font">有了新的回答</span><br />
+</div>
+<div class="people_answer_header_answer_name">
+<span class="common_font font_ya_hei"><%=data.questin_content %></span>
+<div class="fr">
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data.browse_num %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data.answer_num %></span>&nbsp;&nbsp;&nbsp;
+
+</div>
+</div>
+<div>
+
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
+
+</div>
+
+</div>
+
+
+<div class="topic_answer_detail border_bottom_dark">
+<div class="topic_answer_detail_left_bar fl">
+	<div class="topic_answer_detail_pic_div">
+<img src="<%=data.answerer_head %>" class="common_icon" />
+</div>
+<div class="topic_answer_detail_agree_div">
+<div class="topic_answer_detail_agree_icon">
+
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=data.support_num %></span>
+</div>
+</div>
+</div>
+<div class="topic_answer_detail_text fl">
+<div class="topic_answer_detail_text_context">
+<%=data.answer_content %>
+<span class="common_font">点击展开>>></span>
+</div>
+<br />
+<div class="topic_answer_detail_text_time ">
+<span class="fl font_small">回答个人简介</span>
+<div class="fr">
+<img src="/static/image/index/time_icon.png"  />回答时间
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</script>
+<!-- 关注话题有了新的回复结束 -->
+
+<!-- 关注问题有了新的回复开始 -->
+<script type="text/html" id="recommend_answer_response" charset="utf-8">
+<div class="topic_answer">
+<div class="topic_answer_left_bar fl">
+	<a href="/people/<%= data.questioner_id %>"><img src="<%=data.questioner_head %>" class="common_icon" /></a>
+</div>
+<div class="topic_answer_content fl">
+<div class="topic_answer_header border_bottom_dark">
+<div class="topic_answer_header_people_name">
+<span class="dark_font font_ya_hei">我关注的问题有了新的回复</span>
+</div>
+<div class="people_answer_header_answer_name">
+<span class="common_font font_ya_hei"><%=data.questin_content %></span>
+<div class="fr">
+<img src="/static/image/index/view_icon.png"  /><span class="view_count">122</span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count">12</span>&nbsp;&nbsp;&nbsp;
+
+</div>
+</div>
+<div>
+
+<span class="font_ya_hei dark_font font_small">提问个人简介</span>
+
+</div>
+
+</div>
+
+
+<div class="topic_answer_detail border_bottom_dark">
+<div class="topic_answer_detail_left_bar fl">
+	<div class="topic_answer_detail_pic_div">
+<img src="<%=data.answerer_head %>" class="common_icon" />
+</div>
+<div class="topic_answer_detail_agree_div">
+<div class="topic_answer_detail_agree_icon">
+
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count">123</span>
+</div>
+</div>
+</div>
+<div class="topic_answer_detail_text fl">
+<div class="topic_answer_detail_text_context">
+<%=data.answer_content %>
+<span class="common_font">点击展开>>></span>
+</div>
+<br />
+<div class="topic_answer_detail_text_time ">
+<span class="fl font_small">回答个人简介</span>
+<div class="fr">
+<img src="/static/image/index/time_icon.png"  />回答时间
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</script>
+<!-- 关注问题有了新的回复结束 -->
+
+
+
+
+<!-- 关注人物新的回答开始 -->
+<script type="text/html" id="recommend_people_answer" charset="utf-8">
+
+<div class="people_answer">
+	<div class="people_answer_left_bar fl">
+		<img src="<%=data.questioner_head %>" class="common_icon" />
+	</div>
+	<div class="people_answer_content fl">
+		<div class="people_answer_header border_bottom">
+			<div class="people_answer_header_people_name">
+				<span class="dark_font font_ya_hei">我关注的校友</span>&nbsp;&nbsp;
+				<span class="font_ya_hei font_all_black"><a href="/people/<%=data.questioner_id %>"><%=data.questin_content %></a></span>&nbsp;&nbsp;
+				<span class="dark_font font_ya_hei">回答了</span><br />
+			</div>
+			<div class="people_answer_header_answer_name">
+			<span class="common_font font_ya_hei"><%=data.questin_content %></span>
+				<div class="fr">
+					<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data.browse_num %></span>
+					<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data.answer_num %></span>&nbsp;&nbsp;&nbsp;
+
+				</div>
+			</div>
+
+		</div>
+
+
+	<div class="people_answer_detail border_bottom_dark">
+		<div class="people_answer_detail_left_bar fl">
+			<div class="people_answer_detail_pic_div">
+				<a href="/people/<%= data.answerer_id %>"><img src="<%=data.answer_head%>" class="common_icon" /></a>
+			</div>
+			<div class="people_answer_detail_agree_div">
+				<div class="people_answer_detail_agree_icon">
+					<img src="/static/image/index/agree_icon.png" />
+					<span class="people_answer_detail_agree_count"><%=data.support_num %></span>
+			</div>
+		</div>
+	</div>
+	<div class="people_answer_detail_text fl">
+		<div class="people_answer_detail_text_context">
+			<%=data.answer_content %>
+		</div><br />
+		<div class="people_answer_detail_text_time">
+			<img src="/static/image/index/time_icon.png" />回答时间
+		</div>
+	</div>
+</div>
+
+
+</script>
+<!-- 关注人物新的回答结束 -->
+
+
+
+<!-- 人物与话题开始 -->
+	<script type="text/html" id="people_and_answer" charset="utf-8">
+		<% for(i = 0 ; i < data.length ; i ++){ %>
+		<div class="people_and_answer">
+			<div class="people_and_answer_title"><a href="question/<%= data.question_id %>"><%= data.question_content %></a></div>
+			<div class="people_and_answer_userinfo">
+			<div class="fl" ><img src="<%= data.head %>" width="50" height="50" class="roundImg" /></div>
+			<div class="fl people_and_answer_content"><span class="common_font"><a href="/people/<%= data.user_id"><%= data.user_name %></a></span><br/><span class="dark_font"><%= data.academy %></span><br/><span class="dark_font"><%= data.entrance_time %><%= data.education %></span></div>
+		</div>
+		</div>
+		<% } %>
+	</script>
+
+<!-- 人物与话题结束 -->
+
+
+<!--  推荐问答开始 -->
+ <script type="text/html" id="recommend_answer" charset="utf-8">
+
+<% for(i = 0 ; i < recommendAnswerList.length ; i++){ %>
+<div class="answer">
+<div class="answer_left_bar fl">
+	<img src="<%=recommendAnswerList[i].askUserIconUrl %>" class="common_icon" />
+</div>
+<div class="answer_content fl">
+<div class="answer_header border_bottom_dark">
+<div class="people_answer_header_answer_name">
+<span class="common_font font_ya_hei"><%=recommendAnswerList[i].askName %></span>
+<div class="fr">
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=recommendAnswerList[i].viewCount %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=recommendAnswerList[i].commentCount %></span>&nbsp;&nbsp;&nbsp;
+
+</div>
+</div>
+<div>
+
+<span class="font_ya_hei dark_font font_small"><%=recommendAnswerList[i].askUserShortIntroduce %></span> 
+
+</div>
+
+</div>
+
+
+<div class="answer_detail border_bottom_dark">
+<div class="answer_detail_left_bar fl">
+	<div class="answer_detail_pic_div">
+<img src="<%=recommendAnswerList[i].answerUserIconUrl %>" class="common_icon" />
+</div>
+<div class="answer_detail_agree_div">
+<div class="answer_detail_agree_icon">
+
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=recommendAnswerList[i].answerAgreeCount %></span>
+</div>
+</div>
+</div>
+<div class="answer_detail_text fl">
+<div class="answer_detail_text_context">
+<%=recommendAnswerList[i].answerContext %><span class="common_font">点击展开>>></span>
+</div>
+<br />
+<div class="answer_detail_text_time ">
+<span class="fl font_small"><%=recommendAnswerList[i].answerUserShortIntroduce %></span> 
+<div class="fr">
+<img src="/static/image/index/time_icon.png"  /><%=recommendAnswerList[i].answerTime %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<% } %>
+</script>
+<!--  推荐问答结束 -->
+
+
+<!--  推荐人物新问答开始 -->
+ <script type="text/html" id="recommend_people_new_ask" charset="utf-8">
+<div class="people_new_ask">
+<div class="people_ask_left_bar fl">
+	<a href="/people/<%=data.questioner_id %>"><img src="<%=data.questioner_head %>" class="common_icon" /></a>
+</div>
+<div class="people_ask_content border_bottom fl">
+<div class="people_ask_header">
+<div class="people_ask_header_people_name">
+<span class="dark_font font_ya_hei">我关注的校友</span>
+&nbsp;&nbsp;
+<span class="font_ya_hei font_all_black"><%=data.questiner_name %></span>
+&nbsp;&nbsp;
+
+<span class="dark_font font_ya_hei">有出了新的提问</span><br />
+</div>
+<div class="people_ask_header_answer_name">
+<span class="common_font font_ya_hei"><a href="/people/<%=data.question_id %>"><%=data.questin_content %></a></span>
+<div class="fr">
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data.browse_num %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data.answer_num %></span>&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+
+
+
+<div class="people_ask_detail_text_time">
+<img src="/static/image/index/time_icon.png" /><%=data.publish_time %>
+</div>
+
+
+
+</div>
+</div>
+
+</script>
+<!--  推荐人物新问答结束 -->
+

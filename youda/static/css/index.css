@@ -1,0 +1,391 @@
+a {
+  outline: none; }
+
+a:focus {
+  outline: none; }
+
+.roundImg {
+  border: 3px solid #FFFFFF;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.rec {
+  width: 250px;
+  height: 95px;
+  background-color: #17a9b8; }
+
+.baseMagTop {
+  margin-top: 7.5px; }
+
+.common_nav {
+  width: 70px;
+  height: 90px; }
+
+.common_font {
+  color: #17a9b8;
+  font-size: 11pt; }
+
+.havier_font {
+  color: #328cbe;
+  font-size: 11pt; }
+
+.dark_font {
+  color: #666666;
+  font-size: 11pt; }
+
+.common_rec_img {
+  padding-top: 10px;
+  padding-left: 10px; }
+
+.common_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.font_all_black {
+  color: black; }
+
+.font_small {
+  font-size: 10pt; }
+
+.border_bottom {
+  border-bottom: 0.25px solid #17a9b8; }
+
+.border_bottom_dark {
+  border-bottom: 0.25px solid #666666; }
+
+.font_ya_hei {
+  font-family: "Microsoft Yahei"; }
+
+.vertical-align {
+  vertical-align: middle; }
+
+.align_center {
+  text-align: center; }
+
+#header_bg {
+  height: 90px;
+  width: 100%;
+  background-color: #17a9b8; }
+
+#header {
+  width: 1140px;
+  height: 90px;
+  margin: 0 auto; }
+
+#header_blank_left {
+  width: 150px;
+  height: 90px; }
+
+#main_nav_bg {
+  width: 880px;
+  height: 90px;
+  background-image: url(../image/index/nav_bar_bg.png);
+  float: left; }
+
+#logo {
+  width: 196px;
+  height: 90px; }
+
+#navContainer {
+  width: 300px; }
+
+#search {
+  padding-top: 36px;
+  width: 240px; }
+
+#search .am-form-field {
+  border-radius: 5px;
+  moz-border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 0; }
+
+#search .am-input-group-btn {
+  background-color: white;
+  border-radius: 5px;
+  moz-border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 0;
+  border-left: 0.75px solid #17a9b8; }
+
+#search .am-btn {
+  border: 0; }
+
+#navContainer ul li a {
+  padding: 0 0; }
+
+.home_nav_active {
+  background-color: transparent;
+  background-image: url(../image/index/home_nav_active.png); }
+
+.topic_nav_active {
+  background-color: transparent;
+  background-image: url(../image/index/topic_nav_active.png); }
+
+.schooler_nav_active {
+  background-color: transparent;
+  background-image: url(../image/index/schooler_nav_active.png); }
+
+.message_nav_active {
+  background-color: transparent;
+  background-image: url(../image/index/message_nav_active.png); }
+
+.home_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/home_nav.png); }
+
+.topic_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/topic_nav.png); }
+
+.schooler_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/schooler_nav.png); }
+
+.message_nav_normal {
+  background-color: transparent;
+  background-image: url(../image/index/message_nav.png); }
+
+.nav_width {
+  width: 70px;
+  height: 90px; }
+
+#home_nav:hover {
+  background-image: url(../image/index/home_nav_hover.png); }
+
+#topic_nav:hover {
+  background-image: url(../image/index/topic_nav_hover.png); }
+
+#schooler_nav:hover {
+  background-image: url(../image/index/schooler_nav_hover.png); }
+
+#message_nav:hover {
+  background-image: url(../image/index/message_nav_hover.png); }
+
+#newPoper {
+  width: 120px;
+  height: 90px; }
+
+#newPoper a {
+  width: 120px; }
+
+#newPoperText {
+  font-size: 12pt;
+  color: #17a9b8;
+  padding-left: 64px;
+  margin-top: 43px;
+  height: 30px; }
+
+#user_info {
+  width: 260px; }
+
+#user_info_content {
+  line-height: 27px;
+  height: 55px;
+  color: #FFF;
+  font-size: 12pt;
+  padding-top: 17.5px;
+  padding-right: 30px; }
+
+#user_info_img {
+  width: 55px;
+  height: 55px;
+  padding-top: 17.5px; }
+
+#banner {
+  height: 300px;
+  width: 1140px;
+  margin-top: 4px; }
+
+#banner_image {
+  height: 300px;
+  width: 880px; }
+
+#banner_content {
+  padding-left: 10px;
+  height: 300px; }
+
+#container {
+  width: 1140px;
+  margin: 0 auto; }
+
+#focus_area {
+  width: 880px;
+  margin-top: 50px; }
+
+#hot_answer_container {
+  width: 880px;
+  margin-top: 50px; }
+
+#focus_answer {
+  width: 880px; }
+
+#focus_answer_tabs {
+  width: 880px;
+  height: 45px;
+  background-image: url(../image/index/tab_bkg.png);
+  background-repeat: no-repeat; }
+
+.my_interest_tab {
+  width: 200px;
+  height: 45px;
+  background-image: url(../image/index/my_interest_tab.png);
+  background-repeat: no-repeat; }
+
+.my_interest_tab_active, #my_interest_tab:hover {
+  background-image: url(../image/index/my_interest_tab_active.png);
+  background-repeat: no-repeat; }
+
+.tab_image {
+  width: 200px;
+  height: 45px; }
+
+.hot_answer_tab {
+  background-image: url(../image/index/hot_answer_tab.png);
+  background-repeat: no-repeat; }
+
+.hot_answer_tab_active, #hot_answer_tab:hover {
+  background-image: url(../image/index/hot_answer_tab_active.png);
+  background-repeat: no-repeat; }
+
+.tab_padding {
+  margin-left: -58px; }
+
+#focus_people {
+  width: 200px;
+  margin-left: 60px;
+  margin-top: 50px; }
+
+#focus_people_tab {
+  width: 200px;
+  height: 45px;
+  background-image: url(../image/index/people_and_answer_tab.png);
+  background-repeat: no-repeat; }
+
+#interest_topic_icon {
+  width: 60px;
+  height: 280px; }
+
+#lighting_icon {
+  background-image: url(../image/index/lighting_icon.png);
+  background-repeat: no-repeat;
+  background-color: #F9C000; }
+
+#interest_topic {
+  margin-top: 30px; }
+
+#interest_topic_body, #interest_people_body {
+  padding-top: 10px;
+  margin-left: 20px;
+  width: 800px; }
+
+#interest_topic_body_header, #interest_people_body_header {
+  width: 790px; }
+
+#interest_topic_body_lead_content {
+  padding-top: 5px; }
+
+#interest_topic_body_topics, #interest_people_body_topics {
+  padding-top: 10px; }
+
+.to_interest_topic, .to_interest_people {
+  width: 200px;
+  margin-left: 34px;
+  padding-bottom: 30px; }
+
+.ask_and_interest_div {
+  width: 200px;
+  margin-top: 25px;
+  height: 25px; }
+
+.mark_icon_container {
+  margin-top: 18px; }
+
+.mark_icon {
+  height: 30px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-image: url("../image/index/mark_icon.png"); }
+
+.mark_icon:hover {
+  background-image: url("../image/index/mark_icon_active.png"); }
+
+#to_left_topic {
+  width: 30px; }
+
+.people_and_answer {
+  width: 200px;
+  height: 110px;
+  color: #328cbe;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  border-bottom: 0.25px solid #666666; }
+
+.people_and_answer_title {
+  line-height: 17px; }
+
+.people_and_answer_userinfo {
+  padding-top: 15px;
+  height: 50px;
+  line-height: 50px; }
+
+.people_and_answer_content {
+  padding-left: 15px;
+  line-height: 15px; }
+
+#schooler_icon {
+  background-image: url(../image/index/interesting_schooler_icon.png);
+  background-repeat: no-repeat;
+  background-color: #A9D816; }
+
+#interest_people {
+  margin-top: 30px; }
+
+#interest_people_body_topics {
+  height: 160px; }
+
+.mark_people_icon {
+  margin-top: 18px;
+  width: 200px;
+  height: 30px; }
+
+.interest_people_detail_div {
+  width: 200px;
+  height: 90px; }
+
+.interest_people_name {
+  background-color: #17a9b8;
+  color: white;
+  text-align: center;
+  font-size: 11pt;
+  padding-top: 2px;
+  padding-bottom: 2px; }
+
+.interest_people_pic_div {
+  width: 75px; }
+
+.interest_people_detail {
+  padding-left: 5px;
+  padding-top: 10px;
+  width: 120px;
+  font-size: 11pt;
+  font-family: "Microsoft Yahei";
+  color: #666666; }
+
+.interest_people_detail span {
+  font-size: 11pt;
+  ont-family: "Microsoft Yahei"; }
+
+#footer {
+  height: 180px;
+  width: 100%;
+  background-color: #FAF; }

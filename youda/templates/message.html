@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block banner %}
+ {% endblock %}
+{% block focus_area  %}
+
+消息页面左边
+{% endblock %}
+{% block focus_people  %}
+
+消息页面右边
+
+
+<script>
+$(document).ready(function(){
+$('#message_nav').removeClass('message_nav_normal');
+$('#message_nav').addClass('message_nav_active');
+});
+ </script>
+ {% endblock %}

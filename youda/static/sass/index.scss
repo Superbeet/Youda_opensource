@@ -1,0 +1,240 @@
+@import "common.scss";
+@import "header.scss";
+
+
+
+//header
+
+
+//focus_area
+
+#focus_area{
+width:$nav_with;
+margin-top:50px;
+}
+#hot_answer_container{
+width:$nav_with;
+margin-top:50px;
+}
+#focus_answer{
+width:$nav_with;
+}
+#focus_answer_tabs{
+width:$nav_with;
+height: 45px;
+background-image: url(../image/index/tab_bkg.png);
+background-repeat: no-repeat;
+}
+$tab_img_width:0px;
+.my_interest_tab{
+width:200px;
+height: 45px;
+background-image: url(../image/index/my_interest_tab.png);
+background-repeat: no-repeat;
+}
+.my_interest_tab_active,#my_interest_tab:hover{
+background-image: url(../image/index/my_interest_tab_active.png);
+background-repeat: no-repeat;
+}
+.tab_image{
+width:200px;
+height: 45px;
+}
+.hot_answer_tab{
+background-image: url(../image/index/hot_answer_tab.png);
+background-repeat: no-repeat;
+}
+.hot_answer_tab_active,#hot_answer_tab:hover{
+background-image: url(../image/index/hot_answer_tab_active.png);
+background-repeat: no-repeat;
+}
+.tab_padding{
+	margin-left: -58px;
+}
+
+$focus_people_width : 200px;
+#focus_people{
+width:$focus_people_width;
+margin-left:60px;
+margin-top: 50px;
+}
+#focus_people_tab{
+width:$focus_people_width;
+height: 45px;
+background-image: url(../image/index/people_and_answer_tab.png);
+background-repeat: no-repeat;
+
+}
+$interest_topic_width : 280px;
+#interest_topic_icon{
+	width: 60px;
+	height:$interest_topic_width;
+}
+#lighting_icon{
+	background-image: url(../image/index/lighting_icon.png);
+	background-repeat: no-repeat;
+	background-color: #F9C000;
+}
+#interest_topic{
+margin-top: 30px;
+}
+$interest_topic_body_padding : 20px;
+#interest_topic_body{
+	padding-top: 10px;
+	margin-left: $interest_topic_body_padding;
+	width : $nav_with - $interest_topic_body_padding - 60px;
+	
+}
+
+#focus_answer_container{
+}
+#interest_topic_body_header{
+	width : $nav_with - 90px;
+}
+#interest_topic_body_lead_content{
+	padding-top: 5px;
+}
+
+#interest_topic_body_topics{
+padding-top: 10px;
+}
+
+.to_interest_topic{
+	width:200px;
+	margin-left: 34px;
+	padding-bottom: 30px;
+
+}
+.ask_and_interest_div{
+	width:200px;
+margin-top: 25px;
+height: 25px;
+}
+.mark_icon_container{
+margin-top:18px;
+}
+.mark_icon{
+	height:30px;
+	width:200px;
+	background-repeat:no-repeat;
+	background-image:url('../image/index/mark_icon.png');
+}
+.mark_icon:hover{
+	background-image:url('../image/index/mark_icon_active.png');
+}
+
+
+
+#to_left_topic{
+	width:30px;
+}
+.people_and_answer{
+width:200px;
+height:110px;
+color:$base_havier_color;
+margin-top:22px;
+margin-bottom: 22px;
+border-bottom: 0.25px solid $dark_color;
+}
+.people_and_answer_title{
+	line-height: 17px;
+}
+
+
+.people_and_answer_userinfo{
+	padding-top:15px;
+	height:50px;
+	line-height:50px;
+}
+.people_and_answer_content{
+padding-left: 15px;
+line-height: 15px;
+}
+
+//interest_people
+
+#schooler_icon{
+	background-image: url(../image/index/interesting_schooler_icon.png);
+	background-repeat: no-repeat;
+	background-color: #A9D816;
+}
+#interest_people{
+	margin-top: 30px;
+}
+#interest_people_body{
+	@extend #interest_topic_body;
+}
+#interest_people_body_header{
+	@extend #interest_topic_body_header;
+}
+#interest_topic_body_lead_content{
+@extend #interest_topic_body_lead_content;
+
+}
+#interest_people_body_topics{
+	@extend #interest_topic_body_topics;
+	height: 160px;
+}
+
+
+
+.to_interest_people{
+	@extend .to_interest_topic ;
+}
+.mark_people_icon{
+	margin-top: 18px;
+	width:200px;
+	height: 30px;
+}
+.interest_people_detail_div{
+	width:200px;
+	height:90px;
+}
+.interest_people_name{
+	background-color: $base_color;
+	color:white;
+	text-align: center;
+	font-size: 11pt;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.interest_people_pic_div{
+width:75px;
+
+
+}
+
+$interest_people_detail_font_size:11pt;
+$font_ya_hei:"Microsoft Yahei";
+.interest_people_detail{
+	padding-left: 5px;
+	padding-top: 10px;
+	width:120px;
+	font-size: $interest_people_detail_font_size;
+	font-family: $font_ya_hei;
+	color: $dark_color;
+}
+
+
+
+.interest_people_detail span{
+	font-size: $interest_people_detail_font_size;
+	ont-family: $font_ya_hei;
+}
+
+
+
+
+
+
+
+
+//footer
+#footer{
+height: 180px;
+width:100%;
+background-color:#FAF;
+}
+
+
+//common class

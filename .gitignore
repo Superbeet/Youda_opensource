@@ -1,7 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+youda/.settings/
+youda/.*
 # C extensions
 *.so
 youda/.settings/

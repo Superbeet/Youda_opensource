@@ -39,8 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps',
-    'django.contrib.comments',
-    'django.contrib.sites',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,15 +60,15 @@ WSGI_APPLICATION = 'YoudaBE.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 #我的数据库配置
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dev_youda',
-#         'USER': 'root',
-#         'PASSWORD': 'niit',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'dev_youda_2',
+#          'USER': 'root',
+#          'PASSWORD': '',
+#          'HOST': '127.0.0.1',
+#          'PORT': '3306',
+#      }
+#  }
 
 DATABASES = {
     'default': {
@@ -81,15 +79,15 @@ DATABASES = {
 
 #阿里云数据库地址
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dev_youda',
-#         'USER': 'sunny',
-#         'PASSWORD': 'zhangpan',
-#         'HOST': 'rds5w5r280o8rsg0dqdhr.mysql.rds.aliyuncs.com',
-#         'PORT': '3306',
-#     }
-# }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'youda2_dev',
+#          'USER': 'youdawang',
+#          'PASSWORD': 'Superbeet528979',
+#          'HOST': 'rdsa5d5jn2udjgqubak2n.mysql.rds.aliyuncs.com',
+#          'PORT': '3306',
+#      }
+#  }
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -117,32 +115,34 @@ USE_L10N = True
 
 USE_TZ = False
 
-SITE_ID = 1
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-STATIC_URL = '/static/'
-
 TEMPLATE_DIRS = (
-    #os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
-    'html',
+   BASE_DIR + '/templates/',
+   BASE_DIR + '/static/template/',
+   BASE_DIR + '/templates/test/'
 )
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console':{
-#             'level':'DEBUG',
-#             'class':'logging.StreamHandler',
-#         },
-#     },
-#     'loggers': {
-#         'django.db.backends': {
-#             'handlers': ['console'],
-#             'propagate': True,
-#             'level':'DEBUG',
-#         },
-#     }
-# }
-# connections['default'].queries
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+          os.path.join(BASE_DIR, 'static').replace('\\','/'),
+    )
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
+connections['default'].queries

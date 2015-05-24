@@ -1,0 +1,236 @@
+a {
+  outline: none; }
+
+a:focus {
+  outline: none; }
+
+.roundImg {
+  border: 3px solid #FFFFFF;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.rec {
+  width: 250px;
+  height: 95px;
+  background-color: #17a9b8; }
+
+.baseMagTop {
+  margin-top: 7.5px; }
+
+.common_nav {
+  width: 70px;
+  height: 90px; }
+
+.common_font {
+  color: #17a9b8;
+  font-size: 11pt; }
+
+.havier_font {
+  color: #328cbe;
+  font-size: 11pt; }
+
+.dark_font {
+  color: #666666;
+  font-size: 11pt; }
+
+.common_rec_img {
+  padding-top: 10px;
+  padding-left: 10px; }
+
+.common_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+.font_all_black {
+  color: black; }
+
+.font_small {
+  font-size: 10pt; }
+
+.border_bottom {
+  border-bottom: 0.25px solid #17a9b8; }
+
+.border_bottom_dark {
+  border-bottom: 0.25px solid #666666; }
+
+.font_ya_hei {
+  font-family: "Microsoft Yahei"; }
+
+.vertical-align {
+  vertical-align: middle; }
+
+.align_center {
+  text-align: center; }
+
+#all_answer_people_topic {
+  width: 880px;
+  margin-top: 36px; }
+
+.view_count, .comment_count {
+  font-family: "Microsoft Yahei";
+  font-size: 10pt;
+  color: #666666; }
+
+.people_answer, .people_new_ask, .topic_answer, .answer {
+  width: 880px;
+  height: 200px; }
+
+.people_answer_content, .people_ask_content, .topic_answer_content, .answer_content {
+  width: 820px; }
+
+.people_answer_header, .people_ask_header, .topic_answer_header, .answer_header {
+  margin-left: 20px;
+  padding-bottom: 10px; }
+
+.people_answer_header_people_name, .people_ask_header_people_name, .topic_answer_header_people_name, .answer_header_people_name {
+  width: 800px; }
+
+.people_answer_header_answer_name, .people_ask_header_answer_name {
+  width: 800px;
+  padding-top: 10px;
+  padding-right: 10px; }
+
+.people_answer_header_answer_name img, .people_ask_header_answer_name img {
+  vertical-align: middle; }
+
+.people_answer_left_bar {
+  width: 60px; }
+
+.people_answer_detail, .topic_answer_detail, .answer_detail {
+  height: 105px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 20px; }
+
+.people_answer_detail_left_bar, .topic_answer_detail_left_bar, .answer_detail_left_bar {
+  width: 60px;
+  height: 95px; }
+
+.people_answer_detail_text, .topic_answer_detail_text, .answer_detail_text {
+  width: 700px;
+  padding-left: 10px; }
+
+.people_answer_detail_text_context, .topic_answer_detail_text_context, .answer_detail_text_context {
+  width: 700px;
+  padding-top: 20px;
+  font-family: "Microsoft Yahei";
+  color: #666666;
+  font-size: 11pt;
+  padding-left: 10px; }
+
+.people_answer_detail_text_time, .people_ask_detail_text_time, .topic_answer_detail_text_time, .answerdetail_text_time {
+  width: 700px;
+  text-align: right;
+  font-family: "Microsoft Yahei";
+  color: #666666;
+  font-size: 11pt;
+  margin-top: -8px; }
+
+.people_answer_detail_text_time img, .people_ask_detail_text_time img, .topic_answer_detail_text_time img, .answerdetail_text_time img {
+  vertical-align: middle; }
+
+.people_answer_detail_agree_div, .topic_answer_detail_agree_div, .answer_detail_agree_div {
+  width: 60px;
+  height: 65px; }
+
+.people_answer_detail_agree_icon, .topic_answer_detail_agree_icon, .answer_detail_agree_icon {
+  margin-top: -30px;
+  padding-top: 35px;
+  padding-left: 8px;
+  color: #FBCF3B;
+  font-weight: bold;
+  background-color: #FFFAEE;
+  border: 0.25px solid #FBCF3B; }
+
+.people_answer_detail_agree_icon img, .topic_answer_detail_agree_icon img, .answer_detail_agree_icon img {
+  vertical-align: middle; }
+
+.people_answer_detail_agree_count {
+  padding-left: 4px;
+  padding-top: 3px; }
+
+.people_answer_detail_pic_div, .topic_answer_detail_pic_div, .answer_detail_pic_div {
+  width: 60px;
+  height: 60px; }
+
+.people_new_ask {
+  height: 90px; }
+
+.people_ask_left_bar {
+  width: 60px; }
+
+.people_ask_content {
+  padding-bottom: 10px;
+  width: 804px;
+  margin-left: 16px; }
+
+.people_ask_header {
+  margin-left: 0px; }
+
+.people_ask_detail_text_time {
+  text-align: left; }
+
+.topic_answer_left_bar {
+  width: 60px; }
+
+.topic_answer_content {
+  width: 804px;
+  margin-left: 16px; }
+
+.topic_answer_header {
+  margin-left: 0px; }
+
+.topic_answer_detail {
+  height: 120px;
+  margin-left: 0px; }
+
+.topic_answer_detail_text_time {
+  text-align: left;
+  padding-left: 10px; }
+
+.answer_left_bar {
+  width: 60px; }
+
+.answer_content {
+  width: 804px;
+  margin-left: 16px; }
+
+.answer_header {
+  margin-left: 0px; }
+
+.answer_detail {
+  height: 120px;
+  margin-left: 0px; }
+
+.answerdetail_text_time {
+  text-align: left;
+  padding-left: 10px; }
+
+.over_img img {
+  z-index: 0; }
+
+.over_img_description {
+  height: 20px;
+  background-color: rgba(102, 102, 102, 0.5);
+  color: white;
+  z-index: 9999; }
+
+.modal {
+  /*overlay position*/
+  position: relative;
+  line-height: 25px;
+  height: 25px;
+  margin-top: -25px;
+  text-align: center;
+  z-index: 10; }
+
+.base_bg_color_85 {
+  background-color: rgba(23, 169, 184, 0.85); }

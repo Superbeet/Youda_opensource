@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>友答网</title>
+
+<!-- amazeui import -->
+<link rel="stylesheet" href="/static/css/amazeui.min.css" />
+<link rel="stylesheet" href="/static/css/amaze.min.css" />
+
+<link rel="canonical" href="http://www.uanswer.me" />
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/handlebars.min.js" />
+</script>
+<script src="/static/js/amazeui.min.js"></script>
+<script src="/static/js/template-native.js"></script>
+
+<link href="/static/css/index.css" rel="stylesheet" />
+<link href="/static/css/reset.css" rel="stylesheet" />
+<link href="/static/css/wigets.css" rel="stylesheet" />
+
+
+
+{% include 'common_template.html' %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+<!-- amazeui ending -->
+
+
+</head>
+
+<body>
+
+<!-- header  -->
+<div id="header_bg" data-am-sticky>
+	<div id="header">
+		<div id="main_nav_bg" class="fl">
+		<div id="logo" class="fl"></div>
+		<div id="navContainer" class="fl">
+		<ul class="am-nav am-nav-pills">
+		<li> <a href="/home"  id="home_nav" class="nav_width home_nav_normal">
+			</a>  
+		</li>
+		<li> <a href="/topic"  id="topic_nav" class="nav_width topic_nav_normal">
+			</a>  
+		</li>
+		<li> <a href="/schooler"  id="schooler_nav" class="nav_width schooler_nav_normal">
+			</a>  
+		</li>	
+		<li> <a href="/message"  id="message_nav" class="nav_width message_nav_normal">
+			</a>  
+		</li>
+			
+		</ul>
+
+		</div>
+
+		<div id="newPoper" class="fr">
+
+			<a href="#">
+			<div id="newPoperText">
+				新提问
+</div>
+			</a>
+
+
+		</div>
+
+
+
+		<div id="search" class="fr am-input-group">
+	
+		<input type="text" class="am-form-field" placeholder="搜索问题，话题或校友">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-search"></span>
+        </button>
+      </span>
+		</div>
+
+
+
+
+
+
+
+		</div>
+	<div id="user_info" class="fl">
+		<div id="user_info_img" class="fr">
+			<img src="/static/image/avatar-min-img.jpg" width="50" height="50" class="roundImg" />
+		</div>
+	<div id="user_info_content" class="fr">
+		<span>
+		徐子豪<br/>
+		南京邮电大学▽
+
+		</span>
+	</div>
+	</div>
+	</div>
+</div>	
+
+<div id="container">
+	<div id="content">
+ {% block banner %} 
+		<div id="banner">
+			<div data-am-widget="slider" class="am-slider am-slider-default fl" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}'  id="banner_image">
+
+			
+			</div>
+			<div id="banner_content" class="fl">
+			<div class="rec" ></div>
+			<div class="rec baseMagTop"></div>
+			<div class="rec baseMagTop"></div>
+			</div>
+		</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+var bannerdata = {
+	imageList : [{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦1'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦2'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦3'
+	}]
+};
+
+var bannerhtml = template('image_gallary',bannerdata);
+$('#banner_image').html(bannerhtml);
+
+
+	
+});
+
+</script>
+ {% endblock %}
+<div id="focus_area" class="fl">
+ {% block focus_area %}
+
+ {% endblock %}
+</div>
+<div id="focus_people" class="fr">
+ {% block focus_people %}
+
+ {% endblock %}
+</div>
+</div>
+</div>
+<!-- footer  -->
+<!-- <div id="footer">
+</div> -->
+</body>
+</html>

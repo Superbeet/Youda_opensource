@@ -1,0 +1,375 @@
+{% extends "base.html" %}
+
+
+
+
+
+<!-- container  -->
+ {% block focus_area %}
+		<div id="focus_answer" class="fl">
+		<div id="focus_answer_tabs">
+
+		<div id="my_interest_tab" class="fl common_tab my_interest_tab">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		<div id="hot_answer_tab" class="hot_answer_tab fl common_tab tab_padding">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		</div>
+		<div id="focus_answer_container">
+
+		<!-- 感兴趣的话题 -->
+	<div id="interest_topic" class="fl">
+	<div id="interest_topic_icon" class="fl">
+<div id="lighting_icon" class="common_icon"></div>
+	</div>
+	<div id="interest_topic_body" class="fl  border_bottom">
+	<div id="interest_topic_body_header">
+<span class="havier_font">你可能感兴趣的话题</span>&nbsp;&nbsp;<span class="common_font">查看全部>>></span>
+	</div>
+	<div id="interest_topic_body_lead_content">
+		<span class="dark_font font_small">系统根据您定制的话题，推荐您关注以下话题</span>
+	</div>
+	<div id="interest_topic_body_topics">
+
+
+	<!-- 左箭头 -->
+	<div id="to_left_topic" class="fl">
+<img src="/static/image/index/to_left.png" />
+	</div>
+
+
+
+
+	<div id="interest_topic_detail" class="fl">
+
+
+<!-- 感兴趣话题真正内容 -->
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>	
+	<!-- 右箭头 -->
+<div id="to_right_topic" class="fr">
+<img src="/static/image/index/to_right.png" />
+</div>
+
+	</div>
+
+
+
+
+
+
+	
+		</div>
+	</div>
+
+
+<!--  关注的人   -->
+
+
+	<div id="interest_people" class="fl">
+	<div id="interest_people_icon" class="fl">
+<div id="schooler_icon" class="common_icon"></div>
+	</div>
+	<div id="interest_people_body" class="fl  border_bottom">
+	<div id="interest_people_body_header">
+<span class="havier_font">你可能感兴趣的校友</span>&nbsp;&nbsp;<span class="common_font">查看全部>>></span>
+	</div>
+	<div id="interest_topic_body_lead_content">
+		<span class="dark_font font_small">系统根据您定制的话题，推荐您关注以下校友</span>
+	</div>
+	<div id="interest_people_body_topics">
+
+
+	<!-- 左箭头 -->
+	<div id="to_left_people" class="fl">
+<img src="/static/image/index/to_left.png" />
+	</div>
+
+
+
+
+	<div  class="fl" id="interest_people_detail">
+		<!-- 感兴趣的人的真正内容 -->
+
+
+
+
+
+
+
+
+
+
+	</div>	
+	<!-- 右箭头 -->
+<div id="to_right_people" class="fr">
+<img src="/static/image/index/to_right.png" />
+</div>
+
+	</div>
+
+
+
+
+
+
+	
+		</div>
+	</div>
+<div id="all_answer_people_topic" class="fl">
+
+
+
+
+
+<!-- 提出了新的问题开始 -->
+
+
+
+
+
+<!-- 提出了新的问题结束 -->
+
+
+
+<!-- 关注的话题开始 -->
+
+
+<!-- 关注的话题结束 -->
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="people_ask">
+<div class="people_ask_left_bar ">
+	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
+</div>
+
+
+
+</div>
+
+
+<div class="topic_answer">
+<div class="topic_answer_left_bar ">
+	<img src="/static/image/people_detail_pic_60_60.jpg" class="common_icon" />
+</div> -->
+
+</div>
+
+<div id="hot_answer_container" class="fl">
+<!-- 本校热门问答开始 -->
+
+
+
+<!-- 本校热门问答结束 -->
+
+</div>
+</div>
+{% endblock  %}
+
+
+
+
+	{% block focus_people  %}
+		<div id="focus_people_tab"></div>
+
+
+<!-- 撑人数用的 -->
+
+
+<!-- 撑人数用的 -->
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var recommend_answer_data = {
+'recommendAnswerList' : [{
+'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+'askName' : '大学里和毕业后有哪些是你万万没想到的',
+'viewCount' : '123',
+'commentCount' : '6',
+'askUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
+'answerAgreeCount' : '6' ,
+'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是  ',
+'answerUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
+'answerTime' : '2015-01-02  13:38  '
+
+}]
+};
+function toggleTabs(){
+$('#my_interest_tab').toggleClass('my_interest_tab_active');
+$('#hot_answer_tab').toggleClass('hot_answer_tab_active');
+$('#hot_answer_container').toggle();
+$('#focus_answer_container').toggle();
+}
+
+
+$(document).ready(function(){
+$('#home_nav').removeClass('home_nav_normal');
+$('#home_nav').addClass('home_nav_active');
+$('#my_interest_tab').addClass('my_interest_tab_active');
+$('#hot_answer_container').hide();
+$('#my_interest_tab').attr('active','true');
+$('#hot_answer_tab').attr('active','false');
+
+$('#my_interest_tab').on('click',function(){
+if($('#my_interest_tab').attr('active') == 'false'){
+	$('#my_interest_tab').attr('active','true');
+	$('#hot_answer_tab').attr('active','false');
+toggleTabs();
+}
+	return false;
+});
+
+$('#hot_answer_tab').on('click',function(){
+	if($('#hot_answer_tab').attr('active') == 'false'){
+
+		$('#my_interest_tab').attr('active','false');
+		$('#hot_answer_tab').attr('active','true');
+toggleTabs();
+var recommend_answer_html = template('recommend_answer',recommend_answer_data);
+$('#hot_answer_container').html(recommend_answer_html);
+}
+	return false;
+});
+
+
+
+var recommend_interest_topic_data = {
+	recommendList : [{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦1',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦2',
+		focusCount : '112',
+		askCount : '111'
+	},
+	{
+		imageUrl : '/static/image/index/topic_pic.png',
+		description:'请叫我博丽灵梦3',
+		focusCount : '112',
+		askCount : '131'
+	}]
+};
+
+var recommend_interest_topic_html = template('recommend_interest_topic',recommend_interest_topic_data);
+$('#interest_topic_detail').html(recommend_interest_topic_html);
+
+var recommend_interest_schooler_data = {
+	recommendSchoolerList : [{
+		iconUrl : '/static/image/people_detail_pic_75_75.jpg',
+		name:'陈曼1',
+		goodAt : ['互联网运营商','研发12','计算机科学技术']
+	},
+	{
+		iconUrl : '/static/image/people_detail_pic_75_75.jpg',
+		name:'陈曼2',
+		goodAt : ['互联营商','研发','计算机科学技术']
+	},
+	{
+		iconUrl : '/static/image/people_detail_pic_75_75.jpg',
+		name:'陈妮3',
+		goodAt : ['互联网运营商','研1212','计算机科学技术']
+	}]
+};
+
+var recommend_interest_schooler_html = template('recommend_interest_schooler',recommend_interest_schooler_data);
+$('#interest_people_detail').html(recommend_interest_schooler_html);
+    $.ajax({
+        url : '/helpquestions',
+        type : 'get',
+        dataType : 'json',
+        success:function(result){
+            var people_and_answer_html = template('people_and_answer',result);
+            $('#focus_people').append(people_and_answer_html);
+        }
+    });
+
+$.ajax({
+    url : '/focus',
+    dataType : 'json',
+    type : 'get',
+    success : function(result){
+        var data = result.data;
+        for(var i = 0 ; i < result.length ; i ++){
+           var currentIndexData = data[i];
+            var type = currentIndexData.type;
+            console.log(currentIndexData.data);
+            var html = '';
+            switch(type){
+                case 1:
+                    html = template('recommend_people_new_ask',currentIndexData);
+                    break;
+                case 2:
+                    html = template('recommend_people_answer',currentIndexData);
+                    break;
+                case 3 :
+                    html = template('recommend_topic_answer',currentIndexData);
+                    break;
+                case 4:
+                    html = template('recommend_topic_answer_response',currentIndexData);
+                    break;
+                case 5:
+                    html = template('recommend_answer_response',currentIndexData);
+                    break;
+                default :
+            }
+             $('#all_answer_people_topic').append(html);
+        }
+    }
+});
+
+
+
+
+});
+</script>
+
+
+
+
+
+ {% endblock %}
+
