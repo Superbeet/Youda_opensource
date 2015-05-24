@@ -4,7 +4,8 @@ from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
 from apps.models import Users, Questions, Topics, UsersFocus, Schools,\
-    UsersAffiliate, UserSchool, TopicFocus, QuestionsFocus
+    UsersAffiliate, UserSchool, TopicFocus, QuestionsFocus, AnswersComments,\
+    Answers
 from datetime import datetime
 from django.utils import timezone
 from django.db import transaction, connection
@@ -91,13 +92,18 @@ def demo():
     commonDao.todele(Questions, question);
 def test():
 #     for i in range(10):
-#         question = Questions(user_id=1,question_content='how to learn python'+str(55+i),question_detail='which books should i to read?',
+#         question = Questions(user_id=2,question_content='how to learn python'+str(55+i),question_detail='which books should i to read?',
 #                              active_time=datetime.now(),browse_num=10,answer_num=10,want_answer_num=5,attention_num=2,invation_num=50,has_attach=1);
 #         commonDao.toadd(Questions, question);
-    topic = commonDao.toget(Topics,topic_id=9);
-    for x in range(5):
-        question = commonDao.toget(Questions,question_id=10+x);
-        QuestionsFocus(question=question,user_id=1).save();
+#     topic = commonDao.toget(Topics,topic_id=9);
+#     for x in range(5):
+#         question = commonDao.toget(Questions,question_id=10+x);
+#         QuestionsFocus(question=question,user_id=1).save();
+    #for i in range(10):
+        #comment = AnswersComments(content='Test'+str(i),answer_id=1+i,user_id=2,comment_num=1+i,parent_id=0);
+        #answer = Answers(answer_content='Test'+str(10+i),support_num=10+i,anonymous=1,has_attach=0,comment_num=2+i,question_id=1+i,user_id=1);
+        tf = TopicFocus(user_id=2,topic_id=9)
+        commonDao.toadd(TopicFocus,tf);
     
 if __name__=='__main__':
     test();

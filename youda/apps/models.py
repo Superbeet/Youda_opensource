@@ -24,10 +24,6 @@ class Answers(models.Model):
     objects = models.Manager()
     common_objects = CommonDao();
 
-    def __str__(self):
-        return models.Model.__str__(self)
-
-
 class AnswersComments(models.Model):
     comment_id = models.AutoField(primary_key=True)
     answer = models.ForeignKey('Answers')
@@ -302,20 +298,20 @@ class UsersFocus(models.Model):
 class UsersAffiliate(models.Model):
     user = models.ForeignKey(Users, primary_key=True)
     email_state = models.IntegerField(blank=True, null=True)
-    qq = models.CharField(max_length=15, blank=True)
+    qq = models.CharField(max_length=15, blank=True,null=True)
     qq_state = models.IntegerField(blank=True, null=True)
-    phone = models.CharField(max_length=20, blank=True)
+    phone = models.CharField(max_length=20, blank=True,null=True)
     phone_state = models.IntegerField(blank=True, null=True)
-    website = models.CharField(max_length=100, blank=True)
+    website = models.CharField(max_length=100, blank=True,null=True)
     website_state = models.IntegerField(blank=True, null=True)
     reg_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
-    last_ip = models.CharField(max_length=20, blank=True)
+    last_ip = models.CharField(max_length=20, blank=True,null=True)
     last_time = models.DateTimeField(blank=True, null=True)
     question_num = models.IntegerField(blank=True, null=True)
     answer_num = models.IntegerField(blank=True, null=True)
     attention_topic_num = models.IntegerField(blank=True, null=True)
     community_flag = models.IntegerField(blank=True, null=True)
-    community_setting = models.CharField(max_length=255, blank=True)
+    community_setting = models.CharField(max_length=255, blank=True,null=True)
     
     school = models.ManyToManyField('Schools',blank=True, null=True,through='UserSchool')
     question_focus = models.ManyToManyField('Questions', blank=True, null=True,through='QuestionsFocus')

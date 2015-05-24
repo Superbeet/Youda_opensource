@@ -16,23 +16,23 @@ class QuestionService:
         questions = commonDao.toquerypage(Questions,page=1);
         return questions;
     #school_name 学校名称，page 第几页，pagesize为页面大小 
-    def getHotQuestions(self,school_name,page=PAGE,pagesize=PAGESIZE):
+    def getHotQuestions(self,school_id=1,page=PAGE,pagesize=PAGESIZE):
         commonDao =  CommonDao();
         cursor = connection.cursor();
-        sql = "select q_u.user_id as questioner_id,q_u.user_name as questioner_name,q_u.head as questioner_head ,q_u.academy as questioner_academy,q_u.entrance_time as questoner_entime,q_u.education as questioner_education ,q.publish_time as question_time,q.anonymous as question_anonymous,q.browse_num,q.answer_num,a.answer_content,a_u.user_id as answerer_id,a_u.user_name as answerer_name,a_u.head as answerer_head,a_u.academy as answerer_academy,a_u.entrance_time as answerer_entime,a_u.education as answerer_education,a.publish_time as answer_time,a.anonymous as answer_anonymous,max(a.support_num) as support_num FROM questions q LEFT JOIN answers a  on a.question_id=q.question_id LEFT JOIN users q_u on q_u.user_id=q.user_id LEFT JOIN users a_u on a_u.user_id=a.user_id GROUP BY q.question_id ORDER BY q.browse_num+q.answer_num*10 DESC LIMIT %s,%s"
-        data_length = cursor.execute(sql,[(page-1)*pagesize,pagesize]);
+        sql = "select q_u.user_id as questioner_id,q_u.user_name as questioner_name,q_u.head as questioner_head ,q_u_s.academy as questioner_academy,q_u_s.entrance_time as questoner_entime,q_u_s.education as questioner_education ,q.publish_time as question_time,q.anonymous as question_anonymous,q.browse_num,q.answer_num,a.answer_content,a_u.user_id as answerer_id,a_u.user_name as answerer_name,a_u.head as answerer_head,a_u_s.academy as answerer_academy,a_u_s.entrance_time as answerer_entime,a_u_s.education as answerer_education,a.publish_time as answer_time,a.anonymous as answer_anonymous,max(a.support_num) as support_num FROM questions q LEFT JOIN answers a  on a.question_id=q.question_id LEFT JOIN users q_u on q_u.user_id=q.user_id LEFT JOIN user_school q_u_s on q_u.user_id=q_u_s.user_id LEFT JOIN users a_u on a_u.user_id=a.user_id AND q_u_s.school_id=%s LEFT JOIN user_school a_u_s on a_u.user_id=q_u_s.user_id AND a_u_s.school_id=%s GROUP BY q.question_id ORDER BY q.browse_num+q.answer_num*10 DESC LIMIT %s,%s"
+        data_length = cursor.execute(sql,[school_id,school_id,(page-1)*pagesize,pagesize]);
         #data = self.cursor.fetchall();
         data = commonDao.dictfetchall(cursor)
         #print data;
         map_data={'length':data_length,'data':data}
         return map_data;
-    def getHelpfulQuestions(self,user_id):
+    def getHelpfulQuestions(self,user_id,school_id=1):
         commonDao =  CommonDao();
         cursor = connection.cursor();
-        sql = "select q.question_id,q.question_content,u.user_id,u.user_name,u.academy,u.entrance_time,u.education,u.head from  \
-            (SELECT t.topic_id,t.topic_name,COUNT(a.answer_id) as answer_num from answers a ,questions q,topics t WHERE a.user_id=%s and a.question_id=q.question_id and q.topic_id=t.topic_id GROUP BY t.topic_id ORDER BY answer_num DESC) commands ,\
-            questions q,users u where q.answer_num=0 and q.topic_id=commands.topic_id and q.user_id=u.user_id ORDER BY commands.answer_num DESC limit 0,5";
-        data_length = cursor.execute(sql,user_id);
+        sql = "select q.question_id,q.question_content,u.user_id,u.user_name,us.academy,us.entrance_time,us.education,u.head from \
+            (SELECT t.topic_id,t.topic_name,COUNT(a.answer_id) as answer_num from answers a ,questions q,topics t,questions_topic qt WHERE a.user_id=%s and a.question_id=q.question_id and q.question_id=qt.questions_id AND qt.topics_id=t.topic_id GROUP BY t.topic_id ORDER BY answer_num DESC) commands ,\
+            questions q,users u,user_school us,questions_topic qt where q.answer_num=0 and q.question_id=qt.topics_id and qt.topics_id=commands.topic_id and q.user_id=u.user_id and u.user_id=us.user_id and us.school_id=%s ORDER BY commands.answer_num DESC  limit 0,5";
+        data_length = cursor.execute(sql,[user_id,school_id]);
         data = commonDao.dictfetchall(cursor);
         map_obj = {'length':data_length,'data':data};
        
