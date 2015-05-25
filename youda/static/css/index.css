@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+  height: 100%; }
+
 a {
   outline: none; }
 
@@ -54,6 +58,9 @@ a:focus {
 
 .font_small {
   font-size: 10pt; }
+
+.hidden {
+  display: none; }
 
 .border_bottom {
   border-bottom: 0.25px solid #17A9B8; }
