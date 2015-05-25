@@ -45,7 +45,7 @@
         	<span class="am-icon-user"></span>
         </button>
       </span>
-		<input type="text" class="am-form-field " placeholder="用户名">
+		<input type="text" class="am-form-field " id="user_name" placeholder="用户名">
 
 		</div>
 </div>
@@ -58,7 +58,7 @@
         	<span class="am-icon-lock"></span>
         </button>
       </span>
-		<input type="password" class="am-form-field " placeholder="用户密码">
+		<input type="password" class="am-form-field " id="user_pass" placeholder="用户密码">
 
 		</div>
 
@@ -107,7 +107,7 @@
 
             <div class="vistor_href_container fl"><a href="#">游客通道→</a></div>
              <div class="goto_register_container fl"><a href="#">先去注册</a></div>
-            <button class="am-btn primary_btn fr">马上登录</button>
+            <button class="am-btn primary_btn fr" onclick="login()">马上登录</button>
         </div>
 
 
@@ -120,5 +120,20 @@
 </div>
 </div>
 </div>
+<script>
+function login(){
+username = $("#user_name").val();
+pass = $("#user_pass").val();
+$.post("/login/",{userName:username,pass:pass},function(data){
+    if(data.status==-1)
+        alert("ERROR");
+    else
+        window.location.href="/home";
+        
+        
+});
+
+}
+</script>
 </body>
 </html>

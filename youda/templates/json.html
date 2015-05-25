@@ -1,13 +1,14 @@
 
 <script src="/static/js/jquery.min.js"></script>
 <script>
-$.get("questiondetail/answer/13",
-   function(data){
-     alert(data.answers);
-   },"json");
-   
-//$.get("/test2",
+//$.get(&quot;questiondetail/answer/13&quot;,
 //   function(data){
-//     alert('common '+data);
-//   });
+//     alert(data.answers);
+//   },&quot;json&quot;);
+   
+$.get("/focus/",
+   function(data){
+     alert('common '+data);
+   });
+
 </script>
