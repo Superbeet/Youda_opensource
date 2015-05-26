@@ -310,3 +310,177 @@ $img_description_height:25px;
 .base_bg_color_85{
 	background-color: rgba(23,169,184,0.85);
 }
+
+//new Poper css
+
+
+.new_answer_container{
+        background-color: #EFFCFC;
+        border:1px solid #1EA4AC;
+        -moz-border-radius: 5px;      /* Gecko browsers */
+        -webkit-border-radius: 5px;   /* Webkit browsers */
+         border-radius:5px;            /* W3C syntax */
+    }
+.am-modal-no-btn .am-modal-dialog{
+      background-color: #EFFCFC;
+     -moz-border-radius: 5px;      /* Gecko browsers */
+        -webkit-border-radius: 5px;   /* Webkit browsers */
+         border-radius:5px;
+}
+
+.dialog_close_btn{
+    background-color: #1EA4AC;
+    color: white;
+    width: 24px;
+    -moz-border-radius: 12px;      /* Gecko browsers */
+    -webkit-border-radius: 12px;   /* Webkit browsers */
+    border-radius:12px;
+}
+    .am-modal-hd .am-close{
+        right: 10px;
+        top: 15px;
+    }
+    .am-modal-bd{
+        padding-left: 60px;
+    padding-right: 60px;;
+    }
+    .new_answer_description h1{
+        color:#1EA4AC;
+        font-size: 13pt;
+        text-align: left;
+         margin-top: 15px;
+         margin-bottom: 15px;
+    }
+    .new_answer_description p{
+        color:#666666;
+        font-size: 10pt;
+        line-height: 22px;
+        text-align: left;
+        margin:0px;
+    }
+    .new_answer_description h2{
+        color:#666666;
+        font-size: 12pt;
+        text-align: left;
+           margin-top: 10px;
+         margin-bottom: 0px;
+    }
+    .new_answer_description h3{
+        color:#666666;
+        font-size: 10pt;
+        text-align: left;
+           margin-top: 10px;
+      margin-bottom: 0px;
+        font-weight:normal;
+    }
+.new_answer_form_container{
+    width: 100%;
+}
+    .new_answer_content_input{
+        width: 100%;
+        height: 30px;
+        margin-top: 15px;
+    }
+    .new_answer_desc_input{
+        width: 100%;
+        height: 45px;
+         margin-top: 15px;
+    }
+    .common_input_border{
+        border:1.5px solid #1EA4AC;
+        -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px;            /* W3C syntax */
+    }
+    .common_button_border{
+         background-color: #EFFCFC;
+        border:1.5px solid #1EA4AC;
+        -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+        width: 120px;
+         height: 30px;
+      font-size: 10pt;
+        line-height: 30px;
+        padding: 0px;
+        margin: 0px;
+    }
+       .common_button_border:hover{
+background-color: #1EA4AC;
+           color:white;
+       }
+
+.submit_question_btn{
+    background-color: #17A9B8;
+    color:#ffffff;
+    width: 100px;
+   font-size:11pt;
+            -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+}
+    .submit_question_btn:hover{
+        background-color:#2A7393;
+        color:#ffffff;
+    }
+.to_add_paper_btn{
+    color:#FFFFFF;
+    background-color:#328CBE;
+     width: 100px;
+  font-size: 11pt;
+            -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+  margin-right: 15px;
+
+}
+    .to_add_paper_btn:hover{
+         background-color:#068791;
+        color:#ffffff;
+    }
+.topic_selecter_container{
+    margin-top: 15px;
+  text-align: left;
+  font-size: 10pt;
+  color:$dark_color;
+}
+    .commit_container{
+          margin-top: 15px;
+    }
+   .new_answer_input_container{
+     width: 100%;
+   }
+   .new_answer_content_recomman_container{
+     width: 100%;
+   }
+
+ //answer list recommand
+.topic_answer_list_content{
+	width: $nav_with;
+	height: 180px;
+	background-color: #F9FFFF;
+}
+.topic_answer_list_content ul{
+	list-style: none;
+	padding-left: 0px;
+  padding-right: 0px;
+}
+.topic_answer_list_content ul li{
+	height: 35px;
+	line-height: 35px;
+}
+.topic_answer_list_content_new_answer{
+  height: auto;
+width: 745px;
+}
+
+.topic_answer_list_content_new_answer ul li{
+	height: 30px;
+	line-height: 30px;
+  color: $dark_color;
+  font-size: 10pt;
+}
+.new_answer_content_recomman_container p{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

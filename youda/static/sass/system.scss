@@ -1,0 +1,227 @@
+@import "common.scss";
+
+$system_panel_width : $nav_with + 40px;
+.system_container{
+  width: $system_panel_width;
+  margin:0 auto;
+}
+
+.login_bkg{
+  background-image: url('/static/image/system_bkg.png');
+  background-size: 100%;
+}
+
+
+.opacity_bkg{
+background-color: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 100%;
+}
+.register_bkg{
+  background-image: url('/static/image/system_bkg.png');
+  background-size: 100%;
+}
+.system_logo{
+  width: $system_panel_width;
+  height: 126px;
+  background-image: url('/static/image/system/logo_slogan.png');
+  background-repeat: no-repeat;
+}
+
+.main_area{
+  width: $system_panel_width + 20px;
+  padding-right: 10px;
+  height: auto;
+  background-color: rgba(255,255,255,0.85);
+
+}
+$login_area_width:400px;
+.image_area{
+   height : 404px;
+  width: $system_panel_width - $login_area_width;
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.image_area .image{
+  width: 420px;
+  height: 300px;
+  background-color: #095f8a;
+}
+
+.login_area{
+  height : 404px;
+  width: $login_area_width;
+  background-color: rgba(32,178,170,0.2);
+}
+
+.register_area{
+height : 404px;
+  width: $login_area_width;
+
+}
+.common_form_size{
+     width: $login_area_width;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: $dark_color;
+}
+
+.user_form{
+@extend .common_form_size;
+  margin-top: 45px;
+}
+
+.password_form{
+@extend .common_form_size;
+}
+.common_login_field{
+width: 270px;
+
+}
+
+.remember_me_form{
+@extend .common_form_size;
+}
+
+.three_part_login_form{
+  @extend .common_form_size;
+}
+.submit_form{
+   @extend .common_form_size;
+}
+
+.mail_form{
+   @extend .common_form_size;
+  margin-top: 60px;
+}
+
+.user_name_form{
+  @extend .common_form_size;
+}
+
+.current_stage_form{
+    @extend .common_form_size;
+}
+
+.sex_form{
+ @extend .common_form_size;
+}
+
+.goto_register_container{
+  margin-left: 60px;
+}
+.primary_btn{
+    color:#FFFFFF;
+            background-color:#068791;
+     width: 100px;
+  font-size: 11pt;
+            -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+
+
+}
+    .primary_btn:hover{
+
+        background-color:#328CBE;
+        color:#ffffff;
+    }
+
+
+
+
+    .base_color_btn{
+    color:#FFFFFF;
+            background-color:$base_color;
+     width: 100px;
+  font-size: 11pt;
+            -moz-border-radius: 3px;      /* Gecko browsers */
+        -webkit-border-radius: 3px;   /* Webkit browsers */
+         border-radius:3px; /* W3C syntax */
+
+
+}
+    .base_color_btn:hover{
+
+        background-color:$base_havier_color;
+        color:#ffffff;
+    }
+
+
+.common_selecter{
+	height: 44px;
+	line-height: 44px;
+	font-size: 10pt;
+}
+
+.top_title{
+    width: $system_panel_width;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 10;
+}
+.register_title{
+  padding-right: 30px;
+}
+.bottom_title{
+    width: $system_panel_width;
+}
+
+.second_part{
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+
+.second_part .common_register_container{
+  height: 50px;
+  line-height: 50px;
+  margin-top: 25px;
+
+}
+
+.common_select{
+  width: 170px;
+  height: 32px;
+  line-height: 32px;
+  border:1px solid $base_color;
+  background-color: #F0FCFC;
+  color: $dark_color;
+  padding: 0px;
+  	border-radius: 4px;
+	moz-border-radius:4px;
+}
+.common_blank_border{
+   border:1px solid $base_color;
+  background-color: #F0FCFC;
+  color: $dark_color;
+  padding: 0px;
+  	border-radius: 4px;
+	moz-border-radius:4px;
+}
+.self_intro_form{
+  width: $system_panel_width - (35px * 2);
+  height: 60px;
+}
+.common_margin_select{
+    margin-left: 30px;
+}
+.cornor{
+  background-color: $base_color;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: white;
+    	border-radius: 3px;
+	moz-border-radius:3px;
+}
+
+.register_submit{
+  margin-left: 40px;
+}
