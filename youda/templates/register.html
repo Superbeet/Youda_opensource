@@ -430,7 +430,19 @@
   </ul>
 </div>
 
+<script>
 
+
+    $('.am-dropdown-content').children('li').children('a').on('click',function(){
+        var content = this.innerHTML;
+        var html = content + '<span class="cornor fr">∨</span>';
+        var root = $(this).parent('li').parent('ul').parent('div');
+        var button = root.children('button')[0];
+        button.innerHTML = html;
+        root.attr('value',content);
+    });
+
+</script>
     <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
 
 
@@ -483,12 +495,12 @@
             var register_area = $('#register_area');
             next_step_btn.on('click',function(){
              var stage = $('#current_stage_form').attr('is_graduate');
-                 register_area.addClass("hidden");
+                 register_area.hide();
                 if(stage == 'in_school'){
-                    in_school_area.removeClass('hidden');
+                    in_school_area.fadeIn();
                 }
                 else{
-                    not_in_school_area.removeClass('hidden');
+                    not_in_school_area.fadeIn();
                 }
 
             });
@@ -496,14 +508,14 @@
             var in_school_upper_step_btn = $('#in_school_upper_step_btn');
 
 in_school_upper_step_btn.on('click',function(){
-    in_school_area.addClass("hidden");
-    register_area.removeClass("hidden")
+    in_school_area.hide();
+    register_area.fadeIn();
 });
 
             var not_in_school_upper_step_btn = $('#not_in_school_upper_step_btn');
 not_in_school_upper_step_btn.on('click',function(){
-    not_in_school_area.addClass("hidden");
-    register_area.removeClass("hidden")
+    not_in_school_area.hide();
+    register_area.fadeIn();
 });
 
 
