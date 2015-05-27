@@ -45,7 +45,8 @@
         	<span class="am-icon-user"></span>
         </button>
       </span>
-		<input type="text" class="am-form-field " id="user_name" placeholder="用户名">
+
+		<input type="text" class="am-form-field " placeholder="用户名" id="user_name" />
 
 		</div>
 </div>
@@ -58,31 +59,76 @@
         	<span class="am-icon-lock"></span>
         </button>
       </span>
-		<input type="password" class="am-form-field " id="user_pass" placeholder="用户密码">
+		<input type="password" class="am-form-field " placeholder="用户密码" id="password" />
 
 		</div>
 
 
 
         </div>
-        <div class="remember_me_form">
+        <div class="remember_me_form" id="remember_me_form">
             <a href="#" class="fl ">
-<div class="common_selecter" id="">
+<div class="common_selecter" id="remenber_me">
 <div class="fl">
-	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;记住用户名
+	<img src="/static/image/index/radio_selected.png" class="select_img" />&nbsp;&nbsp;记住用户名
 </div>
 </div>
 </a>
 
                        <a href="#" class="fr ">
-<div class="common_selecter" id="">
+<div class="common_selecter" id="auto_login">
 <div class="fl">
-	<img src="/static/image/index/radio_unselect.png" />&nbsp;&nbsp;下次自动登录
+	<img src="/static/image/index/radio_unselect.png" class="select_img" />&nbsp;&nbsp;下次自动登录
 </div>
 </div>
 </a>
 
         </div>
+
+
+        <script>
+
+            $(function(){
+            var remenber_me = $('#remenber_me');
+            var auto_login = $('#auto_login');
+            var remenber_me_img = remenber_me.children("div").children("img");
+            var auto_login_img = auto_login.children("div").children("img");
+             $('#remember_me_form').attr('login_type','remenber_me');
+
+        remenber_me.on('click',function(){
+                $('#remember_me_form').attr('login_type','remenber_me');
+                 remenber_me_img[0].src = '/static/image/index/radio_selected.png';
+                auto_login_img[0].src = '/static/image/index/radio_unselect.png';
+
+            });
+
+            auto_login.on('click',function(){
+                 $('#remember_me_form').attr('login_type','auto_login');
+           remenber_me_img[0].src = '/static/image/index/radio_unselect.png';
+                auto_login_img[0].src = '/static/image/index/radio_selected.png';
+            });
+
+
+
+
+
+                $('#login_btn').on('click',function(){
+                var user_name = $('#user_name');
+                var password = $('#password');
+                var login_tyoe = remenber_me.attr('login_type');
+				$.post("/login/",{userName:user_name,pass:password},function(data){
+				    if(data.status==-1)
+				        alert("ERROR");
+				    else
+				        window.location.href="/home/";        
+				});
+                });
+
+            });
+
+
+
+        </script>
         <div class="three_part_login_form">
 
             <a href="#" class="fl ">
@@ -107,7 +153,7 @@
 
             <div class="vistor_href_container fl"><a href="#">游客通道→</a></div>
              <div class="goto_register_container fl"><a href="#">先去注册</a></div>
-            <button class="am-btn primary_btn fr" onclick="login()">马上登录</button>
+            <button class="am-btn primary_btn fr" id="login_btn">马上登录</button>
         </div>
 
 
@@ -120,20 +166,5 @@
 </div>
 </div>
 </div>
-<script>
-function login(){
-username = $("#user_name").val();
-pass = $("#user_pass").val();
-$.post("/login/",{userName:username,pass:pass},function(data){
-    if(data.status==-1)
-        alert("ERROR");
-    else
-        window.location.href="/home";
-        
-        
-});
-
-}
-</script>
 </body>
 </html>

@@ -30,12 +30,12 @@
         <img src="/static/image/system/register_title.png" class="fr" />
         </div>
     <!-- 注册界面第一版 -->
-<div class="main_area fl hidden">
+<div class="main_area fl " id="register_area">
     <div class="image_area fl">
        <div class="image">
            </div>
     </div>
-    <div class="register_area fl">
+    <div class="register_area fl" >
 
 
         <div class="mail_form dark_font">
@@ -71,10 +71,10 @@
 
 
 
-        <div class="current_stage_form">
+        <div class="current_stage_form" id="current_stage_form" is_graduate="in_school">
             <span class="fl">目前状态</span>
             <a href="#" class="fl ">
-<div class="common_selecter" id="">
+<div class="common_selecter" id="in_school_selecter">
 <div class="fl">
 	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;我在上学
 </div>
@@ -82,7 +82,7 @@
 </a>
 
                        <a href="#" class="fr ">
-<div class="common_selecter" id="">
+<div class="common_selecter" id="not_in_school_selecter">
 <div class="fl">
 	<img src="/static/image/index/radio_unselect.png" />&nbsp;&nbsp;我已毕业
 </div>
@@ -117,7 +117,7 @@
 
             <div class="vistor_href_container fl"><a href="#">游客通道→</a></div>
              <div class="goto_register_container fl"><a href="#">直接登录</a></div>
-            <button class="am-btn primary_btn fr">下一步</button>
+            <button class="am-btn primary_btn fr" id="register_first_next_step">下一步</button>
         </div>
 
 
@@ -129,7 +129,7 @@
 
 
 <!-- 注册界面第二版(在校模块) -->
-    <div class="main_area fl second_part hidden">
+    <div class="main_area fl second_part hidden" id="in_school_area">
 <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
@@ -249,15 +249,11 @@
 
 
      <a href="#" class="fl">游客通道→</a>
-        <button class="am-btn base_color_btn fr register_submit">提交申请</button>
-     <button class="am-btn primary_btn fr uppper_step">上一步</button>
+        <button class="am-btn base_color_btn fr register_submit" id="register_submit">提交申请</button>
+     <button class="am-btn primary_btn fr uppper_step" id="in_school_upper_step_btn">上一步</button>
  </div>
 
     </div>
-
-
-
-
 
 
 
@@ -266,7 +262,8 @@
 
 
     <!-- 注册界面第三版(工作模块)-->
-    <div class="main_area fl second_part">
+    <div class="main_area fl second_part hidden" id="not_in_school_area">
+
 <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
@@ -433,7 +430,19 @@
   </ul>
 </div>
 
+<script>
 
+
+    $('.am-dropdown-content').children('li').children('a').on('click',function(){
+        var content = this.innerHTML;
+        var html = content + '<span class="cornor fr">∨</span>';
+        var root = $(this).parent('li').parent('ul').parent('div');
+        var button = root.children('button')[0];
+        button.innerHTML = html;
+        root.attr('value',content);
+    });
+
+</script>
     <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
 
 
@@ -453,11 +462,67 @@
 
      <a href="#" class="fl">游客通道→</a>
         <button class="am-btn base_color_btn fr register_submit">提交申请</button>
-     <button class="am-btn primary_btn fr uppper_step">上一步</button>
+     <button class="am-btn primary_btn fr uppper_step" id="not_in_school_upper_step_btn">上一步</button>
  </div>
 
     </div>
     <!-- 注册界面第三版(工作模块) -->
+
+
+    <script>
+        $(function(){
+            var in_school = $('#in_school_selecter');
+            var not_in_school = $('#not_in_school_selecter');
+            var in_school_selecter_img = in_school.children("div").children("img");
+            var not_in_school_selecter_img = not_in_school.children("div").children("img");
+             $('#current_stage_form').attr('is_graduate','in_school');
+
+                in_school.on('click',function(){
+                $('#current_stage_form').attr('is_graduate','in_school');
+                 in_school_selecter_img[0].src = '/static/image/index/radio_selected.png';
+                not_in_school_selecter_img[0].src = '/static/image/index/radio_unselect.png';
+
+            });
+
+            not_in_school.on('click',function(){
+             $('#current_stage_form').attr('is_graduate','not_in_school');
+           in_school_selecter_img[0].src = '/static/image/index/radio_unselect.png';
+            not_in_school_selecter_img[0].src = '/static/image/index/radio_selected.png';
+            });
+            var in_school_area = $('#in_school_area');
+            var not_in_school_area = $('#not_in_school_area');
+            var next_step_btn = $('#register_first_next_step');
+            var register_area = $('#register_area');
+            next_step_btn.on('click',function(){
+             var stage = $('#current_stage_form').attr('is_graduate');
+                 register_area.hide();
+                if(stage == 'in_school'){
+                    in_school_area.fadeIn();
+                }
+                else{
+                    not_in_school_area.fadeIn();
+                }
+
+            });
+
+            var in_school_upper_step_btn = $('#in_school_upper_step_btn');
+
+in_school_upper_step_btn.on('click',function(){
+    in_school_area.hide();
+    register_area.fadeIn();
+});
+
+            var not_in_school_upper_step_btn = $('#not_in_school_upper_step_btn');
+not_in_school_upper_step_btn.on('click',function(){
+    not_in_school_area.hide();
+    register_area.fadeIn();
+});
+
+
+      });
+
+
+    </script>
 </div>
 </div>
 </body>
