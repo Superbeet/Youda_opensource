@@ -18,6 +18,7 @@ def answer_detail(request):
     return render_to_response('answer_detail.html');
 #显示我的关注下的所有内容
 def showMyFocus(request):
+    print request.session['update_time'];
     focusService = FocusService();
     #page = request.GET['page'];
     #user_id = request.GET['user_id'];
@@ -31,7 +32,7 @@ def showMyFocus(request):
 def showHotQuestions(request):
     questionService = QuestionService();
     #school_name = request.session['school_name'];
-    rows = questionService.getHotQuestions('nupt',1);#
+    rows = questionService.getHotQuestions(1,1);#
     DATA = json.dumps(rows,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
 
