@@ -8,8 +8,10 @@ from django.core.context_processors import request
 import json
 from django.http.response import HttpResponse
 from util.CJsonEncoder import CJsonEncoder
+from django.views.decorators.cache import cache_page
 questionService = None;
 #问题详情
+@cache_page(1*60)
 def showQuestionDetail(request,question_id):
     questionService = QuestionService();
     #question_id = request.GET['question_id'];

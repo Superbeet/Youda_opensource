@@ -70,7 +70,7 @@
             <a href="#" class="fl ">
 <div class="common_selecter" id="remenber_me">
 <div class="fl">
-	<img src="/static/image/index/radio_selected.png" class="select_img" />&nbsp;&nbsp;记住用户名
+	<img src="/static/image/index/radio_selected.png" class="select_img"/>&nbsp;&nbsp;记住用户名
 </div>
 </div>
 </a>
@@ -82,12 +82,8 @@
 </div>
 </div>
 </a>
-
         </div>
-
-
         <script>
-
             $(function(){
             var remenber_me = $('#remenber_me');
             var auto_login = $('#auto_login');
@@ -108,25 +104,20 @@
                 auto_login_img[0].src = '/static/image/index/radio_selected.png';
             });
 
-
-
-
-
                 $('#login_btn').on('click',function(){
-                var user_name = $('#user_name');
-                var password = $('#password');
+                var user_name = $('#user_name').val();
+                var password = $('#password').val();
                 var login_tyoe = remenber_me.attr('login_type');
-				$.post("/login/",{userName:user_name,pass:password},function(data){
+                alert(login_tyoe);
+/*				$.post("/login/",{userName:user_name,pass:password},function(data){
 				    if(data.status==-1)
 				        alert("ERROR");
 				    else
 				        window.location.href="/home/";        
-				});
+				});*/
+                
                 });
-
             });
-
-
 
         </script>
         <div class="three_part_login_form">
@@ -146,8 +137,6 @@
 </div>
 </div>
 </a>
-
-
         </div>
         <div class="submit_form">
 

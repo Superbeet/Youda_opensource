@@ -26,7 +26,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -55,6 +55,13 @@ ROOT_URLCONF = 'YoudaBE.urls'
 
 WSGI_APPLICATION = 'YoudaBE.wsgi.application'
 
+#CACHE_BACKEND = 'file://E:/python_workspace/Youda_BackEnd/youda/templates/home_test.html?timeout=60'
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': 'E:/python_workspace/Youda_BackEnd/youda/caches/',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

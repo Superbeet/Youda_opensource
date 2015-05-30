@@ -42,7 +42,8 @@ def addSchool():
     user = commonDao.toget(UsersAffiliate,user_id=1);
     school = commonDao.toget(Schools,school_id=1)
     #UsersAffiliate(user=user).save();
-    UserSchool(user=user,school=school,education=1).save();
+    userSchool = UserSchool(user=user,school=school,education=1);
+    commonDao.toadd(userSchool, userSchool);
     #print o;
 def getObject():
     user = commonDao.toget(UsersAffiliate,user_id=1);

@@ -6,7 +6,7 @@ from django.http.response import HttpResponse, HttpResponseRedirect
 from apps.form import ContactForm
 from django.core.mail import send_mail
 def test1(request):
-    return render_to_response('json.html');
+    return render_to_response('file_upload_test.html');
 def test2(request):
     li = {'name1':'tomcat','name2':'apache'};
     return HttpResponse(li);

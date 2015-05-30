@@ -30,11 +30,11 @@ urlpatterns = patterns('',
 )
 #用于测试
 urlpatterns +=patterns('',
-    url(r'testjson',testAction.test1),
+    url(r'test',testAction.test1),
     url(r'test2',testAction.test2),
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
     url(r'fileupload',loginAction.headUpload),
-    url(r'readheadfile',loginAction.readHeadFile),
+    url(r'readheadfile',loginAction.readHeadFile2),
     url(r'contact',testAction.contact),
                        
 )
