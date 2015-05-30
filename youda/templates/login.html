@@ -107,8 +107,8 @@
                 $('#login_btn').on('click',function(){
                 var user_name = $('#user_name').val();
                 var password = $('#password').val();
-                var login_tyoe = remenber_me.attr('login_type');
-                alert(login_tyoe);
+                var login_type = $('#remenber_me_form').attr('login_type');
+                alert(login_type);
 /*				$.post("/login/",{userName:user_name,pass:password},function(data){
 				    if(data.status==-1)
 				        alert("ERROR");
