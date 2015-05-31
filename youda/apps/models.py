@@ -320,9 +320,9 @@ class UsersAffiliate(models.Model):
     question_focus = models.ManyToManyField('Questions', blank=True, null=True,through='QuestionsFocus')
     topic_focus = models.ManyToManyField('Topics', blank=True, null=True,through='TopicFocus')
 
-    user_school = models.ForeignKey('UserSchools')
-    focus_topic = models.ForeignKey('TopicFocus')
-    user_job = models.ForeignKey('UserJobs')
+#     school = models.ManyToManyField('UserSchool',blank=True, null=True,through='UserSchool')
+#     question_focus = models.ManyToManyField('QuestionsFocus', blank=True, null=True,through='QuestionsFocus')
+#     topic_focus = models.ManyToManyField('TopicFocus', blank=True, null=True,through='TopicFocus')
 
     class Meta:
         db_table = 'users_affiliate'

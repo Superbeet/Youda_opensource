@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'test2',testAction.test2),
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
     
-    url(r'^test_focusTopicTest/$', views.test_focusTopicTest),
+    url(r'^test_getFocusTopic/$', views.test_getFocusTopic),
     url(r'^test_getSchoolTopic/$', views.test_getSchoolTopic),
     
 )
