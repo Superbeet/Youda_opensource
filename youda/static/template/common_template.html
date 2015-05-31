@@ -136,7 +136,7 @@
 <div class="topic_answer_detail_text_time ">
 <span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  />回答时间
+<img src="/static/image/index/time_icon.png"  /><%=data.publish_time %>
 </div>
 </div>
 </div>
@@ -200,7 +200,7 @@
 <div class="topic_answer_detail_text_time ">
 <span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  />回答时间
+<img src="/static/image/index/time_icon.png"  /><%=data.publish_time %>
 </div>
 </div>
 </div>
@@ -246,7 +246,7 @@
 <div class="topic_answer_detail_agree_div">
 <div class="topic_answer_detail_agree_icon">
 
-<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count">123</span>
+<span class="people_answer_detail_agree_count"><span class="am-icon-thumbs-o-up"></span>123</span>
 </div>
 </div>
 </div>
@@ -259,7 +259,7 @@
 <div class="topic_answer_detail_text_time ">
 <span class="fl font_small">回答个人简介</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  />回答时间
+<img src="/static/image/index/time_icon.png"  /><%=data.publish_time %>
 </div>
 </div>
 </div>
@@ -315,7 +315,7 @@
 			<%=data.answer_content %>
 		</div><br />
 		<div class="people_answer_detail_text_time">
-			<img src="/static/image/index/time_icon.png" />回答时间
+			<img src="/static/image/index/time_icon.png" /><%=data.publish_time %>
 		</div>
 	</div>
 </div>
@@ -440,3 +440,9 @@
 </script>
 <!--  推荐人物新问答结束 -->
 
+
+            <script type="text/html" id="selecter_creater">
+<% for(i = 0 ; i < data.length ; i++){ %>
+ <li  value="<%= data[i].value %>"><a href="#"><%= data[i].text %></a></li>
+                <% }%>
+</script>

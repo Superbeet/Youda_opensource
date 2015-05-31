@@ -10,13 +10,18 @@
 <link rel="stylesheet" href="/static/css/amaze.min.css" />
 
 <link rel="canonical" href="http://www.uanswer.me" />
-<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>>
 
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/template-native.js"></script>
 
 <link href="/static/css/index.css" rel="stylesheet" />
     <link href="/static/css/system.css" rel="stylesheet" />
+        <link href="/static/css/wigets.css" rel="stylesheet" />
+
+
+
+
 </head>
 <body   class="login_bkg">
 
@@ -430,19 +435,6 @@
   </ul>
 </div>
 
-<script>
-
-
-    $('.am-dropdown-content').children('li').children('a').on('click',function(){
-        var content = this.innerHTML;
-        var html = content + '<span class="cornor fr">∨</span>';
-        var root = $(this).parent('li').parent('ul').parent('div');
-        var button = root.children('button')[0];
-        button.innerHTML = html;
-        root.attr('value',content);
-    });
-
-</script>
     <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
 
 
@@ -526,4 +518,5 @@ not_in_school_upper_step_btn.on('click',function(){
 </div>
 </div>
 </body>
+          <script src="/static/js/wieget.js"></script>
 </html>
