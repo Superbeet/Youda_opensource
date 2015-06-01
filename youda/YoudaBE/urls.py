@@ -45,6 +45,7 @@ urlpatterns +=patterns('',
 urlpatterns += patterns('',
     url(r'^getFocusTopic/',views.getFocusTopic),
     url(r'^getSchoolTopic/', views.getSchoolTopic),
+    url(r'^getTopicQuestion/', views.getTopicQuestion),
 #     url(r'^home',homeAction.index),#显示home页
 #     url(r'^message',messageAction.index),#显示message页    
 )
