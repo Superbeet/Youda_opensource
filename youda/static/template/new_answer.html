@@ -117,20 +117,134 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
       <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
     </div>
     <div class="am-modal-bd">
-
-邀请邀请邀请
+        <div class="new_answer_description">
+        <h1>邀请校友回答</h1>
         </div>
+		<div id="short_tabs">
+
+
+		<div id="invite_recommand_by_system_tab" class="invite_recommand_by_system_tab fl common_tab invite_recommand_by_system_tab_active">
+		<a href="javascript:void(0)">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+        <div id="invite_my_interest_tab" class="fl common_tab invite_my_interest_tab  tab_padding">
+		<a href="javascript:void(0)">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+
+            		<div id="new_question_search_schooler" class="fr am-input-group new_question_search_schooler">
+
+		<input type="text" class="am-form-field" placeholder="输入名字搜索校友">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-search"></span>
+        </button>
+      </span>
+		</div>
+
+            <div class="common_selecter" id="">
+<div class="fr">
+	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;全选
+</div>
+</div>
+
+		</div>
+        </div>
+
+
+           <div class="schooler_chooser_container">
+
+               <div class="common_schooler_chooser fl">
+                   <div class="schooler_choose_header fl">
+                       <img src="/static/image/avatar-min-img.jpg" class="common_icon_50_50" />
+                       
+                   </div>
+                    <div class="schooler_choose_header_content fl">
+                        <div class="schooler_choose_people_short_intro">
+                            <div class="schooler_choose_people_name fl">徐子豪</div>
+                            <div class="schooler_choose_people_intro fl">通讯工程·2011·本科</div>
+                            <div class="schooler_choose_check_container fl">
+                               <img src="/static/image/index/checked_icon.png"/>
+
+                            </div>
+
+                        </div>
+                        <div class="schooler_choose_people_good_at">
+
+                            擅长话题：java，产品经理，研发，运营商
+                        </div>
+
+
+                    </div>
+                    <div class="schooler_choose_bottom fl">
+                    <div class="common_icon_container fl">
+                        <img src="/static/image/index/diamond_icon.png" />积分123
+
+                    </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/ask_icon.png" />提问123
+
+                        </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/comment_icon.png" />回复123
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+               </div>
+
+                <div class="common_schooler_chooser fr"></div>
+                <div class="common_schooler_chooser fl schooler_choose_margin_top"></div>
+
+                <div class="common_schooler_chooser fr schooler_choose_margin_top"></div>
+                 <div class="common_schooler_chooser fl schooler_choose_margin_top"></div>
+
+                <div class="common_schooler_chooser fr schooler_choose_margin_top"></div>
+
+
+
+
+           </div>
            </div>
 
 <!-- invite schooler to answer end -->
 </div>
+<style>
 
+</style>
 
 <script>
     $('#submit_question_btn').on('click',function(){
         $('#new_question_container').hide();
         $('#invite_to_answer_container').fadeIn();
     });
+    var invite_recommand_by_system_tab = $('#invite_recommand_by_system_tab');
+    var invite_my_interest_tab = $('#invite_my_interest_tab');
+
+
+    invite_recommand_by_system_tab.on('click',function(){
+
+         invite_my_interest_tab.removeClass('invite_my_interest_tab_active');
+        invite_recommand_by_system_tab.addClass('invite_recommand_by_system_tab_active');
+    });
+    invite_my_interest_tab.on('click',function(){
+        invite_recommand_by_system_tab.removeClass('invite_recommand_by_system_tab_active');
+        invite_my_interest_tab.addClass('invite_my_interest_tab_active');
+
+    });
+
+
 
 </script>
 
