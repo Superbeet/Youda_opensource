@@ -4,8 +4,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
     questionAction, loginAction, systemAction
-from apps import views
-
+    
+import views
 import urls_test
 
 urlpatterns = patterns('',
@@ -43,9 +43,9 @@ urlpatterns +=patterns('',
 )
 
 urlpatterns += patterns('',
-    url(r'^getFocusTopic/',views.getFocusTopic),
-    url(r'^getSchoolTopic/', views.getSchoolTopic),
-    url(r'^getTopicQuestion/', views.getTopicQuestion),
+    url(r'^getFocusTopic/',views.topic.getFocusTopic),
+    url(r'^getSchoolTopic/', views.topic.getSchoolTopic),
+    url(r'^getTopicQuestion/', views.topic.getTopicQuestion),
 #     url(r'^home',homeAction.index),#显示home页
 #     url(r'^message',messageAction.index),#显示message页    
 )

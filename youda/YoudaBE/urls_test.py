@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
     questionAction
 
-from apps import views
+import views
 
 urlpatterns = patterns('',
     url(r'testjson',testAction.test1),
@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 #     url(r'^test/getFocusTopic/$', views.test_getFocusTopic),
 #     url(r'^test/getSchoolTopic/$', views.test_getSchoolTopic),
 #     url(r'^test/getTopicQuestion/$', views.test_getTopicQuestion),
-    url(r'^test/view/$', views.unitTest)
+    url(r'^test/view/$', views.topic.unitTest)
     
 )

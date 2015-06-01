@@ -18,3 +18,4 @@ encoding//service/FocusService.py=utf-8
 encoding//service/QuestionService.py=utf-8
 encoding//service/TopicService.py=utf-8
 encoding//service/UserService.py=utf-8
+encoding//views/topic.py=utf-8
