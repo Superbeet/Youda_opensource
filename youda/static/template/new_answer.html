@@ -156,9 +156,9 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
         </div>
 
 
-           <div class="schooler_chooser_container">
+           <div class="schooler_chooser_container" id="schooler_chooser_container">
 
-               <div class="common_schooler_chooser fl">
+               <div class="common_schooler_chooser fl" check='true' id="1">
                    <div class="schooler_choose_header fl">
                        <img src="/static/image/avatar-min-img.jpg" class="common_icon_50_50" />
                        
@@ -204,17 +204,60 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
 
                </div>
 
-                <div class="common_schooler_chooser fr"></div>
-                <div class="common_schooler_chooser fl schooler_choose_margin_top"></div>
+               <div class="common_schooler_chooser fr" check='true' id="2">
+                   <div class="schooler_choose_header fl">
+                       <img src="/static/image/avatar-min-img.jpg" class="common_icon_50_50" />
 
-                <div class="common_schooler_chooser fr schooler_choose_margin_top"></div>
-                 <div class="common_schooler_chooser fl schooler_choose_margin_top"></div>
+                   </div>
+                    <div class="schooler_choose_header_content fl">
+                        <div class="schooler_choose_people_short_intro">
+                            <div class="schooler_choose_people_name fl">徐子豪</div>
+                            <div class="schooler_choose_people_intro fl">通讯工程·2011·本科</div>
+                            <div class="schooler_choose_check_container fl">
+                               <img src="/static/image/index/checked_icon.png"/>
 
-                <div class="common_schooler_chooser fr schooler_choose_margin_top"></div>
+                            </div>
+
+                        </div>
+                        <div class="schooler_choose_people_good_at">
+
+                            擅长话题：java，产品经理，研发，运营商
+                        </div>
+
+
+                    </div>
+                    <div class="schooler_choose_bottom fl">
+                    <div class="common_icon_container fl">
+                        <img src="/static/image/index/diamond_icon.png" />积分123
+
+                    </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/ask_icon.png" />提问123
+
+                        </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/comment_icon.png" />回复123
+
+                        </div>
+
+
+                    </div>
 
 
 
 
+
+
+               </div>
+
+
+
+
+           </div>
+
+           <div class="submit_form_container">
+
+                 <button class="am-btn primary_btn fr" id="send_invite_btn">发送邀请</button>
            </div>
            </div>
 
@@ -244,9 +287,43 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
 
     });
 
+$('.common_schooler_chooser').on('click',function(){
+    if( $(this).attr('check') == 'true'){
+         $(this).attr('check','false');
+    }
+    else{
+           $(this).attr('check','true');
+    }
+
+$(this).children('.schooler_choose_header_content').children('.schooler_choose_people_short_intro').children('.schooler_choose_check_container').children('img').toggle();
+
+});
+$('#send_invite_btn').on('click',function(){
+    getCheckedData();
+});
+
+    function getCheckedData(){
+        var ids = [];
+        var childs =  $('#schooler_chooser_container').children();
+        for(var i = 0 ; i < childs.length ; i++){
+            ids.push(childs[i].id);
+        }
+     debugger;
 
 
+    }
 </script>
+<style>
+    .common_schooler_chooser:hover{
+        cursor:pointer;
+    }
+    .submit_form_container{
+        width: 780px;
+        margin: 0 auto;
+        margin-top: 15px;;
 
+    }
+
+</style>
 
 <!-- newAnswerPoperDiv End-->
