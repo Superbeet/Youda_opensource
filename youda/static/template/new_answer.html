@@ -272,20 +272,16 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
         $('#new_question_container').hide();
         $('#invite_to_answer_container').fadeIn();
     });
-    var invite_recommand_by_system_tab = $('#invite_recommand_by_system_tab');
-    var invite_my_interest_tab = $('#invite_my_interest_tab');
 
-
-    invite_recommand_by_system_tab.on('click',function(){
-
-         invite_my_interest_tab.removeClass('invite_my_interest_tab_active');
-        invite_recommand_by_system_tab.addClass('invite_recommand_by_system_tab_active');
+    var activeNode = $('#invite_recommand_by_system_tab');
+    $('.common_tab').on('click',function(){
+        var currentNode = $(this);
+        activeNode.removeClass(activeNode.attr('id')+'_active');
+        currentNode.addClass(currentNode.attr('id')+'_active');
+        activeNode = currentNode;
     });
-    invite_my_interest_tab.on('click',function(){
-        invite_recommand_by_system_tab.removeClass('invite_recommand_by_system_tab_active');
-        invite_my_interest_tab.addClass('invite_my_interest_tab_active');
 
-    });
+
 
 $('.common_schooler_chooser').on('click',function(){
     if( $(this).attr('check') == 'true'){
@@ -305,10 +301,14 @@ $('#send_invite_btn').on('click',function(){
     function getCheckedData(){
         var ids = [];
         var childs =  $('#schooler_chooser_container').children();
-        for(var i = 0 ; i < childs.length ; i++){
-            ids.push(childs[i].id);
-        }
-     debugger;
+        childs.each(function(){
+            var currentNode = $(this);
+            if(currentNode.attr('check') == 'true') {
+               ids.push(currentNode.attr('id'));
+            }
+        });
+
+     window.alert(ids.join(','));
 
 
     }
