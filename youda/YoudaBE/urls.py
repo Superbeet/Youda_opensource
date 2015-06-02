@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from action import homeAction, topicAction, schoolmateAction, messageAction,\
-    questionAction
-        
-from apps import views
-
+from action import homeAction, topicAction,schoolmateAction, testAction,messageAction,\
+    questionAction, loginAction, systemAction
+    
+import views
 import urls_test
 
 urlpatterns = patterns('',
@@ -26,13 +25,30 @@ urlpatterns = patterns('',
     url(r'hotquestions/$',homeAction.showHotQuestions),#本校热门问答
     url(r'helpquestions/$',homeAction.showHelpfulQuestions),#TA在求助
     url(r'questiondetail/question/(\d+)/$',questionAction.showQuestionDetail),#问题详情的问题
-    url(r'questiondetail/answer/(\d+)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
+    url(r'questiondetail/answer/(\d)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
+    url(r'^loginpage/$',loginAction.toLogin,{'op':'1'}),
+    url(r'^login/$',loginAction.toLogin,{'op':'2'}),
+    url(r'^register/$',systemAction.toRegister),
     #url(r'^message',messageAction.index),
+)
+#用于测试
+urlpatterns +=patterns('',
+    url(r'testjson',testAction.test1),
+    url(r'test2',testAction.test2),
+    url(r'showQuestionDetail',questionAction.showQuestionDetail),
+    url(r'fileupload',loginAction.headUpload),
+    url(r'readheadfile',loginAction.readHeadFile),
+    url(r'contact',testAction.contact),
+                       
 )
 
 urlpatterns += patterns('',
-    url(r'^getFocusTopic/',views.getFocusTopic),
-    url(r'^getSchoolTopic/', views.getSchoolTopic),
+    url(r'^getFocusTopic/',views.topic.getFocusTopic),
+    url(r'^getSchoolTopic/', views.topic.getSchoolTopic),
+    url(r'^getTopicQuestion/', views.topic.getTopicQuestion),
+    url(r'^getFocusedSchoolmate/', views.schoolmate.getFocusedSchoolmate),
+
 #     url(r'^home',homeAction.index),#显示home页
 #     url(r'^message',messageAction.index),#显示message页    
 )
+

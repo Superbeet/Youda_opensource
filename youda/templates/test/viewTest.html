@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#button1").click(function(){
+    
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getFocusTopic/',
+		    dataType: "json",
+		    data: {"user_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		}); 
+    });
+    
+ 	$("#button2").click(function(){
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getSchoolTopic/',
+		    dataType: "json",
+		    data: {"user_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		}); 
+    });
+
+    $("#button3").click(function(){
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getTopicQuestion/',
+		    dataType: "json",
+		    data: {"topic_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		});
+    });
+
+    $("#button4").click(function(){
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getFocusedSchoolmate/',
+		    dataType: "json",
+		    data: {"user_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		});
+    });
+
+
+});
+
+
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Test Ajax for Django View Functions</h2></div>
+<div id="div2"></div>
+
+<button id="button1">getFocusTopic</button>
+<button id="button2">getSchoolTopic</button>
+<button id="button3">getTopicQuestion</button>
+
+<button id="button4">getFocusedSchoolmate</button>
+
+</body>
+</html>

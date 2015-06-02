@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>友答网</title>
+
+<!-- amazeui import -->
+<link rel="stylesheet" href="/static/css/amazeui.min.css" />
+<link rel="stylesheet" href="/static/css/amaze.min.css" />
+
+<link rel="canonical" href="http://www.uanswer.me" />
+<script src="/static/js/jquery.min.js"></script>
+
+<script src="/static/js/amazeui.min.js"></script>
+<script src="/static/js/template-native.js"></script>
+
+<link href="/static/css/index.css" rel="stylesheet" />
+    <link href="/static/css/system.css" rel="stylesheet" />
+</head>
+<body   class="login_bkg">
+<div class="system_container">
+<div class="system_logo fl">
+    
+</div>
+        <div class="top_title fl">
+        <img src="/static/image/system/login_title.png" class="fr" />
+        </div>
+<div class="main_area fl">
+
+
+    <div class="image_area fl">
+       <div class="image">
+           </div>
+    </div>
+    <div class="login_area fl">
+
+
+        <div class="user_form dark_font">
+        <span>用户名</span>
+
+            <div  class="fr am-input-group common_login_field">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-user"></span>
+        </button>
+      </span>
+		<input type="text" class="am-form-field " id="user_name" placeholder="用户名">
+
+		</div>
+</div>
+               <div class="password_form dark_font">
+        <span>密&nbsp;&nbsp;码</span>
+
+            <div  class="fr am-input-group common_login_field">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-lock"></span>
+        </button>
+      </span>
+		<input type="password" class="am-form-field " id="user_pass" placeholder="用户密码">
+
+		</div>
+
+
+
+        </div>
+        <div class="remember_me_form">
+            <a href="#" class="fl ">
+<div class="common_selecter" id="">
+<div class="fl">
+	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;记住用户名
+</div>
+</div>
+</a>
+
+                       <a href="#" class="fr ">
+<div class="common_selecter" id="">
+<div class="fl">
+	<img src="/static/image/index/radio_unselect.png" />&nbsp;&nbsp;下次自动登录
+</div>
+</div>
+</a>
+
+        </div>
+        <div class="three_part_login_form">
+
+            <a href="#" class="fl ">
+<div class="common_selecter" id="">
+<div class="fl">
+	<img src="/static/image/system/tencent.png" />&nbsp;&nbsp;QQ登陆
+</div>
+</div>
+</a>
+
+                       <a href="#" class="fr ">
+<div class="common_selecter" id="">
+<div class="fl">
+	<img src="/static/image/system/sina.png" />&nbsp;&nbsp;微博登录
+</div>
+</div>
+</a>
+
+
+        </div>
+        <div class="submit_form">
+
+            <div class="vistor_href_container fl"><a href="#">游客通道→</a></div>
+             <div class="goto_register_container fl"><a href="#">先去注册</a></div>
+            <button class="am-btn primary_btn fr" onclick="login()">马上登录</button>
+        </div>
+
+
+    </div>
+    </div>
+            <div class="bottom_title fl">
+        <img src="/static/image/system/bottom.png" class="fr" />
+        </div>
+
+</div>
+</div>
+</div>
+<script>
+function login(){
+username = $("#user_name").val();
+pass = $("#user_pass").val();
+$.post("/login/",{userName:username,pass:pass},function(data){
+    if(data.status==-1)
+        alert("ERROR");
+    else
+        window.location.href="/home";
+        
+        
+});
+
+}
+</script>
+</body>
+</html>

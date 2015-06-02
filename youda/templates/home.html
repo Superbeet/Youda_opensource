@@ -318,7 +318,7 @@ var recommend_interest_schooler_data = {
 var recommend_interest_schooler_html = template('recommend_interest_schooler',recommend_interest_schooler_data);
 $('#interest_people_detail').html(recommend_interest_schooler_html);
     $.ajax({
-        url : '/helpquestions',
+        url : '/helpquestions/',
         type : 'get',
         dataType : 'json',
         success:function(result){
@@ -328,7 +328,7 @@ $('#interest_people_detail').html(recommend_interest_schooler_html);
     });
 
 $.ajax({
-    url : '/focus',
+    url : '/focus/',
     dataType : 'json',
     type : 'get',
     success : function(result){
@@ -336,7 +336,7 @@ $.ajax({
         for(var i = 0 ; i < result.length ; i ++){
            var currentIndexData = data[i];
             var type = currentIndexData.type;
-            console.log(currentIndexData.data);
+            //console.log(currentIndexData.data);
             var html = '';
             switch(type){
                 case 1:
@@ -348,7 +348,7 @@ $.ajax({
                 case 3 :
                     html = template('recommend_topic_answer',currentIndexData);
                     break;
-                case 4:
+                case 4:m
                     html = template('recommend_topic_answer_response',currentIndexData);
                     break;
                 case 5:
