@@ -10,13 +10,18 @@
 <link rel="stylesheet" href="/static/css/amaze.min.css" />
 
 <link rel="canonical" href="http://www.uanswer.me" />
-<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>>
 
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/template-native.js"></script>
 
 <link href="/static/css/index.css" rel="stylesheet" />
     <link href="/static/css/system.css" rel="stylesheet" />
+        <link href="/static/css/wigets.css" rel="stylesheet" />
+
+
+
+
 </head>
 <body   class="login_bkg">
 
@@ -71,43 +76,31 @@
 
 
 
-        <div class="current_stage_form" id="current_stage_form" is_graduate="in_school">
+        <div class="current_stage_form" id="current_stage_form">
             <span class="fl">目前状态</span>
-            <a href="#" class="fl ">
-<div class="common_selecter" id="in_school_selecter">
-<div class="fl">
+
+<div class="fl common_selecter" id="in_school_selecter" value='in_school'>
 	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;我在上学
 </div>
-</div>
-</a>
 
-                       <a href="#" class="fr ">
-<div class="common_selecter" id="not_in_school_selecter">
-<div class="fl">
+<div class="common_selecter fr" id="not_in_school_selecter" value='not_in_school'>
 	<img src="/static/image/index/radio_unselect.png" />&nbsp;&nbsp;我已毕业
 </div>
-</div>
-</a>
+
+
+
 
         </div>
 
-        <div class="sex_form">
+        <div class="sex_form" id="sex_form">
             <span class="fl">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-            <a href="#" class="fl ">
-<div class="common_selecter" id="">
-<div class="fl">
+<div class="common_selecter fl" id="" value='man'>
 	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;男
 </div>
-</div>
-</a>
 
-                       <a href="#" class="fr ">
-<div class="common_selecter" id="">
-<div class="fl">
+<div class="common_selecter fr" id="" value='female'>
 	<img src="/static/image/index/radio_unselect.png" />&nbsp;&nbsp;女
 </div>
-</div>
-</a>
 
         </div>
 
@@ -430,19 +423,6 @@
   </ul>
 </div>
 
-<script>
-
-
-    $('.am-dropdown-content').children('li').children('a').on('click',function(){
-        var content = this.innerHTML;
-        var html = content + '<span class="cornor fr">∨</span>';
-        var root = $(this).parent('li').parent('ul').parent('div');
-        var button = root.children('button')[0];
-        button.innerHTML = html;
-        root.attr('value',content);
-    });
-
-</script>
     <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
 
 
@@ -470,31 +450,42 @@
 
 
     <script>
+
+function getRadioValue(form_id){
+    return $('#'+form_id).attr('value');
+}
+
+function bindRadioClick(){
+               $('.common_selecter').on('click',function(){
+               var select_radio_img_src = '/static/image/index/radio_selected.png';
+            var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
+               var parent = $(this).parent();
+               var currentNode = $(this);
+               var child = parent.children('div');
+                $(child).each(function(index,n){
+                $(n).children('img')[0].src = unselect_radio_img_src;
+
+               });
+
+               currentNode.children('img')[0].src = select_radio_img_src;
+                parent.attr('value',currentNode.attr('value'));
+           });
+}
+
+
+
         $(function(){
-            var in_school = $('#in_school_selecter');
-            var not_in_school = $('#not_in_school_selecter');
-            var in_school_selecter_img = in_school.children("div").children("img");
-            var not_in_school_selecter_img = not_in_school.children("div").children("img");
-             $('#current_stage_form').attr('is_graduate','in_school');
 
-                in_school.on('click',function(){
-                $('#current_stage_form').attr('is_graduate','in_school');
-                 in_school_selecter_img[0].src = '/static/image/index/radio_selected.png';
-                not_in_school_selecter_img[0].src = '/static/image/index/radio_unselect.png';
+bindRadioClick();
 
-            });
 
-            not_in_school.on('click',function(){
-             $('#current_stage_form').attr('is_graduate','not_in_school');
-           in_school_selecter_img[0].src = '/static/image/index/radio_unselect.png';
-            not_in_school_selecter_img[0].src = '/static/image/index/radio_selected.png';
-            });
+
             var in_school_area = $('#in_school_area');
             var not_in_school_area = $('#not_in_school_area');
             var next_step_btn = $('#register_first_next_step');
             var register_area = $('#register_area');
             next_step_btn.on('click',function(){
-             var stage = $('#current_stage_form').attr('is_graduate');
+             var stage = getRadioValue('current_stage_form');
                  register_area.hide();
                 if(stage == 'in_school'){
                     in_school_area.fadeIn();
@@ -526,4 +517,11 @@ not_in_school_upper_step_btn.on('click',function(){
 </div>
 </div>
 </body>
+          <script src="/static/js/wieget.js"></script>
+<style>
+    .common_selecter:hover{
+        cursor: pointer;
+    }
+
+</style>
 </html>

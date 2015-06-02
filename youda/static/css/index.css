@@ -225,6 +225,102 @@ a:focus {
   width: 1140px;
   margin: 0 auto; }
 
+.schooler_choose_people_name {
+  width: 50px;
+  color: #328CBE; }
+
+.schooler_choose_people_intro {
+  width: 220px;
+  padding-left: 5px;
+  font-size: 9pt;
+  color: #666666;
+  text-align: left; }
+
+.schooler_choose_check_container {
+  width: 30px;
+  padding-left: 5px; }
+
+.schooler_chooser_container {
+  width: 796px;
+  height: 400px;
+  overflow-y: scroll;
+  margin-left: 60px; }
+
+.common_schooler_chooser {
+  width: 380px;
+  height: 120px;
+  border: 1px solid #328CBE;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 12px; }
+
+.schooler_choose_people_short_intro {
+  width: auto;
+  height: 40px;
+  line-height: 40px; }
+
+.schooler_choose_people_good_at {
+  width: auto;
+  height: 20px;
+  font-size: 9pt;
+  color: #666666;
+  text-align: left; }
+
+.common_icon_container {
+  width: 120px;
+  height: 25px;
+  line-height: 25px;
+  text-align: left;
+  font-size: 9pt;
+  color: #666666; }
+
+.schooler_choose_margin_top {
+  margin-top: 20px; }
+
+.schooler_choose_header {
+  width: 50px;
+  height: 50px; }
+
+.schooler_choose_header_content {
+  width: 300px;
+  margin-left: 10px;
+  height: 50px; }
+
+.schooler_choose_bottom {
+  width: 362px;
+  height: 25px;
+  margin-top: 15px; }
+
+.common_icon_50_50 {
+  width: 50px;
+  height: 50px;
+  border-radius: 27px;
+  moz-border-radius: 27px; }
+
+#short_tabs {
+  width: 780px;
+  height: 44px;
+  background-image: url("/static/image/index/tab_bkg_short.png");
+  background-repeat: no-repeat; }
+
+.invite_recommand_by_system_tab {
+  background-image: url("/static/image/index/system_recommand_tab.png");
+  background-repeat: no-repeat; }
+
+.invite_my_interest_tab:hover, .invite_recommand_by_system_tab_active {
+  background-image: url("/static/image/index/system_recommand_tab_active.png"); }
+
+.invite_my_interest_tab {
+  background-image: url("/static/image/index/my_interest_tab.png");
+  background-repeat: no-repeat; }
+
+.invite_my_interest_tab:hover, .invite_my_interest_tab_active {
+  background-image: url("/static/image/index/my_interest_tab_active.png"); }
+
+.new_question_search_schooler {
+  width: 200px;
+  margin-left: 15px; }
+
 #focus_area {
   width: 880px;
   margin-top: 50px; }

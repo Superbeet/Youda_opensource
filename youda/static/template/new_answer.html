@@ -1,0 +1,329 @@
+<!-- newAnswerPoperDiv Begin -->
+ <div class="am-modal am-modal-no-btn new_answer_container" tabindex="-1" id="newAnswer">
+  <div class="am-modal-dialog" id="new_question_container">
+    <div class="am-modal-hd">
+      <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
+    </div>
+    <div class="am-modal-bd">
+    <div class="new_answer_description">
+    <h1>提问原则</h1>
+        <p>真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h2>禁止情况</h2>
+         <p>真实、客观、简洁、明确、规范</p>
+         <p>1、真实、客观、简洁、明确、规范</p>
+         <p>2、真实、客观、简洁、明确、规范</p>
+         <p>3、真实、客观、简洁、明确、规范</p>
+         <p>4、真实、客观、简洁、明确、规范</p>
+    <h3>完整的提问建议可查看<a href="#">友答的提问规范有哪些</a>以及<a href="#">如何提一个好问题</a></h3>
+
+    </div>
+
+        <div class="new_answer_form_container">
+            <div id="doc-dropdown-justify-js">
+  <div class="am-dropdown new_answer_input_container" id="new_answer_input_container">
+      <input type="text" placeholder="一句话描述你的问题(必填)" class="new_answer_content_input common_input_border am-dropdown-toggle" id="new_answer_content_input" />
+    <div class="am-dropdown-content new_answer_content_recomman_container">
+
+        <p class="havier_font">您想问的是不是：</p>
+        <div class="topic_answer_list_content topic_answer_list_content_new_answer">
+		<ul>
+			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+			<!-- 以下为话题充字数用 -->
+			<li>
+			<div class="topic_title fl ">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>			<li>
+			<div class="topic_title fl">
+你的专业或者职业给你养了什么特殊的习惯
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+123
+			</div>
+			</li>
+
+
+			<!-- 以为话题充字数用 -->
+		</ul>
+
+		</div>
+        <p class="havier_font">都不是，我要提一个新问题>>></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  $('#new_answer_content_input').on('focus',function(){
+$('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
+  });
+
+
+</script>
+
+
+
+
+
+    <input type="text" placeholder="问题补充(选填)" class="new_answer_desc_input common_input_border" />
+            <div class="topic_selecter_container">
+          <div class="am-dropdown" data-am-dropdown id="topic_selecter">
+  <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>选择话题类型 <span class="cornor fr">∨</span></button>
+  <ul class="am-dropdown-content">
+
+    <li  value="1"><a href="#">HTML</a></li>
+       <li  value="2"><a href="#">java</a></li>
+       <li  value="3"><a href="#">产品经理</a></li>
+
+  </ul>
+</div>
+            或 <button class="am-btn common_button_border">创建新的话题</button>选择话题类型，系统将推荐更合适的校友回答您的问题
+
+                </div>
+             <div class="commit_container">
+                  <button class="am-btn fr submit_question_btn" id="submit_question_btn">发布问题</button>
+                 <button class="am-btn  fr to_add_paper_btn">我要发文章</button>
+
+
+             </div>
+        </div>
+
+    </div>
+  </div>
+
+<!-- invite schooler to answer begin -->
+
+       <div class="am-modal-dialog hidden" id="invite_to_answer_container">
+    <div class="am-modal-hd">
+      <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
+    </div>
+    <div class="am-modal-bd">
+        <div class="new_answer_description">
+        <h1>邀请校友回答</h1>
+        </div>
+		<div id="short_tabs">
+
+
+		<div id="invite_recommand_by_system_tab" class="invite_recommand_by_system_tab fl common_tab invite_recommand_by_system_tab_active">
+		<a href="javascript:void(0)">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+        <div id="invite_my_interest_tab" class="fl common_tab invite_my_interest_tab  tab_padding">
+		<a href="javascript:void(0)">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+
+            		<div id="new_question_search_schooler" class="fr am-input-group new_question_search_schooler">
+
+		<input type="text" class="am-form-field" placeholder="输入名字搜索校友">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-link" type="button">
+        	<span class="am-icon-search"></span>
+        </button>
+      </span>
+		</div>
+
+            <div class="common_selecter" id="">
+<div class="fr">
+	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;全选
+</div>
+</div>
+
+		</div>
+        </div>
+
+
+           <div class="schooler_chooser_container" id="schooler_chooser_container">
+
+               <div class="common_schooler_chooser fl" check='true' id="1">
+                   <div class="schooler_choose_header fl">
+                       <img src="/static/image/avatar-min-img.jpg" class="common_icon_50_50" />
+                       
+                   </div>
+                    <div class="schooler_choose_header_content fl">
+                        <div class="schooler_choose_people_short_intro">
+                            <div class="schooler_choose_people_name fl">徐子豪</div>
+                            <div class="schooler_choose_people_intro fl">通讯工程·2011·本科</div>
+                            <div class="schooler_choose_check_container fl">
+                               <img src="/static/image/index/checked_icon.png"/>
+
+                            </div>
+
+                        </div>
+                        <div class="schooler_choose_people_good_at">
+
+                            擅长话题：java，产品经理，研发，运营商
+                        </div>
+
+
+                    </div>
+                    <div class="schooler_choose_bottom fl">
+                    <div class="common_icon_container fl">
+                        <img src="/static/image/index/diamond_icon.png" />积分123
+
+                    </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/ask_icon.png" />提问123
+
+                        </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/comment_icon.png" />回复123
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+               </div>
+
+               <div class="common_schooler_chooser fr" check='true' id="2">
+                   <div class="schooler_choose_header fl">
+                       <img src="/static/image/avatar-min-img.jpg" class="common_icon_50_50" />
+
+                   </div>
+                    <div class="schooler_choose_header_content fl">
+                        <div class="schooler_choose_people_short_intro">
+                            <div class="schooler_choose_people_name fl">徐子豪</div>
+                            <div class="schooler_choose_people_intro fl">通讯工程·2011·本科</div>
+                            <div class="schooler_choose_check_container fl">
+                               <img src="/static/image/index/checked_icon.png"/>
+
+                            </div>
+
+                        </div>
+                        <div class="schooler_choose_people_good_at">
+
+                            擅长话题：java，产品经理，研发，运营商
+                        </div>
+
+
+                    </div>
+                    <div class="schooler_choose_bottom fl">
+                    <div class="common_icon_container fl">
+                        <img src="/static/image/index/diamond_icon.png" />积分123
+
+                    </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/ask_icon.png" />提问123
+
+                        </div>
+                        <div class="common_icon_container fl">
+                              <img src="/static/image/index/comment_icon.png" />回复123
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+               </div>
+
+
+
+
+           </div>
+
+           <div class="submit_form_container">
+
+                 <button class="am-btn primary_btn fr" id="send_invite_btn">发送邀请</button>
+           </div>
+           </div>
+
+<!-- invite schooler to answer end -->
+</div>
+<style>
+
+</style>
+
+<script>
+    $('#submit_question_btn').on('click',function(){
+        $('#new_question_container').hide();
+        $('#invite_to_answer_container').fadeIn();
+    });
+
+    var activeNode = $('#invite_recommand_by_system_tab');
+    $('.common_tab').on('click',function(){
+        var currentNode = $(this);
+        activeNode.removeClass(activeNode.attr('id')+'_active');
+        currentNode.addClass(currentNode.attr('id')+'_active');
+        activeNode = currentNode;
+    });
+
+
+
+$('.common_schooler_chooser').on('click',function(){
+    if( $(this).attr('check') == 'true'){
+         $(this).attr('check','false');
+    }
+    else{
+           $(this).attr('check','true');
+    }
+
+$(this).children('.schooler_choose_header_content').children('.schooler_choose_people_short_intro').children('.schooler_choose_check_container').children('img').toggle();
+
+});
+$('#send_invite_btn').on('click',function(){
+    getCheckedData();
+});
+
+    function getCheckedData(){
+        var ids = [];
+        var childs =  $('#schooler_chooser_container').children();
+        childs.each(function(){
+            var currentNode = $(this);
+            if(currentNode.attr('check') == 'true') {
+               ids.push(currentNode.attr('id'));
+            }
+        });
+
+     window.alert(ids.join(','));
+
+
+    }
+</script>
+<style>
+    .common_schooler_chooser:hover{
+        cursor:pointer;
+    }
+    .submit_form_container{
+        width: 780px;
+        margin: 0 auto;
+        margin-top: 15px;;
+
+    }
+
+</style>
+
+<!-- newAnswerPoperDiv End-->

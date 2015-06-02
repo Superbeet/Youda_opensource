@@ -115,49 +115,7 @@ width: 270px;
 .goto_register_container{
   margin-left: 60px;
 }
-.primary_btn{
-    color:#FFFFFF;
-            background-color:#068791;
-     width: 100px;
-  font-size: 11pt;
-            -moz-border-radius: 3px;      /* Gecko browsers */
-        -webkit-border-radius: 3px;   /* Webkit browsers */
-         border-radius:3px; /* W3C syntax */
 
-
-}
-    .primary_btn:hover{
-
-        background-color:#328CBE;
-        color:#ffffff;
-    }
-
-
-
-
-    .base_color_btn{
-    color:#FFFFFF;
-            background-color:$base_color;
-     width: 100px;
-  font-size: 11pt;
-            -moz-border-radius: 3px;      /* Gecko browsers */
-        -webkit-border-radius: 3px;   /* Webkit browsers */
-         border-radius:3px; /* W3C syntax */
-
-
-}
-    .base_color_btn:hover{
-
-        background-color:$base_havier_color;
-        color:#ffffff;
-    }
-
-
-.common_selecter{
-	height: 44px;
-	line-height: 44px;
-	font-size: 10pt;
-}
 
 .top_title{
     width: $system_panel_width;
@@ -186,25 +144,7 @@ width: 270px;
 
 }
 
-.common_select{
-  width: 170px;
-  height: 32px;
-  line-height: 32px;
-  border:1px solid $base_color;
-  background-color: #F0FCFC;
-  color: $dark_color;
-  padding: 0px;
-  	border-radius: 4px;
-	moz-border-radius:4px;
-}
-.common_blank_border{
-   border:1px solid $base_color;
-  background-color: #F0FCFC;
-  color: $dark_color;
-  padding: 0px;
-  	border-radius: 4px;
-	moz-border-radius:4px;
-}
+
 .self_intro_form{
   width: $system_panel_width - (35px * 2);
   height: 60px;
@@ -212,15 +152,7 @@ width: 270px;
 .common_margin_select{
     margin-left: 30px;
 }
-.cornor{
-  background-color: $base_color;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  color: white;
-    	border-radius: 3px;
-	moz-border-radius:3px;
-}
+
 
 .register_submit{
   margin-left: 40px;
