@@ -18,12 +18,13 @@ def answer_detail(request):
     return render_to_response('answer_detail.html');
 #显示我的关注下的所有内容
 def showMyFocus(request):
-    print request.session['update_time'];
+    #print request.session['update_time'];
     focusService = FocusService();
     #page = request.GET['page'];
     #user_id = request.GET['user_id'];
-    uName = request.COOKIES['USERNAME'];
-    print uName;
+    #uName = request.COOKIES['USERNAME'];
+    #print request.POST['pass'];
+    #print "用户名"+uName;
     rows =  focusService.getMyFocus(1,page=1);#getMyFocus(user_id,page),user_id为当前用户id，page为请求第几页的数据
     DATA = json.dumps(rows,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据

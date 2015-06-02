@@ -19,8 +19,7 @@ def readHeadFile(request):
     if form.is_valid(): 
         print 'ok'
         f = request.FILES["imagefile"]  
-        # des_origin_path 为你在服务器上保存原始图片的文件物理路径 
-        
+        # des_origin_path 为你在服务器上保存原始图片的文件物理路径         
         des_origin_f = open("img1.jpg", "ab")  
         for chunk in f.chunks():  
             des_origin_f.write(chunk)  
@@ -51,22 +50,21 @@ def toLogin(request,op):
         try:
             user_name = request.POST['userName'];
             user_pass = request.POST['pass'];
+            flag = request.POST['logintype'];
         except MultiValueDictKeyError:
             return HttpResponseRedirect("/home/");
         userService = UserService();
-        status = userService.toLogin(user_name, user_pass);
+        user = userService.toLogin(user_name, user_pass,flag);
         mapo = {};
-        if status==1:
+        if user:
             mapo['status'] =1;
-            request.session['user_name'] = user_name;
-            request.session['password'] = user_pass;
+            request.session['user_name'] = user.user_name;
             request.session['update_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S");
-               
         else:  
             mapo['status'] =-1;
-            #return HttpResponseRedirect("/loginpage/");
         DATA = json.dumps(mapo);
-        response = HttpResponse(DATA,content_type="application/json"); #json格式返回数据   
-        response.set_cookie("USERNAME",user_name) #要加密储存
-        return   response;            
-        
+        response = HttpResponse(DATA,content_type="application/json"); #json格式返回数据
+        if user:
+            response.set_cookie("USERNAME",user_name,60); #要加密储存
+        return response;       
+        #return HttpResponseRedirect("/loginpage/");

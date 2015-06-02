@@ -58,8 +58,14 @@ def sqltest():
     demo = default_class();
     list = ['or','and',"''",'delete'];
     print demo.Sql_Injection(list);
+def test1():
+    user = commonDao.tolist(Users,user_name='1');
+    print user;
+    if user:
+        commonDao.toupdate(Users,user,auto_login=0,rem_name=0);
+        print 1;
 if __name__=='__main__':
-    myfocus_test();
+    test1();
 
     
     
