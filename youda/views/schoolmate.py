@@ -19,7 +19,7 @@ from util.CJsonEncoder import CJsonEncoder
 from action import schoolmateAction
 
 @api_view(['GET'])
-def getFocusedSchoolmate(request):
+def getFocusedSchoolmateData(request):
     '''
     Get User's focused schoolmates 
     
