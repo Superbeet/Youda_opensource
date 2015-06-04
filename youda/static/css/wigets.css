@@ -490,4 +490,10 @@ a:focus {
   border-radius: 3px;
   moz-border-radius: 3px; }
 
+.common_selecter:hover {
+  cursor: pointer; }
+
+.am-dropdown-content > li > a:hover {
+  cursor: pointer; }
+
 /*# sourceMappingURL=wigets.css.map */

@@ -25,3 +25,38 @@
     }
 
 
+function bindTab(){
+    $('.common_tab').on('click',function(){
+        var currentNode = $(this);
+        var parent = $(this).parent();
+        var childs = parent.children();
+
+        childs.each(function(index,node){
+            var cNode = $(node);
+        if(cNode.hasClass(cNode.attr('id')+'_active')){
+            cNode.removeClass(cNode.attr('id')+'_active');
+        }
+        });
+        currentNode.addClass(currentNode.attr('id')+'_active');
+    });
+}
+
+function getRadioValue(form_id){
+    return $('#'+form_id).attr('value');
+}
+
+function bindRadioClick(){
+               $('.common_selecter').on('click',function(){
+               var select_radio_img_src = '/static/image/index/radio_selected.png';
+            var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
+               var parent = $(this).parent();
+               var currentNode = $(this);
+               var child = parent.children('div');
+                $(child).each(function(index,n){
+                $(n).children('img')[0].src = unselect_radio_img_src;
+               });
+               currentNode.children('img')[0].src = select_radio_img_src;
+                parent.attr('value',currentNode.attr('value'));
+           });
+}
+
