@@ -15,17 +15,7 @@ import datetime
 import json
 
 from util.CJsonEncoder import CJsonEncoder
-from django.utils.text import phone2numeric
 from action import topicAction
-
-def test_getFocusTopic(request):
-    return render_to_response('focusTopicTest.html')
-    
-def test_getSchoolTopic(request):
-    return render_to_response('schoolTopicTest.html')
-
-def test_getTopicQuestion(request):
-    return render_to_response('topicQuestionTest.html')
 
 def unitTest(request):
     return render_to_response('viewTest.html')    
@@ -55,6 +45,7 @@ def getFocusTopic(request):
                     topic_pic,
                     focus_num     
                 }
+                ...
             ]
         
     
@@ -74,7 +65,6 @@ def getFocusTopic(request):
     print "focus_topic_block_list -> %s" %(focus_topic_block_list)
     
     topic_data_list = []
-#     topic_data_fail_list = []
     
     focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
     
@@ -90,12 +80,8 @@ def getFocusTopic(request):
                         "topic_pic": block.topic_pic,
                         "focus_num": block.focus_num,     
                     }
- 
-#         print 'topic_data_series -> %s' %topic_data_list
-     
-        topic_data_list.append(data_dict)
         
-#     print 'topic_data_list -> %s' %topic_data_list
+        topic_data_list.append(data_dict)
 
     result = {
                 "length": len(topic_data_list),
@@ -106,10 +92,6 @@ def getFocusTopic(request):
     
     DATA = json.dumps(topic_data_list,cls=CJsonEncoder)
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
-    
-    #getMyFocus(user_id,page), user_id为当前用户id，page为请求第几页的数据    
-#     rows =  focusService.getMyFocus(1, page=1);
-    
     
 @api_view(['GET'])
 def getSchoolTopic(request):
@@ -176,9 +158,7 @@ def getSchoolTopic(request):
                         "focus_num": block.focus_num     
                     }
  
-#         print 'topic_data_series -> %s' %topic_data_series
         topic_data_list.append(data_dict)
-#     print 'topic_data_list -> %s' %topic_data_list
 
     result = {
                 "length": len(topic_data_list),
@@ -226,7 +206,7 @@ def getTopicQuestion(request):
     print "offset -> %s | end -> %s" %(offset, end) 
         
     question_query_list = models.Topics.objects.get(topic_id = topic_id).questions_set.all()[offset:end]
-#     print 'question_list -> %s' %(question_query_list)
+    
     question_data_list = []
     
     for q in question_query_list:
@@ -242,8 +222,6 @@ def getTopicQuestion(request):
                 }
         
         question_data_list.append(data_dict)
-    
-#     print "question_data_list->", question_data_list
     
     result = {
                 "length": len(question_data_list),

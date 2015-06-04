@@ -44,7 +44,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -69,12 +69,12 @@ CACHES = {
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'dev_youda',
+         'NAME': 'youda_dev_4',
          'USER': 'root',
-         'PASSWORD': 'niit',
+         'PASSWORD': '',
          'HOST': '127.0.0.1',
          'PORT': '3306',
-    }
+     }
  }
 
 # DATABASES = {
@@ -126,9 +126,11 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 TEMPLATE_DIRS = (
-   BASE_DIR+'/templates/',
-   BASE_DIR+'/static/template/',
+   BASE_DIR + '/templates/',
+   BASE_DIR + '/static/template/',
+   BASE_DIR + '/templates/test/'
 )
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
           os.path.join(BASE_DIR, 'static').replace('\\','/'),

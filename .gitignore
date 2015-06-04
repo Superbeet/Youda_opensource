@@ -6,7 +6,8 @@ youda/caches/
 youda/.*
 # C extensions
 *.so
-
+youda/.settings/
+youda/.*
 # Distribution / packaging
 .Python
 env/
@@ -57,9 +58,8 @@ docs/_build/
 
 # PyBuilder
 target/
+*.pydevproject
+youda/db.sqlite3
 
-youda/_build/
-
-youda/.idea/
-*.map
-
+# DB migrations
+youda/apps/migration*/

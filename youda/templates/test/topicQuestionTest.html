@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" /> 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+    	// alert("Button clicked");
+
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getTopicQuestion/',
+		    dataType: "json",
+		    data: {"topic_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div1").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		}); 
+    });
+});
+</script>
+</head>
+<body>
+
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
