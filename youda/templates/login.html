@@ -14,9 +14,11 @@
 
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/template-native.js"></script>
+ <script src="/static/js/wieget.js"></script>
 
 <link href="/static/css/index.css" rel="stylesheet" />
     <link href="/static/css/system.css" rel="stylesheet" />
+     <link href="/static/css/wigets.css" rel="stylesheet" />
 </head>
 <body   class="login_bkg">
 <div class="system_container">
@@ -67,47 +69,25 @@
 
         </div>
         <div class="remember_me_form" id="remember_me_form">
-            <a href="#" class="fl ">
-<div class="common_selecter" id="remenber_me">
-<div class="fl">
+<div class="common_selecter fl" id="remenber_me" value="remenber_me">
 	<img src="/static/image/index/radio_selected.png" class="select_img"/>&nbsp;&nbsp;记住用户名
 </div>
-</div>
-</a>
 
-                       <a href="#" class="fr ">
-<div class="common_selecter" id="auto_login">
-<div class="fl">
+<div class="common_selecter fr" id="auto_login" value="auto_login">
 	<img src="/static/image/index/radio_unselect.png" class="select_img" />&nbsp;&nbsp;下次自动登录
 </div>
-</div>
-</a>
+
         </div>
         <script>
             $(function(){
-            var remenber_me = $('#remenber_me');
-            var auto_login = $('#auto_login');
-            var remenber_me_img = remenber_me.children("div").children("img");
-            var auto_login_img = auto_login.children("div").children("img");
-             $('#remember_me_form').attr('login_type','remenber_me');
+        bindRadioClick();
 
-        remenber_me.on('click',function(){
-                $('#remember_me_form').attr('login_type','remenber_me');
-                 remenber_me_img[0].src = '/static/image/index/radio_selected.png';
-                auto_login_img[0].src = '/static/image/index/radio_unselect.png';
 
-            });
-
-            auto_login.on('click',function(){
-                 $('#remember_me_form').attr('login_type','auto_login');
-           remenber_me_img[0].src = '/static/image/index/radio_unselect.png';
-                auto_login_img[0].src = '/static/image/index/radio_selected.png';
-            });
 
                 $('#login_btn').on('click',function(){
                 var user_name = $('#user_name').val();
                 var password = $('#password').val();
-                var login_type = $('#remember_me_form').attr('login_type');
+                var login_type = getRadioValue('#remember_me_form');
                 //alert(login_type);
 				$.post("/login/",{userName:user_name,pass:password},function(data){
 				    if(data.status==-1)

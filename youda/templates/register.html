@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/static/css/amaze.min.css" />
 
 <link rel="canonical" href="http://www.uanswer.me" />
-<script src="/static/js/jquery.min.js"></script>>
+<script src="/static/js/jquery.min.js"></script>
 
 <script src="/static/js/amazeui.min.js"></script>
 <script src="/static/js/template-native.js"></script>
@@ -20,9 +20,8 @@
         <link href="/static/css/wigets.css" rel="stylesheet" />
 
 
-
-
 </head>
+
 <body   class="login_bkg">
 
 <div class="opacity_bkg">
@@ -76,7 +75,7 @@
 
 
 
-        <div class="current_stage_form" id="current_stage_form">
+        <div class="current_stage_form" id="current_stage_form"  value='in_school'>
             <span class="fl">目前状态</span>
 
 <div class="fl common_selecter" id="in_school_selecter" value='in_school'>
@@ -151,12 +150,12 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入学年份<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li><a>2015</a></li>
+       <li><a>2014</a></li>
+       <li><a>2013</a></li>
+      <li><a>2012</a></li>
+      <li><a>2011</a></li>
+      <li><a>2010</a></li>
   </ul>
 </div>
 
@@ -451,26 +450,7 @@
 
     <script>
 
-function getRadioValue(form_id){
-    return $('#'+form_id).attr('value');
-}
 
-function bindRadioClick(){
-               $('.common_selecter').on('click',function(){
-               var select_radio_img_src = '/static/image/index/radio_selected.png';
-            var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
-               var parent = $(this).parent();
-               var currentNode = $(this);
-               var child = parent.children('div');
-                $(child).each(function(index,n){
-                $(n).children('img')[0].src = unselect_radio_img_src;
-
-               });
-
-               currentNode.children('img')[0].src = select_radio_img_src;
-                parent.attr('value',currentNode.attr('value'));
-           });
-}
 
 
 
@@ -518,10 +498,10 @@ not_in_school_upper_step_btn.on('click',function(){
 </div>
 </body>
           <script src="/static/js/wieget.js"></script>
-<style>
-    .common_selecter:hover{
-        cursor: pointer;
-    }
+<script>
 
-</style>
+    $(function(){
+        bindDropDown();
+    });
+</script>
 </html>

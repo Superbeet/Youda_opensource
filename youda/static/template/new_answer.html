@@ -273,13 +273,6 @@ $('#new_answer_input_container').dropdown({justfiy:'doc-dropdown-justify-js'});
         $('#invite_to_answer_container').fadeIn();
     });
 
-    var activeNode = $('#invite_recommand_by_system_tab');
-    $('.common_tab').on('click',function(){
-        var currentNode = $(this);
-        activeNode.removeClass(activeNode.attr('id')+'_active');
-        currentNode.addClass(currentNode.attr('id')+'_active');
-        activeNode = currentNode;
-    });
 
 
 
@@ -307,10 +300,7 @@ $('#send_invite_btn').on('click',function(){
                ids.push(currentNode.attr('id'));
             }
         });
-
-     window.alert(ids.join(','));
-
-
+        return ids;
     }
 </script>
 <style>
