@@ -19,7 +19,7 @@ from util.CJsonEncoder import CJsonEncoder
 from action import schoolmateAction
 
 @api_view(['GET'])
-def getFocusedSchoolmate(request):
+def getFocusedSchoolmateData(request):
     '''
     Get User's focused schoolmates 
     
@@ -29,20 +29,40 @@ def getFocusedSchoolmate(request):
         user_id
     
     Return
-        length: number of return data
+        {
         
-        data:
-            [
-                {
-                    focus_id,
-                    user_id,
-                    schoolmate,
-                    focus_time,  
-                }
-                ...
-            ]
+            "user_id": user_id,
         
-    
+            "length": length,
+        
+            "data": [
+                        {
+                            "schoolmate_id": schoolmate_id,
+                            "question_data": [
+                                {
+                                    "question_id":question_id,
+                                    "question_content": question_content,
+                                }
+                                ....
+                                ....
+                            ]
+                        }
+                        ....
+                        {
+                            "schoolmate_id": schoolmate_id,
+                            "question_data": [
+                                {
+                                    "question_id":question_id,
+                                    "question_content": question_content,
+                                }
+                                ....
+                                ....
+                            ]
+                        }
+                    ]
+        
+        }
+        
     '''
     
     pagesize = 10
@@ -57,38 +77,43 @@ def getFocusedSchoolmate(request):
 
     focus_user_query = models.UsersFocus.objects.filter(user_id = user_id)
     
-    return_data_list = []
     schoolmate_list= []
     
-    for q in focus_user_query:
-        print "schoolmate_id > %s" %(q.schoolmate_id)
-        schoolmate_list.append(q.schoolmate_id)
-#     
-#     print "schoolmate_list ->", schoolmate_list
-#     
-#     topic_data_list = []
-#     
-#     focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
-#     
-#     topic_data_block_list = models.Topics.objects.filter(topic_id__in = focus_topic_id_list)[offset:end]    
-#     
-#     for b in topic_data_block_list:
-        data_dict = {
-                        "user_id":  q.user_id,
-                        "focus_time": q.focus_time,    
-                    }
-
-        return_data_list.append(data_dict)
+    data = []
+    
+    for f in focus_user_query:
         
-    print 'data_list -> %s' %(return_data_list)
-
+        schoolmate_id = str(f.schoolmate_id)
+#         print "schoolmate_id > %s" %(schoolmate_id)
+        schoolmate_list.append(schoolmate_id)
+        
+        question_query = models.Questions.objects.filter(user_id = schoolmate_id)
+        
+        question_data_list = []
+        
+        for q in question_query:
+            question_data = {
+                        "question_id": q.question_id,
+                        "question_content": q.question_content,
+            }
+            
+            question_data_list.append(question_data)
+        
+        schoolmate_data = {
+            "schoolmate_id": schoolmate_id,
+            "question_data": question_data_list
+        }
+        
+        data.append(schoolmate_data)
+    
     result = {
-                "length": len(return_data_list),
-                "data": return_data_list,
-             }
+        "user_id": user_id,
+        "length": str(len(data)),
+        "data": data  
+    }
     
     print "result -> %s" %(result)
     
-    DATA = json.dumps(return_data_list,cls=CJsonEncoder)
-    return HttpResponse(DATA,content_type="application/json");#json格式返回数据
+    DATA = json.dumps(result,cls=CJsonEncoder)
+    return HttpResponse(DATA,content_type="application/json");  # json格式返回数据
 
