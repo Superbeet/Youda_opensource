@@ -23,39 +23,50 @@ def unitTest(request):
 @api_view(['GET'])
 def getFocusTopic(request):
     '''
-    Get User's focused topics 
+    Get data of user's focused topics 
     
     Parameters
-        page
+
+        page (necessary)
+            page number
+ 
+        user_id (necessary)
+            user id
         
-        user_id
-    
+        page_size (optional)
+            page size (default = 10)
     
     Return
-        length: number of return data
-        
-        data:
-            [
-                {
-                    topic_id,
-                    topic_name,
-                    parent_id,
-                    add_time,
-                    discuss_num,
-                    topic_pic,
-                    focus_num     
-                }
-                ...
-            ]
-        
+    
+        {
+            length: number of return data
+            
+            data:
+                [
+                    {
+                        "topic_id": topic_id,
+                        "topic_name": topic_name,
+                        "parent_id": parent_id,
+                        "add_time": add_time,
+                        "discuss_num": discuss_num,
+                        "topic_pic": topic_pic,
+                        "focus_num": focus_num,      
+                    }
+                    ...
+                ]
+        }
     
     '''
-    pagesize = 10
     user_id = request.GET['user_id']
     page_num = int(request.GET['page'])
+    
+    if 'page_size' in request.GET:
+        page_size = request.GET['page_size']
+    else:
+        page_size = 10
 
-    offset = (page_num-1)*pagesize
-    end = offset + pagesize
+    offset = (page_num-1)*page_size
+    end = offset + page_size
     
     print "page -> %s | user_id -> %s" %(page_num, user_id)
     print "offset -> %s | end -> %s" %(offset, end) 
@@ -99,23 +110,30 @@ def getSchoolTopic(request):
     Get topics of all user's graduated and enrolling schools
     
     Parameters
-        page
+
+        page (necessary)
+            page number
+ 
+        user_id (necessary)
+            user id
         
-        user_id
+        page_size (optional)
+            page size (default = 10)
     
     Return Value
+    
         {
             length: number of return data
             
             data:[
                     {
-                        topic_id,
-                        topic_name,
-                        parent_id,
-                        add_time,
-                        discuss_num,
-                        topic_pic,
-                        focus_num     
+                        "topic_id": topic id,
+                        "topic_name": topic name,
+                        "parent_id": parent id,
+                        "add_time": add time,
+                        "discuss_num": discuss number,
+                        "topic_pic": topic picture,
+                        "focus_num": focus number       
                     },
                     ...
                 ]
@@ -124,12 +142,12 @@ def getSchoolTopic(request):
     
     '''
     
-    pagesize = 10
+    page_size = 10
     user_id = request.GET['user_id']
     page_num = int(request.GET['page'])
 
-    offset = (page_num-1)*pagesize
-    end = offset + pagesize
+    offset = (page_num-1)*page_size
+    end = offset + page_size
     
     print "page -> %s | user_id -> %s" %(page_num, user_id)
     print "offset -> %s | end -> %s" %(offset, end) 
@@ -170,46 +188,67 @@ def getSchoolTopic(request):
     DATA = json.dumps(result, cls=CJsonEncoder)
     return HttpResponse(DATA, content_type="application/json");#json格式返回数据
 
-@api_view(['POST'])
-def setFocusTopic(request):
-    '''
-    Follow a topic
-    
-    Parameters
-        - topic_id
-        - user_id
-    
-    Duplicate implementation, call the original function in topicAction.py
-    '''
-    topicAction.focusTopic(request)
 
 @api_view(['GET'])
 def getTopicQuestion(request):
     '''
     Get questions' brief information under a certain topic
-    
+
     Parameters
-        - topic_id
-        - page_num
+
+        page_num (necessary)
+            page number
+ 
+        topic_id (necessary)
+            topic id
+        
+        page_size (optional)
+            page size (default = 10)
     
+    return
+    
+        {
+            length: number of return data
+            
+            data:[
+                    {
+                        "question_id":  question id,
+                        "question_content": question content,
+                        "browse_num":   browse number,
+                        "answer_num":   answer number,
+                        "want_answer_num":  want answer number,
+                        "attention_num":    attention number,
+                        "invitation_num":   invation number,
+                        "user_id":  user id,
+                        "user_name": user name,
+                    },
+                    ...
+                ]
+        }
+        
     
     '''
-    pagesize = 10
+    page_size = 10
 
     topic_id = request.GET['topic_id']
     page_num = int(request.GET['page'])
-    
-    offset = (page_num-1)*pagesize
-    end = offset + pagesize
+
+    if 'page_size' in request.GET:
+        page_size = request.GET['page_size']
+    else:
+        page_size = 10
+
+    offset = (page_num-1)*page_size
+    end = offset + page_size
     
     print "page_num -> %s | topic_id -> %s" %(page_num, topic_id) 
     print "offset -> %s | end -> %s" %(offset, end) 
         
-    question_query_list = models.Topics.objects.get(topic_id = topic_id).questions_set.all()[offset:end]
+    question_query = models.Topics.objects.get(topic_id = topic_id).questions_set.all()[offset:end]
     
     question_data_list = []
     
-    for q in question_query_list:
+    for q in question_query:
         data_dict = {
                     "question_id":  q.question_id,
                     "question_content": q.question_content,
@@ -218,7 +257,8 @@ def getTopicQuestion(request):
                     "want_answer_num":  q.want_answer_num,
                     "attention_num":    q.attention_num,
                     "invitation_num":   q.invation_num,
-                    "user_id":  q.user.user_name,
+                    "user_id":  q.user.user_id,
+                    "user_name": q.user.user_name,
                 }
         
         question_data_list.append(data_dict)
@@ -233,3 +273,21 @@ def getTopicQuestion(request):
     DATA = json.dumps(result, cls=CJsonEncoder)
     return HttpResponse(DATA, content_type="application/json"); # json格式返回数据
 
+@api_view(['POST'])
+def setFocusTopic(request):
+    '''
+    Follow a topic
+    ( Duplicate implementation, call the original function in topicAction.py )
+    
+    Parameters
+
+        page_num (necessary)
+            page number
+ 
+        topic_id (necessary)
+            topic id
+    
+    '''
+    topicAction.focusTopic(request)
+    
+    

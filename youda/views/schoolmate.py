@@ -45,11 +45,11 @@ def getFocusedSchoolmateData(request):
         
             "data": [
                         {
-                            "schoolmate_id": schoolmate_id,
+                            "schoolmate_id": schoolmate id,
                             "question_data": [
                                 {
-                                    "question_id":question_id,
-                                    "question_content": question_content,
+                                    "question_id":question id,
+                                    "question_content": question content,
                                 }
                                 ....
                                 ....
@@ -57,11 +57,11 @@ def getFocusedSchoolmateData(request):
                         }
                         ....
                         {
-                            "schoolmate_id": schoolmate_id,
+                            "schoolmate_id": schoolmate id,
                             "question_data": [
                                 {
-                                    "question_id":question_id,
-                                    "question_content": question_content,
+                                    "question_id":question id,
+                                    "question_content": question content,
                                 }
                                 ....
                                 ....
@@ -166,11 +166,11 @@ def getPopularSchoolmateData(request):
         
             "data": [
                         {
-                            "schoolmate_id": schoolmate_id,
+                            "schoolmate_id": schoolmate id,
                             "question_data": [
                                 {
-                                    "question_id":question_id,
-                                    "question_content": question_content,
+                                    "question_id": question id,
+                                    "question_content": question content,
                                 }
                                 ....
                                 ....
@@ -178,11 +178,11 @@ def getPopularSchoolmateData(request):
                         }
                         ....
                         {
-                            "popular_user_id": popular_user_id,
+                            "popular_user_id": popular user id,
                             "question_data": [
                                 {
-                                    "question_id":question_id,
-                                    "question_content": question_content,
+                                    "question_id":question id,
+                                    "question_content": question content,
                                 }
                                 ....
                                 ....
@@ -197,11 +197,9 @@ def getPopularSchoolmateData(request):
     def getSchoolPopularUser(school_id, amount = 10):
         print "school_id -> ", school_id
         
-        user_affiliate_query = models.UsersAffiliate.objects.filter(school__school_id = school_id)#.order_by('question_num', 'answer_num')[0:amount]
+        user_affiliate_query = models.UsersAffiliate.objects.filter(school__school_id = school_id).order_by('question_num', 'answer_num')[0:amount]
         
         popular_user_list = [u.user_id for u in user_affiliate_query]
-        
-        print "popular_user_list -> ",popular_user_list
         
         return popular_user_list
         
@@ -227,7 +225,6 @@ def getPopularSchoolmateData(request):
     
     # Get a list of all classmate data in user's same school
     users_school_query = models.UserSchool.objects.filter(user_id = user_id)[offset:end]
-    print "~~~~~~~~~~~~~"
     
     data = []
     popular_user_list = []
@@ -236,6 +233,7 @@ def getPopularSchoolmateData(request):
         
         popular_user_list += getSchoolPopularUser(str(u.school_id))
         
+    print "popular_user_list -> ",popular_user_list
         
     for popular_user_id in popular_user_list:
 
