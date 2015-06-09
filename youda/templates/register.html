@@ -23,25 +23,7 @@
 </head>
 
 <body   class="login_bkg">
-       <div class="image">
-    <div class="imageBox">
-    <div class="thumbBox"></div>
-    <div class="spinner" style="display: none">Loading...</div>
-  </div>
-  <div class="action">
-    <!-- <input type="file" id="file" style=" width: 200px">-->
-    <div class="new-contentarea tc"> <a href="javascript:void(0)" class="upload-img">
-      <label for="upload-file">上传图像</label>
-      </a>
-      <input type="file" class="" name="upload-file" id="upload-file" />
-    </div>
-    <input type="button" id="btnCrop"  class="Btnsty_peyton" value="裁切">
-    <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
-    <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
-  </div>
-  <div class="cropped"></div>
 
-           </div>
 <div class="opacity_bkg">
 
 <div class="system_container">
@@ -54,7 +36,25 @@
     <!-- 注册界面第一版 -->
 <div class="main_area fl " id="register_area">
     <div class="image_area fl">
+       <div class="image">
+    <div class="imageBox">
+    <div class="thumbBox"></div>
+    <div class="spinner" style="display: none">Loading...</div>
+  </div>
+  <div class="action">
+    <!-- <input type="file" id="file" style=" width: 200px">-->
+    <div class="new-contentarea tc"> <a href="javascript:void(0)" class="upload-img primary_btn">
+      <label for="upload-file">上传图像</label>
+      </a>
+      <input type="file" class="primary_btn" name="upload-file" id="upload-file" />
+    </div>
+    <input type="button" id="btnCrop"  class="Btnsty_peyton primary_btn" value="裁切">
+    <input type="button" id="btnZoomIn" class="Btnsty_peyton primary_btn" value="+"  >
+    <input type="button" id="btnZoomOut" class="Btnsty_peyton primary_btn" value="-" >
+  </div>
+  <div class="cropped"></div>
 
+           </div>
     </div>
     <div class="register_area fl" >
 
@@ -556,8 +556,7 @@ not_in_school_upper_step_btn.on('click',function(){
 <style>
     @charset "utf-8";
 .image {
-	width: 400px;
-	margin: 40px auto 0 auto;
+	width: 300px;
 	position: relative;
 	font-family: 微软雅黑;
 	font-size: 12px;
@@ -570,25 +569,25 @@ not_in_school_upper_step_btn.on('click',function(){
 	color: #bbb
 }
 .action {
-	width: 400px;
+	width: 300px;
 	height: 30px;
 	margin: 10px 0;
 }
 .cropped {
 	position: absolute;
-	right: -230px;
+	right: -30px;
 	top: 0;
-	width: 200px;
+	width: 120px;
 	border: 1px #ddd solid;
-	height: 460px;
+	height: 300px;
 	padding: 4px;
 	box-shadow: 0px 0px 12px #ddd;
 	text-align: center;
 }
 .imageBox {
 	position: relative;
-	height: 400px;
-	width: 400px;
+	height: 300px;
+	width: 300px;
 	border: 1px solid #aaa;
 	background: #fff;
 	overflow: hidden;
@@ -620,69 +619,61 @@ not_in_school_upper_step_btn.on('click',function(){
 	background: rgba(0,0,0,0.7);
 }
 .Btnsty_peyton{ float: right;
-   width: 66px;
+   width: 55px;
   display: inline-block;
-  margin-bottom: 10px;
-  height: 57px;
-  line-height: 57px;
-  font-size: 20px;
-  color: #FFFFFF;
+  margin-bottom: 15px;
+  height: 40px;
+  line-height: 40px;
   margin:0px 2px;
-  background-color: #f38e81;
   border-radius: 3px;
   text-decoration: none;
   cursor: pointer;
+    font-weight: normal;
   box-shadow: 0px 0px 5px #B0B0B0;
   border: 0px #fff solid;}
 /*选择文件上传*/
 .new-contentarea {
-	width: 165px;
+	width: 100px;
+    height: 40px;
 	overflow:hidden;
 	margin: 0 auto;
 	position:relative;float:left;
 }
 .new-contentarea label {
-	width:100%;
-	height:100%;
+	width: 100px;
+	height: 40px;
 	display:block;
+    font-size: 11pt;
+    font-weight:normal;
+}
+.new-contentarea label:hover{
+    cursor: pointer;
 }
 .new-contentarea input[type=file] {
-	width:188px;
-	height:60px;
-	background:#333;
-	margin: 0 auto;
-	position:absolute;
-	right:50%;
-	margin-right:-94px;
-	top:0;
-	right/*\**/:0px\9;
-	margin-right/*\**/:0px\9;
-	width/*\**/:10px\9;
+    position: absolute;
+    left: -3000px;
+    top:-3000px;
 	opacity:0;
 	filter:alpha(opacity=0);
-	z-index:2;
 }
-a.upload-img{
-	width:165px;
+.upload-img{
+	width:100px;
 	display: inline-block;
 	margin-bottom: 10px;
-	height:57px;
-	line-height: 57px;
-	font-size: 20px;
-	color: #FFFFFF;
-	background-color: #f38e81;
+	height:40px;
+	line-height: 40px;
 	border-radius: 3px;
 	text-decoration:none;
 	cursor:pointer;
 	border: 0px #fff solid;
 	box-shadow: 0px 0px 5px #B0B0B0;
 }
-a.upload-img:hover{
-	background-color: #ec7e70;
+.upload-img:hover{
+	cursor: pointer;
 }
 
 .tc{text-align:center;}
-/*www.jq22.com*/
+
 
 </style>
 </html>
