@@ -10,7 +10,6 @@ from django.contrib.contenttypes.models import ContentType
 from apps import models
 
 from rest_framework.decorators import api_view
-
 import datetime
 import json
 

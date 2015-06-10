@@ -59,7 +59,7 @@ $(document).ready(function(){
 		$.ajax({
 		    url: 'http://127.0.0.1:8000/getFocusedSchoolmateData/',
 		    dataType: "json",
-		    data: {"user_id": "2", "page": "1" },
+		    data: {"user_id": "1", "page": "1" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
 		        // alert(result);
@@ -71,6 +71,37 @@ $(document).ready(function(){
 		});
     });
 
+    $("#button5").click(function(){
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/getPopularSchoolmateData/',
+		    dataType: "json",
+		    data: {"user_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		});
+    });
+   
+    $("#button6").click(function(){
+		$.ajax({
+		    url: 'http://127.0.0.1:8000/submitQuestion/',
+		    dataType: "json",
+		    data: {"user_id": "1", "page": "1" },
+		    type: 'get', //this is the default though, you don't actually need to always mention it
+		    success: function(result) {
+		        // alert(result);
+            	$("#div2").html(result);
+		    },
+		    failure: function(data) { 
+		        alert('Got an error dude');
+		    }
+		});
+    });
 
 });
 
@@ -87,6 +118,9 @@ $(document).ready(function(){
 <button id="button3">getTopicQuestion</button>
 
 <button id="button4">getFocusedSchoolmate</button>
+<button id="button5">getPopularSchoolmateData</button>
+
+<button id="button6">submitQuestion</button>
 
 </body>
 </html>
