@@ -18,8 +18,10 @@ from util.CJsonEncoder import CJsonEncoder
 from action import topicAction
 
 def unitTest(request):
-    return render_to_response('viewTest.html')    
-
+    response = render_to_response('viewTest.html')  
+    response.set_cookie( 'user_id', '1' )  
+    return response
+    
 @api_view(['GET'])
 def getFocusTopic(request):
     '''

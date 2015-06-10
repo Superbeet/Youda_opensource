@@ -49,6 +49,8 @@ urlpatterns += patterns('',
     url(r'^getFocusedSchoolmateData/', views.schoolmate.getFocusedSchoolmateData),
     url(r'^getPopularSchoolmateData/', views.schoolmate.getPopularSchoolmateData),
     
+    url(r'^submitQuestion/', views.question.submitQuestion),
+        
 #     url(r'^home',homeAction.index),#显示home页
 #     url(r'^message',messageAction.index),#显示message页    
 )
