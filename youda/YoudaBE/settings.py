@@ -69,9 +69,9 @@ CACHES = {
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'youda_dev_4',
+         'NAME': 'dev_youda',
          'USER': 'root',
-         'PASSWORD': '',
+         'PASSWORD': 'niit',
          'HOST': '127.0.0.1',
          'PORT': '3306',
      }
