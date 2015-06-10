@@ -170,7 +170,7 @@ class Questions(models.Model):
     class Meta:
         db_table = 'questions'
     def __unicode__(self):
-        return "[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
+        return u"[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
     objects = models.Manager()
     common_objects = CommonDao();
     
@@ -198,7 +198,7 @@ class Schools(models.Model):
     class Meta:
         db_table = 'schools'
     def __unicode__(self):
-        return "[school_id:"+str(self.school_id)+",school_name:"+str(self.school_name)+"region"+str(self.region)+"]"
+        return u"[school_id:"+str(self.school_id)+",school_name:"+str(self.school_name)+"region"+str(self.region)+"]"
     
     objects = models.Manager()
     common_objects = CommonDao();
@@ -232,7 +232,7 @@ class Topics(models.Model):
         db_table = 'topics'
 
     def __unicode__(self):
-        return "[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",category_id:"+str(self.parent_id)+"]"
+        return u"[topic_id:"+str(self.topic_id)+",topic_name:"+self.topic_name+",category_id:"+str(self.parent_id)+"]"
     objects = models.Manager()
     common_objects = CommonDao();
     
@@ -245,7 +245,7 @@ class TopicFocus(models.Model):
     class Meta:
         db_table = 'topic_focus'
     def __unicode__(self):
-        return "[focus_id:"+str(self.topic_id)+",topic_id:"+str(self.topic_id)+",user_id:"+str(self.user_id)+"]"
+        return u"[focus_id:"+str(self.topic_id)+",topic_id:"+str(self.topic_id)+",user_id:"+str(self.user_id)+"]"
     objects = models.Manager()
     common_objects = CommonDao();  
 

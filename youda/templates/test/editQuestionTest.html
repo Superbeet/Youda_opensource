@@ -7,25 +7,14 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <meta name="description" content="">
 	    <meta name="author" content="">
-	    <!-- <link rel="icon" href="http://v3.bootcss.com/favicon.ico"> -->
 
 	    <title>Edit Question Page Test</title>
 
-	    <!-- Bootstrap core CSS -->
-	    <link href="/statics/css/bootstrap.min.css" rel="stylesheet">
+		<script src="/static/js/jquery.min.js"></script>
+		
+		<script src="/static/js/csrf.js"></script>
 
-	    <!-- Bootstrap styles for this template -->
-	    <link href="/statics/css/navbar-fixed-top.css" rel="stylesheet">
-
-	    <!-- Customer styles for this template -->
-	    <link href="/statics/css/customize.css" rel="stylesheet">
-
-	</head>
-
-	<body id="">
-
-		<div>
-		<script type="text/javascript" src="/statics/tinymce/js/tinymce/tinymce.min.js"></script>
+		<script type="text/javascript" src="/static/tinymce/js/tinymce/tinymce.min.js"></script>
 
 		<script type="text/javascript">
 		tinymce.init({
@@ -46,21 +35,40 @@
 		    ]
 		});
 		</script>
+		
+	</head>
 
-		<form method="POST" action="/submitQuestion/">
+	<body id="">
 
+		<div id="div1"><h2>Edit Question Test Page</h2></div>
+		
+		<div>
+		
+		<form method="POST" action="/submitQuestion/" id="post-form">
+		
+		{% csrf_token %}
+		
 		<ul>
+		    
+		    
+			<input type="checkbox" name="anonymous" unchecked> Be anonymous <br>
+			<input type="checkbox" name="has_attach" checked> Have attachment<br>
+
+		    <hr>
+		    </br>
 		    Question Content (String)
 		    </br>
 		    <input type="text" name="question_content" /> </br>
 
 		    <hr>
+		    </br>
 		    
 		    Topic ID (Number)
 		    </br>
 		    <input type="text" style="width:100%" name="topic_id" /> </br>
 
 		    <hr>
+		    </br>
 		    
 			Content	(Rich Text)
 		    <textarea name="question_detail" style="width:100%"></textarea>
@@ -70,5 +78,6 @@
 		</div>
 
 		</ul>
+	
 	</body>
 </html>
