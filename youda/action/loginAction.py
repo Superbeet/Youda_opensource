@@ -44,6 +44,9 @@ def readHeadFile2(request):
     return render_to_response("file_upload_test.html");
  
 def toLogin(request,op):
+    '''
+            登陆操作，记录用户的登陆状态（Session），设置Cookies
+    '''
     if op=="1":#跳转到登陆页面
         return render_to_response('login.html');
     if op=="2":#用户进行登陆操作
