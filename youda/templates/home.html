@@ -219,21 +219,7 @@
 
 
 <script type="text/javascript">
-var recommend_answer_data = {
-'recommendAnswerList' : [{
-'askUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-'askName' : '大学里和毕业后有哪些是你万万没想到的',
-'viewCount' : '123',
-'commentCount' : '6',
-'askUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
-'answerUserIconUrl' : '/static/image/people_detail_pic_60_60.jpg',
-'answerAgreeCount' : '6' ,
-'answerContext' : '1、以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是这样子这样子这样以为上大学很轻松，没想到，每天都累成狗，当然也有人混日子，混日子的很轻松。2、大学里那些被自己诟病没有用的课，结果就是  ',
-'answerUserShortIntroduce' : '徐子豪 ● 通信工程 ● 2011级 ● 本科',
-'answerTime' : '2015-01-02  13:38  '
 
-}]
-};
 function toggleTabs(){
 $('#my_interest_tab').toggleClass('my_interest_tab_active');
 $('#hot_answer_tab').toggleClass('hot_answer_tab_active');
@@ -264,9 +250,17 @@ $('#hot_answer_tab').on('click',function(){
 
 		$('#my_interest_tab').attr('active','false');
 		$('#hot_answer_tab').attr('active','true');
+
+        $.ajax({
+            url : '/hotquestions',
+            dataType : 'json',
+            type : 'get',
+            success : function(result) {
+                      var recommend_answer_html = template('recommend_answer',result);
+                     $('#hot_answer_container').append(recommend_answer_html);
+                }
+        });
 toggleTabs();
-var recommend_answer_html = template('recommend_answer',recommend_answer_data);
-$('#hot_answer_container').html(recommend_answer_html);
 }
 	return false;
 });

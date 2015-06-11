@@ -87,7 +87,7 @@
                 $('#login_btn').on('click',function(){
                 var user_name = $('#user_name').val();
                 var password = $('#password').val();
-                var login_type = getRadioValue('#remember_me_form');
+                var login_type = getRadioValue('remember_me_form');
                 //alert(login_type);
 				$.post("/login/",{userName:user_name,pass:password},function(data){
 				    if(data.status==-1)

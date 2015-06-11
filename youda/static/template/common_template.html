@@ -219,19 +219,19 @@
 <div class="topic_answer_content fl">
 <div class="topic_answer_header border_bottom_dark">
 <div class="topic_answer_header_people_name">
-<span class="dark_font font_ya_hei">我关注的问题有了新的回复</span>
+<span class="dark_font font_ya_hei">我关注的问题<a href="/question/"><%= data.question_content%></a>有了新的回复</span>
 </div>
 <div class="people_answer_header_answer_name">
 <span class="common_font font_ya_hei"><%=data.questin_content %></span>
 <div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count">122</span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count">12</span>&nbsp;&nbsp;&nbsp;
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data.browse_num %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data.answer_num %></span>&nbsp;&nbsp;&nbsp;
 
 </div>
 </div>
 <div>
 
-<span class="font_ya_hei dark_font font_small">提问个人简介</span>
+<span class="font_ya_hei dark_font font_small"><a href="/people/<%= data.questioner_id %>"><%= data.questioner_name %></a>·通信工程·2011级·本科</span>
 
 </div>
 
@@ -255,9 +255,8 @@
 <%=data.answer_content %>
 <span class="common_font">点击展开>>></span>
 </div>
-<br />
 <div class="topic_answer_detail_text_time ">
-<span class="fl font_small">回答个人简介</span>
+<span class="fl font_small"><a href="/people/<%= data.answerer_id %>"><%= data.answerer_name %></a>·通信工程·2011级·本科</span>
 <div class="fr">
 <img src="/static/image/index/time_icon.png"  /><%=data.publish_time %>
 </div>
@@ -330,10 +329,12 @@
 	<script type="text/html" id="people_and_answer" charset="utf-8">
 		<% for(i = 0 ; i < data.length ; i ++){ %>
 		<div class="people_and_answer">
-			<div class="people_and_answer_title"><a href="question/<%= data.question_id %>"><%= data.question_content %></a></div>
+			<div class="people_and_answer_title"><a href="question/<%= data[i].question_id %>"><%= data[i].question_content %></a></div>
 			<div class="people_and_answer_userinfo">
-			<div class="fl" ><img src="<%= data.head %>" width="50" height="50" class="roundImg" /></div>
-			<div class="fl people_and_answer_content"><span class="common_font"><a href="/people/<%= data.user_id"><%= data.user_name %></a></span><br/><span class="dark_font"><%= data.academy %></span><br/><span class="dark_font"><%= data.entrance_time %><%= data.education %></span></div>
+			<div class="fl" ><img src="<%= data[i].head %>" width="50" height="50" class="roundImg" /></div>
+			<div class="fl people_and_answer_content">
+                <p><a href="/people/<%= data[i].user_id"><%= data[i].user_name %></a></p>
+                <p><%= data[i].academy %></p><p>2011本科</p></div>
 		</div>
 		</div>
 		<% } %>
@@ -345,24 +346,24 @@
 <!--  推荐问答开始 -->
  <script type="text/html" id="recommend_answer" charset="utf-8">
 
-<% for(i = 0 ; i < recommendAnswerList.length ; i++){ %>
+<% for(i = 0 ; i < data.length ; i++){ %>
 <div class="answer">
 <div class="answer_left_bar fl">
-	<img src="<%=recommendAnswerList[i].askUserIconUrl %>" class="common_icon" />
+	<img src="<%=data[i].questioner_head %>" class="common_icon" />
 </div>
 <div class="answer_content fl">
 <div class="answer_header border_bottom_dark">
 <div class="people_answer_header_answer_name">
-<span class="common_font font_ya_hei"><%=recommendAnswerList[i].askName %></span>
+<span class="common_font"><a href="/people/<%=data[i].questioner_id %>"><%=data[i].questioner_name %></a></span>
 <div class="fr">
-<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=recommendAnswerList[i].viewCount %></span>
-<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=recommendAnswerList[i].commentCount %></span>&nbsp;&nbsp;&nbsp;
+<img src="/static/image/index/view_icon.png"  /><span class="view_count"><%=data[i].browse_num %></span>
+<img src="/static/image/index/comment_icon.png" /><span class="comment_count"><%=data[i].answer_num %></span>&nbsp;&nbsp;&nbsp;
 
 </div>
 </div>
 <div>
 
-<span class="font_ya_hei dark_font font_small"><%=recommendAnswerList[i].askUserShortIntroduce %></span> 
+<span class="font_ya_hei dark_font font_small"><%=data[i].questioner_name %>·通信工程·2011级·本科</span>
 
 </div>
 
@@ -372,24 +373,23 @@
 <div class="answer_detail border_bottom_dark">
 <div class="answer_detail_left_bar fl">
 	<div class="answer_detail_pic_div">
-<img src="<%=recommendAnswerList[i].answerUserIconUrl %>" class="common_icon" />
+<img src="<%=data[i].answerer_head %>" class="common_icon" />
 </div>
 <div class="answer_detail_agree_div">
 <div class="answer_detail_agree_icon">
 
-<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=recommendAnswerList[i].answerAgreeCount %></span>
+<img src="/static/image/index/agree_icon.png" /><span class="people_answer_detail_agree_count"><%=data[i].support_num %></span>
 </div>
 </div>
 </div>
 <div class="answer_detail_text fl">
 <div class="answer_detail_text_context">
-<%=recommendAnswerList[i].answerContext %><span class="common_font">点击展开>>></span>
+<%=data[i].answer_content %><span class="common_font">点击展开>>></span>
 </div>
-<br />
 <div class="answer_detail_text_time ">
-<span class="fl font_small"><%=recommendAnswerList[i].answerUserShortIntroduce %></span> 
+<span class="fl font_small"><%=data[i].answerer_name %>·通信工程·2011级·本科</span>
 <div class="fr">
-<img src="/static/image/index/time_icon.png"  /><%=recommendAnswerList[i].answerTime %>
+<img src="/static/image/index/time_icon.png"  /><%=data[i].question_time %>
 </div>
 </div>
 </div>

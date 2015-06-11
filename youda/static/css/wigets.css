@@ -123,15 +123,16 @@ a:focus {
 
 .people_answer_detail_text, .topic_answer_detail_text, .answer_detail_text {
   width: 700px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  height: 95px; }
 
 .people_answer_detail_text_context, .topic_answer_detail_text_context, .answer_detail_text_context {
   width: 700px;
-  padding-top: 20px;
   font-family: "Microsoft Yahei";
   color: #666666;
   font-size: 11pt;
-  padding-left: 10px; }
+  padding-left: 10px;
+  height: 75px; }
 
 .people_answer_detail_text_time, .people_ask_detail_text_time, .topic_answer_detail_text_time, .answerdetail_text_time {
   width: 700px;

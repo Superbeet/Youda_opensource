@@ -66,15 +66,15 @@ height: 95px;
 .people_answer_detail_text{
 	width: $nav_with - 60px - 60px - 60px;
 	padding-left: 10px;
+  height:  95px;
 }
 .people_answer_detail_text_context{
 	width: $nav_with - 60px - 60px - 60px;
-	padding-top: 20px;
 	font-family: $font_ya_hei;
 	color: $dark_color;
 	font-size: 11pt;
 	padding-left: 10px;
-
+  height: 75px;
 
 }
 .people_answer_detail_text_time{
