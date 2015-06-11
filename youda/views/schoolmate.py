@@ -105,7 +105,9 @@ def getFocusedSchoolmateData(request):
         for f in focus_user_query:
             
             schoolmate_id = str(f.schoolmate_id)
+            
     #         print "schoolmate_id > %s" %(schoolmate_id)
+    
             schoolmate_list.append(schoolmate_id)
             
             question_query = models.Questions.objects.filter(user_id = schoolmate_id)[0:activity_max_num]
@@ -116,10 +118,10 @@ def getFocusedSchoolmateData(request):
             
             for q in question_query:
                 question_data = {
-                            "question_id": q.question_id,
-                            "question_content": q.question_content,
-                            "publish_time": q.publish_time,
-                            "active_time": q.active_time,
+                    "question_id": q.question_id,
+                    "question_content": q.question_content,
+                    "publish_time": q.publish_time,
+                    "active_time": q.active_time,
                 }
                 
                 question_data_list.append(question_data)
@@ -309,7 +311,5 @@ def getPopularSchoolmateData(request):
         
         DATA = json.dumps(success_response,cls=CJsonEncoder)
         return HttpResponse(DATA,content_type="application/json")
-    
-    
     
     

@@ -146,70 +146,115 @@ def getSchoolTopic(request):
     Successful Return
     
         {
-            length: number of return data
+            length: number of topics under all schools
             
-            data:[
+            data:[  
                     {
-                        "topic_id": topic id,
-                        "topic_name": topic name,
-                        "parent_id": parent id,
-                        "add_time": add time,
-                        "discuss_num": discuss number,
-                        "topic_pic": topic picture,
-                        "focus_num": focus number       
+                        "school_id":   school id,
+                        
+                        "school_name"：    school name,
+                        
+                        "topic_data":  [
+                                            {
+                                                "topic_id": topic id,
+                                                "topic_name": topic name,
+                                                "parent_id": parent id,
+                                                "add_time": add time,
+                                                "discuss_num": discuss number,
+                                                "topic_pic": topic picture,
+                                                "focus_num": focus number       
+                                            },
+                                            ...
+                                        ]
+                                        
                     },
                     ...
-                ]
+                     
+                ]            
         }
-        
     
     '''
+    try:
+        page_size = 10
+        user_id = request.GET['user_id']
+        page_num = int(request.GET['page'])
     
-    page_size = 10
-    user_id = request.GET['user_id']
-    page_num = int(request.GET['page'])
+        offset = (page_num-1)*page_size
+        end = offset + page_size
+        
+        print "page -> %s | user_id -> %s" %(page_num, user_id)
+        print "offset -> %s | end -> %s" %(offset, end) 
+        
+        user_info = models.UsersAffiliate.objects.get(user_id = user_id)
+        
+        user_school_query = user_info.school.all()
+        
+        school_list = []
+        
+        for school_block in user_school_query:
+            school_list.append(
+                               [school_block.school_id, school_block.school_name]
+                            )
 
-    offset = (page_num-1)*page_size
-    end = offset + page_size
+        print "school_list -> %s" %(school_list)
     
-    print "page -> %s | user_id -> %s" %(page_num, user_id)
-    print "offset -> %s | end -> %s" %(offset, end) 
+    #     topic_data_block_list = models.Topics.objects.filter(topic_school__school_id__in = school_id_list)[offset:end]
     
-    user_info = models.UsersAffiliate.objects.get(user_id = user_id)
+        data_list = []
+        
+        for school_id,school_name in school_list:
+            
+            topic_data_block_list = models.Topics.objects.filter(topic_school__school_id = school_id )#[offset:end]
+        
+            topic_data_list = []
+            
+            
+            for block in topic_data_block_list:
+                topic_data_dict = {
+                                "topic_id": block.topic_id,
+                                "topic_name": block.topic_name,
+                                "parent_id": block.parent_id,
+                                "add_time": block.add_time,
+                                "discuss_num": block.discuss_num,
+                                "topic_pic": block.topic_pic,
+                                "focus_num": block.focus_num     
+                            }
+         
+                topic_data_list.append(topic_data_dict)
+        
+            school_data_dict = {
+                            "school_id": school_id,  
+                            "school_name": school_name,
+                            "topic_data": topic_data_list,
+                        }
+            
+            data_list.append(school_data_dict)
     
-    user_school_query = user_info.school.all()
+        result = {
+                    "length": len(topic_data_list),
+                    "data": data_list,
+                 }
+        
+        print "result -> %s" %(result)
 
-    school_id_list = [str(school_block.school_id) for school_block in user_school_query]
-    
-    print "school_id_list -> %s" %(school_id_list)
+    except Exception, ex:
+        error_response = {
+            "stat":"failed",
+            "code":81,
+            "message":str(ex)
+        }
 
-    topic_data_block_list = models.Topics.objects.filter(topic_school__school_id__in = school_id_list)[offset:end]
-
+        DATA = json.dumps(error_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
     
-    topic_data_list = []
-    
-    for block in topic_data_block_list:
-        data_dict = {
-                        "topic_id": block.topic_id,
-                        "topic_name": block.topic_name,
-                        "parent_id": block.parent_id,
-                        "add_time": block.add_time,
-                        "discuss_num": block.discuss_num,
-                        "topic_pic": block.topic_pic,
-                        "focus_num": block.focus_num     
-                    }
- 
-        topic_data_list.append(data_dict)
-
-    result = {
-                "length": len(topic_data_list),
-                "data": topic_data_list
-             }
-    
-    print "result -> %s" %(result)
-
-    DATA = json.dumps(result, cls=CJsonEncoder)
-    return HttpResponse(DATA, content_type="application/json");#json格式返回数据
+    else:
+        success_response = {
+            "stat":"ok",
+            "data":result
+        }
+        
+        DATA = json.dumps(success_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
 
 
 @api_view(['GET'])
