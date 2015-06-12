@@ -3,7 +3,7 @@
 from django.test import TestCase
 import django
 from apps.CommonDao import CommonDao
-from apps.models_2 import Users, Questions, Topics, TopicFocus
+from apps.models import Users, Questions, Topics, TopicFocus
 from datetime import datetime
 from django.utils import timezone
 from django.db import transaction
@@ -64,8 +64,13 @@ def test1():
     if user:
         commonDao.toupdate(Users,user,auto_login=0,rem_name=0);
         print 1;
+def test2():
+    a = [''];
+    if str(a[0])==None:
+        print 'ok';
+    print len(a),len(str(a[0]));
 if __name__=='__main__':
-    test1();
+    test2();
 
     
     

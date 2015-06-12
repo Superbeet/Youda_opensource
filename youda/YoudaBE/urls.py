@@ -28,7 +28,8 @@ urlpatterns = patterns('',
     url(r'questiondetail/answer/(\d)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
     url(r'^loginpage/$',loginAction.toLogin,{'op':'1'}),
     url(r'^login/$',loginAction.toLogin,{'op':'2'}),
-    url(r'^register/$',systemAction.toRegister),
+    url(r'^register/$',systemAction.register),
+    #url(r'^register1/$',systemAction.toRegister1),
     #url(r'^message',messageAction.index),
 )
 #用于测试

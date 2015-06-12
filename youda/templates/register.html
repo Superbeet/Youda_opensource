@@ -508,10 +508,11 @@ not_in_school_upper_step_btn.on('click',function(){
 
             $('.register_submit').on('click',function(){
 
-                    //TO-DO 提交表单
-            });
-
-      });
+				$.post("/register/",getFormData(),function(data){
+				
+				});
+             });
+        });
 //获取所有表单数据
         function getFormData(){
              var stage = getRadioValue('current_stage_form');
@@ -534,7 +535,7 @@ not_in_school_upper_step_btn.on('click',function(){
                     });
                    temp_select_array.push('#');
                 });
-                educate = temp_select_array.join(',');
+                educate = temp_select_array.join(' ');
 
             }
             else{
@@ -547,7 +548,7 @@ not_in_school_upper_step_btn.on('click',function(){
                     });
                    temp_select_array.push('#');
                 });
-                educate = temp_select_array.join(',');
+                educate = temp_select_array.join(' ');
 
                 var not_school_work_container_form = $('#not_in_school_work_container').children();
                  var temp_work_select_array = [];
@@ -559,13 +560,13 @@ not_in_school_upper_step_btn.on('click',function(){
                  temp_work_select_array.push('#');
                 });
 
-                work  = temp_work_select_array.join(',');
+                work  = temp_work_select_array.join(' ');
             }
 
 
         data.educate = educate;
             data.work = work;
-
+            
             return data;
 
         }

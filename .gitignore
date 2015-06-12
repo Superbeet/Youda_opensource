@@ -4,6 +4,7 @@ __pycache__/
 youda/.settings/
 youda/caches/
 youda/.*
+youda/uploads/avatar/01/
 # C extensions
 *.so
 youda/.settings/

@@ -93,12 +93,13 @@ class InvitationUsers(models.Model):
 class UserJobs(models.Model):
     job_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('UsersAffiliate')
+    company_name = models.CharField(max_length=50, blank=True)
     position = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=100, blank=True)
-    entrance_time = models.DateTimeField(blank=True, null=True)
-    leave_time = models.DateTimeField(blank=True, null=True)
+    entrance_time = models.CharField(max_length=20, blank=True)
+    leave_time = models.CharField(max_length=20, blank=True)
     experience = models.TextField(blank=True)
-
+    
     class Meta:
         db_table = 'user_jobs'
     def __unicode__(self):
@@ -209,7 +210,7 @@ class UserSchool(models.Model):
     user = models.ForeignKey('UsersAffiliate')  # UsersAffiliate->Users
     school = models.ForeignKey('Schools')
     academy = models.CharField(max_length=100, blank=True)
-    entrance_time = models.DateTimeField(blank=True, null=True)
+    entrance_time = models.CharField(max_length=20, blank=True);
     education = models.IntegerField(blank=True, null=True)
     class Meta:
         db_table = 'user_school'

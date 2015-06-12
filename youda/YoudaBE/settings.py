@@ -134,6 +134,7 @@ TEMPLATE_DIRS = (
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
           os.path.join(BASE_DIR, 'static').replace('\\','/'),
+          os.path.join(BASE_DIR, 'uploads').replace('\\','/'),
     )
 LOGGING = {
     'version': 1,
