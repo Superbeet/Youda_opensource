@@ -68,7 +68,7 @@
         	<span class="am-icon-mobile-phone"></span>
         </button>
       </span>
-		<input type="text" class="am-form-field " placeholder="请输入邮箱或者手机号码">
+		<input type="text" class="am-form-field " placeholder="请输入邮箱或者手机号码" id="account">
 
 		</div>
         </div>
@@ -84,7 +84,7 @@
         	<span class="am-icon-user"></span>
         </button>
       </span>
-		<input type="text" class="am-form-field " placeholder="请输入真实姓名">
+		<input type="text" class="am-form-field " placeholder="请输入真实姓名" id="real_name">
 
 		</div>
         </div>
@@ -139,14 +139,15 @@
 
 <!-- 注册界面第二版(在校模块) -->
     <div class="main_area fl second_part hidden" id="in_school_area">
+        <div id="in_school_educate_container">
 <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">南京邮电大学</a></li>
-       <li><a href="#">华中科技大学</a></li>
-       <li><a href="#">华南农业大学</a></li>
+    <li value="1"><a href="#">南京邮电大学</a></li>
+       <li value="2"><a href="#">华中科技大学</a></li>
+       <li value="3"><a href="#">华南农业大学</a></li>
 
   </ul>
 </div>
@@ -155,9 +156,9 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>院系 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">工学院</a></li>
-       <li><a href="#">林学院</a></li>
-       <li><a href="#">数学与信息学院</a></li>
+    <li value="1"><a href="#">工学院</a></li>
+       <li value="2"><a href="#">林学院</a></li>
+       <li value="3"><a href="#">数学与信息学院</a></li>
 
   </ul>
 </div>
@@ -167,12 +168,12 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入学年份<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a>2015</a></li>
-       <li><a>2014</a></li>
-       <li><a>2013</a></li>
-      <li><a>2012</a></li>
-      <li><a>2011</a></li>
-      <li><a>2010</a></li>
+    <li value="2015"><a>2015</a></li>
+       <li value="2014"><a>2014</a></li>
+       <li value="2013"><a>2013</a></li>
+      <li value="2012"><a>2012</a></li>
+      <li value="2011"><a>2011</a></li>
+      <li value="2011"><a>2010</a></li>
   </ul>
 </div>
 
@@ -180,11 +181,11 @@
                  <div class="am-dropdown common_margin_select" data-am-dropdown>
   <button class=" am-dropdown-toggle common_select " data-am-dropdown-toggle>学历<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
-     <li><a href="#">高中</a></li>
-    <li><a href="#">本科</a></li>
-       <li><a href="#">硕士</a></li>
-       <li><a href="#">博士</a></li>
-       <li><a href="#">博士后</a></li>
+     <li value="1"><a href="#">高中</a></li>
+    <li value="2"><a href="#">本科</a></li>
+       <li value="3"><a href="#">硕士</a></li>
+       <li value="4"><a href="#">博士</a></li>
+       <li value="5"><a href="#">博士后</a></li>
   </ul>
 </div>
     
@@ -195,14 +196,15 @@
 
 
 </div>
-    <div class="common_register_container">
+
+        <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">南京邮电大学</a></li>
-       <li><a href="#">华中科技大学</a></li>
-       <li><a href="#">华南农业大学</a></li>
+    <li value="1"><a href="#">南京邮电大学</a></li>
+       <li value="2"><a href="#">华中科技大学</a></li>
+       <li value="3"><a href="#">华南农业大学</a></li>
 
   </ul>
 </div>
@@ -211,9 +213,9 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>院系 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">工学院</a></li>
-       <li><a href="#">林学院</a></li>
-       <li><a href="#">数学与信息学院</a></li>
+    <li value="1"><a href="#">工学院</a></li>
+       <li value="2"><a href="#">林学院</a></li>
+       <li value="3"><a href="#">数学与信息学院</a></li>
 
   </ul>
 </div>
@@ -223,12 +225,12 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入学年份<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li value="2015"><a>2015</a></li>
+       <li value="2014"><a>2014</a></li>
+       <li value="2013"><a>2013</a></li>
+      <li value="2012"><a>2012</a></li>
+      <li value="2011"><a>2011</a></li>
+      <li value="2011"><a>2010</a></li>
   </ul>
 </div>
 
@@ -236,23 +238,26 @@
                  <div class="am-dropdown common_margin_select" data-am-dropdown>
   <button class=" am-dropdown-toggle common_select " data-am-dropdown-toggle>学历<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
-     <li><a href="#">高中</a></li>
-    <li><a href="#">本科</a></li>
-       <li><a href="#">硕士</a></li>
-       <li><a href="#">博士</a></li>
-       <li><a href="#">博士后</a></li>
+     <li value="1"><a href="#">高中</a></li>
+    <li value="2"><a href="#">本科</a></li>
+       <li value="3"><a href="#">硕士</a></li>
+       <li value="4"><a href="#">博士</a></li>
+       <li value="5"><a href="#">博士后</a></li>
   </ul>
 </div>
 
 
-    <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
+    <a href="#" class="common_margin_select"><img src="/static/image/system/add.png"></a>
 
 
 
 
 </div>
+</div>
 
- <div class="common_register_container"><textarea class="common_blank_border self_intro_form"></textarea></div>
+
+
+ <div class="common_register_container"><textarea class="common_blank_border self_intro_form" id="in_school_self_intro_form"></textarea></div>
 
  <div class="common_register_container">
 
@@ -272,15 +277,15 @@
 
     <!-- 注册界面第三版(工作模块)-->
     <div class="main_area fl second_part hidden" id="not_in_school_area">
-
+<div id="not_in_school_educate_container">
 <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">南京邮电大学</a></li>
-       <li><a href="#">华中科技大学</a></li>
-       <li><a href="#">华南农业大学</a></li>
+    <li value="1"><a href="#">南京邮电大学</a></li>
+       <li value="2"><a href="#">华中科技大学</a></li>
+       <li value="3"><a href="#">华南农业大学</a></li>
 
   </ul>
 </div>
@@ -289,9 +294,9 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>院系 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">工学院</a></li>
-       <li><a href="#">林学院</a></li>
-       <li><a href="#">数学与信息学院</a></li>
+    <li value="1"><a href="#">工学院</a></li>
+       <li value="2"><a href="#">林学院</a></li>
+       <li value="3"><a href="#">数学与信息学院</a></li>
 
   </ul>
 </div>
@@ -301,12 +306,12 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入学年份<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li value="2015"><a>2015</a></li>
+       <li value="2014"><a>2014</a></li>
+       <li value="2013"><a>2013</a></li>
+      <li value="2012"><a>2012</a></li>
+      <li value="2011"><a>2011</a></li>
+      <li value="2011"><a>2010</a></li>
   </ul>
 </div>
 
@@ -314,11 +319,11 @@
                  <div class="am-dropdown common_margin_select" data-am-dropdown>
   <button class=" am-dropdown-toggle common_select " data-am-dropdown-toggle>学历<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
-     <li><a href="#">高中</a></li>
-    <li><a href="#">本科</a></li>
-       <li><a href="#">硕士</a></li>
-       <li><a href="#">博士</a></li>
-       <li><a href="#">博士后</a></li>
+     <li value="1"><a href="#">高中</a></li>
+    <li value="2"><a href="#">本科</a></li>
+       <li value="3"><a href="#">硕士</a></li>
+       <li value="4"><a href="#">博士</a></li>
+       <li value="5"><a href="#">博士后</a></li>
   </ul>
 </div>
 
@@ -329,14 +334,15 @@
 
 
 </div>
-    <div class="common_register_container">
+
+        <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>学校 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">南京邮电大学</a></li>
-       <li><a href="#">华中科技大学</a></li>
-       <li><a href="#">华南农业大学</a></li>
+    <li value="1"><a href="#">南京邮电大学</a></li>
+       <li value="2"><a href="#">华中科技大学</a></li>
+       <li value="3"><a href="#">华南农业大学</a></li>
 
   </ul>
 </div>
@@ -345,9 +351,9 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>院系 <span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">工学院</a></li>
-       <li><a href="#">林学院</a></li>
-       <li><a href="#">数学与信息学院</a></li>
+    <li value="1"><a href="#">工学院</a></li>
+       <li value="2"><a href="#">林学院</a></li>
+       <li value="3"><a href="#">数学与信息学院</a></li>
 
   </ul>
 </div>
@@ -357,12 +363,12 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入学年份<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li value="2015"><a>2015</a></li>
+       <li value="2014"><a>2014</a></li>
+       <li value="2013"><a>2013</a></li>
+      <li value="2012"><a>2012</a></li>
+      <li value="2011"><a>2011</a></li>
+      <li value="2011"><a>2010</a></li>
   </ul>
 </div>
 
@@ -370,32 +376,33 @@
                  <div class="am-dropdown common_margin_select" data-am-dropdown>
   <button class=" am-dropdown-toggle common_select " data-am-dropdown-toggle>学历<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
-     <li><a href="#">高中</a></li>
-    <li><a href="#">本科</a></li>
-       <li><a href="#">硕士</a></li>
-       <li><a href="#">博士</a></li>
-       <li><a href="#">博士后</a></li>
+     <li value="1"><a href="#">高中</a></li>
+    <li value="2"><a href="#">本科</a></li>
+       <li value="3"><a href="#">硕士</a></li>
+       <li value="4"><a href="#">博士</a></li>
+       <li value="5"><a href="#">博士后</a></li>
   </ul>
 </div>
 
 
-    <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
+    <a href="#" class="common_margin_select"><img src="/static/image/system/add.png"></a>
 
 
 
 
 </div>
-
+</div>
 
         <!-- 工作 -->
+        <div id="not_in_school_work_container">
          <div class="common_register_container">
      <div class="am-dropdown" data-am-dropdown>
   <button class="am-dropdown-toggle common_select" data-am-dropdown-toggle>工作单位<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">腾讯</a></li>
-       <li><a href="#">阿里巴巴</a></li>
-       <li><a href="#">百度</a></li>
+    <li value="1"><a href="#">腾讯</a></li>
+       <li value="2"><a href="#">阿里巴巴</a></li>
+       <li value="3"><a href="#">百度</a></li>
 
   </ul>
 </div>
@@ -404,9 +411,9 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>职位<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">产品经U理</a></li>
-       <li><a href="#">JAVA开发工程师</a></li>
-       <li><a href="#">UI设计师</a></li>
+    <li value="1"><a href="#">产品经U理</a></li>
+       <li value="2"><a href="#">JAVA开发工程师</a></li>
+       <li value="3"><a href="#">UI设计师</a></li>
 
   </ul>
 </div>
@@ -416,12 +423,10 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>入职年月<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li value="2015"><a href="#">2015</a></li>
+       <li value="2014"><a href="#">2014</a></li>
+       <li value="2013"><a href="#">2013</a></li>
+
   </ul>
 </div>
 
@@ -430,28 +435,22 @@
   <button class="am-dropdown-toggle common_select " data-am-dropdown-toggle>离职年月<span class="cornor fr">∨</span></button>
   <ul class="am-dropdown-content">
 
-    <li><a href="#">2015</a></li>
-       <li><a href="#">2014</a></li>
-       <li><a href="#">2013</a></li>
-      <li><a href="#">2012</a></li>
-      <li><a href="#">2011</a></li>
-      <li><a href="#">2010</a></li>
+    <li value="2015"><a href="#">2015</a></li>
+       <li value="2014"><a href="#">2014</a></li>
+       <li value="2013"><a href="#">2013</a></li>
   </ul>
 </div>
 
     <a href="#" class="common_margin_select"><img src="/static/image/system/delete.png"></a>
 
-
-
-
 </div>
 
         <!--工作 -->
+</div>
 
 
 
-
- <div class="common_register_container"><textarea class="common_blank_border self_intro_form"></textarea></div>
+ <div class="common_register_container"><textarea class="common_blank_border self_intro_form" id="not_in_school_self_intro_form"></textarea></div>
 
  <div class="common_register_container">
 
@@ -473,7 +472,7 @@
 
         $(function(){
 
-bindRadioClick();
+        bindRadioClick();
 
 
 
@@ -507,7 +506,69 @@ not_in_school_upper_step_btn.on('click',function(){
 });
 
 
+            $('.register_submit').on('click',function(){
+
+                    //TO-DO 提交表单
+            });
+
       });
+//获取所有表单数据
+        function getFormData(){
+             var stage = getRadioValue('current_stage_form');
+            var data = {};
+            data.img = img;
+            data.account = $('#account').val();
+            data.real_name = $('#real_name').val();
+            data.stage = stage;
+            data.sex = getRadioValue('sex_form');
+            var educate = '';
+            var work = '';
+
+            if(stage == 'in_school'){
+                var in_school_educate_container_form = $('#in_school_educate_container').children();
+                 var temp_select_array = [];
+                in_school_educate_container_form.each(function(index,form){
+                    var selecters = $(form).children('.am-dropdown');
+                    $(selecters).each(function(index,select){
+                        temp_select_array.push($(select).attr('value'));
+                    });
+                   temp_select_array.push('#');
+                });
+                educate = temp_select_array.join(',');
+
+            }
+            else{
+                 var not_in_school_educate_container_form = $('#not_in_school_educate_container').children();
+                    var temp_select_array = [];
+                  not_in_school_educate_container_form.each(function(index,form){
+                    var selecters = $(form).children('.am-dropdown');
+                    $(selecters).each(function(index,select){
+                        temp_select_array.push($(select).attr('value'));
+                    });
+                   temp_select_array.push('#');
+                });
+                educate = temp_select_array.join(',');
+
+                var not_school_work_container_form = $('#not_in_school_work_container').children();
+                 var temp_work_select_array = [];
+                not_school_work_container_form.each(function(index,form){
+                    var selecters = $(form).children('.am-dropdown');
+                    selecters.each(function(index,select){
+                       temp_work_select_array.push($(select).attr('value'));
+                    });
+                 temp_work_select_array.push('#');
+                });
+
+                work  = temp_work_select_array.join(',');
+            }
+
+
+        data.educate = educate;
+            data.work = work;
+
+            return data;
+
+        }
 
 
     </script>
@@ -516,7 +577,7 @@ not_in_school_upper_step_btn.on('click',function(){
 </body>
           <script src="/static/js/wieget.js"></script>
 <script>
-
+    var img = '';
     $(function(){
         bindDropDown();
         	var options =
@@ -536,7 +597,7 @@ not_in_school_upper_step_btn.on('click',function(){
 		this.files = [];
 	})
 	$('#btnCrop').on('click', function(){
-		var img = cropper.getDataURL();
+		img = cropper.getDataURL();
 		$('.cropped').html('');
 		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:50px;margin-top:4px;border-radius:50px;box-shadow:0px 0px 12px #7E7E7E;" ><p>50px*50px</p>');
 		$('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:60px;margin-top:4px;border-radius:60px;box-shadow:0px 0px 12px #7E7E7E;"><p>60px*60px</p>');
@@ -549,6 +610,12 @@ not_in_school_upper_step_btn.on('click',function(){
 		cropper.zoomOut();
 	})
     });
+
+
+
+
+
+
 </script>
 
 
