@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
     
     # Ye,Cong Test Urls
-    url(r'^test/view/$', views.topic.unitTest),
-    url(r'^test/edit/question/$', views.question.editQuestion),    
+    url(r'^test/view/$', views.test.unitTest),
+    url(r'^test/question/edit/$', views.test.editQuestion),    
         
 )

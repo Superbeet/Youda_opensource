@@ -46,7 +46,7 @@ def getFocusedSchoolmateData(request):
                     
                         "length": length,
                     
-                        "data": [
+                        "question_data": [
                                     {
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
@@ -80,7 +80,7 @@ def getFocusedSchoolmateData(request):
         page_num = int(request.GET['page'])
         
         if 'page_size' in request.GET:
-            page_size = request.GET['page_size']
+            page_size = int(request.GET['page_size'])
         else:
             page_size = 10
         
@@ -234,7 +234,7 @@ def getPopularSchoolmateData(request):
         page_num = int(request.GET['page'])
         
         if 'page_size' in request.GET:
-            page_size = request.GET['page_size']
+            page_size = int(request.GET['page_size'])
         else:
             page_size = 10
         

@@ -19,15 +19,44 @@ import json
 
 from util.CJsonEncoder import CJsonEncoder
 
-def editQuestion(request):
-    c = {}
-    c.update(csrf(request))
-    response = render_to_response('editQuestionTest.html', c)  
-    response.set_cookie( 'user_id', '1' )  
-    return response    
-
 @api_view(['POST'])
 def submitQuestion(request):
+    '''
+    Get topics of all user's graduated and enrolling schools
+    
+    Parameters
+ 
+        user_id (necessary) - from Cookies
+            user id
+        
+        topic_id (necessary)
+            topic id
+            
+        question_content (necessary)
+            question title
+        
+        question_detail (necessary)
+            question content detail
+        
+        anonymous (necessary) 
+            is the user anonymous
+            value: 0/1
+        
+        has_attach (necessary)
+            does this question have attachment
+            value: 0/1
+            
+    Successful Return
+    
+        {
+            "stat":"ok",
+            "data":{
+                "success":"true"
+            }
+        }
+    
+    '''    
+    
     try:
         user_id = request.COOKIES.get('user_id')
         topic_id = str(request.POST.get('topic_id'))

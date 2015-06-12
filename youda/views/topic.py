@@ -17,10 +17,7 @@ import json
 from util.CJsonEncoder import CJsonEncoder
 from action import topicAction
 
-def unitTest(request):
-    response = render_to_response('viewTest.html')  
-    response.set_cookie( 'user_id', '1' )  
-    return response
+
     
 @api_view(['GET'])
 def getFocusTopic(request):
@@ -49,13 +46,13 @@ def getFocusTopic(request):
                         data:
                             [
                                 {
-                                    "topic_id": topic_id,
-                                    "topic_name": topic_name,
-                                    "parent_id": parent_id,
-                                    "add_time": add_time,
-                                    "discuss_num": discuss_num,
-                                    "topic_pic": topic_pic,
-                                    "focus_num": focus_num,      
+                                    "topic_id": topic id,
+                                    "topic_name": topic name,
+                                    "parent_id": parent id,
+                                    "add_time": added time,
+                                    "discuss_num": discuss number,
+                                    "topic_pic": topic picture,
+                                    "focus_num": focus number,      
                                 }
                                 ...
                             ]
@@ -68,7 +65,7 @@ def getFocusTopic(request):
         page_num = int(request.GET['page'])
         
         if 'page_size' in request.GET:
-            page_size = request.GET['page_size']
+            page_size = int(request.GET['page_size'])
         else:
             page_size = 10
     
@@ -80,7 +77,7 @@ def getFocusTopic(request):
         
         focus_topic_block_list = models.TopicFocus.objects.filter(user_id = user_id)
         
-        print "focus_topic_block_list -> %s" %(focus_topic_block_list)
+#         print "focus_topic_block_list -> %s" %(focus_topic_block_list)
         
         topic_data_list = []
         
@@ -146,9 +143,11 @@ def getSchoolTopic(request):
     Successful Return
     
         {
-            length: number of topics under all schools
+            "school_num": school number,
             
-            data:[  
+            "topic_num": total topic numbers under all schools,
+            
+            "data":[  
                     {
                         "school_id":   school id,
                         
@@ -179,6 +178,11 @@ def getSchoolTopic(request):
         user_id = request.GET['user_id']
         page_num = int(request.GET['page'])
     
+        if 'page_size' in request.GET:
+            page_size = request.GET['page_size']
+        else:
+            page_size = 10
+    
         offset = (page_num-1)*page_size
         end = offset + page_size
         
@@ -202,9 +206,18 @@ def getSchoolTopic(request):
     
         data_list = []
         
+        school_num = len(school_list)
+        subpage_size = page_size/school_num
+        sub_offset = (page_num-1)*subpage_size
+        sub_end = sub_offset + subpage_size
+        
+        print "sub_offset -> %s | sub_end -> %s" %(sub_offset, sub_end) 
+        
+        topic_num = 0
+        
         for school_id,school_name in school_list:
             
-            topic_data_block_list = models.Topics.objects.filter(topic_school__school_id = school_id )#[offset:end]
+            topic_data_block_list = models.Topics.objects.filter( topic_school__school_id = school_id )[sub_offset:sub_end]
         
             topic_data_list = []
             
@@ -229,8 +242,12 @@ def getSchoolTopic(request):
                         }
             
             data_list.append(school_data_dict)
-    
+        
+        topic_num += len(topic_data_dict)
+        
         result = {
+                    "school_num": school_num,
+                    "topic_num": topic_num,
                     "length": len(topic_data_list),
                     "data": data_list,
                  }
@@ -305,7 +322,7 @@ def getTopicQuestion(request):
         page_num = int(request.GET['page'])
     
         if 'page_size' in request.GET:
-            page_size = request.GET['page_size']
+            page_size = int(request.GET['page_size'])
         else:
             page_size = 10
     
