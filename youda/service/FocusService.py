@@ -7,7 +7,7 @@ from django.db import transaction, connection
 
 class FocusService:
     PAGE = 1; #第几页
-    PAGESIZE = 10; #页面大小
+    PAGESIZE = 100; #页面大小
     commonDao = None;
     def getMyFocus(self,user_id,page=PAGE,pagesize=PAGESIZE,school_id=1):
         #1我关注的人有了新的提问，2我关注的人有了新的回复，3我关注的话题有了新的问题，4我关注的话题有了新的回复,5我关注的问题有了新的回复

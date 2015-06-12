@@ -36,7 +36,6 @@ width: $nav_with - 60px - 20px;
 }
 .people_answer_header_answer_name{
 width: $nav_with - 60px - 20px;
-padding-top: 10px;
 padding-right: 10px;
 }
 .people_answer_header_answer_name img{
@@ -66,15 +65,15 @@ height: 95px;
 .people_answer_detail_text{
 	width: $nav_with - 60px - 60px - 60px;
 	padding-left: 10px;
+  height:  95px;
 }
 .people_answer_detail_text_context{
 	width: $nav_with - 60px - 60px - 60px;
-	padding-top: 20px;
 	font-family: $font_ya_hei;
 	color: $dark_color;
 	font-size: 11pt;
 	padding-left: 10px;
-
+  height: 75px;
 
 }
 .people_answer_detail_text_time{
@@ -180,6 +179,7 @@ height:90px;
 .topic_answer_header{
 	@extend .people_answer_header;
 	margin-left: 0px;
+  height: 66px;
 }
 .topic_answer_header_people_name{
 	@extend .people_answer_header_people_name;

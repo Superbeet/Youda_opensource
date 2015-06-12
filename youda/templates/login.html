@@ -87,11 +87,13 @@
                 $('#login_btn').on('click',function(){
                 var user_name = $('#user_name').val();
                 var password = $('#password').val();
+                
                 var login_type = $('#remember_me_form').attr('login_type');
                 var flag = 0;
                 if(login_type=="auto_login")
                     flag = 1;
 				$.post("/login/",{userName:user_name,pass:password,logintype:flag},function(data){
+
 				    if(data.status==-1)
 				        alert("ERROR");
 				    else
