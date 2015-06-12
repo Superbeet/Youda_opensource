@@ -36,7 +36,6 @@ width: $nav_with - 60px - 20px;
 }
 .people_answer_header_answer_name{
 width: $nav_with - 60px - 20px;
-padding-top: 10px;
 padding-right: 10px;
 }
 .people_answer_header_answer_name img{
@@ -180,6 +179,7 @@ height:90px;
 .topic_answer_header{
 	@extend .people_answer_header;
 	margin-left: 0px;
+  height: 66px;
 }
 .topic_answer_header_people_name{
 	@extend .people_answer_header_people_name;

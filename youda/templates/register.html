@@ -108,7 +108,7 @@
 
         </div>
 
-        <div class="sex_form" id="sex_form">
+        <div class="sex_form" id="sex_form" value='man'>
             <span class="fl">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
 <div class="common_selecter fl" id="" value='man'>
 	<img src="/static/image/index/radio_selected.png" />&nbsp;&nbsp;男
@@ -257,7 +257,7 @@
 
 
 
- <div class="common_register_container"><textarea class="common_blank_border self_intro_form" id="in_school_self_intro_form"></textarea></div>
+ <div class="common_register_container"><input class="common_blank_border self_intro_form" id="in_school_self_intro_form" /></div>
 
  <div class="common_register_container">
 
@@ -450,7 +450,7 @@
 
 
 
- <div class="common_register_container"><textarea class="common_blank_border self_intro_form" id="not_in_school_self_intro_form"></textarea></div>
+ <div class="common_register_container"><input class="common_blank_border self_intro_form" id="not_in_school_self_intro_form" /></div>
 
  <div class="common_register_container">
 
@@ -508,7 +508,7 @@ not_in_school_upper_step_btn.on('click',function(){
 
             $('.register_submit').on('click',function(){
 
-                    //TO-DO 提交表单
+                   getFormData(); //TO-DO 提交表单
             });
 
       });
@@ -535,6 +535,7 @@ not_in_school_upper_step_btn.on('click',function(){
                    temp_select_array.push('#');
                 });
                 educate = temp_select_array.join(',');
+                data.short_intro = $('#in_school_self_intro_form').val();;
 
             }
             else{
@@ -560,6 +561,7 @@ not_in_school_upper_step_btn.on('click',function(){
                 });
 
                 work  = temp_work_select_array.join(',');
+                data.short_intro = $('#not_in_school_self_intro_form').val();;
             }
 
 
