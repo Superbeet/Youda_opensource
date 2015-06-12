@@ -508,7 +508,7 @@ not_in_school_upper_step_btn.on('click',function(){
 
             $('.register_submit').on('click',function(){
 				$.post("/register/",getFormData(),function(data){
-				
+				      window.location.href="/home/"; 
 				});
              });
         });
