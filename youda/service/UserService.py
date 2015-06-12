@@ -89,6 +89,7 @@ class UserService():
         #开辟一个新的进程来保存用户的头像
         p = Process(target=self.toSaveHead(post['img']));
         p.start();
+        
     def toSaveHead(self,pic):
         '''
              函数说明：
