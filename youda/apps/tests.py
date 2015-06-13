@@ -105,6 +105,9 @@ def test():
         #answer = Answers(answer_content='Test'+str(10+i),support_num=10+i,anonymous=1,has_attach=0,comment_num=2+i,question_id=1+i,user_id=1);
         tf = TopicFocus(user_id=2,topic_id=9)
         commonDao.toadd(TopicFocus,tf);
-        
+def getManyToMany():
+        user = commonDao.toget(UsersAffiliate,user_id=6);
+        s = user.school.all()[0]; 
+        print s.school_name;
 if __name__=='__main__':
-    test();
+    getManyToMany();

@@ -10,6 +10,8 @@ from django.template import response
 from apps.form import login
 
 from PIL import Image, ImageFile
+from apps.models import UsersAffiliate
+from apps.CommonDao import CommonDao
 def headUpload(request):
     return render_to_response('file_upload_test.html');
 
@@ -57,12 +59,17 @@ def toLogin(request,op):
         except MultiValueDictKeyError:
             return HttpResponseRedirect("/home/");
         userService = UserService();
+        commonDao = CommonDao();
         user = userService.toLogin(user_name, user_pass,flag);
         mapo = {};
         if user:
             mapo['status'] =1;
+            request.session['user_id']=user.user_id;
             request.session['user_name'] = user.user_name;
             request.session['update_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S");
+            user_a = commonDao.toget(UsersAffiliate,user_id=user.user_id);
+            school = user_a.school.all()[0]; 
+            request.session['school_id'] = school.school_id;
         else:  
             mapo['status'] =-1;
         DATA = json.dumps(mapo);

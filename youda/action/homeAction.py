@@ -21,11 +21,13 @@ def showMyFocus(request):
     #print request.session['update_time'];
     focusService = FocusService();
     #page = request.GET['page'];
-    #user_id = request.GET['user_id'];
+    user_id = request.session['user_id'];
+    print 'session_user_id=>%s'%user_id;
+    school_id = request.session['school_id'];
     #uName = request.COOKIES['USERNAME'];
     #print request.POST['pass'];
     #print "用户名"+uName;
-    rows =  focusService.getMyFocus(1,page=1);#getMyFocus(user_id,page),user_id为当前用户id，page为请求第几页的数据
+    rows =  focusService.getMyFocus(user_id,page=1,school_id=school_id);#getMyFocus(user_id,page),user_id为当前用户id，page为请求第几页的数据
     DATA = json.dumps(rows,cls=CJsonEncoder);
     return HttpResponse(DATA,content_type="application/json");#json格式返回数据
     # request.session['name']='tomcat';
