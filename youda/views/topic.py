@@ -75,15 +75,13 @@ def getFocusTopic(request):
         print "page -> %s | user_id -> %s" %(page_num, user_id)
         print "offset -> %s | end -> %s" %(offset, end) 
         
-        focus_topic_block_list = models.TopicFocus.objects.filter(user_id = user_id)
+        focus_topic_id_list = models.TopicFocus.objects.filter(user_id = user_id).values_list('topic_id', flat = True)
         
-#         print "focus_topic_block_list -> %s" %(focus_topic_block_list)
-        
-        topic_data_list = []
-        
-        focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
+        print "focus_topic_id_list -> %s" %(focus_topic_id_list)
         
         topic_data_block_list = models.Topics.objects.filter(topic_id__in = focus_topic_id_list)[offset:end]    
+
+        topic_data_list = []
         
         for block in topic_data_block_list:
             data_dict = {
@@ -191,20 +189,9 @@ def getSchoolTopic(request):
         
         user_info = models.UsersAffiliate.objects.get(user_id = user_id)
         
-        user_school_query = user_info.school.all()
-        
-        school_list = []
-        
-        for school_block in user_school_query:
-            school_list.append(
-                               [school_block.school_id, school_block.school_name]
-                            )
+        school_list = user_info.school.all().values_list('school_id','school_name')
 
         print "school_list -> %s" %(school_list)
-    
-    #     topic_data_block_list = models.Topics.objects.filter(topic_school__school_id__in = school_id_list)[offset:end]
-    
-        data_list = []
         
         school_num = len(school_list)
         subpage_size = page_size/school_num
@@ -214,6 +201,8 @@ def getSchoolTopic(request):
         print "sub_offset -> %s | sub_end -> %s" %(sub_offset, sub_end) 
         
         topic_num = 0
+        
+        data_list = []
         
         for school_id,school_name in school_list:
             

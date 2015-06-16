@@ -46,12 +46,13 @@ def getFocusedSchoolmateData(request):
                     
                         "length": length,
                     
-                        "question_data": [
+                        "schoolmate_data": [
                                     {
+                                        "school_id": school id,
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
-                                                "question_id":question id,
+                                                "question_id": question id,
                                                 "question_content": question content,
                                             }
                                             ....
@@ -60,10 +61,11 @@ def getFocusedSchoolmateData(request):
                                     }
                                     ....
                                     {
+                                        "school_id": school id,
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
-                                                "question_id":question id,
+                                                "question_id": question id,
                                                 "question_content": question content,
                                             }
                                             ....
@@ -96,24 +98,20 @@ def getFocusedSchoolmateData(request):
         print "page -> %s | user_id -> %s" %(page_num, user_id)
         print "offset -> %s | end -> %s" %(offset, end) 
     
-        focus_user_query = models.UsersFocus.objects.filter(user_id = user_id)[offset:end]
+        focus_user_id_list = models.UsersFocus.objects.filter(user_id = user_id).values_list('schoolmate_id', flat = True)[offset:end]
         
-        schoolmate_list= []
+#         schoolmate_list= []
         
         data = []
         
-        for f in focus_user_query:
-            
-            schoolmate_id = str(f.schoolmate_id)
+        for schoolmate_id in focus_user_id_list:
             
     #         print "schoolmate_id > %s" %(schoolmate_id)
     
-            schoolmate_list.append(schoolmate_id)
+#             schoolmate_list.append(schoolmate_id)
             
             question_query = models.Questions.objects.filter(user_id = schoolmate_id)[0:activity_max_num]
-            
-    #         print "question_query->values", question_query.values()
-            
+
             question_data_list = []
             
             for q in question_query:
@@ -128,7 +126,7 @@ def getFocusedSchoolmateData(request):
             
             schoolmate_data = {
                 "schoolmate_id": schoolmate_id,
-                "question_data": question_data_list
+                "question_data": question_data_list,
             }
             
             data.append(schoolmate_data)
@@ -136,7 +134,7 @@ def getFocusedSchoolmateData(request):
         result = {
             "user_id": user_id,
             "length": str(len(data)),
-            "data": data  
+            "schoolmate_data": data  
         }
         
         print "result -> %s" %(result)
@@ -190,8 +188,9 @@ def getPopularSchoolmateData(request):
             
                 "length": length,
             
-                "data": [
+                "schoolmate_data": [
                             {
+                                "school_id": school id,
                                 "schoolmate_id": schoolmate id,
                                 "question_data": [
                                     {
@@ -204,7 +203,8 @@ def getPopularSchoolmateData(request):
                             }
                             ....
                             {
-                                "popular_user_id": popular user id,
+                                "school_id": school id,
+                                "schoolmate_id": popular user id,
                                 "question_data": [
                                     {
                                         "question_id":question id,
@@ -221,12 +221,14 @@ def getPopularSchoolmateData(request):
     '''
     
     try:
-        def getSchoolPopularUser(school_id, amount = 10):
+        def getSchoolPopularUserInfo(school_id, amount = 10):
             print "school_id -> ", school_id
             
-            user_affiliate_query = models.UsersAffiliate.objects.filter(school__school_id = school_id).order_by('question_num', 'answer_num')[0:amount]
+            user_affiliate_list = models.UsersAffiliate.objects.values_list('user_id', flat = True).filter(school__school_id = school_id).order_by('question_num', 'answer_num')[0:amount]
             
-            popular_user_list = [u.user_id for u in user_affiliate_query]
+            popular_user_list = [(user_id, school_id) for user_id in user_affiliate_list]
+            
+            print "popular_user_list ->", popular_user_list
             
             return popular_user_list
             
@@ -251,20 +253,21 @@ def getPopularSchoolmateData(request):
         
         
         # Get a list of all classmate data in user's same school
-        users_school_query = models.UserSchool.objects.filter(user_id = user_id)[offset:end]
+        school_id_list = models.UserSchool.objects.filter(user_id = user_id).values_list('school_id', flat = True)[offset:end]
         
+        popular_user_info = []
+        
+#         print "school_id_list -> ", school_id_list
+
+        for school_id in school_id_list:
+             
+            popular_user_info += getSchoolPopularUserInfo(school_id)
+            
         data = []
-        popular_user_list = []
         
-        for u in users_school_query:
-            
-            popular_user_list += getSchoolPopularUser(str(u.school_id))
-            
-        print "popular_user_list -> ",popular_user_list
-            
-        for popular_user_id in popular_user_list:
+        for schoolmate_id, school_id in popular_user_info:
     
-            question_query = models.Questions.objects.filter(user_id = popular_user_id).order_by('publish_time')[0:activity_max_num]
+            question_query = models.Questions.objects.filter(user_id = schoolmate_id).order_by('publish_time')[0:activity_max_num]
             
             question_data_list = []
             
@@ -279,8 +282,9 @@ def getPopularSchoolmateData(request):
                 question_data_list.append(question_data)
             
             schoolmate_data = {
-                "popular_user_id": popular_user_id,
-                "question_data": question_data_list
+                "school_id": school_id,
+                "schoolmate_id": schoolmate_id,
+                "question_data": question_data_list,
             }
             
             data.append(schoolmate_data)
@@ -288,7 +292,7 @@ def getPopularSchoolmateData(request):
         result = {
             "user_id": user_id,
             "length": str(len(data)),
-            "data": data  
+            "schoolmate_data": data, 
         }
         
         print "result -> %s" %(result)
