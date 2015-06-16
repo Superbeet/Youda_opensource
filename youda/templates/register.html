@@ -24,6 +24,100 @@
 
 <body   class="login_bkg">
 
+ <div class="am-modal am-modal-no-btn new_answer_container" tabindex="-1" id="phone_assert_container">
+  <div class="am-modal-dialog" id="new_question_container">
+    <div class="am-modal-hd">
+      <a href="javascript: void(0)" class="am-close am-close-spin dialog_close_btn" data-am-modal-close>x</a>
+    </div>
+    <div class="am-modal-bd">
+        <p>&nbsp;</p>
+        <p>电话号码：<span id="phone_num_assert_span"></span><button class="am-btn primary_btn" id="send_assert_code_btn" onclick="sendAssertCode()">发送验证码</button></p>
+        <p><input class="common_input_border" id="assert_code_input" onblur="assertCode()"/><img src="/static/image/index/checked_icon.png" id="is_checked_img" class="hidden" /></p>
+        <p><button id="confirm_bind_phone_btn" disabled="disabled" onclick="confirmBindPhone">确认绑定手机</button></p>
+        </div>
+      </div>
+     </div>
+<script>
+
+    function assertCode(){
+        var code = $('#assert_code_input').val();
+        /*
+        $.ajax({
+        url : '' ,
+        dataType : 'json',
+        type : 'post' ,
+        data : {
+        code : code
+        }
+        success : function(result){
+        if(success){
+        $('#is_checked_img').show();
+        }
+        }
+        });
+
+        */
+
+
+
+    }
+
+    function confirmBindPhone(){
+          var in_school_area = $('#in_school_area');
+            var not_in_school_area = $('#not_in_school_area');
+            var register_area = $('#register_area');
+            var stage = getRadioValue('current_stage_form');
+                 register_area.hide();
+                if(stage == 'in_school'){
+                    in_school_area.fadeIn();
+                }
+                else{
+                    not_in_school_area.fadeIn();
+                }
+    }
+function sendAssertCode(){
+    var account = $('#account').val();
+    $('#send_assert_code_btn').attr('disabled','disabled');
+    assertCount(60);
+    /*
+     $.ajax({
+        url : '' ,
+        dataType : 'json',
+        type : 'post' ,
+        data : {
+        code : code
+        },
+        success : function(result){
+        if(success){
+        window.alert('验证码发送成功，请耐心等候');
+        }
+        }
+        });
+    */
+
+}
+    function assertCount(count){
+        if(count < 0){
+             $('#send_assert_code_btn').removeAttr('disabled');
+            $('#send_assert_code_btn').html('发送验证码');
+        }
+        else{
+            var content = "等待"+count+"秒";
+             $('#send_assert_code_btn').html(content);
+            setTimeout(function(){
+                assertCount(count -1);
+            },1000)
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
 <div class="opacity_bkg">
 
 <div class="system_container">
@@ -481,14 +575,35 @@
             var next_step_btn = $('#register_first_next_step');
             var register_area = $('#register_area');
             next_step_btn.on('click',function(){
-             var stage = getRadioValue('current_stage_form');
-                 register_area.hide();
-                if(stage == 'in_school'){
-                    in_school_area.fadeIn();
+              var account = $('#account').val();
+                var is_num = false;
+                try{
+                    parseInt(account);
+                    is_num = true;
+                }
+                catch(e){
+
+                }
+                if(account.indexOf('@') != -1){
+                    window.alert('邮箱');
+                }
+                else if(account.length == 11 && is_num){
+
+
+
+                    $('#phone_assert_container').modal({
+                        relatedTarget : this ,
+                        width : 400 ,
+                        height : 240
+                    });
+
+                    $('#phone_num_assert_span').html(account);
                 }
                 else{
-                    not_in_school_area.fadeIn();
+                     window.alert('请输入正确的格式');
                 }
+
+
 
             });
 
