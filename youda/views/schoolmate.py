@@ -48,7 +48,6 @@ def getFocusedSchoolmateData(request):
                     
                         "schoolmate_data": [
                                     {
-                                        "school_id": school id,
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
@@ -61,7 +60,6 @@ def getFocusedSchoolmateData(request):
                                     }
                                     ....
                                     {
-                                        "school_id": school id,
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
