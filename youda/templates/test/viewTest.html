@@ -11,6 +11,12 @@ $.ajaxSetup({
   data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
 });
 
+function showMessage(result){
+	document.getElementById("json").innerHTML = JSON.stringify(result, undefined, 2);
+	// var str = JSON.stringify(result, null, 2); // spacing level = 2
+	// $("#div2").html(str);
+}
+
 $(document).ready(function(){
     $("#button1").click(function(){
     
@@ -20,9 +26,7 @@ $(document).ready(function(){
 		    data: {"user_id": "1", "page": "1" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
-		    	var str = JSON.stringify(result, null, 2); // spacing level = 2
-		        // alert(result);
-            	$("#div2").html(str);
+            	showMessage(result);
 		    },
 		    failure: function(data) { 
 		        alert('Got an error dude');
@@ -37,9 +41,7 @@ $(document).ready(function(){
 		    data: {"user_id": "1", "page": "2" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
-		    	var str = JSON.stringify(result, null, 2); // spacing level = 2
-		        // alert(result);
-            	$("#div2").html(str);
+            	showMessage(result);
 		    },
 		    failure: function(data) { 
 		        alert('Got an error dude');
@@ -54,9 +56,7 @@ $(document).ready(function(){
 		    data: {"topic_id": "1", "page": "1" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
-		    	var str = JSON.stringify(result, null, 2); // spacing level = 2
-		        // alert(result);
-            	$("#div2").html(str);
+            	showMessage(result);
 		    },
 		    failure: function(data) { 
 		        alert('Got an error dude');
@@ -71,9 +71,7 @@ $(document).ready(function(){
 		    data: {"user_id": "1", "page": "1" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
-		    	var str = JSON.stringify(result, null, 2); // spacing level = 2
-		        // alert(result);
-            	$("#div2").html(str);
+            	showMessage(result);
 		    },
 		    failure: function(data) { 
 		        alert('Got an error dude');
@@ -88,9 +86,7 @@ $(document).ready(function(){
 		    data: {"user_id": "1", "page": "1" },
 		    type: 'get', //this is the default though, you don't actually need to always mention it
 		    success: function(result) {
-		    	var str = JSON.stringify(result, null, 2); // spacing level = 2
-		        // alert(result);
-            	$("#div2").html(str);
+            	showMessage(result);
 		    },
 		    failure: function(data) { 
 		        alert('Got an error dude');
@@ -131,7 +127,7 @@ $(document).ready(function(){
 <button id="button4">getFocusedSchoolmate</button>
 <button id="button5">getPopularSchoolmateData</button>
 
-<!-- <button id="button6">submitQuestion</button> -->
+<pre><code id="json" class="prettyprint"></code></pre>
 
 </body>
 </html>
