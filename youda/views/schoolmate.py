@@ -279,13 +279,6 @@ def getPopularSchoolmateData(request):
             
             question_data_list = []
             
-#             print "======================================"
-#             school_list = question_query[0].school.all().values_list('school_id', flat = True)
-#             print school_list
-#             topic_list = question_query[0].topic.values_list('topic_id', flat = True)
-#             print type(topic_list)
-#             print "--------------------------------------"
-            
             for q in question_query:
                 school_list = list(q.school.values_list('school_id', flat = True))
                 topic_list  = list(q.topic.values_list('topic_id', flat = True))
