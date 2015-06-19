@@ -156,7 +156,7 @@ class Questions(models.Model):
     user = models.ForeignKey('Users',related_name='all_questions')
     question_content = models.CharField(max_length=255, blank=True)
     question_detail = models.TextField(blank=True)
-    topic = models.ManyToManyField('Topics', blank=True, null=True)
+    topic = models.ManyToManyField('Topics', related_name="all_topics", through='QuestionsTopic')
     publish_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
     active_time = models.DateTimeField(blank=True, null=True)
     browse_num = models.IntegerField(blank=True, null=True)
@@ -166,11 +166,12 @@ class Questions(models.Model):
     invation_num = models.IntegerField(blank=True, null=True)
     anonymous = models.IntegerField(blank=True, null=True)
     has_attach = models.IntegerField(blank=True, null=True)
-
+    school = models.ManyToManyField('Schools', related_name="all_schools", through='QuestionSchool')    # add School
+    
     class Meta:
         db_table = 'questions'
     def __unicode__(self):
-        return u"[question_id:"+str(self.question_id)+",question_content:"+self.question_content+"]"
+        return u"[question_id: "+str(self.question_id)+"|question_content: "+self.question_content+"]"
     objects = models.Manager()
     common_objects = CommonDao();
     
@@ -183,10 +184,34 @@ class QuestionsFocus(models.Model):
     class Meta:
         db_table = 'questions_focus'
     def __unicode__(self):
-        return "[focus_id:"+str(self.focus_id)+",question_id:"+str(self.question_id)+"user_id"+str(self.user_id)+"]"
+        return "[focus_id: "+str(self.focus_id)+"|question_id: "+str(self.question_id)+"|user_id: "+str(self.user_id)+"]"
     objects = models.Manager()
     common_objects = CommonDao();
 
+class QuestionsTopic(models.Model):
+    id = models.AutoField(primary_key=True)
+    question = models.ForeignKey('Questions', blank=True, null=True)
+    topic = models.ForeignKey('Topics', blank=True, null=True)
+    
+    class Meta:
+        db_table = 'questions_topic'
+    def __unicode__(self):
+        return "[focus_id: "+str(self.focus_id)+"|question_id: "+str(self.question_id)+"|topic_id: "+str(self.topic_id)+"]"
+    objects = models.Manager()
+    common_objects = CommonDao();    
+    
+class QuestionSchool(models.Model):
+    id = models.AutoField(primary_key=True)
+    question = models.ForeignKey('Questions', blank=True, null=True)
+    school = models.ForeignKey('Schools', blank=True, null=True)
+    
+    class Meta:
+        db_table = 'question_school'
+    def __unicode__(self):
+        return "[focus_id: "+str(self.focus_id)+"|question_id: "+str(self.question_id)+"|school_id: "+str(self.school_id)+"]"
+    objects = models.Manager()
+    common_objects = CommonDao();
+    
 # New Schools class, store all candidate school data
 # 新Schools类，存储所以候选学校信息
 class Schools(models.Model):    
@@ -198,7 +223,7 @@ class Schools(models.Model):
     class Meta:
         db_table = 'schools'
     def __unicode__(self):
-        return u"[school_id:"+str(self.school_id)+",school_name:"+str(self.school_name)+"region"+str(self.region)+"]"
+        return u"[school_id: "+str(self.school_id)+"|school_name: "+str(self.school_name)+"|region: "+str(self.region)+"]"
     
     objects = models.Manager()
     common_objects = CommonDao();

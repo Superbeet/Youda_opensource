@@ -51,8 +51,10 @@ def getFocusedSchoolmateData(request):
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
-                                                "question_id": question id,
+                                                "question_id":question id,
                                                 "question_content": question content,
+                                                "school_list": assigned school list,
+                                                "topic_list": assigned topic list,
                                             }
                                             ....
                                             ....
@@ -63,8 +65,10 @@ def getFocusedSchoolmateData(request):
                                         "schoolmate_id": schoolmate id,
                                         "question_data": [
                                             {
-                                                "question_id": question id,
+                                                "question_id":question id,
                                                 "question_content": question content,
+                                                "school_list": assigned school list,
+                                                "topic_list": assigned topic list,
                                             }
                                             ....
                                             ....
@@ -104,20 +108,21 @@ def getFocusedSchoolmateData(request):
         
         for schoolmate_id in focus_user_id_list:
             
-    #         print "schoolmate_id > %s" %(schoolmate_id)
-    
-#             schoolmate_list.append(schoolmate_id)
-            
             question_query = models.Questions.objects.filter(user_id = schoolmate_id)[0:activity_max_num]
 
             question_data_list = []
             
             for q in question_query:
+                school_list = list(q.school.values_list('school_id', flat = True))
+                topic_list  = list(q.topic.values_list('topic_id', flat = True))
+                
                 question_data = {
                     "question_id": q.question_id,
                     "question_content": q.question_content,
                     "publish_time": q.publish_time,
                     "active_time": q.active_time,
+                    "school_list": school_list,
+                    "topic_list": topic_list,
                 }
                 
                 question_data_list.append(question_data)
@@ -194,6 +199,8 @@ def getPopularSchoolmateData(request):
                                     {
                                         "question_id": question id,
                                         "question_content": question content,
+                                        "school_list": assigned school list,
+                                        "topic_list": assigned topic list,
                                     }
                                     ....
                                     ....
@@ -207,6 +214,8 @@ def getPopularSchoolmateData(request):
                                     {
                                         "question_id":question id,
                                         "question_content": question content,
+                                        "school_list": assigned school list,
+                                        "topic_list": assigned topic list,
                                     }
                                     ....
                                     ....
@@ -220,13 +229,10 @@ def getPopularSchoolmateData(request):
     
     try:
         def getSchoolPopularUserInfo(school_id, amount = 10):
-            print "school_id -> ", school_id
-            
             user_affiliate_list = models.UsersAffiliate.objects.values_list('user_id', flat = True).filter(school__school_id = school_id).order_by('question_num', 'answer_num')[0:amount]
             
-            popular_user_list = [(user_id, school_id) for user_id in user_affiliate_list]
+            popular_user_list = [user_id for user_id in user_affiliate_list]
             
-            print "popular_user_list ->", popular_user_list
             
             return popular_user_list
             
@@ -254,33 +260,48 @@ def getPopularSchoolmateData(request):
         school_id_list = models.UserSchool.objects.filter(user_id = user_id).values_list('school_id', flat = True)[offset:end]
         
         popular_user_info = []
-        
-#         print "school_id_list -> ", school_id_list
 
+        print "school_id_list ->", school_id_list        
+        
         for school_id in school_id_list:
              
             popular_user_info += getSchoolPopularUserInfo(school_id)
+        
+        popular_user_info = list(set(popular_user_info))
+        
+        print "popular_user_info ->", popular_user_info
             
         data = []
         
-        for schoolmate_id, school_id in popular_user_info:
+        for schoolmate_id in popular_user_info:
     
             question_query = models.Questions.objects.filter(user_id = schoolmate_id).order_by('publish_time')[0:activity_max_num]
             
             question_data_list = []
             
+#             print "======================================"
+#             school_list = question_query[0].school.all().values_list('school_id', flat = True)
+#             print school_list
+#             topic_list = question_query[0].topic.values_list('topic_id', flat = True)
+#             print type(topic_list)
+#             print "--------------------------------------"
+            
             for q in question_query:
+                school_list = list(q.school.values_list('school_id', flat = True))
+                topic_list  = list(q.topic.values_list('topic_id', flat = True))
                 question_data = {
                             "question_id": q.question_id,
                             "question_content": q.question_content,
                             "publish_time": q.publish_time,
                             "active_time": q.active_time,
+                            "school_list": school_list,
+                            "topic_list": topic_list,
                 }
                 
                 question_data_list.append(question_data)
             
             schoolmate_data = {
-                "school_id": school_id,
+#                 "school_id": school_id,
                 "schoolmate_id": schoolmate_id,
                 "question_data": question_data_list,
             }
