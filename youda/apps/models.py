@@ -156,7 +156,7 @@ class Questions(models.Model):
     user = models.ForeignKey('Users',related_name='all_questions')
     question_content = models.CharField(max_length=255, blank=True)
     question_detail = models.TextField(blank=True)
-    topic = models.ManyToManyField('Topics', related_name="all_topics", through='QuestionsTopic')
+    topic = models.ManyToManyField('Topics', related_name="all_questions", through='QuestionsTopic')
     publish_time = models.DateTimeField(blank=True, null=True,default=datetime.now)
     active_time = models.DateTimeField(blank=True, null=True)
     browse_num = models.IntegerField(blank=True, null=True)
@@ -166,7 +166,7 @@ class Questions(models.Model):
     invation_num = models.IntegerField(blank=True, null=True)
     anonymous = models.IntegerField(blank=True, null=True)
     has_attach = models.IntegerField(blank=True, null=True)
-    school = models.ManyToManyField('Schools', related_name="all_schools", through='QuestionSchool')    # add School
+    school = models.ManyToManyField('Schools', related_name="all_questions", through='QuestionSchool')    # add School
     
     class Meta:
         db_table = 'questions'

@@ -321,7 +321,7 @@ def getTopicQuestion(request):
         print "page_num -> %s | topic_id -> %s" %(page_num, topic_id) 
         print "offset -> %s | end -> %s" %(offset, end) 
             
-        question_query = models.Topics.objects.get(topic_id = topic_id).questions_set.all()[offset:end]
+        question_query = models.Topics.objects.get(topic_id = topic_id).all_questions.all()[offset:end]
         
         question_data_list = []
         
