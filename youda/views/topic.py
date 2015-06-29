@@ -17,10 +17,7 @@ import json
 from util.CJsonEncoder import CJsonEncoder
 from action import topicAction
 
-def unitTest(request):
-    response = render_to_response('viewTest.html')  
-    response.set_cookie( 'user_id', '1' )  
-    return response
+
     
 @api_view(['GET'])
 def getFocusTopic(request):
@@ -38,73 +35,92 @@ def getFocusTopic(request):
         page_size (optional)
             page size (default = 10)
     
-    Return
+    Successful Return
     
         {
-            length: number of return data
-            
-            data:
-                [
-                    {
-                        "topic_id": topic_id,
-                        "topic_name": topic_name,
-                        "parent_id": parent_id,
-                        "add_time": add_time,
-                        "discuss_num": discuss_num,
-                        "topic_pic": topic_pic,
-                        "focus_num": focus_num,      
+            "stat":"ok",   
+             
+            "data": {
+                        length: number of return data
+                        
+                        data:
+                            [
+                                {
+                                    "topic_id": topic id,
+                                    "topic_name": topic name,
+                                    "parent_id": parent id,
+                                    "add_time": added time,
+                                    "discuss_num": discuss number,
+                                    "topic_pic": topic picture,
+                                    "focus_num": focus number,      
+                                }
+                                ...
+                            ]
                     }
-                    ...
-                ]
         }
-    
-    '''
-    user_id = request.GET['user_id']
-    page_num = int(request.GET['page'])
-    
-    if 'page_size' in request.GET:
-        page_size = request.GET['page_size']
-    else:
-        page_size = 10
-
-    offset = (page_num-1)*page_size
-    end = offset + page_size
-    
-    print "page -> %s | user_id -> %s" %(page_num, user_id)
-    print "offset -> %s | end -> %s" %(offset, end) 
-    
-    focus_topic_block_list = models.TopicFocus.objects.filter(user_id = user_id)
-    
-    print "focus_topic_block_list -> %s" %(focus_topic_block_list)
-    
-    topic_data_list = []
-    
-    focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
-    
-    topic_data_block_list = models.Topics.objects.filter(topic_id__in = focus_topic_id_list)[offset:end]    
-    
-    for block in topic_data_block_list:
-        data_dict = {
-                        "topic_id": block.topic_id,
-                        "topic_name": block.topic_name,
-                        "parent_id": block.parent_id,
-                        "add_time": block.add_time,
-                        "discuss_num": block.discuss_num,
-                        "topic_pic": block.topic_pic,
-                        "focus_num": block.focus_num,     
-                    }
         
-        topic_data_list.append(data_dict)
+    '''
+    try:
+        user_id = request.GET['user_id']
+        page_num = int(request.GET['page'])
+        
+        if 'page_size' in request.GET:
+            page_size = int(request.GET['page_size'])
+        else:
+            page_size = 10
+    
+        offset = (page_num-1)*page_size
+        end = offset + page_size
+        
+        print "page -> %s | user_id -> %s" %(page_num, user_id)
+        print "offset -> %s | end -> %s" %(offset, end) 
+        
+        focus_topic_id_list = models.TopicFocus.objects.filter(user_id = user_id).values_list('topic_id', flat = True)
+        
+        print "focus_topic_id_list -> %s" %(focus_topic_id_list)
+        
+        topic_data_block_list = models.Topics.objects.filter(topic_id__in = focus_topic_id_list)[offset:end]    
 
-    result = {
-                "length": len(topic_data_list),
-                "data": topic_data_list,
-             }
+        topic_data_list = []
+        
+        for block in topic_data_block_list:
+            data_dict = {
+                            "topic_id": block.topic_id,
+                            "topic_name": block.topic_name,
+                            "parent_id": block.parent_id,
+                            "add_time": block.add_time,
+                            "discuss_num": block.discuss_num,
+                            "topic_pic": block.topic_pic,
+                            "focus_num": block.focus_num,     
+                        }
+            
+            topic_data_list.append(data_dict)
     
-    print "result -> %s" %(result)
+        result = {
+                    "length": len(topic_data_list),
+                    "data": topic_data_list,
+                 }
+        
+        print "result -> %s" %(result)
     
-    DATA = json.dumps(topic_data_list,cls=CJsonEncoder)
-    return HttpResponse(DATA,content_type="application/json");#json格式返回数据
+    except Exception, ex:
+        error_response = {
+            "stat":"failed",
+            "code":81,
+            "message":str(ex)
+        }
+
+        DATA = json.dumps(error_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
+    
+    else:
+        success_response = {
+            "stat":"ok",
+            "data":result
+        }
+        
+        DATA = json.dumps(success_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
     
 @api_view(['GET'])
 def getSchoolTopic(request):
@@ -122,73 +138,129 @@ def getSchoolTopic(request):
         page_size (optional)
             page size (default = 10)
     
-    Return Value
+    Successful Return
     
         {
-            length: number of return data
+            "school_num": school number,
             
-            data:[
+            "topic_num": total topic numbers under all schools,
+            
+            "data":[  
                     {
-                        "topic_id": topic id,
-                        "topic_name": topic name,
-                        "parent_id": parent id,
-                        "add_time": add time,
-                        "discuss_num": discuss number,
-                        "topic_pic": topic picture,
-                        "focus_num": focus number       
+                        "school_id":   school id,
+                        
+                        "school_name"：    school name,
+                        
+                        "topic_data":  [
+                                            {
+                                                "topic_id": topic id,
+                                                "topic_name": topic name,
+                                                "parent_id": parent id,
+                                                "add_time": add time,
+                                                "discuss_num": discuss number,
+                                                "topic_pic": topic picture,
+                                                "focus_num": focus number       
+                                            },
+                                            ...
+                                        ]
+                                        
                     },
                     ...
-                ]
+                     
+                ]            
         }
-        
     
     '''
+    try:
+        page_size = 10
+        user_id = request.GET['user_id']
+        page_num = int(request.GET['page'])
     
-    page_size = 10
-    user_id = request.GET['user_id']
-    page_num = int(request.GET['page'])
+        if 'page_size' in request.GET:
+            page_size = request.GET['page_size']
+        else:
+            page_size = 10
+    
+        offset = (page_num-1)*page_size
+        end = offset + page_size
+        
+        print "page -> %s | user_id -> %s" %(page_num, user_id)
+        print "offset -> %s | end -> %s" %(offset, end) 
+        
+        user_info = models.UsersAffiliate.objects.get(user_id = user_id)
+        
+        school_list = user_info.school.all().values_list('school_id','school_name')
 
-    offset = (page_num-1)*page_size
-    end = offset + page_size
-    
-    print "page -> %s | user_id -> %s" %(page_num, user_id)
-    print "offset -> %s | end -> %s" %(offset, end) 
-    
-    user_info = models.UsersAffiliate.objects.get(user_id = user_id)
-    
-    user_school_query = user_info.school.all()
+        print "school_list -> %s" %(school_list)
+        
+        school_num = len(school_list)
+        subpage_size = page_size/school_num
+        sub_offset = (page_num-1)*subpage_size
+        sub_end = sub_offset + subpage_size
+        
+        print "sub_offset -> %s | sub_end -> %s" %(sub_offset, sub_end) 
+        
+        topic_num = 0
+        
+        data_list = []
+        
+        for school_id,school_name in school_list:
+            
+            topic_data_block_list = models.Topics.objects.filter( topic_school__school_id = school_id )[sub_offset:sub_end]
+        
+            topic_data_list = []
+            
+            
+            for block in topic_data_block_list:
+                topic_data_dict = {
+                                "topic_id": block.topic_id,
+                                "topic_name": block.topic_name,
+                                "parent_id": block.parent_id,
+                                "add_time": block.add_time,
+                                "discuss_num": block.discuss_num,
+                                "topic_pic": block.topic_pic,
+                                "focus_num": block.focus_num     
+                            }
+         
+                topic_data_list.append(topic_data_dict)
+        
+            school_data_dict = {
+                            "school_id": school_id,  
+                            "school_name": school_name,
+                            "topic_data": topic_data_list,
+                        }
+            
+            data_list.append(school_data_dict)
+        
+        topic_num += len(topic_data_dict)
+        
+        result = {
+                    "school_num": school_num,
+                    "topic_num": topic_num,
+                    "length": len(topic_data_list),
+                    "data": data_list,
+                 }
+        
+        print "result -> %s" %(result)
 
-    school_id_list = [str(school_block.school_id) for school_block in user_school_query]
-    
-    print "school_id_list -> %s" %(school_id_list)
+    except Exception, ex:
+        error_response = {
+            "stat":"failed",
+            "code":81,
+            "message":str(ex)
+        }
 
-    topic_data_block_list = models.Topics.objects.filter(topic_school__school_id__in = school_id_list)[offset:end]
-
+        DATA = json.dumps(error_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
     
-    topic_data_list = []
-    
-    for block in topic_data_block_list:
-        data_dict = {
-                        "topic_id": block.topic_id,
-                        "topic_name": block.topic_name,
-                        "parent_id": block.parent_id,
-                        "add_time": block.add_time,
-                        "discuss_num": block.discuss_num,
-                        "topic_pic": block.topic_pic,
-                        "focus_num": block.focus_num     
-                    }
- 
-        topic_data_list.append(data_dict)
-
-    result = {
-                "length": len(topic_data_list),
-                "data": topic_data_list
-             }
-    
-    print "result -> %s" %(result)
-
-    DATA = json.dumps(result, cls=CJsonEncoder)
-    return HttpResponse(DATA, content_type="application/json");#json格式返回数据
+    else:
+        success_response = {
+            "stat":"ok",
+            "data":result
+        }
+        
+        DATA = json.dumps(success_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
 
 
 @api_view(['GET'])
@@ -208,73 +280,92 @@ def getTopicQuestion(request):
             page size (default = 10)
     
     return
-    
         {
-            length: number of return data
-            
-            data:[
-                    {
-                        "question_id":  question id,
-                        "question_content": question content,
-                        "browse_num":   browse number,
-                        "answer_num":   answer number,
-                        "want_answer_num":  want answer number,
-                        "attention_num":    attention number,
-                        "invitation_num":   invation number,
-                        "user_id":  user id,
-                        "user_name": user name,
-                    },
-                    ...
-                ]
+            "stat":"ok",   
+             
+            "data": {
+                        length: number of return data
+                        
+                        data:[
+                                {
+                                    "question_id":  question id,
+                                    "question_content": question content,
+                                    "browse_num":   browse number,
+                                    "answer_num":   answer number,
+                                    "want_answer_num":  want answer number,
+                                    "attention_num":    attention number,
+                                    "invitation_num":   invation number,
+                                    "user_id":  user id,
+                                    "user_name": user name,
+                                },
+                                ...
+                            ]
+                    }
         }
-        
     
     '''
-    page_size = 10
-
-    topic_id = request.GET['topic_id']
-    page_num = int(request.GET['page'])
-
-    if 'page_size' in request.GET:
-        page_size = request.GET['page_size']
-    else:
+    try:
         page_size = 10
-
-    offset = (page_num-1)*page_size
-    end = offset + page_size
     
-    print "page_num -> %s | topic_id -> %s" %(page_num, topic_id) 
-    print "offset -> %s | end -> %s" %(offset, end) 
+        topic_id = request.GET['topic_id']
+        page_num = int(request.GET['page'])
+    
+        if 'page_size' in request.GET:
+            page_size = int(request.GET['page_size'])
+        else:
+            page_size = 10
+    
+        offset = (page_num-1)*page_size
+        end = offset + page_size
         
-    question_query = models.Topics.objects.get(topic_id = topic_id).questions_set.all()[offset:end]
-    
-    question_data_list = []
-    
-    for q in question_query:
-        data_dict = {
-                    "question_id":  q.question_id,
-                    "question_content": q.question_content,
-                    "browse_num":   q.browse_num,
-                    "answer_num":   q.answer_num,
-                    "want_answer_num":  q.want_answer_num,
-                    "attention_num":    q.attention_num,
-                    "invitation_num":   q.invation_num,
-                    "user_id":  q.user.user_id,
-                    "user_name": q.user.user_name,
-                }
+        print "page_num -> %s | topic_id -> %s" %(page_num, topic_id) 
+        print "offset -> %s | end -> %s" %(offset, end) 
+            
+        question_query = models.Topics.objects.get(topic_id = topic_id).all_questions.all()[offset:end]
         
-        question_data_list.append(data_dict)
+        question_data_list = []
+        
+        for q in question_query:
+            data_dict = {
+                        "question_id":  q.question_id,
+                        "question_content": q.question_content,
+                        "browse_num":   q.browse_num,
+                        "answer_num":   q.answer_num,
+                        "want_answer_num":  q.want_answer_num,
+                        "attention_num":    q.attention_num,
+                        "invitation_num":   q.invation_num,
+                        "user_id":  q.user.user_id,
+                        "user_name": q.user.user_name,
+                    }
+            
+            question_data_list.append(data_dict)
+        
+        result = {
+                    "length": len(question_data_list),
+                    "data": question_data_list
+                 }
+        
+        print "result -> %s" %(result)
     
-    result = {
-                "length": len(question_data_list),
-                "data": question_data_list
-             }
-    
-    print "result -> %s" %(result)
-    
-    DATA = json.dumps(result, cls=CJsonEncoder)
-    return HttpResponse(DATA, content_type="application/json"); # json格式返回数据
+    except Exception, ex:
+        error_response = {
+            "stat":"failed",
+            "code":81,
+            "message":str(ex)
+        }
 
+        DATA = json.dumps(error_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
+    
+    else:
+        success_response = {
+            "stat":"ok",
+            "data":result
+        }
+        
+        DATA = json.dumps(success_response,cls=CJsonEncoder)
+        return HttpResponse(DATA,content_type="application/json")
+    
 @api_view(['POST'])
 def setFocusTopic(request):
     '''
@@ -290,6 +381,6 @@ def setFocusTopic(request):
             topic id
     
     '''
-    topicAction.focusTopic(request)
-    
+    result = topicAction.focusTopic(request)
+    return result
     

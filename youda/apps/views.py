@@ -68,14 +68,14 @@ def getFocusTopic(request):
     print "page -> %s | user_id -> %s" %(page_num, user_id)
     print "offset -> %s | end -> %s" %(offset, end) 
     
-    focus_topic_block_list = models.TopicFocus.objects.filter(user_id = user_id)
+    focus_topic_id_list = models.TopicFocus.objects.filter(user_id = user_id).values_list('topic_id', flat=True)
     
-    print "focus_topic_block_list -> %s" %(focus_topic_block_list)
+    print "focus_topic_id_list -> %s" %(focus_topic_id_list)
     
     topic_data_list = []
 #     topic_data_fail_list = []
     
-    focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
+#     focus_topic_id_list = [focus_topic_block.topic_id for focus_topic_block in focus_topic_block_list]
     
     topic_data_block_list = models.Topics.objects.filter(topic_id__in = focus_topic_id_list)[offset:end]    
     

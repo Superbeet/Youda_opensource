@@ -7,14 +7,13 @@ from action import homeAction, topicAction,schoolmateAction, testAction,messageA
 import views
 
 urlpatterns = patterns('',
+    # Zhang,Pan Test Urls
     url(r'testjson',testAction.test1),
     url(r'test2',testAction.test2),
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
     
-#     url(r'^test/getFocusTopic/$', views.test_getFocusTopic),
-#     url(r'^test/getSchoolTopic/$', views.test_getSchoolTopic),
-#     url(r'^test/getTopicQuestion/$', views.test_getTopicQuestion),
-    url(r'^test/view/$', views.topic.unitTest),
-    url(r'^test/editQuestion/$', views.question.editQuestion),    
+    # Ye,Cong Test Urls
+    url(r'^test/view/$', views.test.unitTest),
+    url(r'^test/question/edit/$', views.test.editQuestion),    
         
 )
