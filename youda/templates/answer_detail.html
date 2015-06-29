@@ -16,7 +16,7 @@
 		<img src="/static/image/people_detail_pic_60_60.jpg" />
 	</div>
 	</a>
-<div class="common_font align_center">徐子豪</div>
+<div class="common_font align_center">{{ QUESTION.user.user_name }}</div>
 </div>
 
 	
@@ -24,21 +24,21 @@
 <div class="top_level_container">
 	<div class="answer_topic_container">
 		<div class="answer_topic_image">
-				职业规划
+				{{ QUESTION.topic.topic_name }}
 		</div>
 	</div>
 		<div class="answer_title_container answer_title havier_font">
-大学里哪些事情是你万万没想到的的事情？
+{{ QUESTION.question_content }}
 	</div>
 	<div class="answer_content_containe dark_font">
-大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？大学里哪些事情是你万万没想到的的事情？
+        {{ QUESTION.question_detail }}
 	</div>
 <div class="icon_bar_container">
 <div class="time_icon_container fl">
-<img src="/static/image/index/time_icon.png" />2015-01-01 10:11
+<img src="/static/image/index/time_icon.png" />{{ QUESTION.publish_time }}
 </div>
 <div class="comment_icon_container fl">
-<img src="/static/image/index/view_icon.png" />123
+<img src="/static/image/index/view_icon.png" />{{ QUESTION.browse_num }}
 </div>
 
 <a href="#" class="fl">
@@ -55,7 +55,7 @@
 </a>
 <a href="#" class="fl button_margin">
 	<div class="want_answer_container">
-	123
+	{{ QUESTION.want_answer_num }}
 	</div>
 </a>
 
@@ -67,7 +67,7 @@
 </div>
 <div class="nav_container fl response_tab_container">
 		<div class="commment_count_tab small_font fl">
-			123个回复
+			{{ QUESTION.answer_num }}个回复
 		</div>
 
 <a href="#" class="fl ">

@@ -18,8 +18,8 @@ def showQuestionDetail(request,question_id):
     question_id = question_id;
     o = questionService.getQuestionDetail(question_id);
     if o!=-1:
-        return render_to_response('home_test.html',{'QUESTION':o});
-    return render_to_response('home_test.html');
+        return render_to_response('answer_detail.html',{'QUESTION':o});
+    return render_to_response('answer_detail.html');
 #问题的回复及评论,question_id 问题id，page 第几页
 def showAnswersAndComments(request,question_id,page):
     questionService = QuestionService();
