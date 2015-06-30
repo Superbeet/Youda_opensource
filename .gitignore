@@ -68,3 +68,4 @@ youda/apps/migration*/
 E:/
 .gitignore
 youda/.gitignore
+*.map

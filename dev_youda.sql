@@ -1,18 +1,6 @@
 /*
 Navicat MySQL Data Transfer
 
-<<<<<<< HEAD
-Source Server         : demo
-Source Server Version : 50525
-Source Host           : localhost:3306
-Source Database       : dev_youda
-
-Target Server Type    : MYSQL
-Target Server Version : 50525
-File Encoding         : 65001
-
-Date: 2015-06-12 17:51:39
-=======
 Source Server         : localhost_3306
 Source Server Version : 50624
 Source Host           : localhost:3306
@@ -23,17 +11,12 @@ Target Server Version : 50624
 File Encoding         : 65001
 
 Date: 2015-06-19 15:45:22
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `answers`
-=======
 -- Table structure for answers
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `answers`;
 CREATE TABLE `answers` (
@@ -51,37 +34,9 @@ CREATE TABLE `answers` (
   KEY `answers_e8701ad4` (`user_id`),
   CONSTRAINT `answers_question_id_5dc187fc_fk_questions_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`question_id`),
   CONSTRAINT `answers_user_id_341d40d7_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of answers
--- ----------------------------
-INSERT INTO `answers` VALUES ('1', 'Test0', '2015-05-23 14:53:31', '10', '0', '0', '2', '1', '2');
-INSERT INTO `answers` VALUES ('2', 'Test1', '2015-05-23 14:53:31', '11', '0', '0', '3', '2', '2');
-INSERT INTO `answers` VALUES ('3', 'Test2', '2015-05-23 14:53:31', '12', '0', '0', '4', '3', '2');
-INSERT INTO `answers` VALUES ('4', 'Test3', '2015-05-23 14:53:31', '13', '0', '0', '5', '4', '2');
-INSERT INTO `answers` VALUES ('5', 'Test4', '2015-05-23 14:53:31', '14', '0', '0', '6', '5', '2');
-INSERT INTO `answers` VALUES ('6', 'Test5', '2015-05-23 14:53:31', '15', '0', '0', '7', '6', '2');
-INSERT INTO `answers` VALUES ('7', 'Test6', '2015-05-23 14:53:31', '16', '0', '0', '8', '7', '2');
-INSERT INTO `answers` VALUES ('8', 'Test7', '2015-05-23 14:53:31', '17', '0', '0', '9', '8', '2');
-INSERT INTO `answers` VALUES ('9', 'Test8', '2015-05-23 14:53:31', '18', '0', '0', '10', '9', '2');
-INSERT INTO `answers` VALUES ('10', 'Test9', '2015-05-23 14:53:31', '19', '0', '0', '11', '10', '2');
-INSERT INTO `answers` VALUES ('11', 'Test10', '2015-05-23 14:54:33', '10', '1', '0', '2', '1', '1');
-INSERT INTO `answers` VALUES ('12', 'Test11', '2015-05-23 14:54:33', '11', '1', '0', '3', '2', '1');
-INSERT INTO `answers` VALUES ('13', 'Test12', '2015-05-23 14:54:34', '12', '1', '0', '4', '3', '1');
-INSERT INTO `answers` VALUES ('14', 'Test13', '2015-05-23 14:54:34', '13', '1', '0', '5', '4', '1');
-INSERT INTO `answers` VALUES ('15', 'Test14', '2015-05-23 14:54:34', '14', '1', '0', '6', '5', '1');
-INSERT INTO `answers` VALUES ('16', 'Test15', '2015-05-23 14:54:34', '15', '1', '0', '7', '6', '1');
-INSERT INTO `answers` VALUES ('17', 'Test16', '2015-05-23 14:54:34', '16', '1', '0', '8', '7', '1');
-INSERT INTO `answers` VALUES ('18', 'Test17', '2015-05-23 14:54:34', '17', '1', '0', '9', '8', '1');
-INSERT INTO `answers` VALUES ('19', 'Test18', '2015-05-23 14:54:34', '18', '1', '0', '10', '9', '1');
-INSERT INTO `answers` VALUES ('20', 'Test19', '2015-05-23 14:54:34', '19', '1', '0', '11', '10', '1');
-INSERT INTO `answers` VALUES ('21', 'Test00', '2015-06-10 15:46:39', '20', '1', '0', '10', '10', '2');
-
--- ----------------------------
-<<<<<<< HEAD
--- Table structure for `answers_comments`
-=======
 -- Records of answers
 -- ----------------------------
 INSERT INTO `answers` VALUES ('1', 'Test0', '2015-05-23 14:53:31', '10', '0', '0', '2', '1', '2');
@@ -107,7 +62,6 @@ INSERT INTO `answers` VALUES ('20', 'Test19', '2015-05-23 14:54:34', '19', '1', 
 
 -- ----------------------------
 -- Table structure for answers_comments
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `answers_comments`;
 CREATE TABLE `answers_comments` (
@@ -123,27 +77,9 @@ CREATE TABLE `answers_comments` (
   KEY `answers_comments_e8701ad4` (`user_id`),
   CONSTRAINT `answers_comments_answer_id_13738d0_fk_answers_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`answer_id`),
   CONSTRAINT `answers_comments_user_id_21138b2b_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of answers_comments
--- ----------------------------
-INSERT INTO `answers_comments` VALUES ('1', 'Test0', '2015-05-23 15:08:08', '1', '0', '1', '2');
-INSERT INTO `answers_comments` VALUES ('2', 'Test1', '2015-05-23 15:08:08', '2', '0', '2', '2');
-INSERT INTO `answers_comments` VALUES ('3', 'Test2', '2015-05-23 15:08:08', '3', '0', '3', '2');
-INSERT INTO `answers_comments` VALUES ('4', 'Test3', '2015-05-23 15:08:08', '4', '0', '4', '2');
-INSERT INTO `answers_comments` VALUES ('5', 'Test4', '2015-05-23 15:08:09', '5', '0', '5', '2');
-INSERT INTO `answers_comments` VALUES ('6', 'Test5', '2015-05-23 15:08:09', '6', '0', '6', '2');
-INSERT INTO `answers_comments` VALUES ('7', 'Test6', '2015-05-23 15:08:09', '7', '0', '7', '2');
-INSERT INTO `answers_comments` VALUES ('8', 'Test7', '2015-05-23 15:08:09', '8', '0', '8', '2');
-INSERT INTO `answers_comments` VALUES ('9', 'Test8', '2015-05-23 15:08:09', '9', '0', '9', '2');
-INSERT INTO `answers_comments` VALUES ('10', 'Test9', '2015-05-23 15:08:09', '10', '0', '10', '2');
-INSERT INTO `answers_comments` VALUES ('11', 'Test00', '2015-06-10 15:42:18', '10', '0', '10', '2');
-
--- ----------------------------
-<<<<<<< HEAD
--- Table structure for `articles`
-=======
 -- Records of answers_comments
 -- ----------------------------
 INSERT INTO `answers_comments` VALUES ('1', 'Test0', '2015-05-23 15:08:08', '1', '0', '1', '2');
@@ -159,7 +95,6 @@ INSERT INTO `answers_comments` VALUES ('10', 'Test9', '2015-05-23 15:08:09', '10
 
 -- ----------------------------
 -- Table structure for articles
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE `articles` (
@@ -171,7 +106,7 @@ CREATE TABLE `articles` (
   `browse_num` int(11) DEFAULT NULL,
   `comment_num` int(11) DEFAULT NULL,
   `attention_num` int(11) DEFAULT NULL,
-  `topic_id` int(11),
+  `topic_id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`article_id`),
   KEY `articles_19b4d727` (`topic_id`),
@@ -185,11 +120,7 @@ CREATE TABLE `articles` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `associations`
-=======
 -- Table structure for associations
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `associations`;
 CREATE TABLE `associations` (
@@ -209,11 +140,7 @@ CREATE TABLE `associations` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `auth_group`
-=======
 -- Table structure for auth_group
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_group`;
 CREATE TABLE `auth_group` (
@@ -228,11 +155,7 @@ CREATE TABLE `auth_group` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `auth_group_permissions`
-=======
 -- Table structure for auth_group_permissions
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_group_permissions`;
 CREATE TABLE `auth_group_permissions` (
@@ -243,8 +166,8 @@ CREATE TABLE `auth_group_permissions` (
   UNIQUE KEY `group_id` (`group_id`,`permission_id`),
   KEY `auth_group_permissions_0e939a4f` (`group_id`),
   KEY `auth_group_permissions_8373b171` (`permission_id`),
-  CONSTRAINT `auth_group_permissions_group_id_58c48ba9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
-  CONSTRAINT `auth_group_permissi_permission_id_23962d04_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
+  CONSTRAINT `auth_group_permissi_permission_id_23962d04_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
+  CONSTRAINT `auth_group_permissions_group_id_58c48ba9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -252,11 +175,7 @@ CREATE TABLE `auth_group_permissions` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `auth_permission`
-=======
 -- Table structure for auth_permission
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_permission`;
 CREATE TABLE `auth_permission` (
@@ -353,87 +272,7 @@ INSERT INTO `auth_permission` VALUES ('77', 'Can change question school', '26', 
 INSERT INTO `auth_permission` VALUES ('78', 'Can delete question school', '26', 'delete_questionschool');
 
 -- ----------------------------
-<<<<<<< HEAD
--- Records of auth_permission
--- ----------------------------
-INSERT INTO `auth_permission` VALUES ('1', 'Can add log entry', '1', 'add_logentry');
-INSERT INTO `auth_permission` VALUES ('2', 'Can change log entry', '1', 'change_logentry');
-INSERT INTO `auth_permission` VALUES ('3', 'Can delete log entry', '1', 'delete_logentry');
-INSERT INTO `auth_permission` VALUES ('4', 'Can add permission', '2', 'add_permission');
-INSERT INTO `auth_permission` VALUES ('5', 'Can change permission', '2', 'change_permission');
-INSERT INTO `auth_permission` VALUES ('6', 'Can delete permission', '2', 'delete_permission');
-INSERT INTO `auth_permission` VALUES ('7', 'Can add group', '3', 'add_group');
-INSERT INTO `auth_permission` VALUES ('8', 'Can change group', '3', 'change_group');
-INSERT INTO `auth_permission` VALUES ('9', 'Can delete group', '3', 'delete_group');
-INSERT INTO `auth_permission` VALUES ('10', 'Can add user', '4', 'add_user');
-INSERT INTO `auth_permission` VALUES ('11', 'Can change user', '4', 'change_user');
-INSERT INTO `auth_permission` VALUES ('12', 'Can delete user', '4', 'delete_user');
-INSERT INTO `auth_permission` VALUES ('13', 'Can add content type', '5', 'add_contenttype');
-INSERT INTO `auth_permission` VALUES ('14', 'Can change content type', '5', 'change_contenttype');
-INSERT INTO `auth_permission` VALUES ('15', 'Can delete content type', '5', 'delete_contenttype');
-INSERT INTO `auth_permission` VALUES ('16', 'Can add session', '6', 'add_session');
-INSERT INTO `auth_permission` VALUES ('17', 'Can change session', '6', 'change_session');
-INSERT INTO `auth_permission` VALUES ('18', 'Can delete session', '6', 'delete_session');
-INSERT INTO `auth_permission` VALUES ('19', 'Can add answers', '7', 'add_answers');
-INSERT INTO `auth_permission` VALUES ('20', 'Can change answers', '7', 'change_answers');
-INSERT INTO `auth_permission` VALUES ('21', 'Can delete answers', '7', 'delete_answers');
-INSERT INTO `auth_permission` VALUES ('22', 'Can add answers comments', '8', 'add_answerscomments');
-INSERT INTO `auth_permission` VALUES ('23', 'Can change answers comments', '8', 'change_answerscomments');
-INSERT INTO `auth_permission` VALUES ('24', 'Can delete answers comments', '8', 'delete_answerscomments');
-INSERT INTO `auth_permission` VALUES ('25', 'Can add articles', '9', 'add_articles');
-INSERT INTO `auth_permission` VALUES ('26', 'Can change articles', '9', 'change_articles');
-INSERT INTO `auth_permission` VALUES ('27', 'Can delete articles', '9', 'delete_articles');
-INSERT INTO `auth_permission` VALUES ('28', 'Can add associations', '10', 'add_associations');
-INSERT INTO `auth_permission` VALUES ('29', 'Can change associations', '10', 'change_associations');
-INSERT INTO `auth_permission` VALUES ('30', 'Can delete associations', '10', 'delete_associations');
-INSERT INTO `auth_permission` VALUES ('31', 'Can add invitation users', '11', 'add_invitationusers');
-INSERT INTO `auth_permission` VALUES ('32', 'Can change invitation users', '11', 'change_invitationusers');
-INSERT INTO `auth_permission` VALUES ('33', 'Can delete invitation users', '11', 'delete_invitationusers');
-INSERT INTO `auth_permission` VALUES ('34', 'Can add user jobs', '12', 'add_userjobs');
-INSERT INTO `auth_permission` VALUES ('35', 'Can change user jobs', '12', 'change_userjobs');
-INSERT INTO `auth_permission` VALUES ('36', 'Can delete user jobs', '12', 'delete_userjobs');
-INSERT INTO `auth_permission` VALUES ('37', 'Can add logs', '13', 'add_logs');
-INSERT INTO `auth_permission` VALUES ('38', 'Can change logs', '13', 'change_logs');
-INSERT INTO `auth_permission` VALUES ('39', 'Can delete logs', '13', 'delete_logs');
-INSERT INTO `auth_permission` VALUES ('40', 'Can add messages', '14', 'add_messages');
-INSERT INTO `auth_permission` VALUES ('41', 'Can change messages', '14', 'change_messages');
-INSERT INTO `auth_permission` VALUES ('42', 'Can delete messages', '14', 'delete_messages');
-INSERT INTO `auth_permission` VALUES ('43', 'Can add private letters', '15', 'add_privateletters');
-INSERT INTO `auth_permission` VALUES ('44', 'Can change private letters', '15', 'change_privateletters');
-INSERT INTO `auth_permission` VALUES ('45', 'Can delete private letters', '15', 'delete_privateletters');
-INSERT INTO `auth_permission` VALUES ('46', 'Can add questions', '16', 'add_questions');
-INSERT INTO `auth_permission` VALUES ('47', 'Can change questions', '16', 'change_questions');
-INSERT INTO `auth_permission` VALUES ('48', 'Can delete questions', '16', 'delete_questions');
-INSERT INTO `auth_permission` VALUES ('49', 'Can add questions focus', '17', 'add_questionsfocus');
-INSERT INTO `auth_permission` VALUES ('50', 'Can change questions focus', '17', 'change_questionsfocus');
-INSERT INTO `auth_permission` VALUES ('51', 'Can delete questions focus', '17', 'delete_questionsfocus');
-INSERT INTO `auth_permission` VALUES ('52', 'Can add schools', '18', 'add_schools');
-INSERT INTO `auth_permission` VALUES ('53', 'Can change schools', '18', 'change_schools');
-INSERT INTO `auth_permission` VALUES ('54', 'Can delete schools', '18', 'delete_schools');
-INSERT INTO `auth_permission` VALUES ('55', 'Can add user school', '19', 'add_userschool');
-INSERT INTO `auth_permission` VALUES ('56', 'Can change user school', '19', 'change_userschool');
-INSERT INTO `auth_permission` VALUES ('57', 'Can delete user school', '19', 'delete_userschool');
-INSERT INTO `auth_permission` VALUES ('58', 'Can add topics', '20', 'add_topics');
-INSERT INTO `auth_permission` VALUES ('59', 'Can change topics', '20', 'change_topics');
-INSERT INTO `auth_permission` VALUES ('60', 'Can delete topics', '20', 'delete_topics');
-INSERT INTO `auth_permission` VALUES ('61', 'Can add topic focus', '21', 'add_topicfocus');
-INSERT INTO `auth_permission` VALUES ('62', 'Can change topic focus', '21', 'change_topicfocus');
-INSERT INTO `auth_permission` VALUES ('63', 'Can delete topic focus', '21', 'delete_topicfocus');
-INSERT INTO `auth_permission` VALUES ('64', 'Can add users', '22', 'add_users');
-INSERT INTO `auth_permission` VALUES ('65', 'Can change users', '22', 'change_users');
-INSERT INTO `auth_permission` VALUES ('66', 'Can delete users', '22', 'delete_users');
-INSERT INTO `auth_permission` VALUES ('67', 'Can add users focus', '23', 'add_usersfocus');
-INSERT INTO `auth_permission` VALUES ('68', 'Can change users focus', '23', 'change_usersfocus');
-INSERT INTO `auth_permission` VALUES ('69', 'Can delete users focus', '23', 'delete_usersfocus');
-INSERT INTO `auth_permission` VALUES ('70', 'Can add users affiliate', '24', 'add_usersaffiliate');
-INSERT INTO `auth_permission` VALUES ('71', 'Can change users affiliate', '24', 'change_usersaffiliate');
-INSERT INTO `auth_permission` VALUES ('72', 'Can delete users affiliate', '24', 'delete_usersaffiliate');
-
--- ----------------------------
--- Table structure for `auth_user`
-=======
 -- Table structure for auth_user
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user`;
 CREATE TABLE `auth_user` (
@@ -455,16 +294,10 @@ CREATE TABLE `auth_user` (
 -- ----------------------------
 -- Records of auth_user
 -- ----------------------------
-<<<<<<< HEAD
-
--- ----------------------------
--- Table structure for `auth_user_groups`
-=======
 INSERT INTO `auth_user` VALUES ('1', 'pbkdf2_sha256$12000$hbOZnwmknkvF$ebLjDeGkTFg/g/Nuy2YZCPRq2Xht6wQmAmgx0s7STso=', '2015-06-19 14:09:06', '1', 'jeffrey', '', '', 'aslan.yeh2010@gmail.com', '1', '1', '2015-06-19 14:09:06');
 
 -- ----------------------------
 -- Table structure for auth_user_groups
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user_groups`;
 CREATE TABLE `auth_user_groups` (
@@ -484,11 +317,7 @@ CREATE TABLE `auth_user_groups` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `auth_user_user_permissions`
-=======
 -- Table structure for auth_user_user_permissions
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user_user_permissions`;
 CREATE TABLE `auth_user_user_permissions` (
@@ -499,8 +328,8 @@ CREATE TABLE `auth_user_user_permissions` (
   UNIQUE KEY `user_id` (`user_id`,`permission_id`),
   KEY `auth_user_user_permissions_e8701ad4` (`user_id`),
   KEY `auth_user_user_permissions_8373b171` (`permission_id`),
-  CONSTRAINT `auth_user_user_permissions_user_id_7cd7acb6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
-  CONSTRAINT `auth_user_user_perm_permission_id_3d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
+  CONSTRAINT `auth_user_user_perm_permission_id_3d7071f0_fk_auth_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
+  CONSTRAINT `auth_user_user_permissions_user_id_7cd7acb6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -508,11 +337,7 @@ CREATE TABLE `auth_user_user_permissions` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `django_admin_log`
-=======
 -- Table structure for django_admin_log
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `django_admin_log`;
 CREATE TABLE `django_admin_log` (
@@ -527,8 +352,8 @@ CREATE TABLE `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin_log_417f1b1c` (`content_type_id`),
   KEY `django_admin_log_e8701ad4` (`user_id`),
-  CONSTRAINT `django_admin_log_user_id_1c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
-  CONSTRAINT `django_admin__content_type_id_5151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
+  CONSTRAINT `django_admin__content_type_id_5151027a_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
+  CONSTRAINT `django_admin_log_user_id_1c5f563_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -536,11 +361,7 @@ CREATE TABLE `django_admin_log` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `django_content_type`
-=======
 -- Table structure for django_content_type
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `django_content_type`;
 CREATE TABLE `django_content_type` (
@@ -579,17 +400,11 @@ INSERT INTO `django_content_type` VALUES ('21', 'topic focus', 'apps', 'topicfoc
 INSERT INTO `django_content_type` VALUES ('22', 'users', 'apps', 'users');
 INSERT INTO `django_content_type` VALUES ('23', 'users focus', 'apps', 'usersfocus');
 INSERT INTO `django_content_type` VALUES ('24', 'users affiliate', 'apps', 'usersaffiliate');
-<<<<<<< HEAD
-
--- ----------------------------
--- Table structure for `django_migrations`
-=======
 INSERT INTO `django_content_type` VALUES ('25', 'questions topic', 'apps', 'questionstopic');
 INSERT INTO `django_content_type` VALUES ('26', 'question school', 'apps', 'questionschool');
 
 -- ----------------------------
 -- Table structure for django_migrations
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `django_migrations`;
 CREATE TABLE `django_migrations` (
@@ -615,11 +430,7 @@ INSERT INTO `django_migrations` VALUES ('9', 'apps', '0005_auto_20150523_1105', 
 INSERT INTO `django_migrations` VALUES ('10', 'apps', '0006_auto_20150523_1551', '2015-05-23 15:51:33');
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `django_session`
-=======
 -- Table structure for django_session
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `django_session`;
 CREATE TABLE `django_session` (
@@ -633,16 +444,9 @@ CREATE TABLE `django_session` (
 -- ----------------------------
 -- Records of django_session
 -- ----------------------------
-<<<<<<< HEAD
-INSERT INTO `django_session` VALUES ('m1dntphihowoux4u8i1g9qjggkm7ng33', 'NWEzMTcyYjkzZmZkOGQ4NWE5YjAzMzM1OTQ5NGUzZmNiZDJlNjFkZDp7InVwZGF0ZV90aW1lIjoiMjAxNS0wNi0wNCAxNDoyMTo0NSIsInBhc3N3b3JkIjoiMTIzIiwidXNlcl9uYW1lIjoidG9tY2F0IiwidXNlciI6InRvbWNhdCJ9', '2015-06-18 14:21:45');
-
--- ----------------------------
--- Table structure for `invitation_users`
-=======
 
 -- ----------------------------
 -- Table structure for invitation_users
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `invitation_users`;
 CREATE TABLE `invitation_users` (
@@ -651,7 +455,7 @@ CREATE TABLE `invitation_users` (
   `receive_user_name` varchar(10) NOT NULL,
   `question_id` int(11) NOT NULL,
   `receive_user_id` int(11) NOT NULL,
-  `send_user_id` int(11),
+  `send_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`invitation_id`),
   KEY `invitation_users_7aa0f6ee` (`question_id`),
   KEY `invitation_users_6234ec5c` (`receive_user_id`),
@@ -666,11 +470,7 @@ CREATE TABLE `invitation_users` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `logs`
-=======
 -- Table structure for logs
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `logs`;
 CREATE TABLE `logs` (
@@ -680,7 +480,7 @@ CREATE TABLE `logs` (
   `operate_command` varchar(20) NOT NULL,
   `from` int(11) DEFAULT NULL,
   `url` varchar(255) NOT NULL,
-  `user_id` int(11),
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`log_id`),
   KEY `logs_e8701ad4` (`user_id`),
   CONSTRAINT `logs_user_id_25ac125e_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
@@ -691,11 +491,7 @@ CREATE TABLE `logs` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `messages`
-=======
 -- Table structure for messages
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
@@ -712,11 +508,7 @@ CREATE TABLE `messages` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `private_letters`
-=======
 -- Table structure for private_letters
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `private_letters`;
 CREATE TABLE `private_letters` (
@@ -738,11 +530,7 @@ CREATE TABLE `private_letters` (
 -- ----------------------------
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `questions`
-=======
 -- Table structure for questions
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE `questions` (
@@ -762,91 +550,6 @@ CREATE TABLE `questions` (
   PRIMARY KEY (`question_id`),
   KEY `questions_e8701ad4` (`user_id`),
   CONSTRAINT `questions_user_id_7e4fa00f_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of questions
--- ----------------------------
-INSERT INTO `questions` VALUES ('1', 'how to learn python0', 'which books should i to read?', '2015-05-23 10:45:24', '2015-05-23 10:45:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('2', 'how to learn python1', 'which books should i to read?', '2015-05-23 10:45:25', '2015-05-23 10:45:25', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('3', 'how to learn python2', 'which books should i to read?', '2015-05-23 10:45:25', '2015-05-23 10:45:25', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('4', 'how to learn python3', 'which books should i to read?', '2015-05-23 10:45:25', '2015-05-23 10:45:25', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('5', 'how to learn python4', 'which books should i to read?', '2015-05-23 10:45:25', '2015-05-23 10:45:25', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('6', 'how to learn python5', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('7', 'how to learn python6', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('8', 'how to learn python7', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('9', 'how to learn python8', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('10', 'how to learn python9', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '0', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('11', 'how to learn python10', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('12', 'how to learn python11', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('13', 'how to learn python12', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('14', 'how to learn python13', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('15', 'how to learn python14', 'which books should i to read?', '2015-05-23 11:20:24', '2015-05-23 11:20:24', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('16', 'how to learn python15', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('17', 'how to learn python16', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('18', 'how to learn python17', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('19', 'how to learn python18', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('20', 'how to learn python19', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('21', 'how to learn python20', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('22', 'how to learn python21', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('23', 'how to learn python22', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('24', 'how to learn python23', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('25', 'how to learn python24', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('26', 'how to learn python25', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('27', 'how to learn python26', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('28', 'how to learn python27', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('29', 'how to learn python28', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('30', 'how to learn python29', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('31', 'how to learn python30', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('32', 'how to learn python31', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('33', 'how to learn python32', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('34', 'how to learn python33', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('35', 'how to learn python34', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('36', 'how to learn python35', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('37', 'how to learn python36', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('38', 'how to learn python37', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('39', 'how to learn python38', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('40', 'how to learn python39', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('41', 'how to learn python40', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('42', 'how to learn python41', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('43', 'how to learn python42', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('44', 'how to learn python43', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('45', 'how to learn python44', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('46', 'how to learn python45', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('47', 'how to learn python46', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('48', 'how to learn python47', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('49', 'how to learn python48', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('50', 'how to learn python49', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('51', 'how to learn python50', 'which books should i to read?', '2015-05-23 11:20:25', '2015-05-23 11:20:25', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('52', 'how to learn python51', 'which books should i to read?', '2015-05-23 11:20:26', '2015-05-23 11:20:26', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('53', 'how to learn python52', 'which books should i to read?', '2015-05-23 11:20:26', '2015-05-23 11:20:26', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('54', 'how to learn python53', 'which books should i to read?', '2015-05-23 11:20:26', '2015-05-23 11:20:26', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('55', 'how to learn python54', 'which books should i to read?', '2015-05-23 11:20:26', '2015-05-23 11:20:26', '100', '20', '20', '20', '5', null, '1', '1');
-INSERT INTO `questions` VALUES ('56', 'how to learn python55', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('57', 'how to learn python56', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('58', 'how to learn python57', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('59', 'how to learn python58', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('60', 'how to learn python59', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('61', 'how to learn python60', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('62', 'how to learn python61', 'which books should i to read?', '2015-05-23 11:21:57', '2015-05-23 11:21:57', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('63', 'how to learn python62', 'which books should i to read?', '2015-05-23 11:21:58', '2015-05-23 11:21:58', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('64', 'how to learn python63', 'which books should i to read?', '2015-05-23 11:21:58', '2015-05-23 11:21:58', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('65', 'how to learn python64', 'which books should i to read?', '2015-05-23 11:21:58', '2015-05-23 11:21:58', '10', '10', '5', '2', '50', null, '1', '1');
-INSERT INTO `questions` VALUES ('66', 'how to learn python55', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('67', 'how to learn python56', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('68', 'how to learn python57', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('69', 'how to learn python58', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('70', 'how to learn python59', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('71', 'how to learn python60', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('72', 'how to learn python61', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('73', 'how to learn python62', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('74', 'how to learn python63', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-INSERT INTO `questions` VALUES ('75', 'how to learn python64', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
-
--- ----------------------------
--- Table structure for `questions_focus`
-=======
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -941,14 +644,13 @@ INSERT INTO `questions` VALUES ('86', 'Europe\'s space agency is still looking f
 
 -- ----------------------------
 -- Table structure for questions_focus
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `questions_focus`;
 CREATE TABLE `questions_focus` (
   `focus_id` int(11) NOT NULL AUTO_INCREMENT,
   `focus_time` datetime NOT NULL,
   `question_id` int(11) DEFAULT NULL,
-  `user_id` int(11),
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`focus_id`),
   KEY `questions_focus_7aa0f6ee` (`question_id`),
   KEY `questions_focus_e8701ad4` (`user_id`),
@@ -981,11 +683,7 @@ INSERT INTO `questions_focus` VALUES ('19', '2015-05-23 14:30:35', '13', '1');
 INSERT INTO `questions_focus` VALUES ('20', '2015-05-23 14:30:35', '14', '1');
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `questions_topic`
-=======
 -- Table structure for questions_topic
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `questions_topic`;
 CREATE TABLE `questions_topic` (
@@ -1032,23 +730,6 @@ CREATE TABLE `question_school` (
   `question_id` int(11) NOT NULL,
   `school_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-<<<<<<< HEAD
-  UNIQUE KEY `questions_id` (`questions_id`,`topics_id`),
-  KEY `questions_topic_390f3732` (`questions_id`),
-  KEY `questions_topic_5b4a14a9` (`topics_id`),
-  CONSTRAINT `questions_topic_questions_id_11b14698_fk_questions_question_id` FOREIGN KEY (`questions_id`) REFERENCES `questions` (`question_id`),
-  CONSTRAINT `questions_topic_topics_id_57139228_fk_topics_topic_id` FOREIGN KEY (`topics_id`) REFERENCES `topics` (`topic_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of questions_topic
--- ----------------------------
-INSERT INTO `questions_topic` VALUES ('1', '1', '1');
-INSERT INTO `questions_topic` VALUES ('2', '2', '5');
-
--- ----------------------------
--- Table structure for `schools`
-=======
   UNIQUE KEY `questions_id_index` (`question_id`,`school_id`) USING BTREE,
   KEY `questions_school_index_1` (`school_id`) USING BTREE,
   KEY `questions_school_index_2` (`question_id`) USING BTREE,
@@ -1072,7 +753,6 @@ INSERT INTO `question_school` VALUES ('10', '10', '3');
 
 -- ----------------------------
 -- Table structure for schools
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `schools`;
 CREATE TABLE `schools` (
@@ -1082,18 +762,6 @@ CREATE TABLE `schools` (
   `school_category` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`school_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-<<<<<<< HEAD
-
--- ----------------------------
--- Records of schools
--- ----------------------------
-INSERT INTO `schools` VALUES ('1', '南京邮电大学', '南京', null);
-INSERT INTO `schools` VALUES ('2', '南京邮电大学', '南京', null);
-INSERT INTO `schools` VALUES ('3', '北京邮电大学', '南京', null);
-
--- ----------------------------
--- Table structure for `topics`
-=======
 
 -- ----------------------------
 -- Records of schools
@@ -1104,7 +772,6 @@ INSERT INTO `schools` VALUES ('3', 'BUPT', 'BEIJING', null);
 
 -- ----------------------------
 -- Table structure for topics
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `topics`;
 CREATE TABLE `topics` (
@@ -1134,35 +801,6 @@ INSERT INTO `topics` VALUES ('12', '实习', '1', '2015-04-30 21:14:34', '41', '
 INSERT INTO `topics` VALUES ('41', '科技学术', '0', null, null, null, null, '1');
 INSERT INTO `topics` VALUES ('60', '漫漫邮子路', '0', null, null, null, null, '1');
 INSERT INTO `topics` VALUES ('113', '职场疑云', '0', null, null, null, null, '1');
-<<<<<<< HEAD
-INSERT INTO `topics` VALUES ('139', '求职应聘', '5', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('140', '出国留学', '5', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('141', '考研保研', '5', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('142', '我要实习', '5', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('144', '考公务员', '5', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('145', '南邮轶事', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('146', '社会百态', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('147', '怦然心动', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('148', '兴趣社团', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('149', '闲谈人生', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('150', '学术研究', '41', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('152', '创新竞赛', '41', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('153', '行业内幕', '113', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('155', '岗位交流', '113', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('157', '跳槽求职', '113', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('158', '合伙创业', '113', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('159', 'Offer专业户', '60', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('160', '考研达人', '60', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('161', '前辈寄语', '60', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('162', '北邮榜样', '60', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('172', '硬件技术', '41', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('173', '其他', '41', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('174', '资料共享', '0', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('175', '内推发布', '0', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('176', '硕博生活', '9', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('177', '软件开发', '41', null, null, null, null, '1');
-INSERT INTO `topics` VALUES ('178', '产品设计', '41', null, null, null, null, '1');
-=======
 INSERT INTO `topics` VALUES ('139', '求职应聘', '5', null, null, null, null, '2');
 INSERT INTO `topics` VALUES ('140', '出国留学', '5', null, null, null, null, '2');
 INSERT INTO `topics` VALUES ('141', '考研保研', '5', null, null, null, null, '2');
@@ -1190,7 +828,6 @@ INSERT INTO `topics` VALUES ('175', '内推发布', '0', null, null, null, null,
 INSERT INTO `topics` VALUES ('176', '硕博生活', '9', null, null, null, null, '3');
 INSERT INTO `topics` VALUES ('177', '软件开发', '41', null, null, null, null, '3');
 INSERT INTO `topics` VALUES ('178', '产品设计', '41', null, null, null, null, '3');
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 INSERT INTO `topics` VALUES ('179', '产品运营', '41', null, null, null, null, '1');
 INSERT INTO `topics` VALUES ('181', '其他', '113', null, null, null, null, '1');
 INSERT INTO `topics` VALUES ('183', '冰桶挑战', '60', null, null, null, null, '1');
@@ -1408,18 +1045,14 @@ INSERT INTO `topics` VALUES ('722', '野草频道', null, null, '1', '20150303/6
 INSERT INTO `topics` VALUES ('723', '爬虫', null, null, '1', null, '1', '1');
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `topic_focus`
-=======
 -- Table structure for topic_focus
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `topic_focus`;
 CREATE TABLE `topic_focus` (
   `focus_id` int(11) NOT NULL AUTO_INCREMENT,
   `focus_time` datetime NOT NULL,
-  `topic_id` int(11),
-  `user_id` int(11),
+  `topic_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`focus_id`),
   KEY `topic_focus_19b4d727` (`topic_id`),
   KEY `topic_focus_e8701ad4` (`user_id`),
@@ -1438,11 +1071,7 @@ INSERT INTO `topic_focus` VALUES ('8', '2015-05-23 15:52:33', '1', '2');
 INSERT INTO `topic_focus` VALUES ('9', '2015-05-23 17:24:38', '9', '2');
 
 -- ----------------------------
-<<<<<<< HEAD
--- Table structure for `users`
-=======
 -- Table structure for users
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -1467,49 +1096,17 @@ CREATE TABLE `users` (
   `integral` int(11) DEFAULT NULL,
   `affiliate_flag` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', 'apache', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
-<<<<<<< HEAD
-INSERT INTO `users` VALUES ('2', 'tomcat', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '1', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
-INSERT INTO `users` VALUES ('3', 'JBoss', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
-INSERT INTO `users` VALUES ('4', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('5', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('6', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('7', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('8', 'tomcat', '', '0', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('9', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('10', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('11', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('12', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('13', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('14', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('15', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('16', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('17', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('18', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('19', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('20', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('21', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('22', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('23', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('24', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('25', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('26', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('27', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-
--- ----------------------------
--- Table structure for `users_affiliate`
-=======
 INSERT INTO `users` VALUES ('2', 'tomcat', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 INSERT INTO `users` VALUES ('3', 'JBoss', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 
 -- ----------------------------
 -- Table structure for users_affiliate
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `users_affiliate`;
 CREATE TABLE `users_affiliate` (
@@ -1536,45 +1133,12 @@ CREATE TABLE `users_affiliate` (
 -- ----------------------------
 -- Records of users_affiliate
 -- ----------------------------
-<<<<<<< HEAD
-INSERT INTO `users_affiliate` VALUES ('1', null, '', null, '', null, '', null, '2015-05-22 16:58:06', '', null, null, null, null, null, '');
-INSERT INTO `users_affiliate` VALUES ('2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('4', null, null, null, null, null, null, null, '2015-06-12 13:07:33', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('5', null, null, null, null, null, null, null, '2015-06-12 14:53:33', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('6', null, null, null, null, null, null, null, '2015-06-12 14:54:03', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('7', null, null, null, null, null, null, null, '2015-06-12 16:19:36', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('8', null, null, null, null, null, null, null, '2015-06-12 16:26:44', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('9', null, null, null, null, null, null, null, '2015-06-12 16:49:36', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('10', null, null, null, null, null, null, null, '2015-06-12 16:54:18', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('11', null, null, null, null, null, null, null, '2015-06-12 16:55:29', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('12', null, null, null, null, null, null, null, '2015-06-12 16:56:09', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('13', null, null, null, null, null, null, null, '2015-06-12 16:57:19', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('14', null, null, null, null, null, null, null, '2015-06-12 16:58:50', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('15', null, null, null, null, null, null, null, '2015-06-12 17:00:14', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('16', null, null, null, null, null, null, null, '2015-06-12 17:00:17', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('17', null, null, null, null, null, null, null, '2015-06-12 17:00:17', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('18', null, null, null, null, null, null, null, '2015-06-12 17:05:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('19', null, null, null, null, null, null, null, '2015-06-12 17:06:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('20', null, null, null, null, null, null, null, '2015-06-12 17:10:58', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('21', null, null, null, null, null, null, null, '2015-06-12 17:12:22', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('22', null, null, null, null, null, null, null, '2015-06-12 17:12:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('23', null, null, null, null, null, null, null, '2015-06-12 17:23:28', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('24', null, null, null, null, null, null, null, '2015-06-12 17:31:07', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('25', null, null, null, null, null, null, null, '2015-06-12 17:41:46', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('26', null, null, null, null, null, null, null, '2015-06-12 17:49:04', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('27', null, null, null, null, null, null, null, '2015-06-12 17:49:21', null, null, null, null, null, null, null);
-
--- ----------------------------
--- Table structure for `users_focus`
-=======
 INSERT INTO `users_affiliate` VALUES ('1', '1', '12345678', '1', '13901512321', '1', 'www.abc.com', '1', '2015-05-22 16:58:06', '192.168.1.1', '2015-05-25 11:52:53', '88', '66', '120', '1', '1');
 INSERT INTO `users_affiliate` VALUES ('2', '0', '12568965', '1', '13902391212', '1', 'www.aaa.com', '0', '2015-05-25 11:53:58', '192.168.1.1', '2015-05-24 11:54:06', '78', '68', '110', '1', '1');
 INSERT INTO `users_affiliate` VALUES ('3', '1', '12568965', '1', '13902391212', '1', 'www.aaa.com', '0', '2015-05-25 11:53:58', '192.168.1.1', '2015-05-24 11:54:06', '68', '68', '108', '1', '1');
 
 -- ----------------------------
 -- Table structure for users_focus
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `users_focus`;
 CREATE TABLE `users_focus` (
@@ -1587,60 +1151,44 @@ CREATE TABLE `users_focus` (
   KEY `users_focus_e8701ad4` (`user_id`),
   CONSTRAINT `users_focus_schoolmate_id_2b862399_fk_users_user_id` FOREIGN KEY (`schoolmate_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `users_focus_user_id_40790d03_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users_focus
 -- ----------------------------
 INSERT INTO `users_focus` VALUES ('1', '2015-05-23 14:16:59', '2', '1');
-<<<<<<< HEAD
-INSERT INTO `users_focus` VALUES ('2', '2015-06-10 15:40:16', '3', '1');
-
--- ----------------------------
--- Table structure for `user_jobs`
-=======
 INSERT INTO `users_focus` VALUES ('2', '2015-05-01 14:10:45', '3', '1');
 INSERT INTO `users_focus` VALUES ('3', '2015-03-01 14:10:48', '2', '3');
 
 -- ----------------------------
 -- Table structure for user_jobs
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `user_jobs`;
 CREATE TABLE `user_jobs` (
   `job_id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_name` varchar(50) DEFAULT NULL,
   `position` varchar(200) NOT NULL,
   `city` varchar(100) NOT NULL,
-  `entrance_time` varchar(20) DEFAULT NULL,
-  `leave_time` varchar(20) DEFAULT NULL,
+  `entrance_time` datetime DEFAULT NULL,
+  `leave_time` datetime DEFAULT NULL,
   `experience` longtext NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`job_id`),
   KEY `user_jobs_e8701ad4` (`user_id`),
   CONSTRAINT `user_jobs_user_id_2bdcc37a_fk_users_affiliate_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_affiliate` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_jobs
 -- ----------------------------
-<<<<<<< HEAD
-INSERT INTO `user_jobs` VALUES ('1', '2', '2', '', '2015', '2014', '', '21');
-INSERT INTO `user_jobs` VALUES ('2', '2', '2', '', '2015', '2014', '', '22');
-
--- ----------------------------
--- Table structure for `user_school`
-=======
 
 -- ----------------------------
 -- Table structure for user_school
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 -- ----------------------------
 DROP TABLE IF EXISTS `user_school`;
 CREATE TABLE `user_school` (
   `primary_id` int(11) NOT NULL AUTO_INCREMENT,
   `academy` varchar(100) NOT NULL,
-  `entrance_time` varchar(20) DEFAULT NULL,
+  `entrance_time` datetime DEFAULT NULL,
   `education` int(11) DEFAULT NULL,
   `school_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -1649,25 +1197,12 @@ CREATE TABLE `user_school` (
   KEY `user_school_e8701ad4` (`user_id`),
   CONSTRAINT `user_school_school_id_4e385b09_fk_schools_school_id` FOREIGN KEY (`school_id`) REFERENCES `schools` (`school_id`),
   CONSTRAINT `user_school_user_id_2f09fb84_fk_users_affiliate_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_affiliate` (`user_id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-=======
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6
 
 -- ----------------------------
 -- Records of user_school
 -- ----------------------------
 INSERT INTO `user_school` VALUES ('1', '计算机学院', '2015-05-23 10:09:55', '1', '1', '2');
-<<<<<<< HEAD
-INSERT INTO `user_school` VALUES ('2', '计算机学院', '2015-05-23 10:09:59', '1', '1', '1');
-INSERT INTO `user_school` VALUES ('3', '数量学院', '2015-05-24 18:38:39', '2', '2', '3');
-INSERT INTO `user_school` VALUES ('4', '', null, null, '1', '6');
-INSERT INTO `user_school` VALUES ('5', '', null, null, '1', '6');
-INSERT INTO `user_school` VALUES ('6', '1', '2014', '2', '1', '7');
-INSERT INTO `user_school` VALUES ('7', '2', '2013', '2', '1', '7');
-=======
 INSERT INTO `user_school` VALUES ('2', '计算机学院', '2015-05-23 10:09:59', '1', '2', '1');
 INSERT INTO `user_school` VALUES ('3', '数量学院', '2015-05-24 18:38:39', '2', '2', '3');
 INSERT INTO `user_school` VALUES ('4', '理学院', '2015-05-26 21:22:08', '2', '3', '1');
->>>>>>> ced474c4b23d60840efdb3ce87828732d6be26a6

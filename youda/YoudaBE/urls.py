@@ -34,7 +34,7 @@ urlpatterns = patterns('',
 )
 #用于测试
 urlpatterns +=patterns('',
-    url(r'test',testAction.test1),
+    url(r'test/$',testAction.test1),
     url(r'test2',testAction.test2),
     url(r'showQuestionDetail',questionAction.showQuestionDetail),
     url(r'fileupload',loginAction.headUpload),

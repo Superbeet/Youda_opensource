@@ -440,3 +440,103 @@
  <li  value="<%= data[i].value %>"><a href="#"><%= data[i].text %></a></li>
                 <% }%>
 </script>
+
+
+ <script type="text/html" id="topic_new_questiuon_list">
+
+
+		<div class="topic_answer_list_area">
+		<div class="topic_answer_list_header">
+		<div class="fl dark_font">最新问题</div>
+		<div class="fr dark_font">点击收起</div>
+		</div>
+		<div class="topic_answer_list_content">
+		<ul>
+
+               <% for(i = 0 ; i < data.length ; i++){ %>
+			<li>
+			<div class="topic_title fl common_font">
+<a href="/question/<%= data[i].question_id %>"><%= data[i].question_content %><a>
+			</div>
+			<div class="commment_count fr">
+<img src="/static/image/index/comment_icon.png" />
+			</div>
+			</li>
+ <% } %>
+
+		</ul>
+
+		</div>
+		</div>
+    </script>
+
+ <script type="text/html" id="focus_topic_list">
+   <% for(i = 0 ; i < data.length ; i++){ %>
+
+<div class="topic_and_answer_recommend_container border_bottom" id="topic_<%= data[i].topic_id %>">
+		<div class="topic_detail_area border_bottom_dark">
+		<div class="topic_img fl" >
+		<img src="<%= data[i].topic_pic %>" />
+		</div>
+		<div class="topic_detail_content fl" >
+		<h1 class="common_font"><%= data[i].topic_name %></h1>
+		<p class="dark_font"><%= data[i].topic_name %></p>
+		<div class="topic_icons">
+			<div class="ask_and_interest_div fl">
+				<div class="interest_topic_icon fl">
+					<img src="/static/image/index/interest_icon.png" />关注<%= data[i].focus_num %>
+				</div>
+				<div class="ask_topic_icon fr">
+					<img src="/static/image/index/ask_icon.png" />提问 <%= data[i].discuss_num %>
+				</div>
+			</div>
+			<div class="mark_icon_container fr">
+			<a href="javascript:void(0)"  >
+				<div class="mark_icon focus_topic" onclick="focusTopic(<%= data[i].topic_id %>)">
+				</div>
+			</a>
+			</div>
+		</div>
+
+		</div>
+
+		</div>
+
+		<!-- 话题下的问答列表开始  -->
+
+<!-- 话题下的问答列表结束  -->
+		</div>
+
+     <% } %>
+     </script>
+<script type="text/html" id="hot_school_topic_list">
+<!-- 本校热门话题开始 -->
+
+        	<a href="#" class="fl"><div class="topic_rec_normal">全部话题</div></a>
+        <% for(i = 0 ; i < data.length ; i++){ %>
+	<!-- 推荐话题充字数开始 -->
+	<a href="javascript:void(0)" class="topic_rec_margin fl"><div class="topic_rec_normal" onclick="focusTopic(<%= data[i].topic_id %>)"><%= data[i].topic_name %></div></a>
+ <% } %>
+	<!-- 推荐话题充字数结束 -->
+
+
+
+<!-- 本校热门话题结束 -->
+</script>
+
+    <script>
+ function focusTopic(topic_id){
+    window.alert(topic_id);
+    /*
+    $.ajax({
+        url : '/focusTopic',
+        data : {
+            topic_id : topic_id
+        }
+    });
+*/
+
+
+
+ }
+ </script>
