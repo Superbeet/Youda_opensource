@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2015-06-12 17:51:39
+Date: 2015-07-01 13:37:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -437,7 +437,11 @@ CREATE TABLE `django_session` (
 -- ----------------------------
 -- Records of django_session
 -- ----------------------------
-INSERT INTO `django_session` VALUES ('m1dntphihowoux4u8i1g9qjggkm7ng33', 'NWEzMTcyYjkzZmZkOGQ4NWE5YjAzMzM1OTQ5NGUzZmNiZDJlNjFkZDp7InVwZGF0ZV90aW1lIjoiMjAxNS0wNi0wNCAxNDoyMTo0NSIsInBhc3N3b3JkIjoiMTIzIiwidXNlcl9uYW1lIjoidG9tY2F0IiwidXNlciI6InRvbWNhdCJ9', '2015-06-18 14:21:45');
+INSERT INTO `django_session` VALUES ('74hvbd1sg93ylfjfnt9c12o5f75nppjc', 'ZjVkNTk0ZGQ3YzFiYzYyZjUxNDUwYjE3MDczZWI3N2UzYmZmNjM3ZTp7InVzZXJOYW1lIjoiYXBhY2hlIiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTcgMTc6MDE6MjIiLCJzY2hvb2xJZCI6MSwic2Nob29sTmFtZSI6Ilx1NTM1N1x1NGVhY1x1OTBhZVx1NzUzNVx1NTkyN1x1NWI2NiIsInVzZXJJZCI6MSwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==', '2015-07-01 17:01:22');
+INSERT INTO `django_session` VALUES ('dbpnuv1fgpoyc5bn0iaripv9oer4xax5', 'YzQ4OWNiY2JkYzgwM2M1MWJmODk5Y2EzNzllYzU0MTdkMTk1OGE4Mjp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6Mjg6NDEiLCJzY2hvb2xJZCI6MSwidXNlcklkIjoyLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:28:41');
+INSERT INTO `django_session` VALUES ('gqnf75xt414j50wdr8klcy86oy7z6z7c', 'ODUzODUxOTE3MGY5NTBiMTBlNDIxNmEwMTIyNjliMTM1NTgwYzU3Nzp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6MjY6NDkiLCJzY2hvb2xJZCI6MSwidXNlcklkIjoyLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:26:49');
+INSERT INTO `django_session` VALUES ('kj1jozxqomj4rwqgh83r1duibkod5j6s', 'NGQ5YWYxYjBlNGE0ZjQyZjFkYjgyOWU1MTI0Y2E5MTY2MTEzOTU4Mjp7InVzZXJOYW1lIjoiYXBhY2hlIiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6NTk6MjciLCJzY2hvb2xJZCI6MSwidXNlcklkIjoxLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:59:27');
+INSERT INTO `django_session` VALUES ('xipvhnolxd887hojcgq7lpcnodnj5yqv', 'ZmNjYjBiMzk0MjI1Y2YwMWQwZjkyN2Q1MWQ3MTZkM2ViYTYxMTQyMjp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMjA6MDc6MTUiLCJzY2hvb2xJZCI6MSwic2Nob29sTmFtZSI6Ilx1NTM1N1x1NGVhY1x1OTBhZVx1NzUzNVx1NTkyN1x1NWI2NiIsInVzZXJJZCI6MiwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==', '2015-06-29 20:07:15');
 
 -- ----------------------------
 -- Table structure for `invitation_users`
@@ -544,7 +548,7 @@ CREATE TABLE `questions` (
   PRIMARY KEY (`question_id`),
   KEY `questions_e8701ad4` (`user_id`),
   CONSTRAINT `questions_user_id_7e4fa00f_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of questions
@@ -624,6 +628,15 @@ INSERT INTO `questions` VALUES ('72', 'how to learn python61', 'which books shou
 INSERT INTO `questions` VALUES ('73', 'how to learn python62', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
 INSERT INTO `questions` VALUES ('74', 'how to learn python63', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
 INSERT INTO `questions` VALUES ('75', 'how to learn python64', 'which books should i to read?', '2015-05-23 14:30:35', '2015-05-23 14:30:35', '10', '10', '5', '2', '50', null, '1', '2');
+INSERT INTO `questions` VALUES ('76', '我是问题', '我是内容', '2015-06-10 10:47:27', '2015-06-10 10:47:27', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('77', '我是问题', '我是内容', '2015-06-10 10:47:32', '2015-06-10 10:47:32', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('78', '我是问题', '我是内容', '2015-06-10 10:47:34', '2015-06-10 10:47:34', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('79', '我是问题', '我是内容', '2015-06-10 10:47:48', '2015-06-10 10:47:48', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('80', '我是问题', '我是内容', '2015-06-10 11:31:05', '2015-06-10 11:31:05', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('81', '我是问题', '<p>我是内容</p>', '2015-06-10 13:37:30', '2015-06-10 13:37:30', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('83', '问题', '<p><strong>我使用的是方式二，在这里也许刚刚接触django的朋友会卡在这里，因为没法明白，怎么传入这个上下文。这里可以使用一个通用的方式去解决这个问题。请原谅我，我将脱离CSRF的内容，帮助你解决一下模板设置的问题，解决它才能解决它。回到django-admin.py startproject xxx初始化的项目中，打开settings.py文件，它是整个django项目的配置文件。找到TEMPLATE_DIRS配置上你模板目录的绝对路径，也可以是os.path生成出来的路径。然后通过from django.shortcuts import render_to_response来导入render_to_response。</strong></p>', '2015-06-10 13:47:33', '2015-06-10 13:47:33', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('84', '问题', '<p>我的问题</p>', '2015-06-10 14:00:00', '2015-06-10 14:00:00', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('85', '问题', '<p>我是问题内容</p>', '2015-06-10 14:04:03', '2015-06-10 14:04:03', null, null, null, null, null, '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for `questions_focus`
@@ -686,6 +699,36 @@ CREATE TABLE `questions_topic` (
 -- ----------------------------
 INSERT INTO `questions_topic` VALUES ('1', '1', '1');
 INSERT INTO `questions_topic` VALUES ('2', '2', '5');
+
+-- ----------------------------
+-- Table structure for `question_school`
+-- ----------------------------
+DROP TABLE IF EXISTS `question_school`;
+CREATE TABLE `question_school` (
+  `id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `school_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `questions_id_index` (`question_id`,`school_id`) USING BTREE,
+  KEY `questions_school_index_1` (`school_id`) USING BTREE,
+  KEY `questions_school_index_2` (`question_id`) USING BTREE,
+  CONSTRAINT `question_school_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`question_id`),
+  CONSTRAINT `question_school_ibfk_2` FOREIGN KEY (`school_id`) REFERENCES `schools` (`school_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of question_school
+-- ----------------------------
+INSERT INTO `question_school` VALUES ('1', '1', '1');
+INSERT INTO `question_school` VALUES ('2', '2', '1');
+INSERT INTO `question_school` VALUES ('3', '3', '1');
+INSERT INTO `question_school` VALUES ('4', '4', '2');
+INSERT INTO `question_school` VALUES ('5', '5', '2');
+INSERT INTO `question_school` VALUES ('6', '6', '2');
+INSERT INTO `question_school` VALUES ('7', '7', '3');
+INSERT INTO `question_school` VALUES ('8', '8', '3');
+INSERT INTO `question_school` VALUES ('9', '9', '3');
+INSERT INTO `question_school` VALUES ('10', '10', '3');
 
 -- ----------------------------
 -- Table structure for `schools`
@@ -1032,38 +1075,20 @@ CREATE TABLE `users` (
   `integral` int(11) DEFAULT NULL,
   `affiliate_flag` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'apache', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
+INSERT INTO `users` VALUES ('1', 'apache', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '1', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 INSERT INTO `users` VALUES ('2', 'tomcat', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '1', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 INSERT INTO `users` VALUES ('3', 'JBoss', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
-INSERT INTO `users` VALUES ('4', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('5', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('6', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('7', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('8', 'tomcat', '', '0', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('9', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('10', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('11', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('12', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('13', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('14', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('15', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('16', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('17', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('18', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('19', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('20', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('21', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('22', 'tomcat', '', '1', '0', '', '0', '0', '2', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('23', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('24', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('25', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('26', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
-INSERT INTO `users` VALUES ('27', 'tomcat', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('29', 'zhangpan', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('30', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('31', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('32', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('33', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('34', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `users_affiliate`
@@ -1096,30 +1121,12 @@ CREATE TABLE `users_affiliate` (
 INSERT INTO `users_affiliate` VALUES ('1', null, '', null, '', null, '', null, '2015-05-22 16:58:06', '', null, null, null, null, null, '');
 INSERT INTO `users_affiliate` VALUES ('2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `users_affiliate` VALUES ('3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('4', null, null, null, null, null, null, null, '2015-06-12 13:07:33', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('5', null, null, null, null, null, null, null, '2015-06-12 14:53:33', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('6', null, null, null, null, null, null, null, '2015-06-12 14:54:03', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('7', null, null, null, null, null, null, null, '2015-06-12 16:19:36', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('8', null, null, null, null, null, null, null, '2015-06-12 16:26:44', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('9', null, null, null, null, null, null, null, '2015-06-12 16:49:36', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('10', null, null, null, null, null, null, null, '2015-06-12 16:54:18', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('11', null, null, null, null, null, null, null, '2015-06-12 16:55:29', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('12', null, null, null, null, null, null, null, '2015-06-12 16:56:09', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('13', null, null, null, null, null, null, null, '2015-06-12 16:57:19', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('14', null, null, null, null, null, null, null, '2015-06-12 16:58:50', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('15', null, null, null, null, null, null, null, '2015-06-12 17:00:14', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('16', null, null, null, null, null, null, null, '2015-06-12 17:00:17', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('17', null, null, null, null, null, null, null, '2015-06-12 17:00:17', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('18', null, null, null, null, null, null, null, '2015-06-12 17:05:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('19', null, null, null, null, null, null, null, '2015-06-12 17:06:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('20', null, null, null, null, null, null, null, '2015-06-12 17:10:58', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('21', null, null, null, null, null, null, null, '2015-06-12 17:12:22', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('22', null, null, null, null, null, null, null, '2015-06-12 17:12:37', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('23', null, null, null, null, null, null, null, '2015-06-12 17:23:28', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('24', null, null, null, null, null, null, null, '2015-06-12 17:31:07', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('25', null, null, null, null, null, null, null, '2015-06-12 17:41:46', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('26', null, null, null, null, null, null, null, '2015-06-12 17:49:04', null, null, null, null, null, null, null);
-INSERT INTO `users_affiliate` VALUES ('27', null, null, null, null, null, null, null, '2015-06-12 17:49:21', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('29', null, null, null, null, null, null, null, '2015-06-13 11:38:47', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('30', null, null, null, null, null, null, null, '2015-06-15 13:56:02', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('31', null, null, null, null, null, null, null, '2015-06-15 13:56:39', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('32', null, null, null, null, null, null, null, '2015-06-15 13:57:40', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('33', null, null, null, null, null, null, null, '2015-06-15 14:00:42', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('34', null, null, null, null, null, null, null, '2015-06-15 14:00:51', null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `users_focus`
@@ -1159,13 +1166,11 @@ CREATE TABLE `user_jobs` (
   PRIMARY KEY (`job_id`),
   KEY `user_jobs_e8701ad4` (`user_id`),
   CONSTRAINT `user_jobs_user_id_2bdcc37a_fk_users_affiliate_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_affiliate` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_jobs
 -- ----------------------------
-INSERT INTO `user_jobs` VALUES ('1', '2', '2', '', '2015', '2014', '', '21');
-INSERT INTO `user_jobs` VALUES ('2', '2', '2', '', '2015', '2014', '', '22');
 
 -- ----------------------------
 -- Table structure for `user_school`
@@ -1183,7 +1188,7 @@ CREATE TABLE `user_school` (
   KEY `user_school_e8701ad4` (`user_id`),
   CONSTRAINT `user_school_school_id_4e385b09_fk_schools_school_id` FOREIGN KEY (`school_id`) REFERENCES `schools` (`school_id`),
   CONSTRAINT `user_school_user_id_2f09fb84_fk_users_affiliate_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_affiliate` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_school
@@ -1191,7 +1196,7 @@ CREATE TABLE `user_school` (
 INSERT INTO `user_school` VALUES ('1', '计算机学院', '2015-05-23 10:09:55', '1', '1', '2');
 INSERT INTO `user_school` VALUES ('2', '计算机学院', '2015-05-23 10:09:59', '1', '1', '1');
 INSERT INTO `user_school` VALUES ('3', '数量学院', '2015-05-24 18:38:39', '2', '2', '3');
-INSERT INTO `user_school` VALUES ('4', '', null, null, '1', '6');
-INSERT INTO `user_school` VALUES ('5', '', null, null, '1', '6');
-INSERT INTO `user_school` VALUES ('6', '1', '2014', '2', '1', '7');
-INSERT INTO `user_school` VALUES ('7', '2', '2013', '2', '1', '7');
+INSERT INTO `user_school` VALUES ('8', '2', '', '2', '1', '29');
+INSERT INTO `user_school` VALUES ('9', '2', '2014', '3', '1', '33');
+INSERT INTO `user_school` VALUES ('10', '2', '2014', '3', '1', '34');
+INSERT INTO `user_school` VALUES ('11', '2', '2013', '3', '2', '34');
