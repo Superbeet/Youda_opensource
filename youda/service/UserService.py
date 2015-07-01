@@ -51,38 +51,43 @@ class UserService():
                   }
 #         for key in post:
 #             print key,post.getlist(key);
-        education = post['educate'];
-        work = post['work'];
-
-        user = Users(user_name=post['real_name'],gender=dict_sex[post['sex']],cur_state=dict_state[post['stage']],first_login=0,verify_email=0,power=0,rem_name=0,auto_login=0);
-        commonDao = CommonDao();
-        commonDao.toadd(Users, user);
-        useraffiliatte = UsersAffiliate(user_id=user.user_id);
-        commonDao.toadd(UsersAffiliate,useraffiliatte);
-        #
-        #将用户的教育经历插入数据，无论是毕业学生还是在校学生都有教育经历
-        edus = education.split("#");
-        edus = edus[0:len(edus)-1];#去掉分割造成的最后一个为空的元素
-        for edu in edus:
-            if edu != None and len(edu)!=0:
-                es = edu.strip().split(" ");#去掉字符串前后的空格，然后进行分割
-                print es;
-                if es!=None and len(str(es[0]))!=0:#es=>[u'']
-                    school = commonDao.toget(Schools,school_id=es[0]);#es[0]为学校id
-                    if school!=0 and school!=-1:
-                        user_school = UserSchool(user=useraffiliatte,school=school,academy=es[1],entrance_time=es[2],education=es[3]);
-                        commonDao.toadd(UserSchool,user_school);
-        #
-        #毕业用户有工作经历
-        if dict_state[post['stage']]==2:
-            works = work.split("#");
-            works = works[0:len(edus)-1];#去掉分割造成的最后一个为空的元素
-            for work in works:
-                if work != None:
-                    w = work.strip().split(" ");#去掉字符串前后的空格，然后进行分割
-                    if  w!=None and len(str(w[0]))!=0:
-                        user_job = UserJobs(user=useraffiliatte,company_name=w[0],position=w[1],entrance_time=w[2],leave_time=w[3]);
-                        commonDao.toadd(UserJobs, user_job);
+        try:
+            education = post['educate'];
+            work = post['work'];
+    
+            user = Users(user_name=post['real_name'],gender=dict_sex[post['sex']],cur_state=dict_state[post['stage']],first_login=0,verify_email=0,power=0,rem_name=0,auto_login=0);
+            commonDao = CommonDao();
+            commonDao.toadd(Users, user);
+            useraffiliatte = UsersAffiliate(user_id=user.user_id);
+            commonDao.toadd(UsersAffiliate,useraffiliatte);
+            #
+            #将用户的教育经历插入数据，无论是毕业学生还是在校学生都有教育经历
+            edus = education.split("#");
+            edus = edus[0:len(edus)-1];#去掉分割造成的最后一个为空的元素
+            for edu in edus:
+                if edu != None and len(edu)!=0:
+                    es = edu.strip().split(" ");#去掉字符串前后的空格，然后进行分割
+                    print es;
+                    if es!=None and len(str(es[0]))!=0:#es=>[u'']
+                        school = commonDao.toget(Schools,school_id=es[0]);#es[0]为学校id
+                        if school!=0 and school!=-1:
+                            user_school = UserSchool(user=useraffiliatte,school=school,academy=es[1],entrance_time=es[2],education=es[3]);
+                            commonDao.toadd(UserSchool,user_school);
+            #
+            #毕业用户有工作经历
+            if dict_state[post['stage']]==2:
+                works = work.split("#");
+                works = works[0:len(edus)-1];#去掉分割造成的最后一个为空的元素
+                for work in works:
+                    if work != None:
+                        w = work.strip().split(" ");#去掉字符串前后的空格，然后进行分割
+                        if  w!=None and len(str(w[0]))!=0:
+                            user_job = UserJobs(user=useraffiliatte,company_name=w[0],position=w[1],entrance_time=w[2],leave_time=w[3]);
+                            commonDao.toadd(UserJobs, user_job);
+            return 1;
+        except Exception,e:
+            print e;
+            return -1;
                                                  
         #self.toSaveHead(post['img']);
         

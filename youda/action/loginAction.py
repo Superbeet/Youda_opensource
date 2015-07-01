@@ -39,23 +39,24 @@ def readHeadFile2(request):
         print title;
         parser = ImageFile.Parser()  
         for chunk in f.chunks():  
-            parser.feed(chunk)   
+            parser.feed(chunk)     
         img = parser.close()
         i2 = img.thumbnail((100,100))
         img.save("./static/image/head/t3.jpg");
     return render_to_response("file_upload_test.html");
  
-def toLogin(request,op):
+def toLogin(request):
     '''
             登陆操作，记录用户的登陆状态（Session），设置Cookies
     '''
-    if op=="1":#跳转到登陆页面
-        return render_to_response('login.html');
-    if op=="2":#用户进行登陆操作
+    if len(request.POST)==0:
+        return render_to_response('login.html');#跳转到登陆页面
+    else:#用户进行登陆操作
+        request.session.set_expiry(0);#设置当浏览器关闭时，session失效
         try:
             user_name = request.POST['userName'];
             user_pass = request.POST['pass'];
-            flag = request.POST['logintype'];
+            flag = request.POST['logintype']; 
         except MultiValueDictKeyError:
             return HttpResponseRedirect("/home/");
         userService = UserService();
@@ -64,12 +65,13 @@ def toLogin(request,op):
         mapo = {};
         if user:
             mapo['status'] =1;
-            request.session['user_id']=user.user_id;
-            request.session['user_name'] = user.user_name;
-            request.session['update_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S");
+            request.session['userId']=user.user_id;
+            request.session['userName'] = user.user_name;
+            request.session['updateTime'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S");
             user_a = commonDao.toget(UsersAffiliate,user_id=user.user_id);
             school = user_a.school.all()[0]; 
-            request.session['school_id'] = school.school_id;
+            request.session['schoolId'] = school.school_id;
+            request.session['schoolName'] = school.school_name;
         else:  
             mapo['status'] =-1;
         DATA = json.dumps(mapo);

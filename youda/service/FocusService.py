@@ -29,7 +29,7 @@ class FocusService:
         list_obj = cursor.fetchall();
         list_data = [];
         map_data = {};
-        print 'user_id=>%s'%user_id
+        #print 'user_id=>%s'%user_id
         for d in list_obj:
             if d[0]==1:
                 user = commonDao.toget(Users,user_id=d[1]);
@@ -55,8 +55,8 @@ class FocusService:
                 topic = commonDao.toget(Topics,topic_id=d[5]);
                 questioner_school = commonDao.toget(UserSchool,user_id=d[1],school_id=school_id);
                 answerer_school = commonDao.toget(UserSchool,user_id=d[2],school_id=school_id)
-                print "questioner_school=>%s,answerer_school=>%s"%(questioner_school,answerer_school);
-                print "user_id=>%s,school_id=>%s"%(d[2],school_id)
+                #print "questioner_school=>%s,answerer_school=>%s"%(questioner_school,answerer_school);
+                #print "user_id=>%s,school_id=>%s"%(d[2],school_id)
                 answer = commonDao.toget(Answers,answer_id=d[6]);
                 map_data = {'type':d[0],'data':{'questioner_id':questioner.user_id,'questioner_name':questioner.user_name,'question_id':question.question_id,'question_content':question.question_content,'browse_num':question.browse_num,'answer_num':question.answer_num,'publish_time':question.publish_time,'answerer_id':answerer.user_id,'answerer_name':answerer.user_name,'questioner_academy':questioner_school.academy,'questioner_entime':questioner_school.entrance_time,'questioner_education':questioner_school.education,'topic_id':topic.topic_id,'topic_name':topic.topic_name,'answer_content':answer.answer_content,'support_num':answer.support_num,'answerer_academy':answerer_school.academy,'answerer_entime':answerer_school.entrance_time,'answerer_education':answerer_school.education,'questioner_head':questioner.head,'answerer_head':answerer.head,'answer_publish_time':answer.publish_time}};
             elif d[0]==5:
