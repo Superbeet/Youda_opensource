@@ -10,7 +10,11 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2015-06-19 15:45:22
+=======
+Date: 2015-07-01 13:37:13
+>>>>>>> origin/dev-pan
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -444,6 +448,14 @@ CREATE TABLE `django_session` (
 -- ----------------------------
 -- Records of django_session
 -- ----------------------------
+<<<<<<< HEAD
+=======
+INSERT INTO `django_session` VALUES ('74hvbd1sg93ylfjfnt9c12o5f75nppjc', 'ZjVkNTk0ZGQ3YzFiYzYyZjUxNDUwYjE3MDczZWI3N2UzYmZmNjM3ZTp7InVzZXJOYW1lIjoiYXBhY2hlIiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTcgMTc6MDE6MjIiLCJzY2hvb2xJZCI6MSwic2Nob29sTmFtZSI6Ilx1NTM1N1x1NGVhY1x1OTBhZVx1NzUzNVx1NTkyN1x1NWI2NiIsInVzZXJJZCI6MSwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==', '2015-07-01 17:01:22');
+INSERT INTO `django_session` VALUES ('dbpnuv1fgpoyc5bn0iaripv9oer4xax5', 'YzQ4OWNiY2JkYzgwM2M1MWJmODk5Y2EzNzllYzU0MTdkMTk1OGE4Mjp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6Mjg6NDEiLCJzY2hvb2xJZCI6MSwidXNlcklkIjoyLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:28:41');
+INSERT INTO `django_session` VALUES ('gqnf75xt414j50wdr8klcy86oy7z6z7c', 'ODUzODUxOTE3MGY5NTBiMTBlNDIxNmEwMTIyNjliMTM1NTgwYzU3Nzp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6MjY6NDkiLCJzY2hvb2xJZCI6MSwidXNlcklkIjoyLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:26:49');
+INSERT INTO `django_session` VALUES ('kj1jozxqomj4rwqgh83r1duibkod5j6s', 'NGQ5YWYxYjBlNGE0ZjQyZjFkYjgyOWU1MTI0Y2E5MTY2MTEzOTU4Mjp7InVzZXJOYW1lIjoiYXBhY2hlIiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMTU6NTk6MjciLCJzY2hvb2xJZCI6MSwidXNlcklkIjoxLCJfc2Vzc2lvbl9leHBpcnkiOjB9', '2015-06-29 15:59:27');
+INSERT INTO `django_session` VALUES ('xipvhnolxd887hojcgq7lpcnodnj5yqv', 'ZmNjYjBiMzk0MjI1Y2YwMWQwZjkyN2Q1MWQ3MTZkM2ViYTYxMTQyMjp7InVzZXJOYW1lIjoidG9tY2F0IiwidXBkYXRlVGltZSI6IjIwMTUtMDYtMTUgMjA6MDc6MTUiLCJzY2hvb2xJZCI6MSwic2Nob29sTmFtZSI6Ilx1NTM1N1x1NGVhY1x1OTBhZVx1NzUzNVx1NTkyN1x1NWI2NiIsInVzZXJJZCI6MiwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==', '2015-06-29 20:07:15');
+>>>>>>> origin/dev-pan
 
 -- ----------------------------
 -- Table structure for invitation_users
@@ -550,7 +562,11 @@ CREATE TABLE `questions` (
   PRIMARY KEY (`question_id`),
   KEY `questions_e8701ad4` (`user_id`),
   CONSTRAINT `questions_user_id_7e4fa00f_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+>>>>>>> origin/dev-pan
 
 -- ----------------------------
 -- Records of questions
@@ -636,11 +652,17 @@ INSERT INTO `questions` VALUES ('78', '我是问题', '我是内容', '2015-06-1
 INSERT INTO `questions` VALUES ('79', '我是问题', '我是内容', '2015-06-10 10:47:48', '2015-06-10 10:47:48', null, null, null, null, null, null, null, '1');
 INSERT INTO `questions` VALUES ('80', '我是问题', '我是内容', '2015-06-10 11:31:05', '2015-06-10 11:31:05', null, null, null, null, null, null, null, '1');
 INSERT INTO `questions` VALUES ('81', '我是问题', '<p>我是内容</p>', '2015-06-10 13:37:30', '2015-06-10 13:37:30', null, null, null, null, null, null, null, '1');
+<<<<<<< HEAD
 INSERT INTO `questions` VALUES ('82', '我是问题', '<p><strong>我是内容</strong></p>\r\n<p><em>我是第二行</em></p>', '2015-06-10 13:45:37', '2015-06-10 13:45:37', null, null, null, null, null, null, null, '1');
 INSERT INTO `questions` VALUES ('83', '问题', '<p><strong>我使用的是方式二，在这里也许刚刚接触django的朋友会卡在这里，因为没法明白，怎么传入这个上下文。这里可以使用一个通用的方式去解决这个问题。请原谅我，我将脱离CSRF的内容，帮助你解决一下模板设置的问题，解决它才能解决它。回到django-admin.py startproject xxx初始化的项目中，打开settings.py文件，它是整个django项目的配置文件。找到TEMPLATE_DIRS配置上你模板目录的绝对路径，也可以是os.path生成出来的路径。然后通过from django.shortcuts import render_to_response来导入render_to_response。</strong></p>', '2015-06-10 13:47:33', '2015-06-10 13:47:33', null, null, null, null, null, null, null, '1');
 INSERT INTO `questions` VALUES ('84', '问题', '<p>我的问题</p>', '2015-06-10 14:00:00', '2015-06-10 14:00:00', null, null, null, null, null, null, null, '1');
 INSERT INTO `questions` VALUES ('85', '问题', '<p>我是问题内容</p>', '2015-06-10 14:04:03', '2015-06-10 14:04:03', null, null, null, null, null, '0', '1', '1');
 INSERT INTO `questions` VALUES ('86', 'Europe\'s space agency is still looking for the Philae comet lander', '<div><a href=\"http://www.engadget.com/2015/06/12/esa-search-for-the-philae-lander/\"><img src=\"http://o.aolcdn.com/hss/storage/midas/dc0ddf945c7ef2a832b39ca144f3d23b/202125826/Revised_lander_search_area.jpg\" alt=\"\" data-credit=\"ESA\" data-mep=\"850050\" /></a></div>\r\n<p>The European Space Agency apparently hasn\'t given up on Philae that\'s currently <a href=\"http://www.engadget.com/2014/11/15/esa-comet-lander-philae-sleeps/\">hibernating</a>on comet 67P/Churyumov-Gerasimenko. In a new post on its website, the agency <a href=\"http://blogs.esa.int/rosetta/2015/06/11/the-quest-to-find-philae-2/\">has detailed</a> a highly technical game of \"Where\'s Waldo?\" that it\'s been playing since last year. See, the lander\'s harpoons failed to deploy upon touchdown, and it ended up bouncing away from its landing site until it reached underneath one of the comet\'s cliffs. In addition to being hidden <a href=\"http://www.engadget.com/2014/11/13/esas-comet-lander-is-stuck-in-the-shadows-where-it-cant-harnes/\">in the shadows</a>, the lander is relatively tiny -- even if <a href=\"http://www.engadget.com/2014/11/12/rosetta-philae-lander-comet-touchdown/\">Rosetta\'s</a> (its partner spacecraft) cameras managed to catch it on film, it would appear as a small bright speck and nothing more.</p>\r\n<p id=\"aeaoofnhgocdbnbeljkmbjdmhbcokfdb-mousedown\">So, the team looked at high-res images of the area where the lander most likely is and identified several bright spots that could be Philae. Since they found five candidates, they narrowed the landing location down to a 52 x 525 feet ellipse by using the radio signals transmitted between Rosetta and Philae before it went to sleep. Unfortunately, none of the bright spots were inside the ellipse, though a few were close enough. The team then compared before and after landing photos of the area to find the best candidate that was just outside the ellipse, as shown in the video below.</p>', '2015-06-12 11:05:28', '2015-06-12 11:05:28', null, null, null, null, null, '0', '1', '1');
+=======
+INSERT INTO `questions` VALUES ('83', '问题', '<p><strong>我使用的是方式二，在这里也许刚刚接触django的朋友会卡在这里，因为没法明白，怎么传入这个上下文。这里可以使用一个通用的方式去解决这个问题。请原谅我，我将脱离CSRF的内容，帮助你解决一下模板设置的问题，解决它才能解决它。回到django-admin.py startproject xxx初始化的项目中，打开settings.py文件，它是整个django项目的配置文件。找到TEMPLATE_DIRS配置上你模板目录的绝对路径，也可以是os.path生成出来的路径。然后通过from django.shortcuts import render_to_response来导入render_to_response。</strong></p>', '2015-06-10 13:47:33', '2015-06-10 13:47:33', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('84', '问题', '<p>我的问题</p>', '2015-06-10 14:00:00', '2015-06-10 14:00:00', null, null, null, null, null, null, null, '1');
+INSERT INTO `questions` VALUES ('85', '问题', '<p>我是问题内容</p>', '2015-06-10 14:04:03', '2015-06-10 14:04:03', null, null, null, null, null, '0', '1', '1');
+>>>>>>> origin/dev-pan
 
 -- ----------------------------
 -- Table structure for questions_focus
@@ -738,6 +760,25 @@ CREATE TABLE `question_school` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+<<<<<<< HEAD
+=======
+-- Table structure for `question_school`
+-- ----------------------------
+DROP TABLE IF EXISTS `question_school`;
+CREATE TABLE `question_school` (
+  `id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `school_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `questions_id_index` (`question_id`,`school_id`) USING BTREE,
+  KEY `questions_school_index_1` (`school_id`) USING BTREE,
+  KEY `questions_school_index_2` (`question_id`) USING BTREE,
+  CONSTRAINT `question_school_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`question_id`),
+  CONSTRAINT `question_school_ibfk_2` FOREIGN KEY (`school_id`) REFERENCES `schools` (`school_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+>>>>>>> origin/dev-pan
 -- Records of question_school
 -- ----------------------------
 INSERT INTO `question_school` VALUES ('1', '1', '1');
@@ -752,7 +793,11 @@ INSERT INTO `question_school` VALUES ('9', '9', '3');
 INSERT INTO `question_school` VALUES ('10', '10', '3');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for schools
+=======
+-- Table structure for `schools`
+>>>>>>> origin/dev-pan
 -- ----------------------------
 DROP TABLE IF EXISTS `schools`;
 CREATE TABLE `schools` (
@@ -1096,17 +1141,36 @@ CREATE TABLE `users` (
   `integral` int(11) DEFAULT NULL,
   `affiliate_flag` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+>>>>>>> origin/dev-pan
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `users` VALUES ('1', 'apache', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 INSERT INTO `users` VALUES ('2', 'tomcat', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 INSERT INTO `users` VALUES ('3', 'JBoss', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
 
 -- ----------------------------
 -- Table structure for users_affiliate
+=======
+INSERT INTO `users` VALUES ('1', 'apache', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '1', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
+INSERT INTO `users` VALUES ('2', 'tomcat', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '1', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
+INSERT INTO `users` VALUES ('3', 'JBoss', '123', '1', '1', '1724241758@qq.com', '1', '1', '1', '/static/image/head/tmp.jpg', '0', '0', '南京有点大学', '10', '10', '10', '40', '10', '200', '0');
+INSERT INTO `users` VALUES ('29', 'zhangpan', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('30', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('31', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('32', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('33', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+INSERT INTO `users` VALUES ('34', 'tom', '', '0', '0', '', '0', '0', '1', '', '0', '0', '', null, null, null, null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `users_affiliate`
+>>>>>>> origin/dev-pan
 -- ----------------------------
 DROP TABLE IF EXISTS `users_affiliate`;
 CREATE TABLE `users_affiliate` (
@@ -1133,12 +1197,27 @@ CREATE TABLE `users_affiliate` (
 -- ----------------------------
 -- Records of users_affiliate
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `users_affiliate` VALUES ('1', '1', '12345678', '1', '13901512321', '1', 'www.abc.com', '1', '2015-05-22 16:58:06', '192.168.1.1', '2015-05-25 11:52:53', '88', '66', '120', '1', '1');
 INSERT INTO `users_affiliate` VALUES ('2', '0', '12568965', '1', '13902391212', '1', 'www.aaa.com', '0', '2015-05-25 11:53:58', '192.168.1.1', '2015-05-24 11:54:06', '78', '68', '110', '1', '1');
 INSERT INTO `users_affiliate` VALUES ('3', '1', '12568965', '1', '13902391212', '1', 'www.aaa.com', '0', '2015-05-25 11:53:58', '192.168.1.1', '2015-05-24 11:54:06', '68', '68', '108', '1', '1');
 
 -- ----------------------------
 -- Table structure for users_focus
+=======
+INSERT INTO `users_affiliate` VALUES ('1', null, '', null, '', null, '', null, '2015-05-22 16:58:06', '', null, null, null, null, null, '');
+INSERT INTO `users_affiliate` VALUES ('2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('29', null, null, null, null, null, null, null, '2015-06-13 11:38:47', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('30', null, null, null, null, null, null, null, '2015-06-15 13:56:02', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('31', null, null, null, null, null, null, null, '2015-06-15 13:56:39', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('32', null, null, null, null, null, null, null, '2015-06-15 13:57:40', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('33', null, null, null, null, null, null, null, '2015-06-15 14:00:42', null, null, null, null, null, null, null);
+INSERT INTO `users_affiliate` VALUES ('34', null, null, null, null, null, null, null, '2015-06-15 14:00:51', null, null, null, null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `users_focus`
+>>>>>>> origin/dev-pan
 -- ----------------------------
 DROP TABLE IF EXISTS `users_focus`;
 CREATE TABLE `users_focus` (
@@ -1197,7 +1276,11 @@ CREATE TABLE `user_school` (
   KEY `user_school_e8701ad4` (`user_id`),
   CONSTRAINT `user_school_school_id_4e385b09_fk_schools_school_id` FOREIGN KEY (`school_id`) REFERENCES `schools` (`school_id`),
   CONSTRAINT `user_school_user_id_2f09fb84_fk_users_affiliate_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_affiliate` (`user_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+>>>>>>> origin/dev-pan
 
 -- ----------------------------
 -- Records of user_school
@@ -1205,4 +1288,11 @@ CREATE TABLE `user_school` (
 INSERT INTO `user_school` VALUES ('1', '计算机学院', '2015-05-23 10:09:55', '1', '1', '2');
 INSERT INTO `user_school` VALUES ('2', '计算机学院', '2015-05-23 10:09:59', '1', '2', '1');
 INSERT INTO `user_school` VALUES ('3', '数量学院', '2015-05-24 18:38:39', '2', '2', '3');
+<<<<<<< HEAD
 INSERT INTO `user_school` VALUES ('4', '理学院', '2015-05-26 21:22:08', '2', '3', '1');
+=======
+INSERT INTO `user_school` VALUES ('8', '2', '', '2', '1', '29');
+INSERT INTO `user_school` VALUES ('9', '2', '2014', '3', '1', '33');
+INSERT INTO `user_school` VALUES ('10', '2', '2014', '3', '1', '34');
+INSERT INTO `user_school` VALUES ('11', '2', '2013', '3', '2', '34');
+>>>>>>> origin/dev-pan

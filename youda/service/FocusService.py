@@ -14,21 +14,22 @@ class FocusService:
         commonDao = CommonDao();
         cursor = connection.cursor();
         sql = "SELECT * from ( \
-                SELECT 1 AS type,u.user_id AS questioner_id,q.question_id,q.publish_time,'' AS f1,'' AS f2,'' AS f3 from users u ,users_focus uf,questions q WHERE uf.user_id=%s AND uf.schoolmate_id=u.user_id AND uf.schoolmate_id=q.user_id \
+                SELECT 1 AS type,u.user_id AS questioner_id,q.question_id,q.publish_time,'' AS f1,'' AS f2,'' AS f3 from users u ,users_focus uf,questions q,user_school us  WHERE uf.user_id=%s AND uf.schoolmate_id=u.user_id AND uf.schoolmate_id=q.user_id AND uf.schoolmate_id=us.user_id AND us.school_id=%s\
                 UNION \
-                SELECT 2 AS type,questioner.user_id AS questioner_id,q.question_id,a.publish_time,answerer.user_id AS answerer_id,a.answer_id,'' FROM users_focus uf,users answerer,users questioner,answers a,questions q WHERE uf.user_id=%s AND uf.schoolmate_id=answerer.user_id AND a.user_id=answerer.user_id AND a.question_id=q.question_id AND q.user_id=questioner.user_id \
+                SELECT 2 AS type,questioner.user_id AS questioner_id,q.question_id,a.publish_time,answerer.user_id AS answerer_id,a.answer_id,'' FROM users_focus uf,users answerer,users questioner,answers a,questions q,user_school us WHERE uf.user_id=%s AND uf.schoolmate_id=answerer.user_id AND a.user_id=answerer.user_id AND a.question_id=q.question_id AND q.user_id=questioner.user_id AND uf.schoolmate_id=us.user_id AND us.school_id=%s\
                 UNION \
-                SELECT 3 AS type,u.user_id AS questioner_id,q.question_id,q.publish_time,t.topic_id,'','' FROM topic_focus tf,topics t,questions q,questions_topic qt,users u WHERE tf.user_id=%s AND tf.topic_id=t.topic_id AND t.topic_id=qt.topics_id AND qt.questions_id=q.question_id AND q.user_id=u.user_id \
+                SELECT 3 AS type,u.user_id AS questioner_id,q.question_id,q.publish_time,t.topic_id,'','' FROM topic_focus tf,topics t,questions q,questions_topic qt,users u WHERE tf.user_id=%s AND tf.topic_id=t.topic_id AND t.topic_id=qt.topics_id AND qt.questions_id=q.question_id AND q.user_id=u.user_id AND t.school_id=%s\
                 UNION \
-                SELECT 4 as type,questioner.user_id AS questioner_id,answerer.user_id AS answerer_id,q.publish_time,q.question_id,t.topic_id,a.answer_id FROM topic_focus tf,topics t,questions q,questions_topic qt,users answerer,users questioner,answers a WHERE tf.user_id=%s AND tf.topic_id=t.topic_id AND t.topic_id=qt.topics_id AND qt.questions_id=q.question_id AND q.user_id=questioner.user_id AND a.question_id=q.question_id AND a.answer_id=answerer.user_id \
+                SELECT 4 as type,questioner.user_id AS questioner_id,answerer.user_id AS answerer_id,q.publish_time,q.question_id,t.topic_id,a.answer_id FROM topic_focus tf,topics t,questions q,questions_topic qt,users answerer,users questioner,answers a WHERE tf.user_id=%s AND tf.topic_id=t.topic_id AND t.topic_id=qt.topics_id AND qt.questions_id=q.question_id AND q.user_id=questioner.user_id AND a.question_id=q.question_id AND a.answer_id=answerer.user_id AND t.school_id=%s\
                 UNION \
-                SELECT 5 as type,questioner.user_id AS questioner_id,answerer.user_id AS answerer_id,a.publish_time,q.question_id,a.answer_id,'' FROM questions_focus qf,questions q,answers a,users questioner,users answerer WHERE qf.user_id=%s AND qf.question_id=q.question_id AND a.question_id=q.question_id AND q.user_id=questioner.user_id AND a.user_id=answerer.user_id \
+                SELECT 5 as type,questioner.user_id AS questioner_id,answerer.user_id AS answerer_id,a.publish_time,q.question_id,a.answer_id,'' FROM questions_focus qf,questions q,answers a,users questioner,users answerer,user_school us WHERE qf.user_id=%s AND qf.question_id=q.question_id AND a.question_id=q.question_id AND q.user_id=questioner.user_id AND a.user_id=answerer.user_id AND q.user_id=us.user_id and us.school_id=%s\
                 ) AS un ORDER BY un.publish_time DESC LIMIT %s,%s";
-        data_length = cursor.execute(sql,[user_id,user_id,user_id,user_id,user_id,(page-1)*pagesize,pagesize]);
+        data_length = cursor.execute(sql,[user_id,school_id,user_id,school_id,user_id,school_id,user_id,school_id,user_id,school_id,(page-1)*pagesize,pagesize]);
         #list_obj = commonDao.dictfetchall(commonDao.cursor)
         list_obj = cursor.fetchall();
         list_data = [];
         map_data = {};
+        #print 'user_id=>%s'%user_id
         for d in list_obj:
             if d[0]==1:
                 user = commonDao.toget(Users,user_id=d[1]);
@@ -49,10 +50,13 @@ class FocusService:
             elif d[0]==4:
                 questioner = commonDao.toget(Users,user_id=d[1]);
                 answerer = commonDao.toget(Users,user_id=d[2]);
+              
                 question = commonDao.toget(Questions,question_id=d[4]);
                 topic = commonDao.toget(Topics,topic_id=d[5]);
                 questioner_school = commonDao.toget(UserSchool,user_id=d[1],school_id=school_id);
                 answerer_school = commonDao.toget(UserSchool,user_id=d[2],school_id=school_id)
+                #print "questioner_school=>%s,answerer_school=>%s"%(questioner_school,answerer_school);
+                #print "user_id=>%s,school_id=>%s"%(d[2],school_id)
                 answer = commonDao.toget(Answers,answer_id=d[6]);
                 map_data = {'type':d[0],'data':{'questioner_id':questioner.user_id,'questioner_name':questioner.user_name,'question_id':question.question_id,'question_content':question.question_content,'browse_num':question.browse_num,'answer_num':question.answer_num,'publish_time':question.publish_time,'answerer_id':answerer.user_id,'answerer_name':answerer.user_name,'questioner_academy':questioner_school.academy,'questioner_entime':questioner_school.entrance_time,'questioner_education':questioner_school.education,'topic_id':topic.topic_id,'topic_name':topic.topic_name,'answer_content':answer.answer_content,'support_num':answer.support_num,'answerer_academy':answerer_school.academy,'answerer_entime':answerer_school.entrance_time,'answerer_education':answerer_school.education,'questioner_head':questioner.head,'answerer_head':answerer.head,'answer_publish_time':answer.publish_time}};
             elif d[0]==5:

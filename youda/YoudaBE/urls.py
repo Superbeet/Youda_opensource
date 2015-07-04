@@ -26,8 +26,7 @@ urlpatterns = patterns('',
     url(r'helpquestions/$',homeAction.showHelpfulQuestions),#TA在求助
     url(r'questiondetail/question/(\d+)/$',questionAction.showQuestionDetail),#问题详情的问题
     url(r'questiondetail/answer/(\d)/(\d+)$',questionAction.showAnswersAndComments),#问题详情的问题回复
-    url(r'^loginpage/$',loginAction.toLogin,{'op':'1'}),
-    url(r'^login/$',loginAction.toLogin,{'op':'2'}),
+    url(r'^login/$',loginAction.toLogin),
     url(r'^register/$',systemAction.register),
     #url(r'^register1/$',systemAction.toRegister1),
     #url(r'^message',messageAction.index),

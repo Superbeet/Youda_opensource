@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import MySQLdb
+from django.contrib.sessions.models import Session
 
 class default_class:
     #对用户传递参数进行转义，没有找到其他的相关函数
@@ -14,3 +15,9 @@ class default_class:
             return content;
         else:        
             return MySQLdb.escape_string(content);
+        
+    def getSession(self):
+        sess = Session.objects.all();
+        for s in sess:
+            print s.session_key,s.session_data,s.get_decoded();
+        
