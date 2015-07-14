@@ -26,7 +26,7 @@
 
 
 function bindTab(){
-    $('.common_tab').on('click',function(){
+    $(document).on('click','.common_tab',function(){
         var currentNode = $(this);
         var parent = $(this).parent();
         var childs = parent.children();
@@ -46,9 +46,9 @@ function getRadioValue(form_id){
 }
 
 function bindRadioClick(){
-               $('.common_selecter').on('click',function(){
+               $(document).on('click','.common_selecter',function(){
                var select_radio_img_src = '/static/image/index/radio_selected.png';
-            var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
+              var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
                var parent = $(this).parent();
                var currentNode = $(this);
                var child = parent.children('div');
@@ -58,5 +58,23 @@ function bindRadioClick(){
                currentNode.children('img')[0].src = select_radio_img_src;
                 parent.attr('value',currentNode.attr('value'));
            });
+}
+
+function bindSwitchRadio(){
+      $(document).on('click','.switch_radio',function(){
+           var select_radio_img_src = '/static/image/index/radio_selected.png';
+           var unselect_radio_img_src = '/static/image/index/radio_unselect.png';
+          var div = $(this);
+                    debugger;
+          if(div.attr('value') == 'uncheck') {
+            div.find('img')[0].src = select_radio_img_src;
+              div.attr('value','checked');
+          }
+
+          else{
+      div.find('img')[0].src = unselect_radio_img_src;
+        div.attr('value','uncheck');
+          }
+      });
 }
 

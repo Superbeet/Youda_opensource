@@ -163,28 +163,7 @@ initSelect('topic_selecter',selecter_data);
 		</div>
 <script type="text/javascript">
 
-$(document).ready(function(){
-var bannerdata = {
-	imageList : [{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦1'
-	},
-	{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦2'
-	},
-	{
-		imageUrl : '/static/image/banner_img.jpg',
-		description:'请叫我博丽灵梦3'
-	}]
-};
 
-var bannerhtml = template('image_gallary',bannerdata);
-$('#banner_image').html(bannerhtml);
-
-
-	
-});
 
 </script>
  {% endblock %}
@@ -208,6 +187,31 @@ $('#banner_image').html(bannerhtml);
 <script>
     $(document).ready(function(){
           bindTab();
+           bindSwitchRadio();
+    bindDropDown();
+    bindRadioClick();
+     bindSwitchRadio();
+
+var bannerdata = {
+	imageList : [{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦1'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦2'
+	},
+	{
+		imageUrl : '/static/image/banner_img.jpg',
+		description:'请叫我博丽灵梦3'
+	}]
+};
+
+var bannerhtml = template('image_gallary',bannerdata);
+$('#banner_image').html(bannerhtml);
+
+
+
     });
 
 </script>

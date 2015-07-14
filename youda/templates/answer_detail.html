@@ -207,7 +207,7 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
     </div>
     </div>
     <!-- 撑字数用的 -->
-
+<div  style="clear:both;"></div> 
     </div>
 
 </div>
@@ -232,6 +232,28 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
                     $(lastChild).html(html);
                    }
                });
+                $(".answer_comment_area").on('click','.submit_comment_btn',function(){
+                    var self = $(this);
+                var form = self.parent().parent();;
+                    var user_id = form.attr('value');
+                    var is_sheild = form.find('.switch_radio').attr('value');
+                    var content = form.find('.am-form-field').val();
+                    debugger;
+                    /*
+                    $.ajax({
+                    url : '',
+                    data : {
+                        user_id : userid,
+                        is_sheild : is_sheild,
+                        content : content
+                    }
+                    success : function(data){
+                    }
+                    });
+
+                    */
+
+                });
             }
     );
 

@@ -529,6 +529,9 @@ width: 745px;
 	line-height: 44px;
 	font-size: 10pt;
 }
+.switch_radio{
+  @extend .common_selecter;
+}
 
 .common_select{
   width: 170px;
