@@ -519,9 +519,25 @@
  <% } %>
 	<!-- 推荐话题充字数结束 -->
 
-
-
 <!-- 本校热门话题结束 -->
+</script>
+
+<script type="text/html" id="new_comment_input">
+
+    <div class="comment_reply_input_area" value="<%= data.user_id %>">
+        <div class="comment_replt_input fl">
+    <input type="text" class="am-form-field " placeholder="有话不说憋着多难受啊" value="回复@<%= data.user_name %>:" />
+    </div>
+<div class="comment_reply_submit_area fl">
+        <button class="am-btn am-btn-secondary fr">提交评论</button>
+<div class="common_selecter comment_reply_sheld_name_selecter fr">
+   <a href="#"> <img src="/static/image/index/radio_unselect.png" />
+    匿名回复
+   </a>
+</div>
+</div>
+    </div>
+
 </script>
 
     <script>

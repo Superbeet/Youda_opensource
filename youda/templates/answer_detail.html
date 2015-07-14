@@ -106,7 +106,7 @@
 
 <div id="question_response_area"  class="response_container fl">
 <div class="left_bar">
-	<a href="#">
+	<a href="#"  data-am-popover="{content: '<input /><h1>aa</h1>', trigger: 'hover focus'}">
 	<div class="common_icon" >
 		<img src="/static/image/people_detail_pic_60_60.jpg" />
 	</div>
@@ -165,10 +165,10 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 	</div>
 	<div class="second_level_container">
 	<div class="user_name_and_time_container">
-        <div class="common_font fl comment_user_name_container">徐子豪</div>   <div class="time_icon_container fl comment_time_container">
+        <div class="common_font fl comment_user_name_container"><a href="/people/123" value="123" class="comment_user_name_href">徐子豪</a></div>   <div class="time_icon_container fl comment_time_container">
 <img src="/static/image/index/time_icon.png" />2015-01-01 14:30
 </div>
-        <div class="fr common_font comment_reply_container">回复</div>
+        <div class="fr common_font comment_reply_container new_comment_reply_href"><a href="javascript:void(0)">回复</a></div>
     </div>
         <div class="comment_context_container fl dark_font">
             没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！
@@ -182,7 +182,7 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 
 
     <!-- 撑字数用的 -->
-        <div class="answer_comment">
+         <div class="answer_comment">
 	<div class="left_bar">
 	<a href="#">
 	<div class="common_icon" >
@@ -192,13 +192,13 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 	</div>
 	<div class="second_level_container">
 	<div class="user_name_and_time_container">
-        <div class="common_font fl comment_user_name_container">杨钊</div>   <div class="time_icon_container fl comment_time_container">
+        <div class="common_font fl comment_user_name_container"><a href="/people/123" value="456" class="comment_user_name_href">杨钊</a></div>   <div class="time_icon_container fl comment_time_container">
 <img src="/static/image/index/time_icon.png" />2015-01-01 14:30
 </div>
-        <div class="fr common_font comment_reply_container">回复</div>
+        <div class="fr common_font comment_reply_container new_comment_reply_href"><a href="javascript:void(0)">回复</a></div>
     </div>
         <div class="comment_context_container fl dark_font">
-            回复@徐子豪 有种你下课别走
+            没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！
 
 
         </div>
@@ -207,27 +207,35 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
     </div>
     </div>
     <!-- 撑字数用的 -->
-    <div class="comment_reply_input_area">
-        <div class="comment_replt_input fl">
-    <input type="text" class="am-form-field " placeholder="有话不说憋着多难受啊" />
-    </div>
-<div class="comment_reply_submit_area fl">
-        <button class="am-btn am-btn-secondary fr">提交评论</button>
-<div class="common_selecter comment_reply_sheld_name_selecter fr">
-   <a href="#"> <img src="/static/image/index/radio_unselect.png" />
-    匿名回复
-   </a>
-</div>
 
-
-</div>
-
-    </div>
     </div>
 
 </div>
 
+<script type="text/javascript">
+    $(function(){
+               $(".answer_comment_area").on('click',".new_comment_reply_href",function() {
+                   var top = $(this).parents('.answer_comment_area');
+                   var lastChild = top.children(':last-child');
+                   var href = $(this).parent().find('.comment_user_name_href');
+                   var value = {data:{
+                       user_id : '',
+                       user_name : ''
+                   }};
+                   value.data.user_id = $(href).attr("value");;
+                   value.data.user_name = $(href).text();
+                     var html = template("new_comment_input", value);
+                   if (!$(lastChild).hasClass("comment_reply_input_area")) {
+                   $(this).parents('.answer_comment_area').append(html);
+                     }
+                   else {
+                    $(lastChild).html(html);
+                   }
+               });
+            }
+    );
 
+</script>
 
 </div>
 
