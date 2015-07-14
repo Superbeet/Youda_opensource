@@ -538,6 +538,30 @@
     </div>
 
 </script>
+<script type="text/html" id="comment_div">
+         <div class="answer_comment">
+	<div class="left_bar">
+	<a href="#">
+	<div class="common_icon" >
+		<img src="/static/image/people_detail_pic_60_60.jpg" />
+	</div>
+	</a>
+	</div>
+	<div class="second_level_container">
+	<div class="user_name_and_time_container">
+        <div class="common_font fl comment_user_name_container"><a href="/people/<%= data.user_id %>" value="<%= data.user_id %>" class="comment_user_name_href"><%= data.username %></a></div>   <div class="time_icon_container fl comment_time_container">
+<img src="/static/image/index/time_icon.png" /><%= data.time %>
+</div>
+        <div class="fr common_font comment_reply_container new_comment_reply_href"><a href="javascript:void(0)">回复</a></div>
+    </div>
+        <div class="comment_context_container fl dark_font">
+            <%= data.content %>
+        </div>
+
+
+    </div>
+    </div>
+</script>
 
     <script>
  function focusTopic(topic_id){

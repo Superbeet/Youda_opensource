@@ -182,32 +182,9 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 
 
     <!-- 撑字数用的 -->
-         <div class="answer_comment">
-	<div class="left_bar">
-	<a href="#">
-	<div class="common_icon" >
-		<img src="/static/image/people_detail_pic_60_60.jpg" />
-	</div>
-	</a>
-	</div>
-	<div class="second_level_container">
-	<div class="user_name_and_time_container">
-        <div class="common_font fl comment_user_name_container"><a href="/people/123" value="456" class="comment_user_name_href">杨钊</a></div>   <div class="time_icon_container fl comment_time_container">
-<img src="/static/image/index/time_icon.png" />2015-01-01 14:30
-</div>
-        <div class="fr common_font comment_reply_container new_comment_reply_href"><a href="javascript:void(0)">回复</a></div>
-    </div>
-        <div class="comment_context_container fl dark_font">
-            没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！没有错我就是只有一行你来打我啊！！
 
-
-        </div>
-
-
-    </div>
-    </div>
     <!-- 撑字数用的 -->
-<div  style="clear:both;"></div> 
+<div  style="clear:both;"></div>
     </div>
 
 </div>
@@ -233,12 +210,13 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
                    }
                });
                 $(".answer_comment_area").on('click','.submit_comment_btn',function(){
+                    var top =  $(".answer_comment_area");
                     var self = $(this);
                 var form = self.parent().parent();;
                     var user_id = form.attr('value');
                     var is_sheild = form.find('.switch_radio').attr('value');
                     var content = form.find('.am-form-field').val();
-                    debugger;
+         
                     /*
                     $.ajax({
                     url : '',
@@ -252,6 +230,22 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
                     });
 
                     */
+
+                    //this only happen if success!!!
+                    var time = '2015-01-01 14:30';
+                    var username = '杨钊';
+                    var value = {data:{
+                          user_id : user_id,
+                        is_sheild : is_sheild,
+                        content : content,
+                        time : time,
+                        username : username
+                    } };
+            var html = template('comment_div',value);
+                    top.children(':last-child').remove();
+                    top.append(html);
+
+
 
                 });
             }
