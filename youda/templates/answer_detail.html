@@ -106,15 +106,13 @@
 
 <div id="question_response_area"  class="response_container fl">
 <div class="left_bar">
-	<a href="#"  data-am-popover="{content: '<input /><h1>aa</h1>', trigger: 'hover focus'}">
-	<div class="common_icon" >
+	<a href="#">
+	<div class="common_icon common_user_icon" >
 		<img src="/static/image/people_detail_pic_60_60.jpg" />
 	</div>
 	</a>
 		<div class="agree_count_area">
 				<img src="/static/image/index/agree_icon.png" />123
-		
-
 		</div>
 
 
@@ -216,7 +214,7 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
                     var user_id = form.attr('value');
                     var is_sheild = form.find('.switch_radio').attr('value');
                     var content = form.find('.am-form-field').val();
-         
+
                     /*
                     $.ajax({
                     url : '',
@@ -293,12 +291,11 @@ void setViewPager(ViewPager view);和 void setOnPageChangeListener(ViewPager.<br
 
 <script type="text/javascript">
 $('.pager_container').on('mouseover',function(){
-$(this).addClass('pager_container_active');
-$(this).children('.pager_point').removeClass('pager_container_normal');
+
+
 });
 $('.pager_container').on('mouseout',function(){
-$(this).removeClass('pager_container_active');
-$(this).children('.pager_point').addClass('pager_container_normal');
+
 });
 $(document).ready(function(){
 var bar_count = $('.page_bar li').length;
@@ -306,7 +303,21 @@ var width = bar_count * 70;
 $('.page_bar').width(width);
 });
 
+
+
+
+
 </script>
+    <style>
+    .single_user_detail_poper{
+        width : 200px;
+        height:100px;
+        position:absolute;
+        background-color: #000000;
+        display: hidden;;
+    }
+
+    </style>
 
 
 {% endblock %}

@@ -78,3 +78,30 @@ function bindSwitchRadio(){
       });
 }
 
+function bindUserIconImformation(){
+    $(document).on('mouseover','.common_user_icon',function(){
+    if(($(document).find('.single_user_detail_poper')).length == 0){
+         var html = "<div class='single_user_detail_poper'>123</div>";
+         $('body').append(html);
+    }
+    var poper = $('.single_user_detail_poper');
+    var top = this.offsetTop;
+    var left = this.offsetLeft;
+    var width = this.offsetWidth;
+    var height = this.offsetHeight;
+
+    var poper_height = poper.height();
+
+    var middleLeft = left + width;
+    var middleTop = top + (height / 2) - (poper_height / 2);
+    poper.css('left',middleLeft+'px');
+     poper.css('top',middleTop+'px');
+    poper.css('display','block');
+});
+
+$(document).on('mouseout','.common_user_icon',function(){
+setTimeout(function(){
+     $('.single_user_detail_poper').css('display','none');
+},500);
+});
+}
