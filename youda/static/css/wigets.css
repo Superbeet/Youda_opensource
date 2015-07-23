@@ -497,4 +497,35 @@ a:focus {
 .am-dropdown-content > li > a:hover {
   cursor: pointer; }
 
+.single_user_detail_poper {
+  width: 286px;
+  height: 220px;
+  position: absolute;
+  padding-left: 20px;
+  padding-top: 15px;
+  display: none;
+  background-image: url("/static/image/system/poper_bg.png");
+  background-repeat: no-repeat; }
+
+.user_info_intro_container {
+  width: 246px;
+  height: 50px;
+  background-color: #003cb3; }
+
+.user_info_detail_container {
+  width: 246px;
+  height: 50px;
+  background-color: #0044cc; }
+
+.user_info_icons_container {
+  width: 246px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #ffc028; }
+
+.user_info_mark_icon_container {
+  width: 246px;
+  height: 30px;
+  background-color: #f8b47e; }
+
 /*# sourceMappingURL=wigets.css.map */

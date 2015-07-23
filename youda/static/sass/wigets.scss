@@ -570,3 +570,43 @@ width: 745px;
 .am-dropdown-content>li>a:hover{
   cursor: pointer;
 }
+
+//user_icon style
+
+$single_user_width : 286px;
+$single_user_content_padding : 15px;
+$single_user_content_width : $single_user_width - 2 * $single_user_content_padding - 10px;
+.single_user_detail_poper{
+        width :$single_user_width;
+        height:220px;
+        position:absolute;
+        padding-left: $single_user_content_padding + 5px;
+        padding-top: $single_user_content_padding;
+        display: none;
+        background-image: url('/static/image/system/poper_bg.png');
+        background-repeat: no-repeat;
+    }
+.user_info_intro_container{
+width: $single_user_content_width;
+  height: 50px;
+  background-color: #003cb3;
+}
+.user_info_detail_container{
+width: $single_user_content_width;
+  height : 50px;
+ background-color: #0044cc;
+}
+
+.user_info_icons_container{
+width: $single_user_content_width;
+  height: 25px;
+  line-height: 25px;
+   background-color: #ffc028;
+}
+
+.user_info_mark_icon_container{
+width: $single_user_content_width;
+height: 30px;
+   background-color: #f8b47e;
+
+}

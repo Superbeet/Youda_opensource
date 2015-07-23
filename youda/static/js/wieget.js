@@ -77,11 +77,12 @@ function bindSwitchRadio(){
           }
       });
 }
-
+    var user_info_timeout;
 function bindUserIconImformation(){
     $(document).on('mouseover','.common_user_icon',function(){
     if(($(document).find('.single_user_detail_poper')).length == 0){
-         var html = "<div class='single_user_detail_poper'>123</div>";
+         //var html = "<div class='single_user_detail_poper'>123</div>";
+        var html = template('common_user_information_poper',{});
          $('body').append(html);
     }
     var poper = $('.single_user_detail_poper');
@@ -93,15 +94,27 @@ function bindUserIconImformation(){
     var poper_height = poper.height();
 
     var middleLeft = left + width;
-    var middleTop = top + (height / 2) - (poper_height / 2);
+   // var middleTop = top + (height / 2) - (poper_height / 2);
+       var middleTop = top;
     poper.css('left',middleLeft+'px');
-     poper.css('top',middleTop+'px');
+    poper.css('top',middleTop+'px');
     poper.css('display','block');
+
+    user_info_timeout = setTimeout(function(){
+                    $('.single_user_detail_poper').css('display','none');
+        },2000);
+
 });
 
-$(document).on('mouseout','.common_user_icon',function(){
-setTimeout(function(){
-     $('.single_user_detail_poper').css('display','none');
-},500);
-});
+    $(document).on('mouseover','.single_user_detail_poper',function(){
+        clearTimeout(user_info_timeout);
+    });
+
+
+    $(document).on('mouseout','.single_user_detail_poper',function(){
+    setTimeout(function(){
+        // $('.single_user_detail_poper').css('display','none');
+    },500);
+    });
+
 }

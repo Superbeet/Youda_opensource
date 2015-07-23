@@ -31,9 +31,9 @@
     </div>
     <div class="am-modal-bd">
         <p>&nbsp;</p>
-        <p>电话号码：<span id="phone_num_assert_span"></span><button class="am-btn primary_btn" id="send_assert_code_btn" onclick="sendAssertCode()">发送验证码</button></p>
-        <p><input class="common_input_border" id="assert_code_input" onblur="assertCode()"/><img src="/static/image/index/checked_icon.png" id="is_checked_img" class="hidden" /></p>
-        <p><button id="confirm_bind_phone_btn" class="am-btn primary_btn" disabled="disabled" onclick="confirmBindPhone">确认绑定手机</button></p>
+        <p>电话号码：<span id="phone_num_assert_span"></span></p>
+        <p><input class="common_input_border" id="assert_code_input"/><button class="am-btn primary_btn" id="send_assert_code_btn" onclick="sendAssertCode()">发送验证码</button></p>
+        <p><button id="confirm_bind_phone_btn" class="am-btn primary_btn"  onclick="confirmBindPhone()">确认绑定手机</button></p>
         </div>
       </div>
      </div>
@@ -599,6 +599,7 @@ not_in_school_upper_step_btn.on('click',function(){
 function sendAssertCode(){
     var account = $('#account').val();
     $('#send_assert_code_btn').attr('disabled','disabled');
+    $('#confirm_bind_phone_btn').removeAttr('disabled');
     assertCount(60);
     /*
      $.ajax({

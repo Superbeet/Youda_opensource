@@ -1,17 +1,41 @@
 {% extends "base.html" %}
 {% block focus_area  %}
 
-校友页面左边
+<div id="focus_answer" class="fl">
+		<div id="focus_answer_tabs">
+		<div id="my_interest_tab" class="fl common_tab my_interest_tab">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		<div id="hot_answer_tab" class="hot_answer_tab fl common_tab tab_padding">
+		<a href="/static/tab.html">
+		<div class="tab_image">
+		</div>
+		</a>
+		</div>
+		</div>
+
+
+
+    <div id="focus_schooler_container">
+
+    </div>
 {% endblock %}
 {% block focus_people  %}
 
-校友页面右边
+<div id="focus_schooler_tab"></div>
+
+
+
+
 
 
 <script>
 $(document).ready(function(){
 	$('#schooler_nav').removeClass('schooler_nav_normal');
-$('#schooler_nav').addClass('schooler_nav_active');
+    $('#schooler_nav').addClass('schooler_nav_active');
 });
  </script>
  {% endblock %}
