@@ -53,6 +53,14 @@ a:focus {
   border-radius: 27px;
   moz-border-radius: 27px; }
 
+.small_icon_50_50 {
+  width: 50px;
+  height: 50px; }
+
+.common_round_img {
+  border-radius: 25px;
+  moz-border-radius: 25px; }
+
 .font_all_black {
   color: black; }
 
@@ -498,34 +506,53 @@ a:focus {
   cursor: pointer; }
 
 .single_user_detail_poper {
-  width: 286px;
+  width: 288px;
   height: 220px;
   position: absolute;
-  padding-left: 20px;
-  padding-top: 15px;
+  padding-left: 29px;
+  padding-top: 20px;
   display: none;
   background-image: url("/static/image/system/poper_bg.png");
   background-repeat: no-repeat; }
 
 .user_info_intro_container {
-  width: 246px;
-  height: 50px;
-  background-color: #003cb3; }
+  width: 230px;
+  height: 56px; }
 
 .user_info_detail_container {
-  width: 246px;
+  width: 230px;
   height: 50px;
-  background-color: #0044cc; }
+  line-height: 20px;
+  word-wrap: break-word;
+  font-size: 10pt;
+  padding-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.user_intro_content_container p {
+  margin: 0px;
+  font-size: 10pt;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 10px; }
 
 .user_info_icons_container {
-  width: 246px;
+  width: 230px;
   height: 25px;
   line-height: 25px;
-  background-color: #ffc028; }
+  font-size: 10pt;
+  margin-top: 5px; }
 
 .user_info_mark_icon_container {
-  width: 246px;
+  width: 230px;
   height: 30px;
-  background-color: #f8b47e; }
+  text-align: center;
+  margin-top: 15px;
+  background-image: url("/static/image/index/mark_icon.png");
+  background-repeat: no-repeat; }
+
+.user_info_mark_icon_container:hover {
+  cursor: pointer;
+  background-image: url("/static/image/index/mark_icon_active.png"); }
 
 /*# sourceMappingURL=wigets.css.map */

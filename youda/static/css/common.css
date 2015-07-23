@@ -53,6 +53,14 @@ a:focus {
   border-radius: 27px;
   moz-border-radius: 27px; }
 
+.small_icon_50_50 {
+  width: 50px;
+  height: 50px; }
+
+.common_round_img {
+  border-radius: 25px;
+  moz-border-radius: 25px; }
+
 .font_all_black {
   color: black; }
 
