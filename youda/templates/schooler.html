@@ -1,33 +1,68 @@
 {% extends "base.html" %}
+{% block css %}
+<link href="/static/css/schooler.css" rel="stylesheet" />
+
+{% endblock %}
+
 {% block focus_area  %}
 
 <div id="focus_answer" class="fl">
 		<div id="focus_answer_tabs">
-		<div id="my_interest_tab" class="fl common_tab my_interest_tab">
+		<div id="my_interest_schooler_tab" class="fl common_tab my_interest_schooler_tab">
 		<a href="/static/tab.html">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
-		<div id="hot_answer_tab" class="hot_answer_tab fl common_tab tab_padding">
+		<div id="hot_schooler_tab" class="hot_schooler_tab fl common_tab tab_padding">
 		<a href="/static/tab.html">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
 		</div>
-
-
-
+</div>
     <div id="focus_schooler_container">
 
     </div>
+<div id="recomand_schooler_container">
+
+
+
+</div>
+
+
 {% endblock %}
 {% block focus_people  %}
 
-<div id="focus_schooler_tab"></div>
+<img src="/static/image/index/recommand_schooler_tab.png" />
 
-
+<style>
+.hot_schooler_tab{
+    background-image: url("/static/image/index/hot_schooler_tab.png");
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 200px
+}
+.hot_schooler_tab:hover,.hot_schooler_tab_active{
+    background-image: url("/static/image/index/hot_schooler_tab_active.png");
+     cursor: pointer;
+}
+.my_interest_schooler_tab{
+        background-image: url("/static/image/index/my_interest_schooler_tab.png");
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 200px
+}
+.my_interest_schooler_tab:hover , .my_interest_schooler_tab_active{
+    cursor: pointer;
+      background-image: url("/static/image/index/my_interest_schooler_tab_active.png");
+}
+.focus_schooler_tab{
+        background-image: url("/static/image/index/recommand_schooler_tab.png");
+    background-repeat: no-repeat;
+}
+</style>
 
 
 
@@ -36,6 +71,11 @@
 $(document).ready(function(){
 	$('#schooler_nav').removeClass('schooler_nav_normal');
     $('#schooler_nav').addClass('schooler_nav_active');
+
+
+    //init the state of tab
+    $('#my_interest_schooler_tab').addClass('my_interest_schooler_tab_active');
+
 });
  </script>
  {% endblock %}
