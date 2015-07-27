@@ -8,28 +8,30 @@
 
 <div id="focus_answer" class="fl">
 		<div id="focus_answer_tabs">
-		<div id="my_interest_schooler_tab" class="fl common_tab my_interest_schooler_tab">
-		<a href="/static/tab.html">
+		<div id="my_interest_schooler_tab" class="fl common_tab my_interest_schooler_tab my_interest_schooler_tab_active">
+		<a href="javascript:void(0)">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
 		<div id="hot_schooler_tab" class="hot_schooler_tab fl common_tab tab_padding">
-		<a href="/static/tab.html">
+		<a href="javascript:void(0)">
 		<div class="tab_image">
 		</div>
 		</a>
 		</div>
 		</div>
-</div>
-    <div id="focus_schooler_container">
-
+   <div id="my_interest_schooler_container">
+关注校友
     </div>
-<div id="recomand_schooler_container">
+<div id="hot_schooler_container">
 
-
+推荐的校友
 
 </div>
+
+</div>
+
 
 
 {% endblock %}
@@ -37,7 +39,25 @@
 
 <img src="/static/image/index/recommand_schooler_tab.png" />
 
+    <div class="recommand_schooler">
+    我是人物资料
+
+
+    </div>
+
 <style>
+
+
+.recommand_schooler{
+    width:200px;
+    height:120px;
+    background-color: #003399;
+
+}
+
+
+
+
 .hot_schooler_tab{
     background-image: url("/static/image/index/hot_schooler_tab.png");
     background-repeat: no-repeat;
@@ -60,7 +80,11 @@
 }
 .focus_schooler_tab{
         background-image: url("/static/image/index/recommand_schooler_tab.png");
-    background-repeat: no-repeat;
+        background-repeat: no-repeat;
+}
+
+#hot_schooler_container{
+    display: none;
 }
 </style>
 
@@ -74,8 +98,23 @@ $(document).ready(function(){
 
 
     //init the state of tab
-    $('#my_interest_schooler_tab').addClass('my_interest_schooler_tab_active');
+
+
+    $('#my_interest_schooler_tab').on('click',function(){
+        $('#my_interest_schooler_container').show();
+         $('#hot_schooler_container').hide();
+    });
+    $('#hot_schooler_tab').on('click',function(){
+     $('#my_interest_schooler_container').hide();
+         $('#hot_schooler_container').show();
+    });
+
 
 });
+
+function load_interest_schooler_list(){
+
+}
+
  </script>
  {% endblock %}
