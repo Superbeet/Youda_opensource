@@ -85,4 +85,60 @@ a:focus {
 .align_center {
   text-align: center; }
 
+.recommand_schooler_user_info {
+  width: 200px;
+  height: 66px;
+  line-height: 50px; }
+
+.recommand_schooler_user_good_at {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 15px; }
+
+.recommond_schooler_detail {
+  padding-left: 20px; }
+
+.recommond_schooler_detail p {
+  line-height: 15px;
+  margin: 0px;
+  font-size: 10pt; }
+
+.recommond_schooler_detail p a {
+  font-size: 13pt; }
+
+.recommand_schooler {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px #666666 solid; }
+
+.hot_schooler_tab {
+  background-image: url("/static/image/index/hot_schooler_tab.png");
+  background-repeat: no-repeat;
+  height: 45px;
+  width: 200px; }
+
+.hot_schooler_tab:hover, .hot_schooler_tab_active {
+  background-image: url("/static/image/index/hot_schooler_tab_active.png");
+  cursor: pointer; }
+
+.my_interest_schooler_tab {
+  background-image: url("/static/image/index/my_interest_schooler_tab.png");
+  background-repeat: no-repeat;
+  height: 45px;
+  width: 200px; }
+
+.my_interest_schooler_tab:hover, .my_interest_schooler_tab_active {
+  cursor: pointer;
+  background-image: url("/static/image/index/my_interest_schooler_tab_active.png"); }
+
+.focus_schooler_tab {
+  background-image: url("/static/image/index/recommand_schooler_tab.png");
+  background-repeat: no-repeat; }
+
+#hot_schooler_container {
+  display: none; }
+
 /*# sourceMappingURL=schooler.css.map */
