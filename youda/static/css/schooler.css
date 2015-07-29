@@ -85,6 +85,12 @@ a:focus {
 .align_center {
   text-align: center; }
 
+.mark_icon:hover {
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
 .recommand_schooler_user_info {
   width: 200px;
   height: 66px;

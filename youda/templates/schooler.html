@@ -6,6 +6,44 @@
 
 {% block focus_area  %}
 
+<style type="text/css">
+.schooler_detail_list_container{
+width: 880px;
+height: 200px;
+}
+
+.schooler_short_intro{
+    height: 60px;
+    width: 880px;
+}
+
+.schooler_recent_answer{
+    height: 150px;
+    width: 880px;
+}
+
+.schooler_short_intro_content{
+    width: 805px;
+    height: 60px;
+    line-height: 28px;
+    margin-left: 15px;
+    border-bottom: 1px #17A9B8 solid;
+}
+
+#my_interest_schooler_container{
+    margin-top: 70px;
+}
+
+.schooler_recent_answer ul{
+    line-height: 40px;
+    padding-left: 75px;
+}
+
+
+</style>
+
+
+
 <div id="focus_answer" class="fl">
 		<div id="focus_answer_tabs">
 		<div id="my_interest_schooler_tab" class="fl common_tab my_interest_schooler_tab my_interest_schooler_tab_active">
@@ -21,17 +59,51 @@
 		</a>
 		</div>
 		</div>
+        </div>
    <div id="my_interest_schooler_container">
-关注校友
+<div class="schooler_detail_list_container">
+<div class="schooler_short_intro fl">
+<div class="fl">
+<img src="/static/image/avatar-min-img.jpg" class="common_icon common_round_img"  />
+</div>
+
+<div class="schooler_short_intro_content fl">
+<div><a>徐子豪</a>  通信工程·2011级·本科  <span class="fr">已有<a class="common_font">1234</a>人关注</span></div>
+<div>擅长：互联网；运营商；研发 <div class="mark_icon fr"></div></div>
+</div>
+
+
+<div class="schooler_recent_answer fl">
+
+<ul>
+
+<li>TA最近回答了  <a href="javascript:void(0)">大学里和毕业后，有哪些是你万万没想到的事情</a>   <div class="time_icon_container fr comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-02 18:33
+</div></li>
+
+<li>TA最近回答了  <a href="javascript:void(0)">大学里和毕业后，有哪些是你万万没想到的事情</a>   <div class="time_icon_container fr comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-02 18:33
+</div></li>
+<li>TA最近回答了  <a href="javascript:void(0)">大学里和毕业后，有哪些是你万万没想到的事情</a>   <div class="time_icon_container fr comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-02 18:33
+</div></li>
+<li>TA最近回答了  <a href="javascript:void(0)">大学里和毕业后，有哪些是你万万没想到的事情</a>   <div class="time_icon_container fr comment_time_container">
+<img src="/static/image/index/time_icon.png" />2015-01-02 18:33
+</div></li>
+
+</ul>
+
+</div>
+</div>
     </div>
+
+
+</div>
 <div id="hot_schooler_container">
 
 推荐的校友
 
 </div>
-
-</div>
-
 
 
 {% endblock %}
@@ -77,7 +149,7 @@
     <div class="recommond_schooler_detail fl">
     <p><a href="javascript:void(0)">徐子豪</a></p>
     <p> &nbsp;</p>
-    <p>通信工程</p>
+    <p> </p>
     <p>2011本科</p>
 
     </div>

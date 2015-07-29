@@ -85,4 +85,10 @@ a:focus {
 .align_center {
   text-align: center; }
 
+.mark_icon:hover {
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
 /*# sourceMappingURL=common.css.map */

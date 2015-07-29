@@ -85,6 +85,12 @@ a:focus {
 .align_center {
   text-align: center; }
 
+.mark_icon:hover {
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
 #all_answer_people_topic {
   width: 880px;
   margin-top: 36px; }

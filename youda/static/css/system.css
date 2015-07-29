@@ -85,6 +85,12 @@ a:focus {
 .align_center {
   text-align: center; }
 
+.mark_icon:hover {
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
 .system_container {
   width: 920px;
   margin: 0 auto; }
