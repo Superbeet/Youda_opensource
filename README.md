@@ -9,9 +9,9 @@ so we decides to open source our code completely.
 Free feel to use the code to build a non-commerical websites and help others. Commerical usage will be limited, send 
 an Email to jeffrey.congye@gmail.com for detailed information. 
 
-If you find any issue or build a wonderful feature that you want to share with us, just send us a pull reqeust.
+If you find any issue or build a awesome feature that you want to share with us and others, just send us a pull reqeust.
 
--- Cong ye
+-- Cong Ye
 
 Features
 ----------
