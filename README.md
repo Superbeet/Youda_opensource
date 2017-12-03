@@ -1,8 +1,8 @@
 Welcome to Project Youda!
 ===================
-One year ago, we founded the first alumni-based education and career website in China named UAnswerMe (友答)。 
+We founded the first alumni-based education and career website in China named UAnswerMe (友答) in 2013。 
 During the online running of the first year, we added in 10 more features and optimized the architecture in
-Many aspects. Today, we have more than 50,000 users, 90% of which are located in Nanjing. We do hope more 
+Many aspects. Today, we have more than 100,000 users, 90% of which are located in Nanjing. We do hope more 
 cities and universities can have their own platforms for people to share knowledges and experience in their lives,
 so we decides to open source our code completely. 
 
